@@ -658,7 +658,9 @@ table {
   font-size: 0.9em;
 }
 
-/* Responsividade */
+/* ==========================================================================
+      RESPONSIVIDADE
+      ========================================================================== */
 @media (max-width: 768px) {
   .sobre-content {
     flex-direction: column;
@@ -706,4 +708,165 @@ table {
   .footer .container {
     padding: 0 1rem;
   }
+
+  .sobre-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav_header {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .ul_header {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .txt_home {
+    width: 90%;
+    margin: 5rem auto;
+    text-align: center;
+  }
+
+  .tit_home {
+    font-size: 2.5rem;
+  }
+
+  .buttons_home {
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .button_orc {
+    padding: 1rem 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sobre-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-imagem img {
+    width: 80%;
+    margin: 2rem 0;
+  }
+
+  .passos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-container {
+    width: 100%;
+    height: 300px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .top {
+    padding: 1rem 0;
+  }
+
+  .txt_home {
+    width: 95%;
+    margin: 3rem auto;
+  }
+
+  .tit_home {
+    font-size: 2rem;
+  }
+
+  .txt_p {
+    font-size: 1.5rem;
+  }
+
+  .buttons_home {
+    gap: 1rem;
+  }
+
+  .button_orc {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-section ul li {
+    text-align: center;
+  }
+
+  .footer-section ul li a {
+    font-size: 0.9rem;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 250px;
+  }
+
+  .passos {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-texto ul li {
+    font-size: 1.2rem;
+  }
+
+  .sobre-texto p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .txt_home {
+    width: 100%;
+    margin: 3rem auto;
+    text-align: center;
+  }
+
+  .tit_home {
+    font-size: 1.8rem;
+  }
+
+  .txt_p {
+    font-size: 1.3rem;
+  }
+
+  .button_orc {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .footer-section ul li {
+    font-size: 0.8rem;
+  }
+
+  .social-links img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
