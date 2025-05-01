@@ -143,18 +143,6 @@ button{
   color: #b450f5;
 }
 
-.desc_log {
-  display: flex;
-  text-align: justify;
-  justify-content: left;
-  font-size: 0.7rem;
-  font-family: "Iansui";
-  font-weight:;
-  width: 20rem;
-  color: #b450f5;
-}
-
-
 .input_log {
   display: flex;
   justify-content: center;
@@ -190,8 +178,11 @@ button{
   background-color: transparent;
   color: grey;
   margin: 0 5rem 1.5rem 5rem;
-  padding: 0.5rem;
-  box-sizing: border-box;
+
+
+  &::placeholder {
+    padding: 10px;
+  }
 
   &:hover{
     border-color: #b450f5;
@@ -204,18 +195,6 @@ button{
 
   p {
     margin: 1rem 0 -1rem 5rem;
+
   }
-}
-
-input[type=submit]{
-  background-color: #b450f5;
-  color: antiquewhite;
-  width: 20rem;
-  height: 2.5rem;
-  border: none;
-  border-radius: 15px;
-  font-size: 20px;
-  font-family: "Iansui";
-  margin-bottom: 20px;
-
 }

@@ -106,6 +106,7 @@ section {
 
 /* Variáveis de Cores */
 :root {
+  /* Paleta de cores */
   --primary: #b450f5;
   --primary-light: rgba(180, 80, 245, 0.1);
   --primary-dark: #8a2be2;
@@ -116,6 +117,14 @@ section {
   --text-light: #fff;
   --shadow: rgba(180, 80, 245, 0.2);
   --shadow-hover: rgba(180, 80, 245, 0.3);
+
+  /* Breakpoints */
+  --mobile-pequeno: 320px;
+  --mobile-normal: 480px;
+  --tablet: 768px;
+  --notebook: 1024px;
+  --desktop: 1280px;
+  --ultra-wide: 1440px;
 }
 
 /* Configurações Globais */
@@ -127,11 +136,9 @@ section {
 body {
   line-height: 1;
   background-color: var(--secondary);
-  background-image: radial-gradient(
-    circle at 10% 20%,
-    var(--primary-light) 0%,
-    transparent 20%
-  );
+  background-image: radial-gradient(circle at 10% 20%,
+      var(--primary-light) 0%,
+      transparent 20%);
 }
 
 /* Reset de Listas e Citações */
@@ -427,7 +434,7 @@ table {
 .map-container {
   width: 45%;
   height: 600px;
-  margin: 3rem 0;
+  margin: 3rem 0 0 5rem;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 20px var(--shadow);
@@ -658,215 +665,157 @@ table {
   font-size: 0.9em;
 }
 
+/* Estilos gerais para o site */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header,
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Estilo para o menu de navegação */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #222;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar a:hover {
+  background-color: #444;
+}
+
+/* Layout para o conteúdo principal */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.section {
+  flex: 1;
+  padding: 20px;
+}
+
 /* ==========================================================================
-      RESPONSIVIDADE
+       RESPONSIVE
       ========================================================================== */
-@media (max-width: 768px) {
-  .sobre-content {
+/* Para celulares pequenos (menor que 480px) */
+@media (max-width: 479px) {
+  .navbar {
     flex-direction: column;
   }
 
-  .passos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .passos {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Responsividade */
-@media (max-width: 1200px) {
   .main-content {
     flex-direction: column;
-    align-items: center;
-    padding: 0 1rem;
   }
 
-  .txt_home,
-  .map-container {
+  .section {
     width: 100%;
-    margin: 2rem auto;
-  }
-
-  .map-container {
-    height: 400px;
-  }
-
-  .sobre-nos .container,
-  .como-funciona .container,
-  .footer .container {
-    padding: 0 1rem;
-  }
-
-  .sobre-content {
-    flex-direction: column;
-    align-items: center;
   }
 }
 
+/* Para celulares modernos de 2025 (entre 480px e 768px) */
 @media (max-width: 768px) {
-  .top {
+  .navbar {
     flex-direction: column;
     align-items: center;
   }
 
-  .nav_header {
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .ul_header {
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .txt_home {
-    width: 90%;
-    margin: 5rem auto;
-    text-align: center;
-  }
-
-  .tit_home {
-    font-size: 2.5rem;
-  }
-
-  .buttons_home {
+  .main-content {
     flex-direction: column;
-    gap: 1.5rem;
+  }
+
+  .section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+}
+
+/* Para tablets (768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
     justify-content: center;
   }
 
-  .button_orc {
-    padding: 1rem 2rem;
+  .main-content {
+    flex-direction: row;
   }
 
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .sobre-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .sobre-imagem img {
-    width: 80%;
-    margin: 2rem 0;
-  }
-
-  .passos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .map-container {
-    width: 100%;
-    height: 300px;
-  }
-
-  .social-links {
-    justify-content: center;
+  .section {
+    width: 48%;
   }
 }
 
-@media (max-width: 480px) {
-  .top {
-    padding: 1rem 0;
+/* Para notebooks (1025px a 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .main-content {
+    flex-direction: row;
   }
 
-  .txt_home {
-    width: 95%;
-    margin: 3rem auto;
-  }
-
-  .tit_home {
-    font-size: 2rem;
-  }
-
-  .txt_p {
-    font-size: 1.5rem;
-  }
-
-  .buttons_home {
-    gap: 1rem;
-  }
-
-  .button_orc {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.3rem;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-section ul li {
-    text-align: center;
-  }
-
-  .footer-section ul li a {
-    font-size: 0.9rem;
-  }
-
-  .map-container {
-    width: 100%;
-    height: 250px;
-  }
-
-  .passos {
-    grid-template-columns: 1fr;
-  }
-
-  .sobre-texto ul li {
-    font-size: 1.2rem;
-  }
-
-  .sobre-texto p {
-    font-size: 1.3rem;
+  .section {
+    width: 30%;
   }
 }
 
-@media (max-width: 360px) {
-  .txt_home {
-    width: 100%;
-    margin: 3rem auto;
-    text-align: center;
+/* Para computadores (largura superior a 1366px) */
+@media (min-width: 1367px) {
+  .navbar {
+    justify-content: space-between;
   }
 
-  .tit_home {
-    font-size: 1.8rem;
+  .main-content {
+    flex-direction: row;
+    gap: 40px;
   }
 
-  .txt_p {
-    font-size: 1.3rem;
-  }
-
-  .button_orc {
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
-
-  .footer-section ul li {
-    font-size: 0.8rem;
-  }
-
-  .social-links img {
-    width: 20px;
-    height: 20px;
+  .section {
+    width: 30%;
   }
 }
 
+/* Para monitores ultra wide (largura superior a 1920px) */
+@media (min-width: 1921px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 15px 50px;
+  }
+
+  .main-content {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .section {
+    width: 28%;
+  }
+}
