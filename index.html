@@ -1,74 +1,67 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZigZag</title>
-    <meta charset="utf-8">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="responsivo.css">
     <link rel="icon" href="desing/images/MiniLogo.png" type="image/x-icon">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <div class="top">
-        <img class="logo_header" src="desing/svg/logo.svg" width="90" height="90">
-
-        <!------------------------------------------------------------------------------------------------------------------------------------->
-        <nav class="nav_header">
-            <ul class="ul_header">
-                <li><a href="cadastro.php">
-                        <p>Seja afiliada (o)<p>
-                    </a>
-                </li>
-                <li><a href="login.html">
-                        <p> login</p>
-                    </a>
-                </li>
-                <li><a class="button_cadastro" href="cadastro.html">
-                        <p>Cadastra-se</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 </head>
 
-
 <body>
-    <div class="main-content">
-        <div class="txt_home">
-            <h1 class="tit_home">A costura que vai até você!</h1>
 
+    <!-- HEADER -->
+    <header class="top">
+        <img class="logo_header" src="desing/svg/logo.svg" width="90" height="90" alt="Logo ZigZag">
+        <nav class="nav_header">
+            <ul class="ul_header">
+                <li><a href="cadastro.php">Seja afiliada (o)</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a class="button_cadastro" href="cadastro.html">Cadastre-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- Texto Home -->
+        <section class="txt_home">
+            <h1 class="tit_home">A costura que vai até você!</h1>
             <div class="txt_p">
-                <p>Precisando <span class="roxo">ajustar</span>, <span class="roxo"> consertar </span> ou
-                    <span class="roxo"> criar </span> uma peça nova? A <span class="roxo"> ZigZag</span>
-                    conecta <span class="roxo"> você</span> a
-                    costureiras locais de forma <span class="roxo"> rápida </span> e <span class="roxo"> prática</span>.
-                    Faça seu <span class="roxo">pedido online </span> e receba um serviço de
-                    <span class="roxo"> qualidade </span> sem
-                    sair de <span class="roxo">casa</span>.<span class="roxo"></span>Costura </span> sob
-                    demanda, no seu tempo e do seu jeito!
+                <p>Precisando <span class="roxo">ajustar</span>, <span class="roxo">consertar</span> ou
+                    <span class="roxo">criar</span> uma peça nova? A <span class="roxo">ZigZag</span>
+                    conecta <span class="roxo">você</span> a costureiras locais de forma <span
+                        class="roxo">rápida</span> e
+                    <span class="roxo">prática</span>. Faça seu <span class="roxo">pedido online</span> e receba um
+                    serviço de
+                    <span class="roxo">qualidade</span> sem sair de <span class="roxo">casa</span>. Costura sob demanda,
+                    no seu
+                    tempo e do seu jeito!
                 </p>
             </div>
+
             <div class="buttons_home">
-                <a class="button_orc" href="cadastro.php">
-                    <p>Faça seu orçamento</p>
-                </a>
+                <a class="button_orc" href="cadastro.php">Faça seu orçamento</a>
                 <div class="search-container">
                     <div class="search-box">
                         <img src="desing/svg/search.svg" alt="Buscar" class="search-icon">
-                        <input type="endereco_search" placeholder="Buscar costureiras próximas..." class="search-input">
+                        <input type="text" placeholder="Buscar costureiras próximas..." class="search-input">
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="map" class="map-container"></div>
-    </div>
+        </section>
 
-    <!-- Seção Sobre Nós -->
+        <!-- Mapa -->
+        <section id="map" class="map-container"></section>
+
+    </main>
+
+    <!-- SOBRE NÓS -->
     <section class="sobre-nos">
         <div class="container">
             <h2>Sobre a ZigZag</h2>
@@ -76,7 +69,8 @@
                 <div class="sobre-texto">
                     <p>A ZigZag nasceu da necessidade de conectar pessoas que precisam de serviços de costura com
                         profissionais talentosos em sua região. Nossa plataforma revoluciona a forma como as pessoas
-                        encontram e contratam serviços de costura.</p>
+                        encontram e
+                        contratam serviços de costura.</p>
                     <p>Com a ZigZag, você tem acesso a:</p>
                     <ul>
                         <li>Costureiras profissionais verificadas</li>
@@ -86,14 +80,13 @@
                     </ul>
                 </div>
                 <div class="sobre-imagem">
-                    <img src="desing/images/costureira trabalhando.png" alt="Costureira trabalhando" width="auto"
-                        height="auto">
+                    <img src="desing/images/costureira trabalhando.png" alt="Costureira trabalhando">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Como Funciona -->
+    <!-- COMO FUNCIONA -->
     <section class="como-funciona">
         <div class="container">
             <h2>Como Funciona</h2>
@@ -122,7 +115,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -143,8 +136,8 @@
                     <h3>Contato</h3>
                     <ul>
                         <li>Email: contato@zigzag.com.br</li>
-                        <li>Telefone: (11) 9999-9999</li>
-                        <li>WhatsApp: (11) 99999-9999</li>
+                        <li>Telefone: (11) 99123-4567</li>
+                        <li>WhatsApp: (11) 99123-4567</li>
                     </ul>
                 </div>
                 <div class="footer-section">

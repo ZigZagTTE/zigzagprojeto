@@ -186,79 +186,72 @@ table {
   align-items: center;
 }
 
+/* Deixa os itens do header na horizontal */
 .ul_header {
-  display: inline-flex;
-
-  a {
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
-  }
-
-  li {
-    text-decoration: none;
-    margin: auto 2rem;
-  }
-
-  p {
-    color: var(--text-light);
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: var(--secondary);
-      transition: width 0.3s ease;
-    }
-
-    &:hover::after {
-      width: 100%;
-    }
-  }
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  /* Espaço entre os botões */
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
-/* Botão de Cadastro no Header */
-.button_cadastro p {
-  padding: 1rem;
-  border-radius: 20px;
-  background-color: var(--secondary);
-  font-size: 1.5rem;
+/* Links normais */
+.ul_header li a {
+  color: #333;
   text-decoration: none;
-  color: var(--primary);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  transform-origin: center;
+  display: inline-block;
   position: relative;
-  cursor: pointer;
-
-  &::after {
-    display: none;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px var(--shadow-hover);
-  }
+  overflow: hidden;
 }
 
-/* Ajuste para evitar que o efeito de sublinhado afete o button_cadastro */
-.ul_header p::after {
+/* Sublinhado animado */
+.ul_header li a::after {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--secondary);
-  transition: width 0.3s ease;
+  left: 50%;
+  bottom: 0;
+  background-color: #5e35b1;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
-.ul_header p:hover::after {
+.ul_header li a:hover::after {
   width: 100%;
 }
+
+.ul_header li a:hover {
+  color: #5e35b1;
+  transform: scale(1.05);
+}
+
+/* Botão Cadastre-se */
+.button_cadastro {
+  background-color: #5e35b1;
+  color: white !important;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.button_cadastro:hover {
+  background-color: #7e57c2;
+  transform: scale(1.1);
+  color: white;
+  box-shadow: 0 0 15px rgba(126, 87, 194, 0.7);
+}
+
 
 /* ==========================================================================
       CONTEÚDO PRINCIPAL - HOME
@@ -718,104 +711,216 @@ body {
   padding: 20px;
 }
 
-/* ==========================================================================
-       RESPONSIVE
-      ========================================================================== */
-/* Para celulares pequenos (menor que 480px) */
-@media (max-width: 479px) {
-  .navbar {
-    flex-direction: column;
-  }
+/* ===================
+   RESPONSIVIDADE
+=================== */
 
-  .main-content {
-    flex-direction: column;
-  }
-
-  .section {
-    width: 100%;
-  }
-}
-
-/* Para celulares modernos de 2025 (entre 480px e 768px) */
-@media (max-width: 768px) {
-  .navbar {
+/* Telas pequenas: celulares até 480px */
+@media (max-width: 480px) {
+  .top {
     flex-direction: column;
     align-items: center;
   }
 
-  .main-content {
+  .nav_header {
     flex-direction: column;
   }
 
-  .section {
-    width: 100%;
-    margin-bottom: 20px;
+  .ul_header li {
+    margin: 0.5rem 0;
   }
 
-  .footer {
-    font-size: 12px;
+  .txt_home {
+    width: 90%;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .tit_home {
+    font-size: 2rem;
+  }
+
+  .txt_p {
+    font-size: 1rem;
+  }
+
+  .buttons_home {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 2rem;
+  }
+
+  .sobre-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-imagem img {
+    width: 100%;
+    height: auto;
+  }
+
+  .passos {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
   }
 }
 
-/* Para tablets (768px a 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .navbar {
+/* Telas médias: celulares grandes e tablets (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav_header {
+    flex-direction: column;
+  }
+
+  .ul_header li {
+    margin: 0.5rem 0;
+  }
+
+  .txt_home {
+    width: 85%;
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .tit_home {
+    font-size: 2.5rem;
+  }
+
+  .txt_p {
+    font-size: 1.2rem;
+  }
+
+  .buttons_home {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 400px;
+    margin-top: 2rem;
+  }
+
+  .sobre-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-imagem img {
+    width: 100%;
+    height: auto;
+  }
+
+  .passos {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+}
+
+/* Telas grandes: notebooks e desktops (769px a 1280px) */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .txt_home {
+    width: 50%;
+  }
+
+  .tit_home {
+    font-size: 3rem;
+  }
+
+  .txt_p {
+    font-size: 1.5rem;
+  }
+
+  .search-box {
+    width: 300px;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 450px;
+  }
+
+  .sobre-content {
+    flex-direction: row;
+  }
+
+  .passos {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
-  .main-content {
+  .footer-content {
     flex-direction: row;
-  }
-
-  .section {
-    width: 48%;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 
-/* Para notebooks (1025px a 1366px) */
-@media (min-width: 1025px) and (max-width: 1366px) {
-  .main-content {
+/* Telas ultra largas: acima de 1281px */
+@media (min-width: 1281px) {
+  .txt_home {
+    width: 45%;
+  }
+
+  .tit_home {
+    font-size: 3.5rem;
+  }
+
+  .txt_p {
+    font-size: 2rem;
+  }
+
+  .search-box {
+    width: 320px;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 500px;
+  }
+
+  .sobre-content {
     flex-direction: row;
   }
 
-  .section {
-    width: 30%;
-  }
-}
-
-/* Para computadores (largura superior a 1366px) */
-@media (min-width: 1367px) {
-  .navbar {
+  .passos {
+    flex-direction: row;
     justify-content: space-between;
   }
 
-  .main-content {
+  .footer-content {
     flex-direction: row;
-    gap: 40px;
-  }
-
-  .section {
-    width: 30%;
-  }
-}
-
-/* Para monitores ultra wide (largura superior a 1920px) */
-@media (min-width: 1921px) {
-  .container {
-    max-width: 1600px;
-  }
-
-  .navbar {
     justify-content: space-between;
-    padding: 15px 50px;
-  }
-
-  .main-content {
-    flex-direction: row;
-    gap: 50px;
-  }
-
-  .section {
-    width: 28%;
   }
 }
