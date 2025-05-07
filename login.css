@@ -86,11 +86,12 @@ video {
   vertical-align: baseline;
 }
 
+
 body {
-  background-image: url(desing/images/ZigZagwpp.png);
+  background-image: url(design/images/ZigZagwpp.png);
 }
 
-button{
+button {
   background-color: #b450f5;
   color: antiquewhite;
   width: 20rem;
@@ -102,7 +103,7 @@ button{
   margin-bottom: 20px;
 }
 
-.cadastro{
+.cadastro {
   color: #b450f5;
 }
 
@@ -143,6 +144,17 @@ button{
   color: #b450f5;
 }
 
+.desc_log {
+  display: flex;
+  text-align: justify;
+  justify-content: left;
+  font-size: 0.7rem;
+  font-family: "Iansui";
+  font-weight: bold;
+  width: 20rem;
+  color: #b450f5;
+}
+
 .input_log {
   display: flex;
   justify-content: center;
@@ -154,20 +166,9 @@ button{
   background-color: transparent;
   color: grey;
   margin: 0 5rem 3rem 5rem;
-
-
-  &::placeholder {
-    padding: 10px;
-  }
-
-  &:hover{
-    border-color: #b450f5;
-  }
-
-
 }
 
-.input_cad{
+.input_cad {
   display: flex;
   justify-content: center;
   width: 20rem;
@@ -178,15 +179,8 @@ button{
   background-color: transparent;
   color: grey;
   margin: 0 5rem 1.5rem 5rem;
-
-
-  &::placeholder {
-    padding: 10px;
-  }
-
-  &:hover{
-    border-color: #b450f5;
-  }
+  padding: 0.5rem;
+  box-sizing: border-box;
 
 }
 
@@ -197,4 +191,17 @@ button{
     margin: 1rem 0 -1rem 5rem;
 
   }
+}
+
+input[type=submit] {
+  background-color: #b450f5;
+  color: antiquewhite;
+  width: 20rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: "Iansui";
+  margin-bottom: 20px;
+
 }
