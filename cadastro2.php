@@ -41,6 +41,11 @@
         input.value = telefone;
         }
     </script>
+<?php
+    require_once("conecta.php");
+
+    ?>
+
     <form class="popup" method="POST" action="cadastro2.php">
         <div class="tit_log">Crie sua conta</div>
         <div class="insc_cad">
@@ -59,7 +64,45 @@
 
     </form>
 
-   
+<?php
+
+    $usuario=$_POST['txtUsu'];
+    $cpf=$_POST['txtCpf'];
+    $data=$_POST['txtData'];
+    $telefone=$_POST['txtTelefone'];
+    $email=$_POST['txtEmail'];
+    $senha=$_POST['txtSenha'];
+    $confirmsenha=$_POST['txtCSenha'];
+
+    if($senha=$confirmsenha)
+    {
+    $sql = "insert into tbl_usuario"
+		."(usu_nome, usu_cpf, usu_nascimento, usu_telefone, usu_email, usu_senha)"
+		."values ('$nome','$cpf','$data', '$telefone', $email', '$senha')";
+    }
+
+    else {
+        echo "Senha incorreta.";
+    
+    }
+
+	$res2 = mysqli_query($conexao, $sql);
+
+	if($res2)
+	{
+		echo "<p align='center'>Usuário cadastrado com sucesso!</p>";
+	}
+	else
+	{
+		$erro = mysqli_error();
+
+		echo "<p align='center>Erro: $erro </p>";
+	}
+	mysqli_close($conexao);
+
+?>
+
+
 
 
 </body>

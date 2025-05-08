@@ -235,8 +235,8 @@ table {
 
 /* Botão Cadastre-se */
 .button_cadastro {
-  background-color: #5e35b1;
-  color: white !important;
+  background-color:var(--secondary) ;
+  color: var(--primary) !important;
   border-radius: 8px;
   padding: 8px 16px;
   transition: all 0.3s ease;
@@ -246,9 +246,9 @@ table {
 }
 
 .button_cadastro:hover {
-  background-color: #7e57c2;
+  background-color:var(--secondary) ;
+  color: var(--primary) !important;
   transform: scale(1.1);
-  color: white;
   box-shadow: 0 0 15px rgba(126, 87, 194, 0.7);
 }
 
