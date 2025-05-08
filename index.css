@@ -212,7 +212,9 @@ table {
 }
 
 /* Sublinhado animado */
-.ul_header li a::after {
+.ul_header 
+  
+  .li_header a::after {
   content: "";
   position: absolute;
   width: 0;

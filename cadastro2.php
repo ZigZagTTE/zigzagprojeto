@@ -66,23 +66,26 @@
 
 <?php
 
-    $usuario=$_POST['txtUsu'];
-    $cpf=$_POST['txtCpf'];
-    $data=$_POST['txtData'];
-    $telefone=$_POST['txtTelefone'];
+    //$usuario=$_POST['txtUsu'];
+    //$cpf=$_POST['txtCpf'];
+    //$data=$_POST['txtData'];
+   // $telefone=$_POST['txtTelefone'];
     $email=$_POST['txtEmail'];
     $senha=$_POST['txtSenha'];
     $confirmsenha=$_POST['txtCSenha'];
 
     if($senha=$confirmsenha)
     {
-    $sql = "insert into tbl_usuario"
-		."(usu_nome, usu_cpf, usu_nascimento, usu_telefone, usu_email, usu_senha)"
-		."values ('$nome','$cpf','$data', '$telefone', $email', '$senha')";
+    //$sql = "insert into tbl_usuario"
+	//	."(usu_nome, usu_cpf, usu_nascimento, usu_telefone, usu_email, usu_senha)"
+	//	."values ('$nome','$cpf','$data', '$telefone', $email', '$senha')";
+        $sql = "insert into tbl_usuario"
+        ."(usu_email, usu_senha)"
+        ."values ('$email', '$senha')";
     }
 
     else {
-        echo "Senha incorreta.";
+        echo "As senhas precisam ser iguais.";
     
     }
 

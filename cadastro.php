@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form class="popup" method="POST" action="cadastro2.php">
+    <form class="popup" method="POST" action="cadastro2.php?arroz=1">
         <div class="tit_log">Crie sua conta</div>
         <div class="insc_cad">
             <br>
