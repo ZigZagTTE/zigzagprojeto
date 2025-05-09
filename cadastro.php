@@ -77,7 +77,7 @@
             <input class="input_cad" type="email" name="txtEmail" required placeholder="exemplo@email.com">
             
             <p class="txt_log">Senha</p><br>
-            <input class="input_cad" type="text" name="txtSenha" required placeholder="crie sua senha*" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <input class="input_cad" type="password" name="txtSenha" required placeholder="crie sua senha*" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
             
             <p class="desc_log">*Crie uma senha com no mínimo 8 caracteres, havendo uma letra maíuscula, uma minúscula e um número. </p><br>
             <?php 
@@ -90,7 +90,7 @@
             ?>
 
             <p class="txt_log">Confirme sua senha</p><br>
-            <input class="input_cad" type="text" name="txtCSenha" required placeholder="digite sua senha">
+            <input class="input_cad" type="password" name="txtCSenha" required placeholder="digite sua senha">
         </div>
 
         <br>
