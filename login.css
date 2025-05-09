@@ -165,7 +165,9 @@ button {
   border-radius: 20px;
   background-color: transparent;
   color: grey;
-  margin: 0 5rem 3rem 5rem;
+  margin: 0 5rem 1.5rem 5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 
 .input_cad {
@@ -181,7 +183,6 @@ button {
   margin: 0 5rem 1.5rem 5rem;
   padding: 0.5rem;
   box-sizing: border-box;
-
 }
 
 .insc_cad {
