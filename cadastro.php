@@ -58,6 +58,7 @@
 
         //# A fazer:
         // - definir mensagens de erro mySQL (se forem usadas);
+        // - talvez testar se o email inserido já está no banco de dados e retornar um erro ao usuário.
         // - testar a página?
         // - implementar php no login;
         // - implementar verificação e configuração de cookies no cadatro, login e possivelmente em todas páginas.
@@ -202,7 +203,7 @@
                                                                         // não numéricos por nada (remove-os).
 
             $sql = "UPDATE tbl_usuario "    // Criação do comando UPDATE para atualizar a tabela.
-                ."SET usu_nome = '$nome', usu_cpf = $cpf, usu_nascimento = '20081211', usu_telefone = $tel "
+                ."SET usu_nome = '$nome', usu_cpf = $cpf, usu_nascimento = $data, usu_telefone = $tel "
                 ."WHERE usu_codigo = $codigo ;";
 
             executarSQL($conexao, $sql, $cadStatus);    // Execução do comando SQL.
