@@ -1,91 +1,15 @@
 /* ==========================================================================
    RESET E CONFIGURAÇÕES GLOBAIS
    ========================================================================== */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
+  font-family: "Iansui", cursive;
+  cursor: default;
+  box-sizing: border-box;
   vertical-align: baseline;
 }
 
@@ -104,7 +28,7 @@ section {
   display: block;
 }
 
-/* Variáveis de Cores */
+/* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores */
   --primary: #b450f5;
@@ -127,18 +51,22 @@ section {
   --ultra-wide: 1440px;
 }
 
-/* Configurações Globais */
-* {
-  font-family: "Iansui", cursive;
-  cursor: default;
+/* Configurações Base */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 body {
   line-height: 1;
   background-color: var(--secondary);
-  background-image: radial-gradient(circle at 10% 20%,
-      var(--primary-light) 0%,
-      transparent 20%);
+  background-image: radial-gradient(
+    circle at 10% 20%,
+    var(--primary-light) 0%,
+    transparent 20%
+  );
 }
 
 /* Reset de Listas e Citações */
@@ -150,12 +78,14 @@ ul {
 blockquote,
 q {
   quotes: none;
+}
 
-  &:before,
-  &:after {
-    content: "";
-    content: none;
-  }
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
 /* Reset de Tabelas */
@@ -170,8 +100,8 @@ table {
 }
 
 /* ==========================================================================
-      HEADER E NAVEGAÇÃO
-      ========================================================================== */
+   HEADER E NAVEGAÇÃO
+   ========================================================================== */
 .top {
   background: linear-gradient(90deg, var(--primary), var(--primary-dark));
   width: 100%;
@@ -186,21 +116,17 @@ table {
   align-items: center;
 }
 
-/* Deixa os itens do header na horizontal */
 .ul_header {
-  list-style: none;
   display: flex;
   gap: 16px;
-  /* Espaço entre os botões */
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin: 0;
+  margin: 0 2rem;
 }
 
-/* Links normais */
 .ul_header li a {
-  color: #333;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   padding: 8px 16px;
@@ -211,17 +137,14 @@ table {
   overflow: hidden;
 }
 
-/* Sublinhado animado */
-.ul_header 
-  
-  .li_header a::after {
+.ul_header .li_header a::after {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
   left: 50%;
   bottom: 0;
-  background-color: #5e35b1;
+  background-color: var(--secondary-light);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -231,13 +154,13 @@ table {
 }
 
 .ul_header li a:hover {
-  color: #5e35b1;
+  color: var(--secondary-light);
   transform: scale(1.05);
 }
 
 /* Botão Cadastre-se */
 .button_cadastro {
-  background-color:var(--secondary) ;
+  background-color: var(--secondary);
   color: var(--primary) !important;
   border-radius: 8px;
   padding: 8px 16px;
@@ -248,27 +171,35 @@ table {
 }
 
 .button_cadastro:hover {
-  background-color:var(--secondary) ;
+  background-color: var(--secondary);
   color: var(--primary) !important;
   transform: scale(1.1);
   box-shadow: 0 0 15px rgba(126, 87, 194, 0.7);
 }
 
-
 /* ==========================================================================
-      CONTEÚDO PRINCIPAL - HOME
-      ========================================================================== */
+   CONTEÚDO PRINCIPAL
+   ========================================================================== */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 0 2rem;
+  overflow-x: hidden;
+}
+
 .txt_home {
   width: 45%;
-  margin: 9rem 0;
+  margin: 6rem 0;
+  position: relative;
 }
 
 .tit_home {
   color: var(--text-dark);
-  font-family: "Iansui", cursive;
   font-size: 3rem;
-  width: max-content;
-  margin: auto;
+  width: 100%;
 }
 
 .roxo {
@@ -281,17 +212,17 @@ table {
 }
 
 /* ==========================================================================
-      ÁREA DE BOTÕES E BUSCA
-      ========================================================================== */
+   BOTÕES E BUSCA
+   ========================================================================== */
 .buttons_home {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Botão de Orçamento */
 .button_orc {
   display: flex;
   width: min-content;
@@ -306,22 +237,13 @@ table {
   transform-origin: center;
   position: relative;
   cursor: pointer;
-
-  p {
-    width: min-content;
-    color: var(--text-light);
-    transition: all 0.3s ease;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px var(--shadow-hover);
-  }
 }
 
-/* ==========================================================================
-      CAMPO DE BUSCA COM ANIMAÇÃO
-      ========================================================================== */
+.button_orc:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px var(--shadow-hover);
+}
+
 /* Animações */
 @keyframes expandSearch {
   0% {
@@ -329,7 +251,6 @@ table {
     opacity: 0;
     transform: scale(0.8);
   }
-
   100% {
     width: 320px;
     opacity: 1;
@@ -342,7 +263,6 @@ table {
     opacity: 0;
     transform: translateX(-20px);
   }
-
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -351,10 +271,11 @@ table {
 
 /* Container de Busca */
 .search-container {
-  margin: auto auto auto 2rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
 }
 
-/* Caixa de Busca */
 .search-box {
   display: flex;
   align-items: center;
@@ -363,33 +284,31 @@ table {
   border-radius: 25px;
   padding: 10px 20px;
   box-shadow: 0 2px 5px var(--shadow);
-  width: 320px;
+  width: 100%;
   max-width: 320px;
   margin: 0 auto;
   animation: expandSearch 0.9s ease-out forwards;
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 4px 12px var(--shadow-hover);
-    transform: translateY(-1px);
-  }
 }
 
-/* Ícone de Busca */
+.search-box:hover {
+  box-shadow: 0 4px 12px var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
 .search-icon {
   width: 24px;
   height: 24px;
   margin-right: 10px;
   transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }
 
-/* Campo de Input */
+.search-icon:hover {
+  transform: scale(1.1);
+}
+
 .search-input {
   border: none;
   outline: none;
@@ -401,31 +320,21 @@ table {
   opacity: 0;
   color: var(--primary);
   cursor: text;
+}
 
-  &::placeholder {
-    color: var(--primary);
-    white-space: nowrap;
-    transition: color 0.3s ease;
-  }
+.search-input::placeholder {
+  color: var(--primary);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
 
-  &:focus::placeholder {
-    color: var(--primary-light);
-  }
+.search-input:focus::placeholder {
+  color: var(--primary-light);
 }
 
 /* ==========================================================================
-      LAYOUT PRINCIPAL
-      ========================================================================== */
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 100%;
-  margin: 0;
-  padding: 0 2rem;
-}
-
-/* Container do Mapa */
+   MAPA
+   ========================================================================== */
 .map-container {
   width: 45%;
   height: 600px;
@@ -444,7 +353,9 @@ table {
   transform: translateY(-5px);
 }
 
-/* Seção Sobre Nós */
+/* ==========================================================================
+   SOBRE NÓS
+   ========================================================================== */
 .sobre-nos {
   width: 100%;
   padding: 3rem 0;
@@ -462,6 +373,12 @@ table {
   color: var(--text-light);
   margin-bottom: 40px;
   font-size: 2.5em;
+  transition: all 0.3s ease;
+}
+
+.sobre-nos h2:hover {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 .sobre-content {
@@ -475,8 +392,9 @@ table {
 }
 
 .sobre-texto p {
+  flex: 1;
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 10rem;
   line-height: 1.6;
   color: var(--text-light);
 }
@@ -484,35 +402,47 @@ table {
 .sobre-texto ul {
   list-style: none;
   padding: 0;
+  position: absolute;
+  top: 1300px;
+  width: 100%;
 }
 
 .sobre-texto ul li {
+  font-size: 1.3rem;
   margin-bottom: 10px;
   padding-left: 25px;
   position: relative;
   color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.sobre-texto ul li:hover {
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
 }
 
 .sobre-texto ul li:before {
   content: "•";
-  color: var(--secondary);
+  color: var(--secondary-dark);
   position: absolute;
   left: 0;
 }
 
 .sobre-imagem {
   flex: 1;
-
-  img {
-    width: 70%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: auto auto auto 6rem;
-    border: 0.5rem solid var(--secondary-dark);
-  }
 }
 
-/* Seção Como Funciona */
+.sobre-imagem img {
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto auto auto 6rem;
+  border: 0.5rem solid var(--secondary-dark);
+}
+
+/* ==========================================================================
+   COMO FUNCIONA
+   ========================================================================== */
 .como-funciona {
   width: 100%;
   padding: 5rem 0;
@@ -577,10 +507,12 @@ table {
   font-size: 0.9em;
 }
 
-/* Footer */
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 .footer {
   width: 100%;
-  background-color: var(--primary);
+  background-color: var(--text-dark);
   padding: 4rem 0 2rem;
 }
 
@@ -616,6 +548,7 @@ table {
 .footer-section ul {
   list-style: none;
   padding: 0;
+  color: var(--text-light);
 }
 
 .footer-section ul li {
@@ -658,271 +591,4 @@ table {
 .footer-bottom p {
   color: var(--secondary);
   font-size: 0.9em;
-}
-
-/* Estilos gerais para o site */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.header,
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-/* Estilo para o menu de navegação */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #222;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-}
-
-.navbar a:hover {
-  background-color: #444;
-}
-
-/* Layout para o conteúdo principal */
-.main-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.section {
-  flex: 1;
-  padding: 20px;
-}
-
-/* ===================
-   RESPONSIVIDADE
-=================== */
-
-/* Telas pequenas: celulares até 480px */
-@media (max-width: 480px) {
-  .top {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav_header {
-    flex-direction: column;
-  }
-
-  .ul_header li {
-    margin: 0.5rem 0;
-  }
-
-  .txt_home {
-    width: 90%;
-    margin: 2rem 0;
-    text-align: center;
-  }
-
-  .tit_home {
-    font-size: 2rem;
-  }
-
-  .txt_p {
-    font-size: 1rem;
-  }
-
-  .buttons_home {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .search-box {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .map-container {
-    width: 100%;
-    height: 300px;
-    margin-top: 2rem;
-  }
-
-  .sobre-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-imagem img {
-    width: 100%;
-    height: auto;
-  }
-
-  .passos {
-    flex-direction: column;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-}
-
-/* Telas médias: celulares grandes e tablets (481px a 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .top {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav_header {
-    flex-direction: column;
-  }
-
-  .ul_header li {
-    margin: 0.5rem 0;
-  }
-
-  .txt_home {
-    width: 85%;
-    margin: 3rem 0;
-    text-align: center;
-  }
-
-  .tit_home {
-    font-size: 2.5rem;
-  }
-
-  .txt_p {
-    font-size: 1.2rem;
-  }
-
-  .buttons_home {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .search-box {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .map-container {
-    width: 100%;
-    height: 400px;
-    margin-top: 2rem;
-  }
-
-  .sobre-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sobre-imagem img {
-    width: 100%;
-    height: auto;
-  }
-
-  .passos {
-    flex-direction: column;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-}
-
-/* Telas grandes: notebooks e desktops (769px a 1280px) */
-@media (min-width: 769px) and (max-width: 1280px) {
-  .txt_home {
-    width: 50%;
-  }
-
-  .tit_home {
-    font-size: 3rem;
-  }
-
-  .txt_p {
-    font-size: 1.5rem;
-  }
-
-  .search-box {
-    width: 300px;
-  }
-
-  .map-container {
-    width: 100%;
-    height: 450px;
-  }
-
-  .sobre-content {
-    flex-direction: row;
-  }
-
-  .passos {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .footer-content {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-
-/* Telas ultra largas: acima de 1281px */
-@media (min-width: 1281px) {
-  .txt_home {
-    width: 45%;
-  }
-
-  .tit_home {
-    font-size: 3.5rem;
-  }
-
-  .txt_p {
-    font-size: 2rem;
-  }
-
-  .search-box {
-    width: 320px;
-  }
-
-  .map-container {
-    width: 100%;
-    height: 500px;
-  }
-
-  .sobre-content {
-    flex-direction: row;
-  }
-
-  .passos {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .footer-content {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 }
