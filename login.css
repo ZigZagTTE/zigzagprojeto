@@ -86,13 +86,34 @@ video {
   vertical-align: baseline;
 }
 
+/* Variáveis de Cores e Breakpoints */
+:root {
+  /* Paleta de cores */
+  --primary: #b450f5;
+  --primary-light: rgba(180, 80, 245, 0.1);
+  --primary-dark: #8a2be2;
+  --secondary: #f5e9dc;
+  --secondary-light: #fff5f0;
+  --secondary-dark: #e6d5c3;
+  --text-dark: #333;
+  --text-light: #fff;
+  --shadow: rgba(180, 80, 245, 0.2);
+  --shadow-hover: rgba(180, 80, 245, 0.3);
+}
 
 body {
   background-image: url(design/images/ZigZagwpp.png);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
-  background-color: #b450f5;
+  background-color: var(--primary);
   color: antiquewhite;
   width: 20rem;
   height: 2.5rem;
@@ -104,55 +125,52 @@ button {
 }
 
 .cadastro {
-  color: #b450f5;
+  color: var(--primary);
 }
 
 .popup {
-  background-color: #f5e9dc;
+  background-color: var(--secondary);
   border-radius: 20px;
   box-shadow: 0 0 60px rgb(95, 95, 95);
   width: 30%;
   padding-top: 40px;
   text-align: center;
-  height: 30.5rem;
-  margin: 6.5rem auto;
+  height: auto;
+  max-height: 90vh;
+  margin: 0 auto;
+  overflow-y: auto;
 }
 
 .tit_log {
   display: flex;
   justify-content: center;
   font-family: "Iansui";
-  color: #b450f5;
+  color: var(--primary);
   font-weight: bold;
   font-size: 3rem;
-}
-
-.insc_log {
-  margin: 5rem 0 0 0;
-
-  p {
-    margin: 2rem 0 -1rem 5rem;
-
-  }
+  margin-bottom: 1rem;
 }
 
 .txt_log {
   display: flex;
+  margin: 0 auto 0 auto;
+  width: 20rem;
   justify-content: left;
   font-family: "Iansui";
   font-weight: bold;
-  color: #b450f5;
+  color: var(--primary);
 }
 
 .desc_log {
   display: flex;
+  margin: 0 auto 0 auto;
   text-align: justify;
   justify-content: left;
   font-size: 0.7rem;
   font-family: "Iansui";
   font-weight: bold;
   width: 20rem;
-  color: #b450f5;
+  color: var(--primary);
 }
 
 .input_log {
@@ -161,11 +179,11 @@ button {
   width: 20rem;
   height: 2rem;
   font-family: "Iansui";
-  border-color: #b450f5;
+  border-color: var(--primary);
   border-radius: 20px;
   background-color: transparent;
   color: grey;
-  margin: 0 5rem 1.5rem 5rem;
+  margin: 0 auto 1.5rem auto;
   padding: 0.5rem;
   box-sizing: border-box;
 }
@@ -176,26 +194,17 @@ button {
   width: 20rem;
   height: 2rem;
   font-family: "Iansui";
-  border-color: #b450f5;
+  border-color: var(--primary);
   border-radius: 20px;
   background-color: transparent;
   color: grey;
-  margin: 0 5rem 1.5rem 5rem;
+  margin: 0 auto 1.5rem auto;
   padding: 0.5rem;
   box-sizing: border-box;
 }
 
-.insc_cad {
-  margin: 1rem 0 0 0;
-
-  p {
-    margin: 1rem 0 -1rem 5rem;
-
-  }
-}
-
-input[type=submit] {
-  background-color: #b450f5;
+input[type="submit"] {
+  background-color: var(--primary);
   color: antiquewhite;
   width: 20rem;
   height: 2.5rem;
@@ -204,5 +213,4 @@ input[type=submit] {
   font-size: 20px;
   font-family: "Iansui";
   margin-bottom: 20px;
-
 }
