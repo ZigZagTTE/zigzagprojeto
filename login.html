@@ -17,8 +17,10 @@
     </div>
 </head>
 
+
 <body>
-    <form class="popup">
+    
+    <form class="popup" method="POST" action="login.php">
         <div class="tit_log">Login</div>
         <div class="insc_log">
             <p class="txt_log">Email</p><br>
@@ -26,18 +28,16 @@
             <p class="txt_log">Senha</p><br>
             <input class="input_log" type="password" name="txtSenha" placeholder="digite sua senha">
         </div>
-
         <br>
         <br>
         <br>
 
-        <button><a>Entrar</a></button><br>
-        <a class="cadastro" href="cadastro.php">Não tenho conta</a>
-
+        <input class="btnSeta" type="submit" name="button" value="Entrar"><br>
+        <a class="cadastro" href="cadastro.php">Não tenho conta</a><br><br>
+        
     </form>
-
-   
-
+    
+    
 
 </body>
 
