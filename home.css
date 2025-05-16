@@ -110,6 +110,13 @@ body {
     align-items: center;
 }
 
+.zigzag_txt{
+    color: #f5e9db;
+    font-family: "Iansui";
+    font-size: 40px;
+    align-self: center;
+}
+
 /* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores */
@@ -174,16 +181,43 @@ body {
     background: transparent;
     animation: fadeIn 0.7s ease-out 0.7s forwards;
     opacity: 0;
-    color: #d89ffd;
+    color: white;
     cursor: text;
+    
 }
 
 .search-input::placeholder {
-    color: #d89ffd;
+    color: white;
     white-space: nowrap;
-    transition: color 0.3s ease;
 }
 
 .search-input:focus::placeholder {
     color: #d89ffd;
+}
+
+/*ICON*/
+
+.icon{
+    align-self: center;
+    padding-right: 20px;
+    color: #f5e9db;
+}
+
+.icon::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    background-color: var(--secondary-light);
+    transition: all 1s ease;
+    transform: translateX(-50%);
+}
+
+
+
+.icon:hover {
+    color: var(--secondary-light);
+    transform: scale(1.10);
 }
