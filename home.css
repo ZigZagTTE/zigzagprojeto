@@ -221,3 +221,16 @@ body {
     color: var(--secondary-light);
     transform: scale(1.10);
 }
+
+/*BOTÃO MAIN*/
+.btn_home{
+    display: flex;
+    align-items: center;
+    max-width: 8%;
+    margin: 100px 0 0 70px;
+    background-color: #d89ffd;
+    .img_home{
+    width: 100px;
+    justify-content: center;
+}
+}
