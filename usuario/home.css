@@ -1,0 +1,239 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+    background-color: var(--secondary);
+    background-image: radial-gradient(circle at 10% 20%,
+            var(--primary-light) 0%,
+            transparent 20%);
+}
+
+/*HEADER*/
+.top {
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.nav_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.zigzag_txt {
+    color: #f5e9db;
+    font-family: "Iansui";
+    font-size: 40px;
+    align-self: center;
+}
+
+/* Variáveis de Cores e Breakpoints */
+:root {
+    /* Paleta de cores */
+    --primary: #b450f5;
+    --primary-light: rgba(180, 80, 245, 0.1);
+    --primary-dark: #8a2be2;
+    --secondary: #f5e9dc;
+    --secondary-light: #fff5f0;
+    --secondary-dark: #e6d5c3;
+    --text-dark: #333;
+    --text-light: #fff;
+    --shadow: rgba(180, 80, 245, 0.2);
+    --shadow-hover: rgba(180, 80, 245, 0.3);
+}
+
+/* BOTÃO DE BUSCA*/
+
+.search-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0;
+    align-self: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 3px solid #d89ffd;
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px var(--shadow);
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    animation: expandSearch 0.9s ease-out forwards;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.search-box:hover {
+    box-shadow: 0 4px 12px var(--shadow-hover);
+    transform: translateY(-1px);
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.search-icon:hover {
+    transform: scale(1.1);
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px 5px;
+    background: transparent;
+    animation: fadeIn 0.7s ease-out 0.7s forwards;
+    opacity: 0;
+    color: white;
+    cursor: text;
+
+}
+
+.search-input::placeholder {
+    color: white;
+    white-space: nowrap;
+}
+
+.search-input:focus::placeholder {
+    color: #d89ffd;
+}
+
+/*ICON*/
+
+.icon {
+    align-self: center;
+    padding-right: 20px;
+    color: #f5e9db;
+}
+
+.icon::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    background-color: var(--secondary-light);
+    transition: all 1s ease;
+    transform: translateX(-50%);
+}
+
+
+
+.icon:hover {
+    color: var(--secondary-light);
+    transform: scale(1.10);
+}
+
+/*BOTÃO MAIN*/
+.btn_home {
+    display: flex;
+    align-items: center;
+    max-width: 10%;
+    height: 20%;
+    margin: 100px 0 0 70px;
+    background-color: #d89ffd;
+
+    .img_home {
+        width: 100px;
+        justify-content: center;
+    }
+}
