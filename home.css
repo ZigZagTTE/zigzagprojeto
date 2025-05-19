@@ -200,7 +200,7 @@ body {
 .icon{
     align-self: center;
     padding-right: 20px;
-    color: #f5e9db;
+    color: red;
 }
 
 .icon::after {
