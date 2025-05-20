@@ -62,11 +62,9 @@ body {
 body {
   line-height: 1;
   background-color: var(--secondary);
-  background-image: radial-gradient(
-    circle at 10% 20%,
-    var(--primary-light) 0%,
-    transparent 20%
-  );
+  background-image: radial-gradient(circle at 10% 20%,
+      var(--primary-light) 0%,
+      transparent 20%);
 }
 
 /* Reset de Listas e Citações */
@@ -251,6 +249,7 @@ table {
     opacity: 0;
     transform: scale(0.8);
   }
+
   100% {
     width: 320px;
     opacity: 1;
@@ -263,6 +262,7 @@ table {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -294,7 +294,7 @@ table {
 }
 
 .search-box:hover {
-  box-shadow: 0 4px 12px var(--shadow-hover);
+  box-shadow: 0 4px 12px var(--primary-dark);
   transform: translateY(-1px);
 }
 
