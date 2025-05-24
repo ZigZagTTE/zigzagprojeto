@@ -1,0 +1,216 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* Variáveis de Cores e Breakpoints */
+:root {
+  /* Paleta de cores */
+  --primary: #b450f5;
+  --primary-light: rgba(180, 80, 245, 0.1);
+  --primary-dark: #8a2be2;
+  --secondary: #f5e9dc;
+  --secondary-light: #fff5f0;
+  --secondary-dark: #e6d5c3;
+  --text-dark: #333;
+  --text-light: #fff;
+  --shadow: rgba(180, 80, 245, 0.2);
+  --shadow-hover: rgba(180, 80, 245, 0.3);
+}
+
+body {
+  background-image: url(../design/images/ZigZagwpp.png);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: var(--primary);
+  color: antiquewhite;
+  width: 20rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: "Iansui";
+  margin-bottom: 20px;
+}
+
+.cadastro {
+  color: var(--primary);
+}
+
+.popup {
+  background-color: var(--secondary);
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgb(95, 95, 95);
+  width: 30%;
+  padding-top: 40px;
+  text-align: center;
+  height: auto;
+  max-height: 90vh;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.tit_log {
+  display: flex;
+  justify-content: center;
+  font-family: "Iansui";
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.txt_log {
+  display: flex;
+  margin: 0 auto 0 auto;
+  width: 20rem;
+  justify-content: left;
+  font-family: "Iansui";
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.desc_log {
+  display: flex;
+  margin: 0 auto 0 auto;
+  text-align: justify;
+  justify-content: left;
+  font-size: 0.7rem;
+  font-family: "Iansui";
+  font-weight: bold;
+  width: 20rem;
+  color: var(--primary);
+}
+
+.input_log {
+  display: flex;
+  justify-content: center;
+  width: 20rem;
+  height: 2rem;
+  font-family: "Iansui";
+  border-color: var(--primary);
+  border-radius: 20px;
+  background-color: transparent;
+  color: grey;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.input_cad {
+  display: flex;
+  justify-content: center;
+  width: 20rem;
+  height: 2rem;
+  font-family: "Iansui";
+  border-color: var(--primary);
+  border-radius: 20px;
+  background-color: transparent;
+  color: grey;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+  color: antiquewhite;
+  width: 20rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: "Iansui";
+  margin-bottom: 20px;
+}

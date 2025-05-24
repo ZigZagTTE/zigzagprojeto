@@ -1,4 +1,5 @@
 <?php
+        
         require_once"conecta.php"; //conectar com o banco
         
         $email = $_POST['txtEmail']; //definindo a variável email
