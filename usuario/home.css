@@ -277,29 +277,44 @@ body {
     color: var(--secondary-light);
     transform: scale(1.10);
 }
+/*TÍTULO*/
 
+.title{
+    font-size: 30px;
+    margin: 60px 0 20px 70px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 /*BOTÃO MAIN*/
 .btn_home {
-    display: flex;
-    align-items: center;
+    display: flexbox;
     max-width: 10%;
     height: 20%;
-    margin: 100px 0 0 70px;
+    margin: 40px 0 0 60px;
+    padding: 20px;
     border-radius: 20px;
     background-color: #d89ffd;
 
     .btn_home_container {
-        align-items: center;
-        margin: 10px 0 10px 30px;
+        padding: 5px;
+        margin-left: 15px;
 
         .img_home {
             width: 100px;
-            justify-content: center;
             border-radius: 1rem;
         }
 
         .txt_btn {
+            align-self: center;
             font-family: Arial, Helvetica, sans-serif;
+            width: 110%;
         }
     }
+}
+/*LILNHA*/
+
+.linha {
+    border: solid 3px;
+    width: 70%;
+
+    
 }
