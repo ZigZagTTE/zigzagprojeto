@@ -277,13 +277,15 @@ body {
     color: var(--secondary-light);
     transform: scale(1.10);
 }
+
 /*TÍTULO*/
 
-.title{
+.title {
     font-size: 30px;
     margin: 60px 0 20px 70px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 /*BOTÃO MAIN*/
 .btn_home {
     display: flexbox;
@@ -295,12 +297,13 @@ body {
     background-color: #d89ffd;
 
     .btn_home_container {
-        padding: 5px;
-        margin-left: 15px;
+        text-align: center;
 
         .img_home {
+            padding: 5px;
             width: 100px;
             border-radius: 1rem;
+            margin: 0 auto 0 auto;
         }
 
         .txt_btn {
@@ -310,11 +313,12 @@ body {
         }
     }
 }
+
 /*LILNHA*/
 
 .linha {
     border: solid 3px;
     width: 70%;
 
-    
+
 }
