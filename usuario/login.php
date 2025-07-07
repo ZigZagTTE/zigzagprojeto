@@ -23,7 +23,7 @@
 			$codigo = $registro[0]; //registrar o código
         ?>
     <script>
-        window.location.assign("home.html"); //ir para o home
+        window.location.assign("home.php"); //ir para o home
     </script>
     <?php
         
