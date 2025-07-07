@@ -37,6 +37,7 @@
     <p class="title">Faça já seu pedido em costureiras próximas!</p>
 
     <!-- Primeira linha - Costurar peças -->
+     <div class="container_opções_home">
     <div class="carousel-section">
         <div class="carousel-row">
             <div class="category-card">
@@ -110,8 +111,11 @@
             </div>
         </div>
     </div>
-    <span class="ponto"></span>
-    <hr class="linha">
+    
+    <div class="linha">
+        <span class="ponto"></span>
+        <hr class="linha_hr">
+    </div>
     <!-- Segunda linha - Criar peças -->
     <div class="carousel-section">
         <div class="carousel-row">
@@ -185,6 +189,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
 
