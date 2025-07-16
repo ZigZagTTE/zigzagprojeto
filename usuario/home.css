@@ -29,18 +29,17 @@
   }
   
   /* Variáveis de Cores e Breakpoints */
-  :root {
-    /* Paleta de cores */
-    --primary: #b450f5;
-    --primary-light: rgba(180, 80, 245, 0.1);
-    --primary-dark: #8a2be2;
-    --secondary: #f5e9dc;
-    --secondary-light: #fff5f0;
-    --secondary-dark: #e6d5c3;
-    --text-dark: #333;
-    --text-light: #fff;
-    --shadow: rgba(180, 80, 245, 0.2);
-    --shadow-hover: rgba(180, 80, 245, 0.3);
+:root {
+    /* Paleta de cores - Tema Claro */
+    --roxo-principal: #b450f5;
+    --roxo-claro: #d89ffd;
+    --roxo-mais-claro: #e7cef6;
+    --preto: #303030;
+    --cinza-escuro: #545454;
+    --cinza: #a6a6a6;
+    --bege: #e1d5c7;
+    --bege-claro: #f5e9db;
+    --amarelo: #edbd44;
   
     /* Breakpoints */
     --mobile-pequeno: 320px;
@@ -49,6 +48,19 @@
     --notebook: 1024px;
     --desktop: 1280px;
     --ultra-wide: 1440px;
+  }
+  
+  [data-theme="dark"] {
+    /* Paleta de cores - Tema Escuro */
+    --bege: #f5e9dc;
+    --roxo-principal: #b450f5;
+    --roxo-escuro: #894faf;
+    --bege-claro: #f5e9db;
+    --amarelo-claro: #fdf2e6;
+    --cinza: #a6a6a6;
+    --roxo-medio: #824db7;
+    --roxo-muito-escuro: #1c0d2b;
+    --amarelo: #b450f5;
   }
   
   /* Configurações Base */
