@@ -1,97 +1,101 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
-    vertical-align: baseline;
-}
-
-body {
-    background-color: var(--secondary);
-    overflow-x: hidden;
-    max-width: 100vw;
+    font-family: "Iansui", cursive;
+    cursor: default;
     box-sizing: border-box;
-}
+    vertical-align: baseline;
+  }
+  
+  /* Configuração de elementos HTML5 */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  
+  /* Variáveis de Cores e Breakpoints */
+  :root {
+    /* Paleta de cores */
+    --primary: #b450f5;
+    --primary-light: rgba(180, 80, 245, 0.1);
+    --primary-dark: #8a2be2;
+    --secondary: #f5e9dc;
+    --secondary-light: #fff5f0;
+    --secondary-dark: #e6d5c3;
+    --text-dark: #333;
+    --text-light: #fff;
+    --shadow: rgba(180, 80, 245, 0.2);
+    --shadow-hover: rgba(180, 80, 245, 0.3);
+  
+    /* Breakpoints */
+    --mobile-pequeno: 320px;
+    --mobile-normal: 480px;
+    --tablet: 768px;
+    --notebook: 1024px;
+    --desktop: 1280px;
+    --ultra-wide: 1440px;
+  }
+  
+  /* Configurações Base */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  body {
+    line-height: 1;
+    background-color: var(--secondary);
+    background-image: radial-gradient(circle at 10% 20%,
+        var(--primary-light) 0%,
+        transparent 20%);
+  }
+  
+  /* Reset de Listas e Citações */
+  ol,
+  ul {
+    list-style: none;
+  }
+  
+  blockquote,
+  q {
+    quotes: none;
+  }
+  
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  
+  /* Reset de Tabelas */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* Utilitários */
+  .fixFloat {
+    clear: both;
+  }
 
 /*HEADER*/
 .top {
@@ -118,22 +122,6 @@ body {
     align-self: center;
 }
 
-/* Variáveis de Cores e Breakpoints */
-:root {
-    /* Paleta de cores */
-    --primary: #b450f5;
-    --primary-light: rgba(180, 80, 245, 0.1);
-    --primary-dark: #8a2be2;
-    --secondary: #f5e9dc;
-    --secondary-light: #fff5f0;
-    --secondary-dark: #e6d5c3;
-    --text-dark: #333;
-    --text-light: #fff;
-    --shadow: rgba(180, 80, 245, 0.2);
-    --shadow-hover: rgba(180, 80, 245, 0.3);
-}
-
-/**-*-*-*-*-*-*-*-*-*--*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-**-*-*
 
 /* BOTÃO DE BUSCA*/
 
@@ -286,7 +274,7 @@ body {
 
 .title {
     font-size: 30px;
-    margin: 20px 0 20px 20px;
+    margin: 30px 0 20px 50px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -354,7 +342,7 @@ margin: 20px 0 20px 20px;
 
 /* CARROSSEL HORIZONTAL - Estilo da imagem */
 .carousel-section {
-    margin: 20px 0 40px 20px;
+    margin: 20px 0 30px 20px;
     position: relative;
 }
 
@@ -369,7 +357,7 @@ margin: 20px 0 20px 20px;
     background: #d89ffd;
     border-radius: 20px;
     padding: 15px;
-    min-width: 160px;
+    min-width: 200px;
     text-align: center;
     display: flex;
     flex-direction: column;

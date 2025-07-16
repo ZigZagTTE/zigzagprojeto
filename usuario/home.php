@@ -36,160 +36,160 @@
 
     <p class="title">Faça já seu pedido em costureiras próximas!</p>
 
-    <!-- Primeira linha - Costurar peças -->
-     <div class="container_opções_home">
-    <div class="carousel-section">
-        <div class="carousel-row">
-            <div class="category-card">
-                <div class="category-icon">
-                    <img class="category-icon" src="../design/images/usu_img/maquina.png">
-                </div>
-                <div class="category-text">
-                    Costurar minhas<br>peças
-                </div>
-            </div>
-
-
-            <div class="store-card">
-                <img class="store-image" url:"">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+    <div class="container_opções_home">
+        <!-- Primeira linha - Costurar peças -->
+        <div class="carousel-section">
+            <div class="carousel-row">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img class="category-icon" src="../design/images/usu_img/maquina.png">
+                    </div>
+                    <div class="category-text">
+                        Costurar minhas<br>peças
                     </div>
                 </div>
-            </div>
 
-            <div class="store-card">
-                <img class="store-image" url:"">
-                <div class="store-info">
-                    <p class="store-name">Costura Criativa</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">4,8 • 1.2km</span>
-                        <p class="store-details">
-                            Especialista em ajustes<br>
-                            Aberto • Fecha 19h
-                        </p>
+
+                <div class="store-card">
+                    <img class="store-image" url:"">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="store-card">
-                <img class="store-image" url:"">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                <div class="store-card">
+                    <img class="store-image" url:"">
+                    <div class="store-info">
+                        <p class="store-name">Costura Criativa</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">4,8 • 1.2km</span>
+                            <p class="store-details">
+                                Especialista em ajustes<br>
+                                Aberto • Fecha 19h
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="store-card">
-                <img class="store-image" url:"">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                <div class="store-card">
+                    <img class="store-image" url:"">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="linha">
-        <span class="ponto"></span>
-        <hr class="linha_hr">
-    </div>
-    <!-- Segunda linha - Criar peças -->
-    <div class="carousel-section">
-        <div class="carousel-row">
-            <div class="category-card">
-                <div class="category-icon">
-                    <img class="category-icon" src="../design/images/usu_img/maquina.png">
-                </div>
-                <div class="category-text">
-                    Criar minhas<br>peças
-                </div>
-            </div>
 
-
-            <div class="store-card">
-                <img class="store-image" url:"">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="store-card">
-                <img class="store-image" url:"">
-                <div class="store-info">
-                    <p class="store-name">Costura Criativa</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">4,8 • 1.2km</span>
-                        <p class="store-details">
-                            Especialista em ajustes<br>
-                            Aberto • Fecha 19h
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="store-card">
-                <img class="store-image" url:"">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="store-card">
-                <img class="store-image" url:"">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                <div class="store-card">
+                    <img class="store-image" url:"">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="linha">
+            <span class="ponto"></span>
+            <hr class="linha_hr">
+        </div>
+        <!-- Segunda linha - Criar peças -->
+        <div class="carousel-section">
+            <div class="carousel-row">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img class="category-icon" src="../design/images/usu_img/maquina.png">
+                    </div>
+                    <div class="category-text">
+                        Criar minhas<br>peças
+                    </div>
+                </div>
+
+
+                <div class="store-card">
+                    <img class="store-image" url:"">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <img class="store-image" url:"">
+                    <div class="store-info">
+                        <p class="store-name">Costura Criativa</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">4,8 • 1.2km</span>
+                            <p class="store-details">
+                                Especialista em ajustes<br>
+                                Aberto • Fecha 19h
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <img class="store-image" url:"">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <img class="store-image" url:"">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
 
