@@ -31,7 +31,7 @@
     <main class="main-content">
 
         <!-- Texto Home -->
-        <section class="txt_home">
+        <section class="txt_home fade-in">
             <h1 class="tit_home">A costura que vai até você!</h1>
             <div class="txt_p">
                 <p>Precisando <span class="roxo">ajustar</span>, <span class="roxo">consertar</span> ou
@@ -58,12 +58,12 @@
         </section>
 
         <!-- Mapa -->
-        <section id="map" class="map-container"></section>
+        <section id="map" class="map-container fade-in"></section>
 
     </main>
 
     <!-- SOBRE NÓS -->
-    <section class="sobre-nos">
+    <section class="sobre-nos fade-in">
         <div class="container">
             <h2>Sobre a ZigZag</h2>
             <div class="sobre-content">
@@ -88,7 +88,7 @@
     </section>
 
     <!-- COMO FUNCIONA -->
-    <section class="como-funciona">
+    <section class="como-funciona fade-in">
         <div class="container">
             <h2>Como Funciona</h2>
             <div class="passos">
@@ -145,7 +145,7 @@
                     <h3>Redes Sociais</h3>
                     <div class="social-links">
                         <a href="#"><img src="design/svg/facebook.svg" alt="Facebook"></a>
-                        <a href="#"><img src="design/svg/instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="design/svg/instagram.svg" alt="Instagram"></a>
                         <a href="#"><img src="design/svg/whatsapp.svg" alt="WhatsApp"></a>
                     </div>
                 </div>
@@ -156,7 +156,29 @@
         </div>
     </footer>
 
+    <script>
+  function onScrollFadeIn() {
+    const elements = document.querySelectorAll('.fade-in');
+    const windowBottom = window.innerHeight + window.scrollY;
+
+    elements.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top + window.scrollY;
+      if (windowBottom > elementTop + 100) { // 100px antes de aparecer totalmente
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScrollFadeIn);
+  window.addEventListener('DOMContentLoaded', onScrollFadeIn);
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('loaded');
+    });
+  </script>
     <script src="maps.js"></script>
+    <script src="scroll-smoth.js"></script>
 </body>
 
 </html>

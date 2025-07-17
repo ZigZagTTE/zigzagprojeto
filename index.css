@@ -64,17 +64,27 @@ section {
 }*/
 
 /* Configurações Base */
-html,
-body {
+html{
   overflow-x: hidden;
   width: 100%;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 body {
+  opacity: 0;
+  transition: opacity 1s ease;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
   line-height: 1;
   background-color: var(--bege);
+  scroll-behavior: smooth;
 }
+
+body.loaded {
+  opacity: 1;
+} 
 
 /* Reset de Listas e Citações */
 ol,
@@ -104,6 +114,19 @@ table {
 /* Utilitários */
 .fixFloat {
   clear: both;
+}
+
+/* efeito de scroll suave */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================================================================
@@ -626,3 +649,4 @@ table {
   color: var(--roxo-claro);
   font-size: 0.9em;
 }
+

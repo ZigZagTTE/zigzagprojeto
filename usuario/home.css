@@ -73,11 +73,8 @@
   
   body {
     line-height: 1;
-    background-color: var(--secondary);
-    background-image: radial-gradient(circle at 10% 20%,
-        var(--primary-light) 0%,
-        transparent 20%);
-  }
+    background-color: var(--bege);
+    }
   
   /* Reset de Listas e Citações */
   ol,
@@ -111,7 +108,7 @@
 
 /*HEADER*/
 .top {
-    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    background: linear-gradient(90deg, var(--roxo-principal), var(--roxo-claro));
     width: 100%;
     display: flex;
     box-sizing: border-box;
@@ -150,8 +147,8 @@
     display: flex;
     width: min-content;
     margin: 2rem auto;
-    background-color: var(--primary);
-    color: var(--text-light);
+    background-color: var(--roxo-principal);
+    color: var(--bege);
     text-decoration: none;
     border-radius: 5rem;
     font-size: 1.5rem;
@@ -162,10 +159,7 @@
     cursor: pointer;
 }
 
-.button_orc:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px var(--shadow-hover);
-}
+
 
 /* Animações */
 @keyframes expandSearch {
@@ -261,6 +255,8 @@
     align-self: center;
     padding-right: 20px;
     color: #f5e9db;
+    transition: all 0.3s ease;
+
 }
 
 .icon::after {
@@ -270,7 +266,7 @@
     height: 2px;
     left: 50%;
     bottom: 0;
-    background-color: var(--secondary-light);
+    background-color: var(--bege-claro);
     transition: all 1s ease;
     transform: translateX(-50%);
 }
@@ -278,7 +274,7 @@
 
 
 .icon:hover {
-    color: var(--secondary-light);
+    color: var(--bege);
     transform: scale(1.10);
 }
 
@@ -460,7 +456,7 @@ margin: 20px 0 20px 20px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--primary);
+    background: var(--roxo-principal);
     border: none;
     width: 40px;
     height: 40px;
@@ -473,7 +469,7 @@ margin: 20px 0 20px 20px;
 }
 
 .carousel-nav-btn:hover {
-    background: var(--primary-dark);
+    background: var(--roxo-claro);
     transform: translateY(-50%) scale(1.1);
 }
 
