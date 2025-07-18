@@ -14,22 +14,22 @@
 
     <?php
 
-        require_once("../conecta.php");
+    require_once("../conecta.php");
 
-        require_once("verificaUsu.php");
+    require_once("verificaUsu.php");
 
-        if (!isset($_GET['erro']))    // Define a variável $_GET 'status' como 0 caso ela seja nula.
-        {                               // Variáveis $_GET são armazenadas como texto no link. (http://exemplo.com?variavel=exemplo)
-            $_GET['erro'] = null;
-        }
+    if (!isset($_GET['erro']))    // Define a variável $_GET 'status' como 0 caso ela seja nula.
+    {                               // Variáveis $_GET são armazenadas como texto no link. (http://exemplo.com?variavel=exemplo)
+        $_GET['erro'] = null;
+    }
 
-        if (isset($_POST['cadastroStatus']))     // Obtem a variável $_POST 'cadastroStatus' caso ela não seja nula
-        {                                       // e define $cadStatus com seu valor.    
-            $cadStatus = $_POST['cadastroStatus'];
-        } else                // Define a variável $_POST 'cadastroStatus' como cadastro_0
-        {                   // caso ela seja nula.
-            $cadStatus = "cadastro_0";
-        }
+    if (isset($_POST['cadastroStatus']))     // Obtem a variável $_POST 'cadastroStatus' caso ela não seja nula
+    {                                       // e define $cadStatus com seu valor.    
+        $cadStatus = $_POST['cadastroStatus'];
+    } else                // Define a variável $_POST 'cadastroStatus' como cadastro_0
+    {                   // caso ela seja nula.
+        $cadStatus = "cadastro_0";
+    }
     ?>
 </head>
 
@@ -53,8 +53,7 @@
                 <input class="input_cad" type="email" name="txtEmail" required placeholder="exemplo@email.com">
 
                 <?php
-                if ($_GET['erro'] == "emailUsado")
-                {
+                if ($_GET['erro'] == "emailUsado") {
                 ?>
                     <p class="desc_log">ESTE EMAIL JÁ FOI USADO</p><br>
                 <?php
@@ -67,8 +66,7 @@
                 <p class="desc_log">*Crie uma senha com no mínimo 8 caracteres, havendo uma letra maíuscula, uma minúscula e um número. </p><br>
 
                 <?php
-                if ($_GET['erro'] == "senhaDif")
-                {
+                if ($_GET['erro'] == "senhaDif") {
                 ?>
                     <p class="desc_log">AS SENHAS PRECISAM SER IGUAIS</p><br>
                 <?php
@@ -86,7 +84,7 @@
             <!-- O próximo input alterará o $cadastroStatus para cadastro_1 na próxima chamada da página. -->
             <input hidden name="cadastroStatus" value="cadastro_1">
         </form>
-        <?php
+    <?php
     }
-        ?>
+    ?>
 </body>
