@@ -22,7 +22,7 @@ if (mysqli_num_rows($res) == 0) //caso não possua nenhum cadastro, não tenha c
     $codigo = $registro[0]; //registrar o código
 ?>
     <script>
-        window.location.assign("home.php"); //ir para o home
+        window.location.assign("home-cliente.php"); //ir para o home
     </script>
 <?php
 

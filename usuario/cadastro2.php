@@ -44,7 +44,7 @@
         $res = mysqli_query($conexao, $sql);    // Execução do comando SQL.
 
         $_SESSION["nome"] = $nome;
-        header("Location: home.php");
+        header("Location: home-cliente.php");
     }
 
     mysqli_close($conexao); // Encerramento da conexão

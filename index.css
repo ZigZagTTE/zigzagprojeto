@@ -146,6 +146,16 @@ table {
   align-self: center;
 }
 
+.logo_header {
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.logo_header:hover {
+  scale: 1.05;
+}
+
 
 .nav_header {
   width: 100%;
@@ -649,4 +659,3 @@ table {
   color: var(--roxo-claro);
   font-size: 0.9em;
 }
-
