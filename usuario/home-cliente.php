@@ -39,17 +39,18 @@
     <div class="container_opções_home">
         <!-- Primeira linha - Costurar peças -->
         <div class="carousel-section">
-            <div class="category-card">
-                <div class="category-icon">
-                    <img class="category-icon" src="../design/images/usu_img/maquina.png">
-                </div>
-                <div class="category-text">
-                    Costurar minhas<br>peças
-                </div>
-            </div>
+            
             <div class="carousel-wrapper">
                 <div class="carousel-row">
-                    <div class="store-card">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <img class="category-icon" src="../design/images/usu_img/maquina.png">
+                            </div>
+                            <div class="category-text">
+                                Costurar minhas<br>peças
+                            </div>
+                        </div>
+                    <a href="home-cliente-loja.php" class="store-card">
                         <img class="store-image" src="">
                         <div class="store-info">
                             <p class="store-name">Ateliê da Maria</p>
@@ -62,7 +63,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <div class="store-card">
                         <img class="store-image" src="">
                         <div class="store-info">
@@ -120,11 +121,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-controls">
+                
+            </div>
+            <div class="carousel-controls">
                     <button class="carousel-btn left" disabled>&lt;</button>
                     <button class="carousel-btn right">&gt;</button>
                 </div>
-            </div>
         </div>
 
         <div class="linha">
