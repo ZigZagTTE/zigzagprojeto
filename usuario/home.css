@@ -361,6 +361,8 @@ E ASSIM POR DIANTE*/
     align-items: center;
     margin: auto auto auto 10px;
     gap: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
     .category-card {
@@ -391,13 +393,19 @@ E ASSIM POR DIANTE*/
     height: 40px;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
     z-index: 2;
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: var(--roxo-claro);
+    transform: scale(1.1);
 }
 
 .carousel-btn:disabled {
     background: #ccc;
     cursor: not-allowed;
+    opacity: 0.5;
 }
 
 .category-icon {

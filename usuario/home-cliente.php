@@ -48,7 +48,7 @@
                 Costurar minhas<br>peças
             </div>
         </div>
-        <div class="carousel-section">
+        <div class="carousel-section" id="carousel1">
             <a href="home-cliente-loja.php" class="store-card">
                 <img class="store-image" src="">
                 <div class="store-info">
@@ -135,8 +135,8 @@
             </a>
         </div>
         <div class="carousel-controls">
-            <button class="carousel-btn left" disabled>&lt;</button>
-            <button class="carousel-btn right">&gt;</button>
+            <button class="carousel-btn left" data-carousel="carousel1" disabled>&lt;</button>
+            <button class="carousel-btn right" data-carousel="carousel1">&gt;</button>
         </div>
         <div class="linha">
             <span class="ponto"></span>
@@ -153,7 +153,7 @@
                 Costurar minhas<br>peças
             </div>
         </div>
-        <div class="carousel-section">
+        <div class="carousel-section" id="carousel2">
             <a href="home-cliente-loja.php" class="store-card">
                 <img class="store-image" src="">
                 <div class="store-info">
@@ -240,12 +240,77 @@
             </a>
         </div>
         <div class="carousel-controls">
-            <button class="carousel-btn left" disabled>&lt;</button>
-            <button class="carousel-btn right">&gt;</button>
+            <button class="carousel-btn left" data-carousel="carousel2" disabled>&lt;</button>
+            <button class="carousel-btn right" data-carousel="carousel2">&gt;</button>
         </div>
     </div>
     </div>
     </div>
+
+    <script>
+        // Função para inicializar o carousel
+        function initCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const cards = carousel.querySelectorAll('.store-card');
+            const leftBtn = document.querySelector(`[data-carousel="${carouselId}"].left`);
+            const rightBtn = document.querySelector(`[data-carousel="${carouselId}"].right`);
+
+            let currentIndex = 0;
+
+            // Função para calcular a largura total de um card (incluindo gap)
+            function getCardWidth() {
+                if (cards.length === 0) return 0;
+                const card = cards[0];
+                const cardStyle = window.getComputedStyle(card);
+                const cardWidth = card.offsetWidth;
+                const gap = parseInt(window.getComputedStyle(carousel).gap) || 20;
+                return cardWidth + gap;
+            }
+
+            // Função para atualizar a posição do carousel
+            function updateCarousel() {
+                const cardWidth = getCardWidth();
+                carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+                // Atualizar estado dos botões
+                leftBtn.disabled = currentIndex === 0;
+                rightBtn.disabled = currentIndex >= cards.length - 1;
+            }
+
+            // Event listener para botão esquerdo
+            leftBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            // Event listener para botão direito
+            rightBtn.addEventListener('click', () => {
+                if (currentIndex < cards.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+
+            // Recalcular quando a janela for redimensionada
+            window.addEventListener('resize', () => {
+                updateCarousel();
+            });
+
+            // Inicializar estado dos botões
+            updateCarousel();
+        }
+
+        // Inicializar todos os carousels quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            // Aguardar um pouco para garantir que todos os elementos estejam renderizados
+            setTimeout(() => {
+                initCarousel('carousel1');
+                initCarousel('carousel2');
+            }, 100);
+        });
+    </script>
 
 </body>
 
