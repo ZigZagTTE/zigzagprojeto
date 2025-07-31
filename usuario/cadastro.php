@@ -35,10 +35,7 @@
 
 <body>
     <?php
-    //echo $_SESSION["id"];
-    //echo $_SESSION["nome"];
-
-
+    
     if ($cadStatus == "cadastro_0") //# Etapa 0 => caso $cadStatus = "cadastro_0"
     {                               // - Contém apenas o primeiro formulário.
 
