@@ -11,25 +11,25 @@
     cursor: default;
     box-sizing: border-box;
     vertical-align: baseline;
-    
-    }
-    
-    /* Configuração de elementos HTML5 */
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section {
-        display: block;
-    }
-    
-  /* Variáveis de Cores e Breakpoints */
+
+}
+
+/* Configuração de elementos HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* Variáveis de Cores e Breakpoints */
 :root {
     /* Paleta de cores - Tema Claro */
     --roxo-principal: #b450f5;
@@ -49,7 +49,8 @@
     --notebook: 1024px;
     --desktop: 1280px;
     --ultra-wide: 1440px;
-    }
+}
+
 /*[data-theme="dark"] {
     /* Paleta de cores - Tema Escuro 
     --bege: #f5e9dc;
@@ -62,49 +63,50 @@
     --roxo-muito-escuro: #1c0d2b;
     --amarelo: #b450f5;
     }*/
-    
-  /* Configurações Base */
-    html,
-    body {
-    
+
+/* Configurações Base */
+html,
+body {
+
     width: 100%;
     position: relative;
-    }
-    
-    body {
+}
+
+body {
     line-height: 1;
     background-color: var(--bege);
     overflow-x: hidden;
-    }
- /* Reset de Listas e Citações */
-    ol,
-    ul {
-        list-style: none;
-    }
-    
-    blockquote,
-    q {
-        quotes: none;
-    }
-    
-    blockquote:before,
-    blockquote:after,
-    q:before,
-    q:after {
-        content: "";
-        content: none;
-    }
-    
-    /* Reset de Tabelas */
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-    
-    /* Utilitários */
-    .fixFloat {
-        clear: both;
-    }
+}
+
+/* Reset de Listas e Citações */
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+/* Reset de Tabelas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Utilitários */
+.fixFloat {
+    clear: both;
+}
 
 /* ========================================================================== */
 /* HEADER E NAVEGAÇÃO                                                        */
@@ -133,13 +135,13 @@
     align-self: center;
 }
 
-.logo_header{
-    cursor:pointer;
+.logo_header {
+    cursor: pointer;
     margin-left: 10px;
     transition: all 0.3s ease;
 }
 
-.logo_header:hover{
+.logo_header:hover {
     scale: 1.05;
 }
 
@@ -289,6 +291,7 @@
     color: var(--bege);
     transform: scale(1.10);
 }
+
 /* ========================================================================== */
 /* BBODY DO SITE                                                              */
 /* ========================================================================== */
@@ -304,16 +307,16 @@
 /*CONTAINER DE TODO A PARTE DE ESCOLHA DE LOJA*/
 
 .container_opções_home {
-margin: 0 0 20px 50px;
-display:grid;
-grid-template-columns: 1fr 1fr;
-gap: 16px;
+    margin: 0 0 20px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
 
 /* FAZ COM QUE FIQUE DUAS COLUNAS NA PRIMEIRA LINHA E ABAIXO FIQUE DUAS LINHAS COM UMA COLUNA 
 E ASSIM POR DIANTE*/
 
-.container_opções_home >*:nth-child(4) {
+.container_opções_home>*:nth-child(4) {
     grid-column: 1 / -1;
     /* Ocupa as duas colunas */
     justify-self: center;
@@ -332,7 +335,7 @@ E ASSIM POR DIANTE*/
     margin: 0 -10px 0 0;
     vertical-align: middle;
     flex-shrink: 0;
-    
+
 }
 
 .linha {
@@ -361,11 +364,11 @@ E ASSIM POR DIANTE*/
     align-items: center;
     margin: auto auto auto 10px;
     gap: 20px;
-    overflow: hidden;
+    z-index: -1;
     transition: transform 0.3s ease;
 }
 
-    .category-card {
+.category-card {
     width: 200px;
     min-width: 200px;
     max-width: 100%;
@@ -375,7 +378,7 @@ E ASSIM POR DIANTE*/
     text-align: center;
     flex-direction: row;
     align-items: center;
-    }
+}
 
 .carousel-controls {
     margin: 10px auto auto auto;
@@ -439,7 +442,7 @@ E ASSIM POR DIANTE*/
     text-decoration: none;
 }
 
-.store-card:hover{
+.store-card:hover {
     scale: 1.01;
 }
 
@@ -484,6 +487,7 @@ E ASSIM POR DIANTE*/
     color: #666;
     line-height: 1.4;
 }
+
 /* ========================================================================== */
 /* CLIENTE LOJA                                                               */
 /* ========================================================================== */

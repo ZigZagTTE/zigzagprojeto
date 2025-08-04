@@ -17,7 +17,8 @@
 
     <!-- HEADER -->
     <header class="top">
-        <a href="../index.html"><img class="logo_header" src="../design/svg/logo.svg" width="90" height="90" alt="Logo ZigZag"></a>
+        <a href="../index.html"><img class="logo_header" src="../design/svg/logo.svg" width="90" height="90"
+                alt="Logo ZigZag"></a>
         <p class="zigzag_txt">igzag</p>
         <nav class="nav_header">
             <div class="buttons_home">
@@ -246,6 +247,7 @@
     </div>
     </div>
     </div>
+
 
     <script>
         // Função para inicializar o carousel
