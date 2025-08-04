@@ -37,62 +37,56 @@
     <div class="info-loja">
         <!-- Header da Loja -->
         <div class="loja-header">
-            <img src="../design/images/loja-exemplo.jpg" alt="Foto da loja" class="loja-imagem">
-            <div class="loja-info">
-                <div class="loja-nome">
-                    Nome da loja
-                    <div class="rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0</span>
+                <img src="https://media.istockphoto.com/id/520137102/pt/foto/desenhar-e-do-conselho.jpg?s=612x612&w=0&k=20&c=eqVmb2JzXO-Y-Rf6NUyhPucFZvT67NcW6qBFxpV-X84=" alt="Foto da loja" class="loja-imagem">
+                <div class="loja-info">
+                    <div class="loja-nome">
+                        Nome da loja
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0</span>
+                        </div>
                     </div>
+                    <div class="loja-detalhes">Tempo e frete</div>
                 </div>
-                <div class="loja-detalhes">Tempo e frete</div>
-            </div>
-            <div class="loja-status">
-                <div class="status-info">Distância</div>
-                <div class="status-info">Aberto/ Fechado</div>
-            </div>
+                <div class="loja-status">
+                    <div class="status-info">Distância</div>
+                    <div class="status-info">Aberto/ Fechado</div>
+                </div>
         </div>
+
+            
 
         <!-- Busca de Serviços -->
-        <div class="busca-servicos">
-            <div class="busca-container">
-                <input type="text" placeholder="Buscar serviços" class="busca-input">
-                <img src="../design/svg/search.svg" alt="Buscar" class="busca-icon">
+        
+            <div class="busca-servicos">
+                <div class="busca-container">
+                    <input type="text" placeholder="Buscar serviços" class="busca-input">
+                    <img src="../design/svg/search.svg" alt="Buscar" class="busca-icon">
+                </div>
             </div>
-        </div>
-
-        <!-- Categorias de Serviços -->
-        <div class="categorias-servicos">
-            <div class="categoria-buttons">
-                <button class="categoria-btn active">
-                    <i class="fa-solid fa-scissors categoria-icon"></i>
-                    Costurar minhas peças
-                </button>
-                <button class="categoria-btn">
-                    <i class="fa-solid fa-plus categoria-icon"></i>
-                    Ajustes e reformas
-                </button>
+            
+            <!-- Categorias de Serviços -->
+            <div class="categorias-servicos">
+                <div class="categoria-buttons">
+                    <button class="categoria-btn active">
+                        <i class="fa-solid fa-scissors categoria-icon"></i>
+                        Costurar minhas peças
+                    </button>
+                    <button class="categoria-btn">
+                        <i class="fa-solid fa-plus categoria-icon"></i>
+                        Ajustes e reformas
+                    </button>
+                </div>
             </div>
-        </div>
-
-        <!-- Botões de Ação -->
-        <div class="action-buttons">
-            <button class="action-btn">
-                <i class="fa-solid fa-plus action-icon"></i>
-                Criar novas peças
-            </button>
-            <button class="action-btn">
-                <i class="fa-solid fa-scissors action-icon"></i>
-                Costurar minhas peças
-            </button>
-        </div>
+        
+            
+        
 
         <!-- Grid de Serviços -->
         <div class="servicos-grid">
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-file-lines servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/agulha.png" alt="Pequenas costuras">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Pequenas costuras</div>
@@ -102,27 +96,27 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-shirt servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/ziper.png" alt="Zíper comum">
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Trocas de zíper</div>
-                    <div class="servico-descricao">Substituição de zíperes</div>
+                    <div class="servico-nome">Trocas de zíper comum</div>
+                    <div class="servico-descricao">Substituição de zíperes fáceis</div>
                 </div>
             </div>
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-cut servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/ziper.png" alt="Zíper invisivel">
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Remendos</div>
-                    <div class="servico-descricao">Reparos em tecidos danificados</div>
+                    <div class="servico-nome">Trocas de zíper invisível</div>
+                    <div class="servico-descricao">Substituição de zíperes complicados</div>
                 </div>
             </div>
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-ruler servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/calca.png" alt="Barras">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Ajuste de barra</div>
@@ -132,27 +126,27 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-file-lines servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/calça.png" alt="Sob medida">
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Pequenas costuras</div>
-                    <div class="servico-descricao">Reparos e ajustes simples</div>
+                    <div class="servico-nome">Sob Medida</div>
+                    <div class="servico-descricao">Ajuste de compremento personalizado</div>
                 </div>
             </div>
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-shirt servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/vestido.png" alt="Roupas ornamentadas">
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Trocas de zíper</div>
-                    <div class="servico-descricao">Substituição de zíperes</div>
+                    <div class="servico-nome">Roupas ornamentadas</div>
+                    <div class="servico-descricao">Peças complicadas de costura</div>
                 </div>
             </div>
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-cut servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/tecido.png" alt="Remendos">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Remendos</div>
@@ -165,8 +159,8 @@
                     <i class="fa-solid fa-file-lines servico-icon"></i>
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Pequenas costuras</div>
-                    <div class="servico-descricao">Reparos e ajustes simples</div>
+                    <div class="servico-nome">Bordados</div>
+                    <div class="servico-descricao">Decoração de pecas</div>
                 </div>
             </div>
 
@@ -175,8 +169,8 @@
                     <i class="fa-solid fa-shirt servico-icon"></i>
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Trocas de zíper</div>
-                    <div class="servico-descricao">Substituição de zíperes</div>
+                    <div class="servico-nome">Confecção</div>
+                    <div class="servico-descricao">Costuras em larga escala</div>
                 </div>
             </div>
 
@@ -185,8 +179,8 @@
                     <i class="fa-solid fa-cut servico-icon"></i>
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Remendos</div>
-                    <div class="servico-descricao">Reparos em tecidos danificados</div>
+                    <div class="servico-nome">Patchwork</div>
+                    <div class="servico-descricao">Cria padrões atravéz de tecidos variados</div>
                 </div>
             </div>
 
