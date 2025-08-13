@@ -308,11 +308,22 @@ table {
 /* FAZ COM QUE FIQUE DUAS COLUNAS NA PRIMEIRA LINHA E ABAIXO FIQUE DUAS LINHAS COM UMA COLUNA 
 E ASSIM POR DIANTE*/
 
-.container_opções_home > *:nth-child(4) {
+/* Primeira linha: dois carousel-warp lado a lado */
+.container_opções_home>*:nth-child(1),
+.container_opções_home>*:nth-child(2) {
+  grid-column: span 1;
+}
+
+/* Segunda linha: carousel-controls + linha separadora */
+.container_opções_home>*:nth-child(3),
+.container_opções_home>*:nth-child(4) {
+  grid-column: span 1;
+}
+
+/* Terceira linha: carousel-controls da segunda seção ocupa toda a largura */
+.container_opções_home>*:nth-child(5) {
   grid-column: 1 / -1;
-  /* Ocupa as duas colunas */
   justify-self: center;
-  /* Centraliza o item */
 }
 
 /*LILNHA*/
@@ -353,9 +364,16 @@ E ASSIM POR DIANTE*/
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: auto auto auto 10px;
   gap: 20px;
   transition: transform 0.3s ease;
+}
+
+.carousel-warp {
+  border: 2px solid var(--bege);
+  border-radius: 20px;
+  padding: 10px;
+  background-color: var(--bege);
+  overflow: hidden;
 }
 
 .category-card {
@@ -422,7 +440,7 @@ E ASSIM POR DIANTE*/
   background: rgb(192, 185, 185);
   border-radius: 15px;
   padding: 20px;
-  min-width: 250px;
+  min-width: 200px;
   max-width: 100%;
   box-sizing: border-box;
   display: flex;

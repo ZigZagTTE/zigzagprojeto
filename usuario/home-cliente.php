@@ -49,91 +49,93 @@
                 Costurar minhas<br>peças
             </div>
         </div>
-        <div class="carousel-section" id="carousel1">
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+        <div class="carousel-warp">
+            <div class="carousel-section" id="carousel1">
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
         <div class="carousel-controls">
             <button class="carousel-btn left" data-carousel="carousel1" disabled>&lt;</button>
@@ -154,91 +156,93 @@
                 Costurar minhas<br>peças
             </div>
         </div>
-        <div class="carousel-section" id="carousel2">
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+        <div class="carousel-warp">
+            <div class="carousel-section" id="carousel2">
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="home-cliente-loja.php" class="store-card">
-                <img class="store-image" src="">
-                <div class="store-info">
-                    <p class="store-name">Ateliê da Maria</p>
-                    <div class="store-rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0 • 2.5km</span>
-                        <p class="store-details">
-                            Entrega rápida<br>
-                            Aberto • Fecha 18h
-                        </p>
+                </a>
+                <a href="home-cliente-loja.php" class="store-card">
+                    <img class="store-image" src="">
+                    <div class="store-info">
+                        <p class="store-name">Ateliê da Maria</p>
+                        <div class="store-rating">
+                            <span class="star">★</span>
+                            <span class="rating-text">5,0 • 2.5km</span>
+                            <p class="store-details">
+                                Entrega rápida<br>
+                                Aberto • Fecha 18h
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
         <div class="carousel-controls">
             <button class="carousel-btn left" data-carousel="carousel2" disabled>&lt;</button>
