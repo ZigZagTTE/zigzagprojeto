@@ -679,7 +679,7 @@ E ASSIM POR DIANTE*/
 }
 
 /* Grid de Serviços */
-.servicos-grid {
+.servicos_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;

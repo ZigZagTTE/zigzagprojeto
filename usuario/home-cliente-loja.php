@@ -68,11 +68,11 @@
             <!-- Categorias de Serviços -->
             <div class="categorias-servicos">
                 <div class="categoria-buttons">
-                    <button class="categoria-btn active">
+                    <button onclick="mostrarConteudo('conteudo1')" class="categoria-btn active">
                         <i class="fa-solid fa-scissors categoria-icon"></i>
                         Costurar minhas peças
                     </button>
-                    <button class="categoria-btn">
+                    <button onclick="mostrarConteudo('conteudo2')" class="categoria-btn">
                         <i class="fa-solid fa-plus categoria-icon"></i>
                         Ajustes e reformas
                     </button>
@@ -83,7 +83,7 @@
         
 
         <!-- Grid de Serviços -->
-        <div class="servicos-grid">
+        <div id = "conteudo1" class="servicos_grid active">
             <div class="servico-card">
                 <div class="servico-icon-container">
                     <img class="servico-icon" src="../design/images/usu_img/agulha.png" alt="Pequenas costuras">
@@ -204,6 +204,9 @@
                 </div>
             </div>
         </div>
+        <div id = "conteudo2" class="servicos_grid">
+
+        </div>
     </div>
 
     <script>
@@ -222,6 +225,18 @@
                 // Aqui você pode adicionar a lógica para abrir detalhes do serviço
             });
         });
+        // Função para mostrar o conteúdo baseado no botão clicado
+    function mostrarConteudo(id) {
+      // Oculta todos os conteúdos
+        var conteudos = document.querySelectorAll('.servicos_grid');
+        conteudos.forEach(function(servicos_grid) {
+        servicos_grid.classList.remove('ativo');
+    });
+
+      // Exibe o conteúdo correspondente ao botão clicado
+        var conteudoAtivo = document.getElementById(id);
+        conteudoAtivo.classList.add('ativo');
+    }
     </script>
 </body>
 
