@@ -68,13 +68,13 @@
             <!-- Categorias de Serviços -->
             <div class="categorias-servicos">
                 <div class="categoria-buttons">
-                    <button class="categoria-btn active">
+                    <button id="botao1" onclick="mostrarConteudoUm()" class="categoria-btn">
                         <i class="fa-solid fa-scissors categoria-icon"></i>
-                        Costurar minhas peças
-                    </button>
-                    <button class="categoria-btn">
-                        <i class="fa-solid fa-plus categoria-icon"></i>
                         Ajustes e reformas
+                    </button>
+                    <button id="botao2" onclick="mostrarConteudoDois()" class="categoria-btn">
+                        <i class="fa-solid fa-plus categoria-icon"></i>
+                        Costurar minhas peças
                     </button>
                 </div>
             </div>
@@ -83,7 +83,7 @@
         
 
         <!-- Grid de Serviços -->
-        <div class="servicos-grid">
+        <div id = "conteudo1" class="servicos_grid active">
             <div class="servico-card">
                 <div class="servico-icon-container">
                     <img class="servico-icon" src="../design/images/usu_img/agulha.png" alt="Pequenas costuras">
@@ -130,7 +130,7 @@
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Sob Medida</div>
-                    <div class="servico-descricao">Ajuste de compremento personalizado</div>
+                    <div class="servico-descricao">Ajuste de comprimento personalizado</div>
                 </div>
             </div>
 
@@ -156,7 +156,7 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-file-lines servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/bordar.png" alt="Bordados">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Bordados</div>
@@ -166,7 +166,7 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-shirt servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/confeccao.png" alt="Confecção">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Confecção</div>
@@ -176,7 +176,7 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-cut servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/patchwork.png" alt="Patchwork">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Patchwork</div>
@@ -186,11 +186,11 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-ruler servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/personalizado.png" alt="Personalizados">
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Ajuste de barra</div>
-                    <div class="servico-descricao">Ajustes de comprimento</div>
+                    <div class="servico-nome">Personalizado</div>
+                    <div class="servico-descricao">Ajustes personalizados de acordo com as ordens do cliente.</div>
                 </div>
             </div>
 
@@ -203,6 +203,9 @@
                     <div class="servico-descricao">Reparos e ajustes simples</div>
                 </div>
             </div>
+        </div>
+        <div id = "conteudo2" class="personalizado_grid" style="display: none;">
+
         </div>
     </div>
 
@@ -222,6 +225,25 @@
                 // Aqui você pode adicionar a lógica para abrir detalhes do serviço
             });
         });
+        // Função para mostrar o conteúdo baseado no botão clicado
+    function mostrarConteudoUm() {
+        let conteudoUm = document.querySelector('#conteudo1');
+        let conteudoUmPropriedadeDisplay = window.getComputedStyle(conteudoUm).display;
+        
+        if (conteudoUmPropriedadeDisplay == "none") {
+            document.getElementById("conteudo1").style.display = "grid";
+            document.getElementById("conteudo2").style.display = "none";
+        }
+    }
+    function mostrarConteudoDois() {
+        let conteudoDois = document.querySelector('#conteudo2');
+        let conteudoDoisPropriedadeDisplay = window.getComputedStyle(conteudoDois).display;
+        
+        if (conteudoDoisPropriedadeDisplay == "none") {
+            document.getElementById("conteudo2").style.display = "grid";
+            document.getElementById("conteudo1").style.display = "none";
+        }
+    }
     </script>
 </body>
 
