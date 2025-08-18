@@ -68,13 +68,13 @@
             <!-- Categorias de Serviços -->
             <div class="categorias-servicos">
                 <div class="categoria-buttons">
-                    <button onclick="mostrarConteudo('conteudo1')" class="categoria-btn active">
+                    <button id="botao1" onclick="mostrarConteudoUm()" class="categoria-btn">
                         <i class="fa-solid fa-scissors categoria-icon"></i>
-                        Costurar minhas peças
-                    </button>
-                    <button onclick="mostrarConteudo('conteudo2')" class="categoria-btn">
-                        <i class="fa-solid fa-plus categoria-icon"></i>
                         Ajustes e reformas
+                    </button>
+                    <button id="botao2" onclick="mostrarConteudoDois()" class="categoria-btn">
+                        <i class="fa-solid fa-plus categoria-icon"></i>
+                        Costurar minhas peças
                     </button>
                 </div>
             </div>
@@ -204,7 +204,7 @@
                 </div>
             </div>
         </div>
-        <div id = "conteudo2" class="servicos_grid">
+        <div id = "conteudo2" class="personalizado_grid" style="display: none;">
 
         </div>
     </div>
@@ -226,16 +226,23 @@
             });
         });
         // Função para mostrar o conteúdo baseado no botão clicado
-    function mostrarConteudo(id) {
-      // Oculta todos os conteúdos
-        var conteudos = document.querySelectorAll('.servicos_grid');
-        conteudos.forEach(function(servicos_grid) {
-        servicos_grid.classList.remove('ativo');
-    });
-
-      // Exibe o conteúdo correspondente ao botão clicado
-        var conteudoAtivo = document.getElementById(id);
-        conteudoAtivo.classList.add('ativo');
+    function mostrarConteudoUm() {
+        let conteudoUm = document.querySelector('#conteudo1');
+        let conteudoUmPropriedadeDisplay = window.getComputedStyle(conteudoUm).display;
+        
+        if (conteudoUmPropriedadeDisplay == "none") {
+            document.getElementById("conteudo1").style.display = "grid";
+            document.getElementById("conteudo2").style.display = "none";
+        }
+    }
+    function mostrarConteudoDois() {
+        let conteudoDois = document.querySelector('#conteudo2');
+        let conteudoDoisPropriedadeDisplay = window.getComputedStyle(conteudoDois).display;
+        
+        if (conteudoDoisPropriedadeDisplay == "none") {
+            document.getElementById("conteudo2").style.display = "grid";
+            document.getElementById("conteudo1").style.display = "none";
+        }
     }
     </script>
 </body>
