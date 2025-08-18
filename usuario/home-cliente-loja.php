@@ -130,7 +130,7 @@
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Sob Medida</div>
-                    <div class="servico-descricao">Ajuste de compremento personalizado</div>
+                    <div class="servico-descricao">Ajuste de comprimento personalizado</div>
                 </div>
             </div>
 
@@ -156,7 +156,7 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-file-lines servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/bordar.png" alt="Bordados">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Bordados</div>
@@ -166,7 +166,7 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-shirt servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/confeccao.png" alt="Confecção">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Confecção</div>
@@ -176,7 +176,7 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-cut servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/patchwork.png" alt="Patchwork">
                 </div>
                 <div class="servico-info">
                     <div class="servico-nome">Patchwork</div>
@@ -186,11 +186,11 @@
 
             <div class="servico-card">
                 <div class="servico-icon-container">
-                    <i class="fa-solid fa-ruler servico-icon"></i>
+                    <img class="servico-icon" src="../design/images/usu_img/personalizado.png" alt="Personalizados">
                 </div>
                 <div class="servico-info">
-                    <div class="servico-nome">Ajuste de barra</div>
-                    <div class="servico-descricao">Ajustes de comprimento</div>
+                    <div class="servico-nome">Personalizado</div>
+                    <div class="servico-descricao">Ajustes personalizados de acordo com as ordens do cliente.</div>
                 </div>
             </div>
 
