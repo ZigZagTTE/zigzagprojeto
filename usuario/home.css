@@ -303,6 +303,7 @@ table {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  position: relative;
 }
 
 /* FAZ COM QUE FIQUE DUAS COLUNAS NA PRIMEIRA LINHA E ABAIXO FIQUE DUAS LINHAS COM UMA COLUNA 
@@ -313,6 +314,8 @@ E ASSIM POR DIANTE*/
   /* Ocupa as duas colunas */
   justify-self: center;
   /* Centraliza o item */
+  position: relative;
+  z-index: 2;
 }
 
 /*LILNHA*/
@@ -355,7 +358,10 @@ E ASSIM POR DIANTE*/
   align-items: center;
   margin: auto auto auto 10px;
   gap: 20px;
+  overflow: hidden;
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 0;
 }
 
 .category-card {
@@ -369,6 +375,7 @@ E ASSIM POR DIANTE*/
   flex-direction: row;
   align-items: center;
   z-index: 1;
+  position: relative;
 }
 
 .carousel-controls {
