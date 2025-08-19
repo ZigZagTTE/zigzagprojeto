@@ -41,7 +41,7 @@
         <!--========================================================================== 
         Primeira linha - Costurar peças
         ==============================================================================-->
-        <div class="category-card">
+        <div class="category-card-costurar">
             <div class="category-icon">
                 <img class="category-icon" src="../design/images/usu_img/maquina.png">
             </div>
@@ -49,7 +49,7 @@
                 Costurar minhas<br>peças
             </div>
         </div>
-        <div class="carousel-warp">
+        <div class="carousel-warp-costurar">
             <div class="carousel-section" id="carousel1">
                 <a href="home-cliente-loja.php" class="store-card">
                     <img class="store-image" src="">
@@ -137,7 +137,7 @@
                 </a>
             </div>
         </div>
-        <div class="carousel-controls">
+        <div class="carousel-controls-costurar">
             <button class="carousel-btn left" data-carousel="carousel1" disabled>&lt;</button>
             <button class="carousel-btn right" data-carousel="carousel1">&gt;</button>
         </div>
@@ -148,15 +148,15 @@
         <!--========================================================================== 
         Segunda linha - Criar peças
         ==============================================================================-->
-        <div class="category-card">
+        <div class="category-card-criar">
             <div class="category-icon">
                 <img class="category-icon" src="../design/images/usu_img/cabide.png">
             </div>
             <div class="category-text">
-                Costurar minhas<br>peças
+                Criar novas<br>peças
             </div>
         </div>
-        <div class="carousel-warp">
+        <div class="carousel-warp-criar">
             <div class="carousel-section" id="carousel2">
                 <a href="home-cliente-loja.php" class="store-card">
                     <img class="store-image" src="">
@@ -244,7 +244,7 @@
                 </a>
             </div>
         </div>
-        <div class="carousel-controls">
+        <div class="carousel-controls-criar">
             <button class="carousel-btn left" data-carousel="carousel2" disabled>&lt;</button>
             <button class="carousel-btn right" data-carousel="carousel2">&gt;</button>
         </div>

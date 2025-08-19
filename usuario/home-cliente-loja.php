@@ -37,53 +37,53 @@
     <div class="info-loja">
         <!-- Header da Loja -->
         <div class="loja-header">
-                <img src="https://media.istockphoto.com/id/520137102/pt/foto/desenhar-e-do-conselho.jpg?s=612x612&w=0&k=20&c=eqVmb2JzXO-Y-Rf6NUyhPucFZvT67NcW6qBFxpV-X84=" alt="Foto da loja" class="loja-imagem">
-                <div class="loja-info">
-                    <div class="loja-nome">
-                        Nome da loja
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                        </div>
+            <img src="https://media.istockphoto.com/id/520137102/pt/foto/desenhar-e-do-conselho.jpg?s=612x612&w=0&k=20&c=eqVmb2JzXO-Y-Rf6NUyhPucFZvT67NcW6qBFxpV-X84=" alt="Foto da loja" class="loja-imagem">
+            <div class="loja-info">
+                <div class="loja-nome">
+                    Nome da loja
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="rating-text">5,0</span>
                     </div>
-                    <div class="loja-detalhes">Tempo e frete</div>
                 </div>
-                <div class="loja-status">
-                    <div class="status-info">Distância</div>
-                    <div class="status-info">Aberto/ Fechado</div>
-                </div>
+                <div class="loja-detalhes">Tempo e frete</div>
+            </div>
+            <div class="loja-status">
+                <div class="status-info">Distância</div>
+                <div class="status-info">Aberto/ Fechado</div>
+            </div>
         </div>
 
-            
+
 
         <!-- Busca de Serviços -->
-        
-            <div class="busca-servicos">
-                <div class="busca-container">
-                    <input type="text" placeholder="Buscar serviços" class="busca-input">
-                    <img src="../design/svg/search.svg" alt="Buscar" class="busca-icon">
-                </div>
+
+        <div class="busca-servicos">
+            <div class="busca-container">
+                <input type="text" placeholder="Buscar serviços" class="busca-input">
+                <img src="../design/svg/search.svg" alt="Buscar" class="busca-icon">
             </div>
-            
-            <!-- Categorias de Serviços -->
-            <div class="categorias-servicos">
-                <div class="categoria-buttons">
-                    <button id="botao1" onclick="mostrarConteudoUm()" class="categoria-btn">
-                        <i class="fa-solid fa-scissors categoria-icon"></i>
-                        Ajustes e reformas
-                    </button>
-                    <button id="botao2" onclick="mostrarConteudoDois()" class="categoria-btn">
-                        <i class="fa-solid fa-plus categoria-icon"></i>
-                        Costurar minhas peças
-                    </button>
-                </div>
+        </div>
+
+        <!-- Categorias de Serviços -->
+        <div class="categorias-servicos">
+            <div class="categoria-buttons">
+                <button id="botao1" onclick="mostrarConteudoUm()" class="categoria-btn">
+                    <i class="fa-solid fa-scissors categoria-icon"></i>
+                    Ajustes e reformas
+                </button>
+                <button id="botao2" onclick="mostrarConteudoDois()" class="categoria-btn">
+                    <i class="fa-solid fa-plus categoria-icon"></i>
+                    Costurar minhas peças
+                </button>
             </div>
-        
-            
-        
+        </div>
+
+
+
 
         <!-- Grid de Serviços -->
-        <div id = "conteudo1" class="servicos_grid active">
+        <div id="conteudo1" class="servicos_grid active">
             <div class="servico-card">
                 <div class="servico-icon-container">
                     <img class="servico-icon" src="../design/images/usu_img/agulha.png" alt="Pequenas costuras">
@@ -204,7 +204,7 @@
                 </div>
             </div>
         </div>
-        <div id = "conteudo2" class="personalizado_grid" style="display: none;">
+        <div id="conteudo2" class="personalizado_grid" style="display: none;">
 
         </div>
     </div>
@@ -226,24 +226,25 @@
             });
         });
         // Função para mostrar o conteúdo baseado no botão clicado
-    function mostrarConteudoUm() {
-        let conteudoUm = document.querySelector('#conteudo1');
-        let conteudoUmPropriedadeDisplay = window.getComputedStyle(conteudoUm).display;
-        
-        if (conteudoUmPropriedadeDisplay == "none") {
-            document.getElementById("conteudo1").style.display = "grid";
-            document.getElementById("conteudo2").style.display = "none";
+        function mostrarConteudoUm() {
+            let conteudoUm = document.querySelector('#conteudo1');
+            let conteudoUmPropriedadeDisplay = window.getComputedStyle(conteudoUm).display;
+
+            if (conteudoUmPropriedadeDisplay == "none") {
+                document.getElementById("conteudo1").style.display = "grid";
+                document.getElementById("conteudo2").style.display = "none";
+            }
         }
-    }
-    function mostrarConteudoDois() {
-        let conteudoDois = document.querySelector('#conteudo2');
-        let conteudoDoisPropriedadeDisplay = window.getComputedStyle(conteudoDois).display;
-        
-        if (conteudoDoisPropriedadeDisplay == "none") {
-            document.getElementById("conteudo2").style.display = "grid";
-            document.getElementById("conteudo1").style.display = "none";
+
+        function mostrarConteudoDois() {
+            let conteudoDois = document.querySelector('#conteudo2');
+            let conteudoDoisPropriedadeDisplay = window.getComputedStyle(conteudoDois).display;
+
+            if (conteudoDoisPropriedadeDisplay == "none") {
+                document.getElementById("conteudo2").style.display = "grid";
+                document.getElementById("conteudo1").style.display = "none";
+            }
         }
-    }
     </script>
 </body>
 
