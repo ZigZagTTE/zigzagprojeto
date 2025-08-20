@@ -205,7 +205,11 @@
             </div>
         </div>
         <div id="conteudo2" class="personalizado_grid" style="display: none;">
-
+            <h1 >Digite a maneira como você quer que sua criação seja feita.</h1>
+            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descreva aqui..."></textarea>
+            <p>Envie uma imagem de referência (opcional):</p>
+            <input type="file" id="file" name="file" accept="image/*" class="file_customizada">
+            <button type="submit">Enviar pedido</button>
         </div>
     </div>
 
@@ -241,7 +245,7 @@
             let conteudoDoisPropriedadeDisplay = window.getComputedStyle(conteudoDois).display;
 
             if (conteudoDoisPropriedadeDisplay == "none") {
-                document.getElementById("conteudo2").style.display = "grid";
+                document.getElementById("conteudo2").style.display = "flex";
                 document.getElementById("conteudo1").style.display = "none";
             }
         }
