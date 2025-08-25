@@ -91,11 +91,39 @@ CREATE TABLE IF NOT EXISTS tbl_peca
     pec_nome varchar(32)
 );
 
+-- Valores definidos para peças
+
+INSERT INTO tbl_peca (pec_nome)
+VALUES  ('blusa'),
+        ('camisa (com botão)'),
+        ('camiseta (sem botão)'),
+        ('moletom'),
+        ('casaco'),
+        ('macacão'),
+        ('calças'),
+        ('shorts'),
+        ('bermuda');
+
 CREATE TABLE IF NOT EXISTS tbl_servico
 (
     ser_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
     ser_nome varchar(32)
 );
+
+-- Valores definidos para serviços
+
+INSERT INTO tbl_servico (ser_nome)
+VALUES  ('pequenas costuras'),
+        ('troca de zíper comum'),
+        ('troca de zíper invisível'),
+        ('ajuste de barra'),
+        ('sob medida'),
+        ('roupas ornamentadas'),
+        ('remendos'),
+        ('bordados'),
+        ('confecção'),
+        ('patchwork'),
+        ('personalizado');
 
 CREATE TABLE IF NOT EXISTS tbl_catalogo
 (
