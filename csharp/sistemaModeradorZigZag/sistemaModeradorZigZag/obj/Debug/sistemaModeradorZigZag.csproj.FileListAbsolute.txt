@@ -1,0 +1,14 @@
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\bin\Debug\sistemaModeradorZigZag.exe.config
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\bin\Debug\sistemaModeradorZigZag.exe
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\bin\Debug\sistemaModeradorZigZag.pdb
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\bin\Debug\MySql.Data.dll
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.csproj.AssemblyReference.cache
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.frmMenu.resources
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.Properties.Resources.resources
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.csproj.GenerateResource.cache
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaM.EBF7D102.Up2Date
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.exe
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.pdb
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.exe.config
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.frmPainelCostureiro.resources
