@@ -9,33 +9,31 @@ namespace sistemaModeradorZigZag
     internal class costureiro
     {
         public costureiro() { }
-        //ADICIONAR AS PROPRIEDADES COMO CORRESPONDENCIAS DOS CAMPOS DA TABELA
-        public costureiro(string nome, string endereco, int idade)
-        {
-            this.Nome = nome;
-            this.Endereco = endereco;
-            this.Idade = idade;
-        }
 
-        private int _costureiroID;
-        public int CostureiroID
-        {
-            get { return _costureiroID; }
-            set { _costureiroID = value; }
-        }
+        public int CostureiroID { get; set; }
 
-        private string nome;
-        public string Nome
-        {
-            get { return nome; }
-            set { nome = value; }
-        }
+        public string Email { get; set; }
 
-        private int cpf;
-        public int CPF
-        {
-            get { return cpf; }
-            set { cpf = value; }
-        }
+        public string Nome { get; set; }
+
+        public long CPF { get; set; }
+
+        public long CNPJ { get; set; }
+
+        public int Verificado { get; set; }
+
+        public string Rua { get; set; }
+
+        public string Bairro { get; set; }
+
+        public long Numero { get; set; }
+
+        public string Complemento { get; set; }
+
+        public string Cidade { get; set; }
+
+        public string Estado { get; set; }
+
+        public int CEP { get; set; }
     }
 }

@@ -12,3 +12,7 @@ C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZ
 C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.pdb
 C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.exe.config
 C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.frmPainelCostureiro.resources
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.frmVerificaCostureiro.resources
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.frmPainelEntregador.resources
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.frmVerificaEntregador.resources
+C:\xampp\htdocs\zigzagprojeto\csharp\sistemaModeradorZigZag\sistemaModeradorZigZag\obj\Debug\sistemaModeradorZigZag.info.resources

@@ -36,6 +36,10 @@
             this.costureirosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregadoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,12 +48,16 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.painelGeralToolStripMenuItem,
             this.verificarToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.sobreToolStripMenuItem,
+            this.sairToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(283, 24);
             this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Text = "Sobre";
             // 
             // painelGeralToolStripMenuItem
             // 
@@ -63,15 +71,16 @@
             // costureiroToolStripMenuItem
             // 
             this.costureiroToolStripMenuItem.Name = "costureiroToolStripMenuItem";
-            this.costureiroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.costureiroToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.costureiroToolStripMenuItem.Text = "Costureiros";
             this.costureiroToolStripMenuItem.Click += new System.EventHandler(this.costureiroToolStripMenuItem_Click);
             // 
             // entregadoresToolStripMenuItem
             // 
             this.entregadoresToolStripMenuItem.Name = "entregadoresToolStripMenuItem";
-            this.entregadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entregadoresToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.entregadoresToolStripMenuItem.Text = "Entregadores";
+            this.entregadoresToolStripMenuItem.Click += new System.EventHandler(this.entregadoresToolStripMenuItem_Click);
             // 
             // verificarToolStripMenuItem
             // 
@@ -87,18 +96,43 @@
             this.costureirosToolStripMenuItem.Name = "costureirosToolStripMenuItem";
             this.costureirosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.costureirosToolStripMenuItem.Text = "Costureiros";
+            this.costureirosToolStripMenuItem.Click += new System.EventHandler(this.costureirosToolStripMenuItem_Click);
             // 
             // entregadoresToolStripMenuItem1
             // 
             this.entregadoresToolStripMenuItem1.Name = "entregadoresToolStripMenuItem1";
             this.entregadoresToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.entregadoresToolStripMenuItem1.Text = "Entregadores";
+            this.entregadoresToolStripMenuItem1.Click += new System.EventHandler(this.entregadoresToolStripMenuItem1_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // sobreToolStripMenuItem
+            // 
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.sobreToolStripMenuItem.Text = "Sobre";
+            this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(12, 20);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(12, 20);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(12, 20);
             // 
             // frmMenu
             // 
@@ -126,6 +160,10 @@
         private System.Windows.Forms.ToolStripMenuItem costureirosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entregadoresToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }
 
