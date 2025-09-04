@@ -69,7 +69,7 @@
         <!-- Categorias de Serviços -->
         <div class="categorias-servicos">
             <div class="categoria-buttons">
-                <button id="botao1" onclick="mostrarConteudoUm()" class="categoria-btn">
+                <button id="botao1" onclick="mostrarConteudoUm()" class="categoria-btn active">
                     <i class="fa-solid fa-scissors categoria-icon"></i>
                     Ajustes e reformas
                 </button>
@@ -207,7 +207,7 @@
         </div>
         <div id="conteudo2" class="personalizado_grid" style="display: none;">
             <h1 >Digite a maneira como você quer que sua criação seja feita.</h1>
-            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descreva aqui..."></textarea>
+            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descreva aqui o seu projeto..."></textarea>
             <p>Envie uma imagem de referência (opcional):</p>
             <input type="file" id="file" name="file" accept="image/*" class="file_customizada">
             <button type="submit">Enviar pedido</button>

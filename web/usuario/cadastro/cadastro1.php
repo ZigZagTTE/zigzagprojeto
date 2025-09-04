@@ -4,9 +4,9 @@
 <head>
     <title>ZigZag</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="cadastro.css">
     <link rel="stylesheet" href="responsivo.css">
-    <link rel="icon" href="design/images/MiniLogo.png" type="image/x-icon">
+    <link rel="icon" href="../../design/images/MiniLogo.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
     </script>
     <?php
 
-    require_once("../conecta.php");
+    require_once("../../conecta.php");
 
     if (isset($_POST['cadastroStatus']))     // Obtem a variável $_POST 'cadastroStatus' caso ela não seja nula
     {                                       // e define $cadStatus com seu valor.    
@@ -60,9 +60,9 @@
         $senha = $_POST['txtSenha'];
         $confirmsenha = $_POST['txtCSenha'];  // -> Obtêm os dados a serem cadastrados + senha de confirmação.
 
-        $testeEmail = mysqli_query($conexao, "SELECT usu_email "
-            . "FROM tbl_usuario "
-            . "WHERE usu_email = '$email'");
+        $testeEmail = mysqli_query($conexao, "SELECT cli_email "
+            . "FROM tbl_cliente "
+            . "WHERE cli_email = '$email'");
 
         if (mysqli_num_rows($testeEmail) != 0) {
             header("Location: cadastro.php?erro=emailUsado");
@@ -72,16 +72,16 @@
             header("Location: cadastro.php?erro=senhaDif");
         } else //## Executa o código caso a senha normal seja igual a sua confirmação.
         {
-            $sql = "INSERT into tbl_usuario"    // Criação do comando INSERT para inserção dos dados.
-                . "(usu_email, usu_senha)"
+            $sql = "INSERT into tbl_cliente"    // Criação do comando INSERT para inserção dos dados.
+                . "(cli_email, cli_senha)"
                 . "VALUES ('$email', '$senha')";
 
             $res = mysqli_query($conexao, $sql);    // Executa o código SQL em uma função definida no final da página,
             // o código que mostra os erros está comentado, então não aparecem.
 
-            $sql2 = "SELECT usu_codigo "        // Criação do comando SELECT para obter o código da conta criada.
-                . "FROM tbl_usuario "
-                . "WHERE usu_email = '$email' AND usu_senha = '$senha'";
+            $sql2 = "SELECT cli_id "        // Criação do comando SELECT para obter o código da conta criada.
+                . "FROM tbl_cliente "
+                . "WHERE cli_email = '$email' AND cli_senha = '$senha'";
 
             $res = mysqli_query($conexao, $sql2);
 

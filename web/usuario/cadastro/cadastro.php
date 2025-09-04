@@ -4,9 +4,9 @@
 <head>
     <title>ZigZag</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="cadastro.css">
     <link rel="stylesheet" href="responsivo.css">
-    <link rel="icon" href="design/images/MiniLogo.png" type="image/x-icon">
+    <link rel="icon" href="../../design/images/MiniLogo.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 
     <?php
 
-    require_once("../conecta.php");
+    require_once("../../conecta.php");
 
     require_once("verificaUsu.php");
 
