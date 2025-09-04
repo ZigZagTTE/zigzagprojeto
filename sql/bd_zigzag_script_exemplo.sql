@@ -32,10 +32,10 @@ VALUES  ('entregadorA@exemplo.com', '1234abcD', 'Entregador A', 000123456789, 12
 
 INSERT INTO tbl_costureiro (cos_email, cos_senha, cos_nome, cos_cpf, cos_cnpj, cos_perfil,
             cos_rua, cos_bairro, cos_numero, cos_cidade, cos_estado, cos_cep)
-VALUES  ('costureiroA@exemplo.com', '1234abcD', 'Costureiro A', 12345678903, 12123456791, 'https://vectorified.com/images/default-user-icon-33.jpg',
+VALUES  ('costureiroA@exemplo.com', '1234abcD', 'Costureiro A', 12345678903, 12345678000190, 'https://vectorified.com/images/default-user-icon-33.jpg',
 -- Endereço do Costureiro A
         'Rua A', 'Bairro A', 110, 'Taubaté', 'SP', 12345123),
-        ('costureiroB@exemplo.com', 'ABCd1234',  'Costureiro B',98765432113, 12987654323, 'https://vectorified.com/images/default-user-icon-33.jpg',
+        ('costureiroB@exemplo.com', 'ABCd1234',  'Costureiro B',98765432113, 23456789000291, 'https://vectorified.com/images/default-user-icon-33.jpg',
 -- Endereço do Costureiro B
         'Rua B', 'Bairro B', 210, 'Taubaté', 'SP', 54321123);
 
