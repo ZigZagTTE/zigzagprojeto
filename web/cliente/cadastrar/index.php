@@ -24,9 +24,9 @@
             <div class="insc_cad">
                 <br>
                 <p class="txt_cad">Email</p><br>
-                <input class="input_cad" type="email" name="txtEmail" required placeholder="exemplo@email.com">
+                <input class="input_cad" type="email" name="txtEmail" required placeholder="exemplo@email.com" id="txtEmail">
 
-                <p class="erro_cad" id="emailRepetido">ESTE EMAIL JÁ FOI USADO</p><br>
+                <p class="erro_cad" id="erroEmail">ESTE EMAIL JÁ FOI USADO</p><br>
 
                 <p class="txt_cad">Senha</p><br>
                 <input class="input_cad" type="password" name="txtSenha" required placeholder="crie sua senha*"
@@ -36,7 +36,7 @@
                     minúscula e
                     um número. </p><br>
 
-                <p class="erro_cad" id="senhasIguais">AS SENHAS PRECISAM SER IGUAIS</p><br>
+                <p class="erro_cad" id="erroSenha"></p><br>
 
                 <p class="txt_cad">Confirme sua senha</p><br>
 

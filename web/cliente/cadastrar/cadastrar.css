@@ -31,6 +31,7 @@ section {
 /* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores - Tema Claro */
+  --vermelho-erro: #f73151;
   --roxo-principal: #b450f5;
   --roxo-claro: #d89ffd;
   --roxo-mais-claro: #e7cef6;
@@ -207,7 +208,7 @@ button {
   font-family: "Calibri";
   font-weight: bold;
   width: 20rem;
-  color: var(--preto);
+  color: var(--vermelho-erro);
 }
 
 #emailRepetido {
