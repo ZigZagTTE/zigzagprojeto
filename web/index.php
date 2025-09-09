@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZigZag</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="icon" href="design/images/MiniLogo.png" type="image/x-icon" />
+    <link rel="icon" href="assets/images/MiniLogo.png" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
       rel="stylesheet"
@@ -20,10 +20,10 @@
   <body>
     <!-- HEADER -->
     <header class="top">
-      <a href="index.html"
+      <a href="index.php"
         ><img
           class="logo_header"
-          src="design/svg/logo.svg"
+          src="assets/svg/logo.svg"
           width="90"
           height="90"
           alt="Logo ZigZag"
@@ -34,9 +34,9 @@
           <li class="li_header">
             <a href="cadastro/index.php">Seja afiliada(o)</a>
           </li>
-          <li class="li_header"><a href="usuario/login/index.html">Login</a></li>
+          <li class="li_header"><a href="cliente/entrar/">Entrar</a></li>
           <li>
-            <a class="button_cadastro" href="usuario/cadastrar/"
+            <a class="button_cadastro" href="cliente/cadastrar/"
               >Cadastre-se</a
             >
           </li>
@@ -70,7 +70,7 @@
           <div class="search-container">
             <div class="search-box">
               <img
-                src="design/svg/search.svg"
+                src="assets/svg/search.svg"
                 alt="Buscar"
                 class="search-icon"
               />
