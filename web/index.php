@@ -36,7 +36,7 @@
           </li>
           <li class="li_header"><a href="usuario/login/index.html">Login</a></li>
           <li>
-            <a class="button_cadastro" href="usuario/cadastro/index.php"
+            <a class="button_cadastro" href="usuario/cadastrar/"
               >Cadastre-se</a
             >
           </li>

@@ -171,7 +171,7 @@
             // txtVerificado
             // 
             this.txtVerificado.BackColor = System.Drawing.Color.White;
-            this.txtVerificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVerificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtVerificado.Location = new System.Drawing.Point(77, 310);
             this.txtVerificado.Name = "txtVerificado";
             this.txtVerificado.ReadOnly = true;

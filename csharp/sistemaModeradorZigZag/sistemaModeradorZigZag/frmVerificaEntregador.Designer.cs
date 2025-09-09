@@ -43,11 +43,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxDados = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtCNH = new System.Windows.Forms.TextBox();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.cbxId = new System.Windows.Forms.ComboBox();
-            this.txtCNH = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.gbxDados.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +101,7 @@
             // txtVerificado
             // 
             this.txtVerificado.BackColor = System.Drawing.Color.White;
-            this.txtVerificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVerificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVerificado.Location = new System.Drawing.Point(413, 193);
             this.txtVerificado.Name = "txtVerificado";
             this.txtVerificado.ReadOnly = true;
@@ -205,6 +205,32 @@
             this.gbxDados.Text = "Dados";
             this.gbxDados.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Telefone:";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(17, 175);
+            this.txtTelefone.Mask = "(00)99999-9999";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.ReadOnly = true;
+            this.txtTelefone.Size = new System.Drawing.Size(84, 20);
+            this.txtTelefone.TabIndex = 31;
+            // 
+            // txtCNH
+            // 
+            this.txtCNH.Location = new System.Drawing.Point(310, 72);
+            this.txtCNH.Name = "txtCNH";
+            this.txtCNH.ReadOnly = true;
+            this.txtCNH.Size = new System.Drawing.Size(138, 20);
+            this.txtCNH.TabIndex = 30;
+            // 
             // btnVisualizar
             // 
             this.btnVisualizar.Location = new System.Drawing.Point(173, 10);
@@ -222,32 +248,6 @@
             this.cbxId.Name = "cbxId";
             this.cbxId.Size = new System.Drawing.Size(121, 21);
             this.cbxId.TabIndex = 3;
-            // 
-            // txtCNH
-            // 
-            this.txtCNH.Location = new System.Drawing.Point(310, 72);
-            this.txtCNH.Name = "txtCNH";
-            this.txtCNH.ReadOnly = true;
-            this.txtCNH.Size = new System.Drawing.Size(138, 20);
-            this.txtCNH.TabIndex = 30;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(17, 175);
-            this.txtTelefone.Mask = "(00)99999-9999";
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.ReadOnly = true;
-            this.txtTelefone.Size = new System.Drawing.Size(84, 20);
-            this.txtTelefone.TabIndex = 31;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Telefone:";
             // 
             // frmVerificaEntregador
             // 

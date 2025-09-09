@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.btnVer = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(647, 66);
+            this.label2.Location = new System.Drawing.Point(646, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 6;
@@ -109,15 +110,14 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(721, 63);
+            this.txtID.Location = new System.Drawing.Point(720, 46);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(90, 20);
             this.txtID.TabIndex = 7;
-            this.txtID.Text = "Digite um número";
             // 
             // btnVer
             // 
-            this.btnVer.Location = new System.Drawing.Point(817, 61);
+            this.btnVer.Location = new System.Drawing.Point(816, 44);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(35, 23);
             this.btnVer.TabIndex = 8;
@@ -125,11 +125,21 @@
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(646, 69);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "(Digite um número)";
+            // 
             // frmPainelCostureiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 378);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
@@ -140,7 +150,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmPainelCostureiro";
-            this.Text = "Painel Geral - Costureiros";
+            this.Text = "Digite um número";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,5 +168,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Label label5;
     }
 }

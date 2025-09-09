@@ -141,6 +141,14 @@ button {
 /* ESTILOS DE LAYOUT E COMPONENTES                                           */
 /* ========================================================================== */
 
+#infoDeEntrada {
+  display: auto;
+}
+
+#infoPessoais {
+  display: none;
+}
+
 .cadastro {
   color: var(--roxo-principal);
 }
@@ -150,7 +158,7 @@ button {
   border-radius: 20px;
   box-shadow: 0 0 60px rgb(95, 95, 95);
   width: 30%;
-  padding-top: 30px;
+  padding: 30px 0 30px 0;
   text-align: center;
   height: auto;
   max-height: 90vh;
@@ -159,7 +167,7 @@ button {
   overflow: hidden;
 }
 
-.tit_log {
+.tit_cad {
   display: flex;
   justify-content: center;
   font-family: "Iansui";
@@ -169,7 +177,7 @@ button {
   margin-bottom: 1rem;
 }
 
-.txt_log {
+.txt_cad {
   display: flex;
   margin: 0 auto 0 auto;
   width: 20rem;
@@ -179,7 +187,7 @@ button {
   color: var(--roxo-principal);
 }
 
-.desc_log {
+.desc_cad {
   display: flex;
   margin: 0 auto 0 auto;
   text-align: justify;
@@ -191,21 +199,25 @@ button {
   color: var(--roxo-principal);
 }
 
-.input_log {
-  display: flex;
-  justify-content: center;
+.erro_cad {
+  display: block;
+  margin: 0 auto 0 auto;
+  text-align: justify;
+  font-size: 1.1rem;
+  font-family: "Calibri";
+  font-weight: bold;
   width: 20rem;
-  height: 2rem;
-  font-family: "Iansui";
-  border: solid 2px var(--roxo-principal);
-  border-radius: 20px;
-  background-color: transparent;
-  color: grey;
-  margin: 0 auto 1.5rem auto;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
+  color: var(--preto);
 }
+
+#emailRepetido {
+  display: none;
+}
+
+#senhasIguais {
+  display: none;
+}
+
 
 .input_cad {
   display: flex;
@@ -217,18 +229,17 @@ button {
   border-radius: 20px;
   background-color: transparent;
   color: grey;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto 1rem auto;
   padding: 0.5rem;
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
 
-.input_log:hover,
 .input_cad:hover {
-  scale: 1.1;
+  scale: 1.05;
 }
 
-.btnSeta {
+.btnProximo {
   background-color: var(--roxo-principal);
   color: var(--bege);
   width: 20rem;
@@ -241,6 +252,6 @@ button {
   transition: all 0.3s ease;
 }
 
-.btnSeta:hover {
+.btnProximo:hover {
   scale: 1.10;
 }

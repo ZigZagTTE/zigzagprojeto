@@ -37,12 +37,13 @@
             this.lblNumVerificados = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVer
             // 
-            this.btnVer.Location = new System.Drawing.Point(816, 69);
+            this.btnVer.Location = new System.Drawing.Point(816, 53);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(35, 23);
             this.btnVer.TabIndex = 17;
@@ -52,16 +53,15 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(720, 71);
+            this.txtID.Location = new System.Drawing.Point(720, 55);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(90, 20);
             this.txtID.TabIndex = 16;
-            this.txtID.Text = "Digite um número";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(646, 74);
+            this.label2.Location = new System.Drawing.Point(646, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 15;
@@ -125,11 +125,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(838, 279);
             this.dataGridView1.TabIndex = 9;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(646, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "(Digite um número)";
+            // 
             // frmPainelEntregador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 394);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
@@ -158,5 +168,6 @@
         private System.Windows.Forms.Label lblNumVerificados;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label5;
     }
 }

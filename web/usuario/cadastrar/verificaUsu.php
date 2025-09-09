@@ -1,10 +1,8 @@
 <?php
 
-//Inicializa a sessão
+//A ARRUMAR
 
 session_start();
-
-//Se não tiver variáveis registradas, retorna para tela de login
 
 if (isset($_SESSION["id"]) and isset($_SESSION["nome"])) {
 	header("Location: home-cliente.php");

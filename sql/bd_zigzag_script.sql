@@ -145,6 +145,8 @@ CREATE TABLE IF NOT EXISTS tbl_pedido
 (
     ped_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
+    ped_descricao text,
+
     ped_data date,
     ped_horario time,
 

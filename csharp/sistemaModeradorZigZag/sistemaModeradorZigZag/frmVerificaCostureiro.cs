@@ -48,6 +48,7 @@ namespace sistemaModeradorZigZag
                 txtVerificado.Text = "NÃO";
                 txtVerificado.ForeColor = Color.FromArgb(247, 69, 69);
                 txtVerificado.BackColor = Color.FromArgb(58, 55, 55);
+                txtVerificado.TextSty
             }
             else
             {
