@@ -116,7 +116,7 @@ table {
 }
 
 body {
-  background-image: url(../../design/images/ZigZagwpp.png);
+  background-image: url(../../assets/images/ZigZagwpp.png);
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -158,11 +158,11 @@ button {
   background-color: var(--bege);
   border-radius: 20px;
   box-shadow: 0 0 60px rgb(95, 95, 95);
-  width: 30%;
+  width: 35%;
   padding: 30px 0 30px 0;
   text-align: center;
   height: auto;
-  max-height: 90vh;
+  max-height: 98vh;
   margin: 0 auto;
   overflow-y: auto;
   overflow: hidden;
@@ -201,24 +201,15 @@ button {
 }
 
 .erro_cad {
-  display: block;
+  display: none;
   margin: 0 auto 0 auto;
   text-align: justify;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-family: "Calibri";
   font-weight: bold;
   width: 20rem;
   color: var(--vermelho-erro);
 }
-
-#emailRepetido {
-  display: none;
-}
-
-#senhasIguais {
-  display: none;
-}
-
 
 .input_cad {
   display: flex;

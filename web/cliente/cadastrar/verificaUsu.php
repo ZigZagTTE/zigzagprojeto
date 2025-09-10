@@ -4,6 +4,6 @@
 
 session_start();
 
-if (isset($_SESSION["id"]) and isset($_SESSION["nome"])) {
-	header("Location: home-cliente.php");
-}
+echo $_SESSION["cli_id"];
+echo"<br>";
+echo $_SESSION["cli_nome"];
