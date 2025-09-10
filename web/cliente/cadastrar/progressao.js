@@ -1,11 +1,11 @@
 // ## Código Javascript que rege a lógica do cadastro
 const erroEmail = document.getElementById("erroEmail");
 const erroSenha = document.getElementById("erroSenha");
-const erroVazioUm = document.getElementById("erroVazioUm");
-const erroVazioDois = document.getElementById("erroVazioDois");
+const erroVazio = document.getElementById("erroVazio");
 const txtSenha = document.getElementById("txtSenha");
 const txtConfirmarSenha = document.getElementById("txtConfirmarSenha");
 const txtEmail = document.getElementById("txtEmail");
+var passoDaProgessao = 0;
 
 var isSenhasIguais = -1;
 
@@ -20,13 +20,11 @@ if (listaDeParametros.get("erroEmail") === "1") {
 function testeVazio(elemento) {
     if (elemento.value === "") {
         elemento.style.borderColor = "#f73151";
-        erroVazioUm.style.display = "block";
-        erroVazioDois.style.display = "block";
+        erroVazio.style.display = "block";
     }
     else {
         elemento.style.borderColor = "#b450f5";
-        erroVazioUm.style.display = "none";
-        erroVazioDois.style.display = "none";
+        erroVazio.style.display = "none";
     }
 }
 
@@ -65,8 +63,9 @@ function testeSenhas(elemento) {
 }
 
 function progredirCadastro() {
+        passoDaProgessao ++;
     if (txtEmail.value === "") {
-        erroVazioUm.style.display = "block";
+        erroVazio.style.display = "block";
         txtEmail.style.borderColor = "#f73151";
     }
     else if (isSenhasIguais == -1) {
@@ -76,12 +75,36 @@ function progredirCadastro() {
         txtConfirmarSenha.style.borderColor = "#f73151";
     }
     else if (isSenhasIguais == 1) {
-        document.getElementById("infoDeEntrada").style.display = "none";
-        document.getElementById("infoPessoais").style.display = "block";
+        displayEtapa();
     }
 }
 
 function regredirCadastro() {
-    document.getElementById("infoDeEntrada").style.display = "block";
-    document.getElementById("infoPessoais").style.display = "none";
+    passoDaProgessao --;
+    displayEtapa();
+}
+
+function displayEtapa(){
+    switch(passoDaProgessao)
+    {
+        case 0:
+            document.getElementById("infoDeEntrada").style.display = "block";
+            document.getElementById("infoDeApresentacao").style.display = "none";
+            document.getElementById("infoPessoais").style.display = "none";
+            break;
+        case 1:
+            document.getElementById("infoDeEntrada").style.display = "none";
+            document.getElementById("infoDeApresentacao").style.display = "block";
+            document.getElementById("infoPessoais").style.display = "none";
+            break;
+        case 2:
+            document.getElementById("infoDeEntrada").style.display = "none";
+            document.getElementById("infoDeApresentacao").style.display = "none";
+            document.getElementById("infoPessoais").style.display = "block";
+            break;
+    }
+}
+
+function avisoImagem(){
+    document.getElementById("avisoPfp").style.display = "block";
 }

@@ -119,7 +119,7 @@ body {
   background-image: url(../../assets/images/ZigZagwpp.png);
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: auto;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -143,16 +143,18 @@ button {
 /* ========================================================================== */
 
 #infoDeEntrada {
-  display: auto;
+  display: block;
+}
+
+#infoDeApresentacao {
+  display: none;
+
 }
 
 #infoPessoais {
   display: none;
 }
 
-.cadastro {
-  color: var(--roxo-principal);
-}
 
 .popup {
   background-color: var(--bege);
@@ -162,8 +164,8 @@ button {
   padding: 30px 0 30px 0;
   text-align: center;
   height: auto;
-  max-height: 98vh;
-  margin: 0 auto;
+  max-height: 120vh;
+  margin: 30px auto 30px auto;
   overflow-y: auto;
   overflow: hidden;
 }
@@ -200,6 +202,8 @@ button {
   color: var(--roxo-principal);
 }
 
+
+
 .erro_cad {
   display: none;
   margin: 0 auto 0 auto;
@@ -231,6 +235,70 @@ button {
   scale: 1.05;
 }
 
+.cad_img {
+  height: 200px;
+  width: 150px;
+  margin: 0 auto 0 auto;
+}
+
+.img_pfp {
+  display: block;
+  margin: 0 auto 0 auto;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.input_img{
+  position: relative;
+  left: 70%;
+  bottom: 20%;
+  background: var(--roxo-principal);
+  width: 51px;
+  height: 51px;
+  font-size: 1.5rem;
+  line-height: 41px;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid var(--bege);
+  overflow: hidden;
+}
+
+.input_img img {
+  position: relative;
+  top: 7.5%;
+  z-index: 0;
+  width: 38px;
+  height: 38px;
+}
+
+.input_img input[type="file"]{
+  position: absolute;
+  transform: scale(2);
+  z-index: 1;
+  opacity: 0;
+}
+
+input[type=file]:hover{
+    cursor: pointer;
+}
+
+#avisoPfp {
+  color: green;
+  font-weight: bold;
+  display: none;
+  position: relative;
+  left: 20%;
+  bottom: 15%;
+}
+
+.redireciona_entrar {
+  display: block;
+  color: var(--roxo-principal);
+  margin: 0 auto 1rem auto;
+}
+
 .btnProximo {
   background-color: var(--roxo-principal);
   color: var(--bege);
@@ -245,5 +313,38 @@ button {
 }
 
 .btnProximo:hover {
-  scale: 1.10;
+  scale: 1.1;
+}
+
+.doisBotoes {
+  display: inline-grid;
+  grid-template-columns: 10rem 10rem;
+  grid-template-rows: auto;
+
+  .btnCompostoUm {
+    justify-self: start;
+    background-color: var(--roxo-principal);
+    color: var(--bege);
+    width: 9.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: "Iansui";
+    margin: 0 0 20px 0;
+    transition: all 0.3s ease;
+  }
+  .btnCompostoDois {
+    justify-self: end;
+    background-color: var(--roxo-principal);
+    color: var(--bege);
+    width: 9.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: "Iansui";
+    margin: 0 0 20px 0;
+    transition: all 0.3s ease;
+  }
 }

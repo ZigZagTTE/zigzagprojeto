@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS tbl_cliente
     cli_nascimento date,
     cli_telefone bigint,
 
-    cli_perfil varchar(255)
+    cli_perfil varchar(255) DEFAULT 'default.png'
 );
 
 CREATE TABLE IF NOT EXISTS tbl_endereco_cliente
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS tbl_entregador
     entgd_cpf bigint,
     entgd_telefone bigint,
 
-    entgd_perfil varchar(255),
+    entgd_perfil varchar(255) DEFAULT 'default.png',
     entgd_verificado tinyint DEFAULT 0
 );
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS tbl_costureiro
     cos_cpf bigint,
     cos_cnpj bigint,
 
-    cos_perfil varchar(255),
+    cos_perfil varchar(255) DEFAULT 'default.png',
     cos_verificado tinyint DEFAULT 0,
 
     -- Endereço do Costureiro
