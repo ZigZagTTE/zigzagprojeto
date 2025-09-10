@@ -17,22 +17,22 @@
 
     <!-- HEADER -->
     <header class="top">
-        <a href="../../../index.html"><img class="logo_header" src="../../../design/svg/logo.svg" width="90" height="90"
+        <a href="../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
                 alt="Logo ZigZag"></a>
         <p class="zigzag_txt">igzag</p>
         <nav class="nav_header">
             <div class="buttons_home">
                 <div class="search-container">
                     <div class="search-box">
-                        <img src="../../../design/svg/search.svg" alt="Buscar" class="search-icon">
+                        <img src="../assets/svg/search.svg" alt="Buscar" class="search-icon">
                         <input type="text" placeholder="Busque costureiras e faça seu orçamento!" class="search-input">
                     </div>
                 </div>
             </div>
         </nav>
-        <a class="icon" href="../../../index.html"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-        <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="../../login/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
+        <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
+        <a class="icon" href="../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
+        <a class="icon" href="../cliente/cadastrar/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
     </header>
 
     <p class="title">Faça já seu pedido em costureiras próximas!</p>
@@ -43,7 +43,7 @@
         ==============================================================================-->
         <div class="category-card-costurar">
             <div class="category-icon">
-                <img class="category-icon" src="../../../design/images/usu_img/maquina.png">
+                <img class="category-icon" src="../assets/images/usu_img/maquina.png">
             </div>
             <div class="category-text">
                 Costurar minhas<br>peças
@@ -52,87 +52,39 @@
         <div class="carousel-warp-costurar">
             <div class="carousel-section" id="carousel1">
                 <a href="" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/agulha.png" alt="Pequenas costuras">
+                    <img class="service-image" src="../assets/images/usu_img/agulha.png" alt="Pequenas costuras">
                     <div class="service-info">
-                        <p class="service-name">Costura Express</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Pequenas costuras</p>
                     </div>
                 </a>
-                <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/ziper.png" alt="Zíper comum">
+                <a href="" class="service-card">
+                    <img class="service-image" src="../assets/images/usu_img/ziper.png" alt="ziper">
                     <div class="service-info">
-                        <p class="service-name">Ateliê Elegância</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Trocas de zíper</p>
                     </div>
                 </a>
-                <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/calca.png" alt="Barras">
+                <a href="" class="service-card">
+                    <img class="service-image" src="../assets/images/usu_img/tecido.png" alt="Pequenas costuras">
                     <div class="service-info">
-                        <p class="service-name">Mãos de Ouro</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Remendos</p>
                     </div>
                 </a>
-                <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/calça.png" alt="Sob medida">
+                <a href="" class="service-card">
+                    <img class="service-image" src="../assets/images/usu_img/camisa.png" alt="camisa">
                     <div class="service-info">
-                        <p class="service-name">Costura Premium</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Reforma de camisa</p>
                     </div>
                 </a>
-                <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/vestido.png" alt="Roupas ornamentadas">
+                <a href="" class="service-card">
+                    <img class="service-image" src="../assets/images/usu_img/calca.png" alt="Pequenas costuras">
                     <div class="service-info">
-                        <p class="service-name">Ateliê Moda & Estilo</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Reforma de calça</p>
                     </div>
                 </a>
-                <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/tecido.png" alt="Remendos">
+                <a href="" class="service-card">
+                    <img class="service-image" src="../assets/images/usu_img/saia.png" alt="Pequenas costuras">
                     <div class="service-info">
-                        <p class="service-name">Costura Rápida</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Reforma de saia</p>
                     </div>
                 </a>
             </div>
@@ -150,7 +102,7 @@
         ==============================================================================-->
         <div class="category-card-criar">
             <div class="category-icon">
-                <img class="category-icon" src="../../../design/images/usu_img/cabide.png">
+                <img class="category-icon" src="../assets/images/usu_img/cabide.png">
             </div>
             <div class="category-text">
                 Criar novas<br>peças
@@ -159,87 +111,40 @@
         <div class="carousel-warp-criar">
             <div class="carousel-section" id="carousel2">
                 <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/camisa.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/camisa.png" alt="Remendos">
                     <div class="service-info">
-                        <p class="service-name">Ateliê da Ana</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Camisas</p>
+                    </div>
+
+                </a>
+                <a href="home-cliente-loja.php" class="service-card">
+                    <img class="service-image" src="../assets/images/usu_img/calça.png" alt="Remendos">
+                    <div class="service-info">
+                        <p class="service-name">Calças</p>
                     </div>
                 </a>
                 <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/calça.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/vestido.png" alt="Remendos">
                     <div class="service-info">
-                        <p class="service-name">Costura & Criação</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Vestidos</p>
                     </div>
                 </a>
                 <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/vestido.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/calca.png" alt="Remendos">
                     <div class="service-info">
-                        <p class="service-name">Ateliê Perfeição</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Calças</p>
                     </div>
                 </a>
                 <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/calca.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/saia.png" alt="Remendos">
                     <div class="service-info">
-                        <p class="service-name">Costura Artesanal</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Saias</p>
                     </div>
                 </a>
                 <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/saia.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/bone.png" alt="Remendos">
                     <div class="service-info">
-                        <p class="service-name">Ateliê Fashion</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="home-cliente-loja.php" class="service-card">
-                    <img class="service-image" src="../../../design/images/usu_img/bone.png" alt="Remendos">
-                    <div class="service-info">
-                        <p class="service-name">Costura Profissional</p>
-                        <div class="service-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="service-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
+                        <p class="service-name">Bonés</p>
                     </div>
                 </a>
             </div>
@@ -252,6 +157,48 @@
     </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img
+                        src="assets/svg/logo.svg"
+                        alt="ZigZag Logo"
+                        class="footer-logo" />
+                    <p>Conectando talentos e necessidades na arte da costura.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>Email: contato@zigzag.com.br</li>
+                        <li>Telefone: (11) 99123-4567</li>
+                        <li>WhatsApp: (11) 99123-4567</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><img src="assets/svg/facebook.svg" alt="Facebook" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="#"><img src="assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZigZag. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Função para inicializar o carousel

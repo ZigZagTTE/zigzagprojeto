@@ -2,7 +2,7 @@
 
 -- USE DATABASE
 
-USE bd_zigzag_main;
+USE bd_zigzag;
 
 
 -- Clientes de exemplo

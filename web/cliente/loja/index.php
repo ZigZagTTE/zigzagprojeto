@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZigZag</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../../index.css">
     <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -206,7 +207,7 @@
             </div>
         </div>
         <div id="conteudo2" class="personalizado_grid" style="display: none;">
-            <h1 >Digite a maneira como você quer que sua criação seja feita.</h1>
+            <h1>Digite a maneira como você quer que sua criação seja feita.</h1>
             <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descreva aqui o seu projeto..."></textarea>
             <p>Envie uma imagem de referência (opcional):</p>
             <input type="file" id="file" name="file" accept="image/*" class="file_customizada">
@@ -214,6 +215,48 @@
         </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img
+                        src="assets/svg/logo.svg"
+                        alt="ZigZag Logo"
+                        class="footer-logo" />
+                    <p>Conectando talentos e necessidades na arte da costura.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>Email: contato@zigzag.com.br</li>
+                        <li>Telefone: (11) 99123-4567</li>
+                        <li>WhatsApp: (11) 99123-4567</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><img src="assets/svg/facebook.svg" alt="Facebook" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="#"><img src="assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZigZag. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
     <script>
         // Funcionalidade dos botões de categoria
         document.querySelectorAll('.categoria-btn').forEach(btn => {

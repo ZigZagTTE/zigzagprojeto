@@ -1,225 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZigZag</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="icon" href="assets/images/MiniLogo.png" type="image/x-icon" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  </head>
 
-  <body>
-    <!-- HEADER -->
-    <header class="top">
-      <a href="index.php"
-        ><img
-          class="logo_header"
-          src="assets/svg/logo.svg"
-          width="90"
-          height="90"
-          alt="Logo ZigZag"
-      /></a>
-      <p class="zigzag_txt">igzag</p>
-      <nav class="nav_header">
-        <ul class="ul_header">
-          <li class="li_header">
-            <a href="cadastro/index.php">Seja afiliada(o)</a>
-          </li>
-          <li class="li_header"><a href="cliente/entrar/">Entrar</a></li>
-          <li>
-            <a class="button_cadastro" href="cliente/cadastrar/"
-              >Cadastre-se</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZigZag</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" href="assets/images/MiniLogo.png" type="image/x-icon" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
+    rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="main-content">
-      <!-- Texto Home -->
-      <section class="txt_home fade-in">
-        <h1 class="tit_home">A costura que vai até você!</h1>
-        <div class="txt_p">
+<body>
+  <!-- HEADER -->
+  <header class="top">
+    <a href="index.php"><img
+        class="logo_header"
+        src="assets/svg/logo.svg"
+        width="90"
+        height="90"
+        alt="Logo ZigZag" /></a>
+    <p class="zigzag_txt">igzag</p>
+    <nav class="nav_header">
+      <ul class="ul_header">
+        <li class="li_header">
+          <a href="cadastro/index.php">Seja afiliada(o)</a>
+        </li>
+        <li class="li_header"><a href="cliente/entrar/">Entrar</a></li>
+        <li>
+          <a class="button_cadastro" href="cliente/cadastrar/">Cadastre-se</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+    <!-- Texto Home -->
+    <section class="txt_home fade-in">
+      <h1 class="tit_home">A costura que vai até você!</h1>
+      <div class="txt_p">
+        <p>
+          Precisando <span class="roxo">ajustar</span>,
+          <span class="roxo">consertar</span> ou
+          <span class="roxo">criar</span> uma peça nova? A
+          <span class="roxo">ZigZag</span> conecta
+          <span class="roxo">você</span> a costureiras locais de forma
+          <span class="roxo">rápida</span> e
+          <span class="roxo">prática</span>. Faça seu
+          <span class="roxo">pedido online</span> e receba um serviço de
+          <span class="roxo">qualidade</span> sem sair de
+          <span class="roxo">casa</span>. Costura sob demanda, no seu tempo e
+          do seu jeito!
+        </p>
+      </div>
+
+      <div class="buttons_home">
+        <a class="button_orc" href="cadastro.php">Faça seu orçamento</a>
+        <div class="search-container">
+          <div class="search-box">
+            <img
+              src="assets/svg/search.svg"
+              alt="Buscar"
+              class="search-icon" />
+            <input
+              type="text"
+              placeholder="Buscar costureiras próximas..."
+              class="search-input" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa -->
+    <section id="map" class="map-container fade-in"></section>
+  </main>
+
+  <!-- SOBRE NÓS -->
+  <section class="sobre-nos fade-in">
+    <div class="container">
+      <h2>Sobre a ZigZag</h2>
+      <div class="sobre-content">
+        <div class="sobre-texto">
           <p>
-            Precisando <span class="roxo">ajustar</span>,
-            <span class="roxo">consertar</span> ou
-            <span class="roxo">criar</span> uma peça nova? A
-            <span class="roxo">ZigZag</span> conecta
-            <span class="roxo">você</span> a costureiras locais de forma
-            <span class="roxo">rápida</span> e
-            <span class="roxo">prática</span>. Faça seu
-            <span class="roxo">pedido online</span> e receba um serviço de
-            <span class="roxo">qualidade</span> sem sair de
-            <span class="roxo">casa</span>. Costura sob demanda, no seu tempo e
-            do seu jeito!
+            A ZigZag nasceu da necessidade de conectar pessoas que precisam de
+            serviços de costura com profissionais talentosos em sua região.
+            Nossa plataforma revoluciona a forma como as pessoas encontram e
+            contratam serviços de costura.<br />
+            Na ZigZag, você tem acesso a:
           </p>
+          <ul>
+            <li>Costureiras profissionais verificadas</li>
+            <li>Orçamentos rápidos e transparentes</li>
+            <li>Serviço de qualidade garantido</li>
+            <li>Preços justos e competitivos</li>
+          </ul>
         </div>
-
-        <div class="buttons_home">
-          <a class="button_orc" href="cadastro.php">Faça seu orçamento</a>
-          <div class="search-container">
-            <div class="search-box">
-              <img
-                src="assets/svg/search.svg"
-                alt="Buscar"
-                class="search-icon"
-              />
-              <input
-                type="text"
-                placeholder="Buscar costureiras próximas..."
-                class="search-input"
-              />
-            </div>
-          </div>
+        <div class="sobre-imagem">
+          <img
+            src="assets/images/costureira_trabalhando.png"
+            alt="Costureira trabalhando" />
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- Mapa -->
-      <section id="map" class="map-container fade-in"></section>
-    </main>
+  <!-- COMO FUNCIONA -->
+  <section class="como-funciona fade-in">
+    <div class="container">
+      <h2>Como Funciona</h2>
+      <div class="passos">
+        <div class="passo">
+          <div class="numero">1</div>
+          <h3>Faça seu Cadastro</h3>
+          <p>Registre-se na plataforma e crie seu perfil</p>
+        </div>
+        <div class="passo">
+          <div class="numero">2</div>
+          <h3>Descreva seu Projeto</h3>
+          <p>Detalhe o que você precisa e envie fotos</p>
+        </div>
+        <div class="passo">
+          <div class="numero">3</div>
+          <h3>Receba Orçamentos</h3>
+          <p>Costureiras próximas enviarão propostas</p>
+        </div>
+        <div class="passo">
+          <div class="numero">4</div>
+          <h3>Escolha e Acompanhe</h3>
+          <p>Selecione a melhor proposta e acompanhe o serviço</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- SOBRE NÓS -->
-    <section class="sobre-nos fade-in">
-      <div class="container">
-        <h2>Sobre a ZigZag</h2>
-        <div class="sobre-content">
-          <div class="sobre-texto">
-            <p>
-              A ZigZag nasceu da necessidade de conectar pessoas que precisam de
-              serviços de costura com profissionais talentosos em sua região.
-              Nossa plataforma revoluciona a forma como as pessoas encontram e
-              contratam serviços de costura.<br />
-              Na ZigZag, você tem acesso a:
-            </p>
-            <ul>
-              <li>Costureiras profissionais verificadas</li>
-              <li>Orçamentos rápidos e transparentes</li>
-              <li>Serviço de qualidade garantido</li>
-              <li>Preços justos e competitivos</li>
-            </ul>
-          </div>
-          <div class="sobre-imagem">
-            <img
-              src="design/images/costureira_trabalhando.png"
-              alt="Costureira trabalhando"
-            />
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img
+            src="assets/svg/logo.svg"
+            alt="ZigZag Logo"
+            class="footer-logo" />
+          <p>Conectando talentos e necessidades na arte da costura.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links Úteis</h3>
+          <ul>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="termos.html">Termos de Uso</a></li>
+            <li><a href="privacidade.html">Política de Privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+            <li>Email: contato@zigzag.com.br</li>
+            <li>Telefone: (11) 99123-4567</li>
+            <li>WhatsApp: (11) 99123-4567</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Redes Sociais</h3>
+          <div class="social-links">
+            <a href="#"><img src="assets/svg/facebook.svg" alt="Facebook" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="assets/svg/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section class="como-funciona fade-in">
-      <div class="container">
-        <h2>Como Funciona</h2>
-        <div class="passos">
-          <div class="passo">
-            <div class="numero">1</div>
-            <h3>Faça seu Cadastro</h3>
-            <p>Registre-se na plataforma e crie seu perfil</p>
-          </div>
-          <div class="passo">
-            <div class="numero">2</div>
-            <h3>Descreva seu Projeto</h3>
-            <p>Detalhe o que você precisa e envie fotos</p>
-          </div>
-          <div class="passo">
-            <div class="numero">3</div>
-            <h3>Receba Orçamentos</h3>
-            <p>Costureiras próximas enviarão propostas</p>
-          </div>
-          <div class="passo">
-            <div class="numero">4</div>
-            <h3>Escolha e Acompanhe</h3>
-            <p>Selecione a melhor proposta e acompanhe o serviço</p>
-          </div>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 ZigZag. Todos os direitos reservados.</p>
       </div>
-    </section>
+    </div>
+  </footer>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <img
-              src="design/svg/logo.svg"
-              alt="ZigZag Logo"
-              class="footer-logo"
-            />
-            <p>Conectando talentos e necessidades na arte da costura.</p>
-          </div>
-          <div class="footer-section">
-            <h3>Links Úteis</h3>
-            <ul>
-              <li><a href="sobre.html">Sobre Nós</a></li>
-              <li><a href="contato.html">Contato</a></li>
-              <li><a href="termos.html">Termos de Uso</a></li>
-              <li><a href="privacidade.html">Política de Privacidade</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Contato</h3>
-            <ul>
-              <li>Email: contato@zigzag.com.br</li>
-              <li>Telefone: (11) 99123-4567</li>
-              <li>WhatsApp: (11) 99123-4567</li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Redes Sociais</h3>
-            <div class="social-links">
-              <a href="#"
-                ><img src="design/svg/facebook.svg" alt="Facebook"
-              /></a>
-              <a href="https://www.instagram.com/zigzag_ltda"
-                ><img src="design/svg/instagram.svg" alt="Instagram"
-              /></a>
-              <a href="#"
-                ><img src="design/svg/whatsapp.svg" alt="WhatsApp"
-              /></a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 ZigZag. Todos os direitos reservados.</p>
-        </div>
-      </div>
-    </footer>
+  <script>
+    function onScrollFadeIn() {
+      const elements = document.querySelectorAll(".fade-in");
+      const windowBottom = window.innerHeight + window.scrollY;
 
-    <script>
-      function onScrollFadeIn() {
-        const elements = document.querySelectorAll(".fade-in");
-        const windowBottom = window.innerHeight + window.scrollY;
-
-        elements.forEach((el) => {
-          const elementTop = el.getBoundingClientRect().top + window.scrollY;
-          if (windowBottom > elementTop + 100) {
-            // 100px antes de aparecer totalmente
-            el.classList.add("visible");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", onScrollFadeIn);
-      window.addEventListener("DOMContentLoaded", onScrollFadeIn);
-    </script>
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        document.body.classList.add("loaded");
+      elements.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top + window.scrollY;
+        if (windowBottom > elementTop + 100) {
+          // 100px antes de aparecer totalmente
+          el.classList.add("visible");
+        }
       });
-    </script>
-    <script src="maps.js"></script>
-    <script src="scroll-smoth.js"></script>
-  </body>
+    }
+
+    window.addEventListener("scroll", onScrollFadeIn);
+    window.addEventListener("DOMContentLoaded", onScrollFadeIn);
+  </script>
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      document.body.classList.add("loaded");
+    });
+  </script>
+  <script src="maps.js"></script>
+  <script src="scroll-smoth.js"></script>
+</body>
+
 </html>
