@@ -1,68 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{CED4A8D3-AB9F-48D0-AC4F-A406EBC57171}|sistemaModeradorZigZag\\sistemaModeradorZigZag.csproj|c:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemamoderadorzigzag\\sistemamoderadorzigzag\\frmpainelentregador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CED4A8D3-AB9F-48D0-AC4F-A406EBC57171}|sistemaModeradorZigZag\\sistemaModeradorZigZag.csproj|solutionrelative:sistemamoderadorzigzag\\frmpainelentregador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CED4A8D3-AB9F-48D0-AC4F-A406EBC57171}|sistemaModeradorZigZag\\sistemaModeradorZigZag.csproj|c:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemamoderadorzigzag\\sistemamoderadorzigzag\\frmpainelcostureiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CED4A8D3-AB9F-48D0-AC4F-A406EBC57171}|sistemaModeradorZigZag\\sistemaModeradorZigZag.csproj|solutionrelative:sistemamoderadorzigzag\\frmpainelcostureiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CED4A8D3-AB9F-48D0-AC4F-A406EBC57171}|sistemaModeradorZigZag\\sistemaModeradorZigZag.csproj|c:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemamoderadorzigzag\\sistemamoderadorzigzag\\frmverificacostureiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CED4A8D3-AB9F-48D0-AC4F-A406EBC57171}|sistemaModeradorZigZag\\sistemaModeradorZigZag.csproj|solutionrelative:sistemamoderadorzigzag\\frmverificacostureiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmPainelEntregador.cs [Design]",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemaModeradorZigZag\\frmPainelEntregador.cs",
-              "RelativeDocumentMoniker": "sistemaModeradorZigZag\\frmPainelEntregador.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemaModeradorZigZag\\frmPainelEntregador.cs [Design]",
-              "RelativeToolTip": "sistemaModeradorZigZag\\frmPainelEntregador.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T17:03:19.985Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmPainelCostureiro.cs [Design]",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemaModeradorZigZag\\frmPainelCostureiro.cs",
-              "RelativeDocumentMoniker": "sistemaModeradorZigZag\\frmPainelCostureiro.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemaModeradorZigZag\\frmPainelCostureiro.cs [Design]",
-              "RelativeToolTip": "sistemaModeradorZigZag\\frmPainelCostureiro.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T16:59:50.45Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmVerificaCostureiro.cs [Design]",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemaModeradorZigZag\\frmVerificaCostureiro.cs",
-              "RelativeDocumentMoniker": "sistemaModeradorZigZag\\frmVerificaCostureiro.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemaModeradorZigZag\\frmVerificaCostureiro.cs [Design]",
-              "RelativeToolTip": "sistemaModeradorZigZag\\frmVerificaCostureiro.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T16:59:44.002Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

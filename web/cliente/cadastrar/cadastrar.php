@@ -18,7 +18,6 @@
 
     $email = $_POST["txtEmail"];
     $senha = $_POST["txtSenha"];
-    $senhaConfirmada = $_POST["txtConfirmarSenha"];
     $nome = $_POST['txtNome'];
     $cpf = preg_replace('/[^0-9]/', '', $_POST['txtCpf']);
     $data = $_POST['txtData'];
@@ -31,10 +30,7 @@
 
     $resTeste = mysqli_query($conexao, $queryTesteEmail);
 
-    if ($senha != $senhaConfirmada) {
-        header("Location: ./?erroSenha=1");
-    }
-    else if (mysqli_num_rows($resTeste) != 0) {
+    if (mysqli_num_rows($resTeste) != 0) {
         header("Location: ./?erroEmail=1");
     } else {
         $sql = "INSERT INTO tbl_cliente(cli_email, cli_senha, cli_nome, cli_cpf, cli_nascimento, cli_telefone)"
