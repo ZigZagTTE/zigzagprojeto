@@ -82,7 +82,7 @@
   </main>
 
   <!-- SOBRE NÓS -->
-  <section class="sobre-nos fade-in">
+  <section class="sobre-nos fade-in" id="sobre">
     <div class="container">
       <h2>Sobre a ZigZag</h2>
       <div class="sobre-content">
@@ -140,7 +140,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" id ="contato">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">

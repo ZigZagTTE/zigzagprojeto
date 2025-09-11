@@ -808,3 +808,98 @@ E ASSIM POR DIANTE*/
     transition: all 0.3s ease;
   }
 }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  width: 100%;
+  background-color: var(--preto);
+  padding: 4rem 0 2rem;
+}
+
+.footer-logo {
+  background-color: var(--roxo-principal);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+  scale: 1.06;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  color: var(--roxo-claro);
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  color: var(--roxo-claro);
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  color: var(--roxo-claro);
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: var(--roxo);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-section ul li a:hover {
+  color: var(--cinza-escuro);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--roxo-claro);
+}
+
+.footer-bottom p {
+  color: var(--roxo-claro);
+  font-size: 0.9em; }
