@@ -287,15 +287,12 @@ table {
 /* BODY DO SITE                                                              */
 /* ========================================================================== */
 
-.secoes{
+.secoes {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
 
-
-
-  .paginas{
-    
+  .paginas {
     li {
       margin-top: 20px;
       margin-bottom: -10px;
@@ -306,43 +303,43 @@ table {
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
       transition: transform 0.3s ease;
-      
 
-    i {
-      margin-right: 24px;
+      i {
+        margin-right: 24px;
+      }
+    }
+
+    li:hover {
+      transform: scale(1.1);
+    }
+
+    .choice {
+      margin: 10px;
+      font-size: 22px;
+      font-weight: bold;
+      vertical-align: middle;
+      background-color: var(--roxo-claro);
+      text-decoration: none;
+      color: black;
     }
   }
 
-  li:hover {
-    transform: scale(1.1);
-  }
+  .informacoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 
-  .choice {
-    margin: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    vertical-align: middle;
-    background-color: var(--roxo-claro);
-    text-decoration: none;
-    color: black;
-  }
-  }
-    
-
-  .informacoes{
-    grid-area: 2fr;
-
-    .title{
-    font-size: 54px;
-    margin: 16px;
+    .title {
+      font-size: 54px;
+      margin: 16px;
     }
 
-    .label{
+    .label {
       font-size: 20px;
       margin: 16px;
     }
 
-    .input{
+    .input {
       width: 300px;
       height: 40px;
       border-radius: 20px;
@@ -351,7 +348,7 @@ table {
       font-size: 16px;
     }
 
-    .btn_alt{
+    .btn_alt {
       width: 150px;
       height: 40px;
       border-radius: 20px;
@@ -364,15 +361,42 @@ table {
       transition: all 0.3s ease;
     }
 
-    .btn_alt:hover{
+    .btn_alt:hover {
       background-color: var(--roxo-claro);
       color: var(--preto);
       transform: scale(1.05);
     }
-  }
-  
-}
 
+    .info_endereco_dois {
+      margin-top: auto;
+    }
+  }
+}
+.endereco {
+  
+  .setor_endereco {
+    background-color: var(--roxo-claro);
+    display: flex;
+    border-radius: 20px;
+    width: 50%;
+    height: 30%;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .title{
+    font-size: 54px;
+    margin: 16px;
+  }
+
+  h1{
+    font-size: 22px;
+    margin: 12px;
+  }
+}
 
 
 /* ==========================================================================
@@ -385,13 +409,13 @@ table {
   margin-top: 200px;
 }
 
-.footer-logo{
+.footer-logo {
   background-color: var(--roxo-principal);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
-.footer-logo:hover{
+.footer-logo:hover {
   scale: 1.06;
 }
 
@@ -471,4 +495,3 @@ table {
   color: var(--roxo-claro);
   font-size: 0.9em;
 }
-
