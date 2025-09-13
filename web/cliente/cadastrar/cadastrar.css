@@ -120,6 +120,7 @@ body {
   margin: 0;
   padding: 0;
   height: auto;
+  min-height: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -202,8 +203,6 @@ button {
   color: var(--roxo-principal);
 }
 
-
-
 .erro_cad {
   display: none;
   margin: 0 auto 0 auto;
@@ -237,13 +236,19 @@ button {
 
 .cad_img {
   height: 200px;
+  width: 20rem;
+  margin: 0 auto 0 auto;
+}
+
+.box_img {
   width: 150px;
+  height: 150px;
   margin: 0 auto 0 auto;
 }
 
 .img_pfp {
+  object-fit: cover;
   display: block;
-  margin: 0 auto 0 auto;
   position: relative;
   width: 150px;
   height: 150px;
@@ -252,8 +257,8 @@ button {
 
 .input_img{
   position: relative;
-  left: 70%;
-  bottom: 20%;
+  left: 65%;
+  transform: translate(0, -100%);
   background: var(--roxo-principal);
   width: 51px;
   height: 51px;
@@ -284,13 +289,13 @@ input[type=file]:hover{
     cursor: pointer;
 }
 
-#avisoPfp {
-  color: green;
+#avisoImg {
   font-weight: bold;
   display: none;
   position: relative;
-  left: 20%;
-  bottom: 15%;
+  text-align: center;
+  width: 20rem;
+  bottom: -5%;
 }
 
 .redireciona_entrar {

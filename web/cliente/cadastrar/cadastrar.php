@@ -23,6 +23,19 @@
     $data = $_POST['txtData'];
     $telefone = preg_replace('/[^0-9]/', '', $_POST['txtTelefone']);
 
+    $maxTamanhoImagem = 1000000 * 15;
+
+    $tamanhoImagem = $_FILES['arquivoImagem']['size'];
+    $imagemTmp = $_FILES['arquivoImagem']['tmp_name'];
+    $imagemNome = $_FILES['arquivoImagem']['name'];
+
+    $imagemExtensao = explode('.', $imagemNome);
+    $imagemExtensao = strtolower(end($imagemExtensao));
+
+    $imagemNomeNovo = date('Y-m-d-His') . $nome . "." . $imagemExtensao;
+
+    $uploadDir = '../../assets/uploads/profilepictures/';
+    $uploadDestino = $uploadDir . $imagemNomeNovo;
 
     $queryTesteEmail = "SELECT cli_email "
         . "FROM tbl_cliente "
@@ -30,27 +43,34 @@
 
     $resTeste = mysqli_query($conexao, $queryTesteEmail);
 
-    if (mysqli_num_rows($resTeste) != 0) {
-        header("Location: ./?erroEmail=1");
-    } else {
-        $sql = "INSERT INTO tbl_cliente(cli_email, cli_senha, cli_nome, cli_cpf, cli_nascimento, cli_telefone)"
-            . "VALUES('$email', '$senha', '$nome', $cpf, '$data', $telefone)";
-        $res = mysqli_query($conexao, $sql);
 
-        $getID = "SELECT cli_id "
-            . "FROM tbl_cliente "
-            . "WHERE cli_email = '$email' AND cli_senha = '$senha'";
-        $resID = mysqli_query($conexao, $getID);
-
-        if (mysqli_num_rows($resID) == 0) {
-            echo "Erro ao encontrar o ID específico.";
+    if($tamanhoImagem > $maxTamanhoImagem) {
+        header("Location: ./?erroImagem=1");
+    } else{
+        move_uploaded_file($imagemTmp, $uploadDestino);
+        if (mysqli_num_rows($resTeste) != 0) {
+            header("Location: ./?erroEmail=1");
         } else {
-            $registro = mysqli_fetch_row($resID);
+            $sql = "INSERT INTO tbl_cliente(cli_email, cli_senha, cli_nome, cli_perfil, cli_cpf, cli_nascimento, cli_telefone)"
+                . "VALUES('$email', '$senha', '$nome', '$imagemNomeNovo', $cpf, '$data', $telefone)";
+            $res = mysqli_query($conexao, $sql);
 
-            session_start();
-            $_SESSION["cli_id"] = $registro[0];
-            $_SESSION["cli_nome"] = $nome;
-            header("Location: ../home");
+            $getID = "SELECT cli_id "
+                . "FROM tbl_cliente "
+                . "WHERE cli_email = '$email' AND cli_senha = '$senha'";
+            $resID = mysqli_query($conexao, $getID);
+
+            if (mysqli_num_rows($resID) == 0) {
+                echo "Erro ao encontrar o ID específico.";
+            } else {
+                $registro = mysqli_fetch_row($resID);
+
+                session_start();
+                $_SESSION["cli_id"] = $registro[0];
+                $_SESSION["cli_nome"] = $nome;
+                $_SESSION["cli_perfil"] = $imagemNomeNovo;
+                header("Location: ../");
+            }
         }
     }
     mysqli_close($conexao);
