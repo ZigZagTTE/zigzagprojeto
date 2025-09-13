@@ -12,17 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
 
     <script type="text/javascript" src="formatacao.js" defer></script>
-    <script type="text/javascript" src="progressao.js" defer></script>
+    <script type="text/javascript" src="cadastrar.js" defer></script>
 </head>
 
 <body>
-    <form class="popup" method="POST" action="cadastrar.php">
+    <form class="popup" method="POST" action="cadastrar.php" enctype="multipart/form-data">
 
         <div class="tit_cad">Crie sua conta</div>
 
         <section id="infoDeEntrada">
             <div class="insc_cad">
-                <p class="erro_cad" id="erroImagem">Sua imagem é maior do que 30 MB</p><br>
+                <p class="erro_cad" id="erroImagem"></p><br>
                 <br>
                 <p class="txt_cad">Email</p><br>
                 <input class="input_cad" type="email" name="txtEmail" required placeholder="exemplo@email.com"
@@ -55,15 +55,18 @@
         <section id="infoDeApresentacao">
             <div class="insc_cad">
                 <div class="cad_img">
-                    <img class="img_pfp" src="../../assets/downloads/profilepictures/default.png" />
-                    <div class="input_img">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-                        <input type="file" name="perfil" id="image" accept=".jpg, .jpeg, .png" onclick="avisoImagem();">
-                        <img src="../../assets/images/camera.png" />
+                    <div class="box_img">
+                        <img id="preview_img" class="img_pfp"
+                            src="../../assets/uploads/profilepictures/default.png" />
+                        <div class="input_img">
+                            <input type="file" name="arquivoImagem" accept="image/*" id="inputImg"
+                                onchange="mudancaDaImagem(event);">
+                            <img src="../../assets/images/camera.png" />
+                        </div>
                     </div>
-                    <p class="desc_cad" id="avisoPfp">Imagem escolhida</p>
+                    <p class="desc_cad" id="avisoImg"></p>
                 </div>
-                
+
 
                 <p class="txt_cad">Nome de usuário</p><br>
                 <input class="input_cad" type="text" name="txtNome" placeholder="seu nome de usuário aqui" required
@@ -90,10 +93,10 @@
                 placeholder="(12) 34567-8901" required onkeyup="formatarTelefone(this);testeVazio(this);"
                 onclick="testeVazio(this);">
 
-        <div class="doisBotoes"> 
-            <input class="btnCompostoUm" type="button" onclick="regredirCadastro()" value="←">
-            <input class="btnCompostoDois" type="submit" name="btnSeta" value="Cadastrar"><br>
-        </div>
+            <div class="doisBotoes">
+                <input class="btnCompostoUm" type="button" onclick="regredirCadastro()" value="←">
+                <input class="btnCompostoDois" type="submit" name="btnSeta" value="Cadastrar"><br>
+            </div>
         </section>
         <p class="erro_cad" id="erroVazio">Todos os campos precisam ser preenchidos</p><br>
     </form>
