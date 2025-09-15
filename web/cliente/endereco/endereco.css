@@ -370,6 +370,8 @@ table {
   }
 }
 .endereco {
+
+  justify-content: center;
   .setor_endereco {
     background-color: var(--roxo-claro);
     display: flex;
@@ -409,6 +411,7 @@ table {
   .add_endereco {
     background-color: var(--roxo-claro);
     font-size: 30px;
+    margin-left: 22.5%;
     cursor: pointer;
     width: 50px;
     height: 50px;
