@@ -29,24 +29,27 @@
     $imagemTmp = $_FILES['arquivoImagem']['tmp_name'];
     $imagemNome = $_FILES['arquivoImagem']['name'];
 
-    $imagemExtensao = explode('.', $imagemNome);
-    $imagemExtensao = strtolower(end($imagemExtensao));
-
-    $imagemNomeNovo = date('Y-m-d-His') . $nome . "." . $imagemExtensao;
-
-    $uploadDir = '../../assets/uploads/profilepictures/';
-    $uploadDestino = $uploadDir . $imagemNomeNovo;
-
     $queryTesteEmail = "SELECT cli_email "
         . "FROM tbl_cliente "
         . "WHERE cli_email = '$email'";
 
     $resTeste = mysqli_query($conexao, $queryTesteEmail);
 
+    if (!$imagemTmp) {
+        $imagemNomeNovo = "default.png";
+    } else {
+        $imagemExtensao = explode('.', $imagemNome);
+        $imagemExtensao = strtolower(end($imagemExtensao));
 
-    if($tamanhoImagem > $maxTamanhoImagem) {
+        $imagemNomeNovo = date('Y-m-d-His') . $nome . "." . $imagemExtensao;
+
+        $uploadDir = '../../assets/uploads/profilepictures/';
+        $uploadDestino = $uploadDir . $imagemNomeNovo;
+    }
+
+    if ($tamanhoImagem > $maxTamanhoImagem) {
         header("Location: ./?erroImagem=1");
-    } else{
+    } else {
         move_uploaded_file($imagemTmp, $uploadDestino);
         if (mysqli_num_rows($resTeste) != 0) {
             header("Location: ./?erroEmail=1");
