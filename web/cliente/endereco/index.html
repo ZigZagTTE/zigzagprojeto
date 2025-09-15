@@ -1,65 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZigZag</title>
-    <link rel="stylesheet" href="endereco.css">
-    <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="endereco.css" />
+    <link
+      rel="icon"
+      href="../../assets/images/MiniLogo.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://kit.fontawesome.com/a1d8234c07.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-
+  <body>
     <!-- HEADER -->
     <header class="top">
-        <a href="../../index.php"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90" alt="Logo ZigZag"></a>
-        <p class="zigzag_txt">igzag</p>
-        <nav class="nav_header">
-            <div class="buttons_home">
-            </div>
-        </nav>
-        <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-        <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="../perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
-
+      <a href="../../index.php"
+        ><img
+          class="logo_header"
+          src="../../assets/svg/logo.svg"
+          width="90"
+          height="90"
+          alt="Logo ZigZag"
+      /></a>
+      <p class="zigzag_txt">igzag</p>
+      <nav class="nav_header">
+        <div class="buttons_home"></div>
+      </nav>
+      <a class="icon" href="../index.php"
+        ><i class="fa-solid fa-house fa-2x"></i
+      ></a>
+      <!--casa-->
+      <a class="icon" href="index.php"
+        ><i class="fa-solid fa-cart-shopping fa-2x"></i
+      ></a>
+      <!--carrinho-->
+      <a class="icon" href="../perfil/"
+        ><i class="fa-solid fa-circle-user fa-2x"></i
+      ></a>
+      <!--user-->
     </header>
 
     <!-- INFORMACOES -->
-    
+
     <div class="secoes">
-        <div class="paginas">
-            <ul>
-                <a href="../perfil/" class="choice"><li><i class="fa-regular fa-user fa-lg" style="color: #fdf2e6;"></i>Meus dados</li></a>
-                <a href="../pagamento/" class="choice"><li><i class="fa-regular fa-address-book fa-lg" style="color: #fdf2e6;"></i>Pagamentos</li></a>
-                <a href="index.html" class="choice"><li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6;"></i>Endereço</li></a>
-            </ul>
-        </div>
+      <div class="paginas">
+        <ul>
+          <a href="../perfil/" class="choice"
+            ><li>
+              <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i
+              >Meus dados
+            </li></a
+          >
+          <a href="../seguranca/" class="choice"
+            ><li>
+              <i
+                class="fa-solid fa-shield-halved fa-lg"
+                style="color: #fdf2e6"
+              ></i
+              >Segurança
+            </li></a
+          >
+          <a href="index.html" class="choice"
+            ><li>
+              <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i
+              >Endereço
+            </li></a
+          >
+        </ul>
+      </div>
 
-          
+      <div class="endereco">
+        <p class="title">Endereço</p>
 
-        <div class="endereco">
-
-          <p class="title">Endereço</p>
-
-          <a href="detalhes.html">
-            <div class="setor_endereco">
+        <a href="detalhes.html">
+          <div class="setor_endereco">
             <h1>Endereço 1</h1>
-
             <p>Rua xxxxxxxx, xx</p>
+            <i class="fa-solid fa-arrow-right fa-lg"></i>
+          </div>
+        </a>
 
-            <i class="fa-solid fa-arrow-right"></i>
-            </div>
+        <div class="add_endereco">
+          <a href="adicionar.html">
+            <i class="fa-solid fa-plus" style="color: black"></i>
           </a>
-              
         </div>
+      </div>
     </div>
 
-<!-- FOOTER -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
@@ -85,7 +128,7 @@
             <ul>
               <li>Email: contato@zigzag.com.br</li>
               <li>Telefone: (11) 99123-4567</li>
-              <li>WhatsApp: (11) 99123-4567</li>
+              <li>WhatsApp: (12) 99656-5618</li>
             </ul>
           </div>
           <div class="footer-section">
@@ -131,7 +174,5 @@
         document.body.classList.add("loaded");
       });
     </script>
-    <script src="maps.js"></script>
-    <script src="scroll-smoth.js"></script>
   </body>
 </html>

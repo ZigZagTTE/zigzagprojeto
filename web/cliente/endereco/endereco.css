@@ -291,7 +291,6 @@ table {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
-
   .paginas {
     li {
       margin-top: 20px;
@@ -313,6 +312,10 @@ table {
       transform: scale(1.1);
     }
 
+    li:focus {
+      transform: scale(1.1);
+    }
+
     .choice {
       margin: 10px;
       font-size: 22px;
@@ -325,9 +328,7 @@ table {
   }
 
   .informacoes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-area: 2fr;
 
     .title {
       font-size: 54px;
@@ -366,20 +367,33 @@ table {
       color: var(--preto);
       transform: scale(1.05);
     }
-
-    .info_endereco_dois {
-      margin-top: auto;
-    }
   }
 }
 .endereco {
-  
   .setor_endereco {
     background-color: var(--roxo-claro);
     display: flex;
-    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px var(--preto);
     width: 50%;
     height: 30%;
+    margin-bottom: 20px;
+
+    h1 {
+      font-size: 22px;
+      margin: 12px;
+    }
+
+    i {
+      margin-right: 20px;
+      padding: auto;
+      transition: width 1s, height 1s, transform 1s ease;
+    }
+
+    i:hover {
+      transform: scale(1.4);
+    }
   }
 
   a {
@@ -387,20 +401,27 @@ table {
     color: black;
   }
 
-  .title{
+  .title {
     font-size: 54px;
     margin: 16px;
   }
 
-  h1{
-    font-size: 22px;
-    margin: 12px;
+  .add_endereco {
+    background-color: var(--roxo-claro);
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px var(--preto);
   }
 }
 
-
 /* ==========================================================================
-   FOOTER
+    FOOTER
    ========================================================================== */
 .footer {
   width: 100%;
