@@ -31,6 +31,7 @@ section {
 /* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores - Tema Claro */
+  --vermelho-erro: #f73151;
   --roxo-principal: #b450f5;
   --roxo-claro: #d89ffd;
   --roxo-mais-claro: #e7cef6;
@@ -125,18 +126,6 @@ body {
   align-items: center;
 }
 
-button {
-  background-color: var(--roxo-principal);
-  color: var(--bege);
-  width: 20rem;
-  height: 2.5rem;
-  border: none;
-  border-radius: 15px;
-  font-size: 20px;
-  font-family: "Iansui";
-  margin-bottom: 20px;
-}
-
 /* ========================================================================== */
 /* ESTILOS DE LAYOUT E COMPONENTES                                           */
 /* ========================================================================== */
@@ -150,13 +139,33 @@ button {
   border-radius: 20px;
   box-shadow: 0 0 60px rgb(95, 95, 95);
   width: 30%;
-  padding-top: 30px;
+  padding: 2rem 0 2rem 0;
   text-align: center;
   height: auto;
-  max-height: 90vh;
-  margin: 0 auto;
-  overflow-y: auto;
+  max-height: 120vh;
+  margin: 3rem auto;
   overflow: hidden;
+}
+
+.logo {
+  display: flex;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  height: 5rem;
+  width: 11rem;
+  font-family: "Iansui";
+  font-size: 2rem;
+  color: var(--roxo-principal);
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.img_logo {
+  height: 4rem;
 }
 
 .tit_log {
@@ -165,7 +174,7 @@ button {
   font-family: "Iansui";
   color: var(--roxo-principal);
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -181,14 +190,26 @@ button {
 
 .desc_log {
   display: flex;
-  margin: 0 auto 0 auto;
+  margin: 0.1rem auto 0.1rem auto;
   text-align: justify;
-  justify-content: left;
-  font-size: 0.7rem;
+  justify-content: center;
+  text-decoration: underline;
+  font-size: 1rem;
   font-family: "Iansui";
   font-weight: bold;
   width: 20rem;
   color: var(--roxo-principal);
+}
+
+.erro_log {
+  display: block;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Calibri";
+  font-weight: bold;
+  width: 20rem;
+  color: var(--vermelho-erro);
 }
 
 .input_log {
@@ -207,24 +228,17 @@ button {
   transition: all 0.3s ease;
 }
 
-.input_cad {
-  display: flex;
-  justify-content: center;
-  width: 20rem;
-  height: 2rem;
-  font-family: "Iansui";
-  border: solid 2px var(--roxo-principal);
-  border-radius: 20px;
-  background-color: transparent;
-  color: grey;
-  margin: 0 auto 1.5rem auto;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
+.img_pfp {
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 0 auto;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 }
 
-.input_log:hover,
-.input_cad:hover {
+.input_log:hover {
   scale: 1.1;
 }
 
@@ -243,4 +257,37 @@ button {
 
 .btnSeta:hover {
   scale: 1.10;
+}
+
+.doisBotoes {
+  display: inline-grid;
+  grid-template-columns: 10rem 10rem;
+  grid-template-rows: auto;
+
+  .btnCompostoUm {
+    justify-self: start;
+    background-color: var(--roxo-principal);
+    color: var(--bege);
+    width: 9.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: "Iansui";
+    margin: 0 0 20px 0;
+    transition: all 0.3s ease;
+  }
+  .btnCompostoDois {
+    justify-self: end;
+    background-color: var(--roxo-principal);
+    color: var(--bege);
+    width: 9.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: "Iansui";
+    margin: 0 0 20px 0;
+    transition: all 0.3s ease;
+  }
 }

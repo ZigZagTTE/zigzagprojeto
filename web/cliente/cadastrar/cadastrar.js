@@ -1,16 +1,70 @@
 // ## Código Javascript que rege a lógica do cadastro
+
+// Avisos
 const erroImagem = document.getElementById("erroImagem");
 const erroEmail = document.getElementById("erroEmail");
 const erroSenha = document.getElementById("erroSenha");
 const erroVazio = document.getElementById("erroVazio");
 const avisoImg = document.getElementById("avisoImg");
+
+// Inputs 
+const txtEmail = document.getElementById("txtEmail");
 const txtSenha = document.getElementById("txtSenha");
 const txtConfirmarSenha = document.getElementById("txtConfirmarSenha");
-const txtEmail = document.getElementById("txtEmail");
-const imagemDePreview = document.getElementById("preview_img");
-var passoDaProgessao = 0;
+const txtNome = document.getElementById("txtNome");
+const inputImagem = document.getElementById("inputImagem");
+const txtCPF = document.getElementById("txtCPF");
+const txtNascimento = document.getElementById("txtNascimento");
+const txtTelefone = document.getElementById("txtTelefone");
 
+//Buttons
+const btnProximo1 = document.getElementById("btnProximo1");
+const btnProximo2 = document.getElementById("btnProximo2");
+const btnRegredir1 = document.getElementById("btnRegredir1");
+const btnRegredir2 = document.getElementById("btnRegredir2");
+
+// Preview para imagem
+const imagemDePreview = document.getElementById("preview_img");
+
+// Variáveis de lógica
+var passoDaProgessao = 0;
 var isSenhasIguais = -1;
+
+//Eventos
+['mouseover', 'keyup'].forEach(function (evento) {
+    txtEmail.addEventListener(evento, testeEmail);
+});
+
+['mouseover', 'keyup'].forEach(function (evento) {
+    txtSenha.addEventListener(evento, testeSenhas);
+});
+
+['mouseover', 'keyup'].forEach(function (evento) {
+    txtConfirmarSenha.addEventListener(evento, testeSenhas);
+});
+
+inputImagem.addEventListener("change", mudancaDaImagem);
+
+['mouseover', 'keyup'].forEach(function (evento) {
+    txtNome.addEventListener(evento, testeVazio);
+});
+
+['mouseover', 'keyup'].forEach(function (evento) {
+    txtCPF.addEventListener(evento, testeVazio);
+});
+
+['mouseover', 'keyup'].forEach(function (evento) {
+    txtNascimento.addEventListener(evento, testeVazio);
+});
+
+['mouseover', 'keyup'].forEach(function (evento) {
+    txtTelefone.addEventListener(evento, testeVazio);
+});
+
+btnProximo1.addEventListener("click", progredirCadastro);
+btnProximo2.addEventListener("click", progredirCadastro);
+btnRegredir1.addEventListener("click", regredirCadastro);
+btnRegredir2.addEventListener("click", regredirCadastro);
 
 endereco = window.location.search;
 listaDeParametros = new URLSearchParams(endereco);
@@ -25,7 +79,8 @@ if (listaDeParametros.get("erroImagem") === "1") {
     erroImagem.innerHTML = "Sua imagem é maior do que 15 MB";
 }
 
-function testeVazio(elemento) {
+function testeVazio(evento) {
+    elemento = evento.target;
     if (elemento.value === "") {
         elemento.style.borderColor = "#f73151";
         erroVazio.style.display = "block";
@@ -36,7 +91,7 @@ function testeVazio(elemento) {
     }
 }
 
-function testeEmail(elemento) {
+function testeEmail(evento) {
     let pattern = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/;
     if (!(pattern.test(txtEmail.value))) {
         erroEmail.style.display = "block";
@@ -45,10 +100,10 @@ function testeEmail(elemento) {
     else {
         erroEmail.style.display = "none";
     }
-    testeVazio(elemento)
+    testeVazio(evento)
 }
 
-function testeSenhas(elemento) {
+function testeSenhas(evento) {
     let pattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
     if (!(pattern.test(txtSenha.value))) {
         erroSenha.style.display = "block";
@@ -67,7 +122,7 @@ function testeSenhas(elemento) {
         txtConfirmarSenha.style.borderColor = "#b450f5";
         isSenhasIguais = 1;
     }
-    testeVazio(elemento)
+    testeVazio(evento)
 }
 
 function progredirCadastro() {
@@ -117,14 +172,15 @@ function mudancaDaImagem(evento) {
     avisoImg.innerHTML = "Imagem escolhida";
     avisoImg.style.display = "block";
 
-    if (evento.target.files[0].size > 1048576*15) {
+    if (evento.target.files[0].size > 1048576 * 15) {
         avisoImg.style.color = "#f73151";
         avisoImg.innerHTML = "A imagem escolhida é muito grande";
         avisoImg.style.display = "block";
         evento.target.files[0] = "";
     }
-    else{
+    else {
         imagemDePreview.src = URL.createObjectURL(evento.target.files[0]);
+        URL.revokeObjectURL(imagemDePreview.src); //libera memória
     }
 
 }

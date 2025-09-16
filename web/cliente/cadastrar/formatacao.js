@@ -1,6 +1,11 @@
 // ## Código Javascript que formata automaticamente as informações de telefone e CPF
 
-function formatarTelefone(input) {
+txtTelefone.addEventListener("keyup", formatarTelefone);
+txtCPF.addEventListener("keyup", formatarCPF);
+
+function formatarTelefone(evento) {
+  const input = evento.target;
+
   // Remove todos os caracteres não numéricos
   var telefone = input.value.replace(/\D/g, "");
 
@@ -11,7 +16,9 @@ function formatarTelefone(input) {
   input.value = telefone;
 }
 
-function formatarCPF(input) {
+function formatarCPF(evento) {
+  const input = evento.target;
+
   // Remove todos os caracteres não numéricos
   var cpf = input.value.replace(/\D/g, "");
 

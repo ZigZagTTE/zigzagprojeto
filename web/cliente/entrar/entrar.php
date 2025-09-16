@@ -2,27 +2,35 @@
 
 require_once "../../conexao.php";
 
-$email = $_POST['txtEmail'];
-$senha = $_POST['txtSenha'];
+if (isset($_POST['txtEmail'])) {
+    $email = $_POST['txtEmail'];
 
-$sql1 = "SELECT cli_id, cli_nome FROM tbl_cliente WHERE cli_email='$email' AND cli_senha='$senha'"; 
-$res = mysqli_query($conexao, $sql1);
+    $queryInfoConta = "SELECT cli_id, cli_nome, cli_email, cli_perfil FROM tbl_cliente WHERE cli_email='$email'";
+    $resultadoInfoConta = mysqli_query($conexao, $queryInfoConta);
+}
 
-if (mysqli_num_rows($res) == 0)
-{
-    echo "Usuário não cadastrado, email ou senha errados";
+session_start();
+if (isset($_GET["cancelarEntrada"])) {
+    $_SESSION["cli_idtemp"] = null;
+    $_SESSION["cli_nometemp"] = null;
+    $_SESSION["cli_emailtemp"] = null;
+    $_SESSION["cli_perfiltemp"] = null;
     header("Location: ./");
-} else
-{
-    echo "Usuário cadastrado";
-    $registro = mysqli_fetch_row($res);
+} else if (mysqli_num_rows($resultadoInfoConta) == 0) {
+    header("Location: ./?erroEmail=1");
+} else {
+    $registro = mysqli_fetch_row($resultadoInfoConta);
     $id = $registro[0];
     $nome = $registro[1];
+    $email = $registro[2];
+    $perfil = $registro[3];
 
-    session_start();
+    $_SESSION["cli_idtemp"] = $id;
+    $_SESSION["cli_nometemp"] = $nome;
+    $_SESSION["cli_emailtemp"] = $email;
+    $_SESSION["cli_perfiltemp"] = $perfil;
 
-    $_SESSION["id"] = $id;
-    $_SESSION["nome"] = $nome;
-    header("Location: ./verificaUsu.php");
+    header("Location: ./");
+
 }
 ?>

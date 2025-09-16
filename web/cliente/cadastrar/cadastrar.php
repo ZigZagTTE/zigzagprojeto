@@ -19,7 +19,7 @@
     $email = $_POST["txtEmail"];
     $senha = $_POST["txtSenha"];
     $nome = $_POST['txtNome'];
-    $cpf = preg_replace('/[^0-9]/', '', $_POST['txtCpf']);
+    $cpf = preg_replace('/[^0-9]/', '', $_POST['txtCPF']);
     $data = $_POST['txtData'];
     $telefone = preg_replace('/[^0-9]/', '', $_POST['txtTelefone']);
 
@@ -33,7 +33,7 @@
         . "FROM tbl_cliente "
         . "WHERE cli_email = '$email'";
 
-    $resTeste = mysqli_query($conexao, $queryTesteEmail);
+    $resultadoTeste = mysqli_query($conexao, $queryTesteEmail);
 
     if (!$imagemTmp) {
         $imagemNomeNovo = "default.png";
@@ -51,26 +51,27 @@
         header("Location: ./?erroImagem=1");
     } else {
         move_uploaded_file($imagemTmp, $uploadDestino);
-        if (mysqli_num_rows($resTeste) != 0) {
+        if (mysqli_num_rows($resultadoTeste) != 0) {
             header("Location: ./?erroEmail=1");
         } else {
             $sql = "INSERT INTO tbl_cliente(cli_email, cli_senha, cli_nome, cli_perfil, cli_cpf, cli_nascimento, cli_telefone)"
                 . "VALUES('$email', '$senha', '$nome', '$imagemNomeNovo', $cpf, '$data', $telefone)";
-            $res = mysqli_query($conexao, $sql);
+            mysqli_query($conexao, $sql);
 
-            $getID = "SELECT cli_id "
+            $queryID = "SELECT cli_id "
                 . "FROM tbl_cliente "
                 . "WHERE cli_email = '$email' AND cli_senha = '$senha'";
-            $resID = mysqli_query($conexao, $getID);
+            $resultadoID = mysqli_query($conexao, $queryID);
 
-            if (mysqli_num_rows($resID) == 0) {
+            if (mysqli_num_rows($resultadoID) == 0) {
                 echo "Erro ao encontrar o ID específico.";
             } else {
-                $registro = mysqli_fetch_row($resID);
+                $registro = mysqli_fetch_row($resultadoID);
 
                 session_start();
                 $_SESSION["cli_id"] = $registro[0];
                 $_SESSION["cli_nome"] = $nome;
+                $_SESSION["cli_email"] = $email;
                 $_SESSION["cli_perfil"] = $imagemNomeNovo;
                 header("Location: ../");
             }
