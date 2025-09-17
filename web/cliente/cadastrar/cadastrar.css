@@ -127,7 +127,6 @@ body {
   align-items: center;
 }
 
-
 /* ========================================================================== */
 /* ESTILOS DE LAYOUT E COMPONENTES                                           */
 /* ========================================================================== */
@@ -138,13 +137,11 @@ body {
 
 #infoDeApresentacao {
   display: none;
-
 }
 
 #infoPessoais {
   display: none;
 }
-
 
 .popup {
   background-color: var(--bege);
@@ -265,7 +262,7 @@ body {
   border-radius: 50%;
 }
 
-.input_img{
+.input_img {
   position: relative;
   left: 65%;
   transform: translate(0, -100%);
@@ -288,15 +285,15 @@ body {
   height: 38px;
 }
 
-.input_img input[type="file"]{
+.input_img input[type="file"] {
   position: absolute;
   transform: scale(2);
   z-index: 1;
   opacity: 0;
 }
 
-input[type=file]:hover{
-    cursor: pointer;
+input[type="file"]:hover {
+  cursor: pointer;
 }
 
 #avisoImg {

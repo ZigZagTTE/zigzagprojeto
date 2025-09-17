@@ -12,6 +12,9 @@
   <script type="text/javascript" src="entrar.js" defer></script>
   <?php
   session_start();
+  if (isset($_SESSION["cli_id"])) {
+    header("Location: ../");
+  }
   ?>
 </head>
 
@@ -63,6 +66,14 @@
 
         <p class="txt_log">Senha</p><br>
         <input class="input_log" type="password" name="txtSenha" required>
+
+        <?php
+        if (isset($_GET["erroSenha"])) {
+          ?>
+          <p class="erro_log">Senha errada</p><br>
+          <?php
+        }
+        ?>
 
         <div class="doisBotoes">
           <input class="btnCompostoUm" id="btnCancelar" type="button" value="Cancelar">

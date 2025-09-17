@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+    <?php session_start();?>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
         </nav>
         <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
         <a class="icon" href="loja/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
+        <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"></a> <!--user-->
     </header>
 
     <p class="title">Faça já seu pedido em costureiras próximas!</p>

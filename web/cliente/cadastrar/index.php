@@ -94,7 +94,7 @@
 
             <div class="doisBotoes">
                 <input class="btnCompostoUm" id="btnRegredir2" type="button" value="←">
-                
+
                 <input class="btnCompostoDois" type="submit" value="Cadastrar">
             </div>
         </section>
