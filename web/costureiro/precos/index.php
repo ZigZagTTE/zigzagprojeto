@@ -7,7 +7,7 @@
     <title>ZigZag</title>
     <link rel="stylesheet" href="../home.css">
     <link rel="stylesheet" href="precos.css">
-    <link rel="icon" href="../../../../design/images/MiniLogo.png" type="image/x-icon">
+    <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -49,35 +49,82 @@
             <li>
                 <img src="../../assets/images/usu_img/calca.png" alt="calça">
                 <p>Calça</p>
-                <p>Valor:</p>
-                <input type="text" placeholder="R$ 00,00">
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/vestido.png" alt="calça">
+                <p>vestido</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/camisa.png" alt="calça">
+                <p>camisa</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/calca.png" alt="calça">
+                <p>Calça</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/bone.png" alt="calça">
+                <p>bone</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/patchwork.png" alt="calça">
+                <p>remendo</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/saia.png" alt="calça">
+                <p>saia</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/camisa.png" alt="calça">
+                <p>camisa</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/calça.png" alt="calça">
+                <p>Calça</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
             <li>
-
+                <img src="../../assets/images/usu_img/bone.png" alt="calça">
+                <p>bone</p>
+                <div class="valor_list">
+                    <p>Valor:</p>
+                    <input type="text" placeholder="R$ 00,00">
+                </div>
             </li>
         </ul>
     </div>
