@@ -311,10 +311,8 @@ table {
     li:hover {
       transform: scale(1.1);
     }
+    
 
-    li:focus {
-      transform: scale(1.1);
-    }
 
     .choice {
       margin: 10px;
@@ -325,6 +323,8 @@ table {
       text-decoration: none;
       color: black;
     }
+
+    
   }
 
   .informacoes {

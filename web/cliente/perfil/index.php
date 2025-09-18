@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZigZag</title>
     <link rel="stylesheet" href="perfil.css" />
-    <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="../../assets/images/MiniLogo.png"
+      type="image/x-icon"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
       rel="stylesheet"
@@ -19,6 +23,7 @@
       src="https://kit.fontawesome.com/a1d8234c07.js"
       crossorigin="anonymous"
     ></script>
+    <?php require_once("../../conexao.php"); session_start(); ?>
   </head>
 
   <body>
@@ -45,8 +50,12 @@
         ><i class="fa-solid fa-cart-shopping fa-2x"></i>
       </a>
       <!--carrinho-->
-      <a class="icon" href="index.html"
-        ><i class="fa-solid fa-circle-user fa-2x"></i>
+      <a class="icon" href="index.php"
+        ><img
+            class="icon_img_perfil"
+            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
+            alt="Foto de perfil"
+          />
       </a>
       <!--user-->
     </header>
@@ -56,28 +65,106 @@
     <section class="secoes">
       <div class="paginas">
         <ul>
-          <a href="index.html" class="choice"><li><i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados</li></a>
-          <a href="../seguranca/" class="choice"><li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li></a>
-          <a href="../endereco/" class="choice"><li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço</li></a>
+          <a href="index.html" class="choice"
+            ><li autofocus>
+              <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i
+              >Meus dados
+            </li></a
+          >
+          <a href="../seguranca/" class="choice"
+            ><li>
+              <i
+                class="fa-solid fa-shield-halved fa-lg"
+                style="color: #fdf2e6"
+              ></i
+              >Segurança
+            </li></a
+          >
+          <a href="../endereco/" class="choice"
+            ><li>
+              <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i
+              >Endereço
+            </li></a
+          >
         </ul>
       </div>
 
       <div class="informacoes">
-        <p class="title">Informações pessoais</p>
 
-        <img src="https://cdn-icons-png.flaticon.com/512/12225/12225881.png" />
+          <div class="title">
+            <p class="title_txt">Informações pessoais</p>
+          </div>
 
-        <p class="label">Nome</p>
-        <input type="text" class="input" placeholder="Fulano de tal" disabled />
-        <p class="label">CPF</p>
-        <input type="text" class="input" placeholder="01234567890" disabled />
-        <p class="label">Email</p>
-        <input type="text" class="input" placeholder="abc@gmail.com" disabled />
+          <div>
+            <div class="box_img">
+              <img
+                class="icon_img_perfil"
+                src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
+                alt="Foto de perfil"
+              />
+              <div class="input_img">
+              <input id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
+              <img src="../../assets/images/camera.png" />
+              </div>
+            </div>
 
-        <p class="label">Telefone</p>
-        <input type="text" class="input" placeholder="01234567890" disabled />
-        <p class="label">Data de nascimento</p>
-        <input type="text" class="input" placeholder="xx/xx/xxxx" disabled />
+            <button class="btn-editar" onclick="enableInput()">
+              Alterar Informações
+            </button>
+
+            <button class="btn-salvar" style="display: none;">
+              Salvar alterações
+            </button>
+          </div>
+
+        <div>
+          <p class="label">Nome</p>
+          <input
+            id="input"
+            type="text"
+            class="input"
+            value="<?php echo $_SESSION["cli_nome"];?>"
+            disabled
+          />
+          <p class="label">CPF</p>
+          <input
+            id="input"
+            type="text"
+            class="input"
+            value="<?php echo $_GET["cli_cpf"];?>"
+            disabled
+          />
+          <p class="label">Email</p>
+          <input
+            id="input"
+            type="email"
+            class="input"
+            value="<?php echo $_SESSION["cli_email"];?>"
+            disabled
+          />
+
+          <p class="label">Telefone</p>
+          <input
+            disabled
+            id="input"
+            type="tel"
+            class="input"
+            value="<?php echo $_SESSION["cli_telefone"];?>"
+            
+          />
+          <p class="label">Data de nascimento</p>
+          <input
+            id="input"
+            type="text"
+            class="input"
+            value="<?php echo $_SESSION["cli_datanascimento"];?>"
+            disabled
+          />
+
+          <button class="btn-excluir" >
+            Excluir Conta
+          </button>
+        </div>
       </div>
     </section>
 
@@ -132,6 +219,14 @@
     </footer>
 
     <script>
+      function enableInput() {
+        const inputs = document.querySelectorAll(".input");
+        const btnSalvar = document.querySelector(".btn-salvar");
+        inputs.forEach((input) => {
+          input.disabled = !input.disabled;
+        });
+        btnSalvar.style.display = "block";
+      }
       function onScrollFadeIn() {
         const elements = document.querySelectorAll(".fade-in");
         const windowBottom = window.innerHeight + window.scrollY;

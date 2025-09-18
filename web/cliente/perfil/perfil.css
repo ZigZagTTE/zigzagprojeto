@@ -283,19 +283,24 @@ table {
   transform: scale(1.1);
 }
 
+.icon_img_perfil {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  justify-content: center;
+  box-shadow: #303030 0px 0px 8px;
+}
+
 /* ========================================================================== */
 /* BODY DO SITE                                                              */
 /* ========================================================================== */
 
-.secoes{
+.secoes {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
 
-
-
-  .paginas{
-    
+  .paginas {
     li {
       margin-top: 20px;
       margin-bottom: -10px;
@@ -306,50 +311,90 @@ table {
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
       transition: transform 0.3s ease;
-      
 
-    i {
-      margin-right: 24px;
+      i {
+        margin-right: 24px;
+      }
+    }
+
+    li:hover {
+      transform: scale(1.1);
+    }
+
+    .choice {
+      margin: 10px;
+      font-size: 22px;
+      font-weight: bold;
+      vertical-align: middle;
+      background-color: var(--roxo-claro);
+      text-decoration: none;
+      color: black;
     }
   }
 
-  li:hover {
-    transform: scale(1.1);
-  }
-
-  .choice {
-    margin: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    vertical-align: middle;
-    background-color: var(--roxo-claro);
-    text-decoration: none;
-    color: black;
-  }
-  }
+  .informacoes {
+    display: flex;
     
-
-  .informacoes{
-    grid-area: 2fr;
-
-    .title{
-    font-size: 54px;
-    margin: 16px;
+    
+    .title {
+      .title_txt{
+        font-size: 54px;
+        margin: 16px;
+      }
+      
+      
     }
 
-    img{
+    img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
+      position: relative;
       margin: 16px;
+      box-shadow: #303030 0px 0px 8px;
+
     }
 
-    .label{
+    .input_img {
+      position: relative;
+      left: 65%;
+      transform: translate(0, -100%);
+      background: var(--roxo-principal);
+      width: 51px;
+      height: 51px;
+      font-size: 1.5rem;
+      line-height: 41px;
+
+      border-radius: 50%;
+      border: 2px solid var(--bege);
+      overflow: hidden;
+    }
+
+    .input_img img {
+      position: relative;
+      top: 7.5%;
+      z-index: 0;
+      width: 38px;
+      height: 38px;
+    }
+
+    .input_img input[type="file"] {
+      position: absolute;
+      transform: scale(2);
+      z-index: 1;
+      opacity: 0;
+    }
+
+    input[type="file"]:hover {
+      cursor: pointer;
+    }
+
+    .label {
       font-size: 20px;
       margin: 16px;
     }
 
-    .input{
+    .input {
       width: 300px;
       height: 40px;
       border-radius: 20px;
@@ -357,8 +402,52 @@ table {
       padding: 8px;
       font-size: 16px;
     }
+
+    .btn-editar {
+      display: block;
+      margin: 20px auto;
+      background-color: var(--roxo-principal);
+      color: var(--bege);
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .btn-salvar{
+      display: none;
+      margin: 20px auto;
+      border: var(--amarelo) 2px solid;
+      background-color: var(--bege);
+      color: var(--amarelo);
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-excluir{
+      display: block;
+      margin: 20px auto;
+      border: red 2px solid;
+      background-color: var(--bege);
+      color: red;
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      position: relative;
+      cursor: pointer;
+    }
   }
-  
 }
 
 /* ==========================================================================
@@ -371,13 +460,13 @@ table {
   margin-top: 50px;
 }
 
-.footer-logo{
+.footer-logo {
   background-color: var(--roxo-principal);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
-.footer-logo:hover{
+.footer-logo:hover {
   scale: 1.06;
 }
 
@@ -457,4 +546,3 @@ table {
   color: var(--roxo-claro);
   font-size: 0.9em;
 }
-
