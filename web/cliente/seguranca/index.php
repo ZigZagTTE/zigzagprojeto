@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+    <?php require_once("../../conexao.php"); session_start(); ?>
 </head>
 
 <body>
@@ -25,7 +26,12 @@
         </nav>
         <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
         <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="../perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
+        <a class="icon" href="../perfil/"><img
+            class="icon_img_perfil"
+            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
+            alt="Foto de perfil"
+          />
+        </a> <!--user-->
 
     </header>
 
@@ -44,13 +50,13 @@
             <p class="title">Segurança</p> 
 
             <p class="label">Telefone</p>
-            <input type="text" class="input" placeholder="xx xxxxx-xxxx" disabled>
+            <input type="text" class="input" value="<?php echo $_SESSION["cli_telefone"];?>" disabled>
             <p class="label">Email</p>
-            <input type="text" class="input" placeholder="abc@gmail.com" disabled>
+            <input type="text" class="input" value="<?php echo $_SESSION["cli_email"];?>" disabled>
             <p class="label">Senha</p>
-            <input type="text" class="input" placeholder="xxxxxx" disabled>
+            <input type="text" class="input" value="<?php echo $_SESSION["cli_senha"];?>" disabled>
             
-            <button class="btn_alt">Alterar senha</button>
+            <button onclick="alterarSenha()" class="btn_alt">Alterar senha</button>
             
         </div>
     </div>
@@ -106,6 +112,18 @@
     </footer>
 
     <script>
+
+      function alterarSenha() {
+        var inputSenha = document.querySelector('.input');
+         inputSenha.forEach((input) => {
+          input.disable = !input.disabled;
+         });
+        var novaSenha = prompt("Digite sua nova senha:");
+        if (novaSenha) {
+          // Aqui você pode adicionar a lógica para atualizar a senha no servidor
+          alert("Senha alterada com sucesso!");
+        }
+      }
       function onScrollFadeIn() {
         const elements = document.querySelectorAll(".fade-in");
         const windowBottom = window.innerHeight + window.scrollY;

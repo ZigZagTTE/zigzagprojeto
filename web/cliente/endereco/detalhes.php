@@ -69,27 +69,27 @@
         <div class="info_enredeco">
           <p class="title">Endereço</p>
           <p class="label">CEP</p>
-          <input type="text" class="input" placeholder="xxxxx-xxx" disabled />
+          <input type="text" class="input" value="<?php echo $_SESSION["end_cep"];?>" placeholder="xxxxxxx" disabled />
           <p class="label">Cidade</p>
-          <input type="text" class="input" placeholder="xxxxxxx" disabled />
+          <input type="text" class="input" value="<?php echo $_SESSION["end_cidade"];?>" placeholder="xxxxxxxx" disabled />
           <p class="label">Bairro</p>
-          <input type="text" class="input" placeholder="xxxxxxxxxxx" disabled />
+          <input type="text" class="input" value="<?php echo $_SESSION["end_bairro"];?>" placeholder="xxxxxxxx" disabled />
           <p class="label">Rua</p>
           <input
             type="text"
             class="input"
-            placeholder="xxxxxxxxxxxx"
+            value="<?php echo $_SESSION["end_rua"];?>"
             disabled
           />
         </div>
 
         <div class="info_endereco_dois">
           <p class="label">Número</p>
-          <input type="text" class="input" placeholder="xxx" disabled />
+          <input type="text" class="input" value="<?php echo $_SESSION["end_numero"];?>" disabled />
           <p class="label">Complemento</p>
-          <input type="text" class="input" placeholder="xxxxxx" disabled />
+          <input type="text" class="input" value="<?php echo $_SESSION["end_complemento"];?>" disabled />
           <p class="label">Estado</p>
-          <input type="text" class="input" placeholder="xxxxxx" disabled />
+          <input type="text" class="input" value="<?php echo $_SESSION["end_estado"];?>" disabled />
         </div>
       </div>
     </div>

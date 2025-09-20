@@ -91,11 +91,9 @@
 
       <div class="informacoes">
 
-          <div class="title">
-            <p class="title_txt">Informações pessoais</p>
-          </div>
-
           <div>
+            <p class="title">Informações pessoais</p>
+
             <div class="box_img">
               <img
                 class="icon_img_perfil"
@@ -117,7 +115,7 @@
             </button>
           </div>
 
-        <div>
+        <div class="dados">
           <p class="label">Nome</p>
           <input
             id="input"
@@ -155,9 +153,9 @@
           <p class="label">Data de nascimento</p>
           <input
             id="input"
-            type="text"
+            type="date"
             class="input"
-            value="<?php echo $_SESSION["cli_datanascimento"];?>"
+            value="<?php echo $_GET["cli_nascimento"];?>"
             disabled
           />
 

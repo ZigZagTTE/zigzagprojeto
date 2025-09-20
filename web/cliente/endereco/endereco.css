@@ -283,6 +283,14 @@ table {
   transform: scale(1.1);
 }
 
+.icon_img_perfil {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  justify-content: center;
+  box-shadow: #303030 0px 0px 8px;
+}
+
 /* ========================================================================== */
 /* BODY DO SITE                                                              */
 /* ========================================================================== */
@@ -366,6 +374,19 @@ table {
       background-color: var(--roxo-claro);
       color: var(--preto);
       transform: scale(1.05);
+    }
+
+    .btn_salvar {
+      width: 200px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: var(--roxo-principal);
+      color: var(--bege);
+      font-size: 20px;
+      font-weight: bold;
+      margin: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
   }
 }

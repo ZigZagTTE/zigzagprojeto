@@ -337,27 +337,23 @@ table {
     
     
     .title {
-      .title_txt{
         font-size: 54px;
         margin: 16px;
-      }
-      
-      
     }
 
     img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      position: relative;
-      margin: 16px;
+      display: flex;
+      margin: auto;
       box-shadow: #303030 0px 0px 8px;
 
     }
 
     .input_img {
       position: relative;
-      left: 65%;
+      left: 55%;
       transform: translate(0, -100%);
       background: var(--roxo-principal);
       width: 51px;
@@ -372,10 +368,9 @@ table {
 
     .input_img img {
       position: relative;
-      top: 7.5%;
-      z-index: 0;
-      width: 38px;
-      height: 38px;
+      width: 48px;
+      height: 48px;
+      margin: auto;
     }
 
     .input_img input[type="file"] {
@@ -387,6 +382,14 @@ table {
 
     input[type="file"]:hover {
       cursor: pointer;
+    }
+
+
+    .dados {
+      display: block;
+      justify-content: center;
+      margin: auto;
+      
     }
 
     .label {

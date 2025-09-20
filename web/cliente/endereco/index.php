@@ -23,6 +23,7 @@
       src="https://kit.fontawesome.com/a1d8234c07.js"
       crossorigin="anonymous"
     ></script>
+    <?php require_once("../../conexao.php"); session_start(); ?>
   </head>
 
   <body>
@@ -49,8 +50,12 @@
       ></a>
       <!--carrinho-->
       <a class="icon" href="../perfil/"
-        ><i class="fa-solid fa-circle-user fa-2x"></i
-      ></a>
+        ><img
+            class="icon_img_perfil"
+            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
+            alt="Foto de perfil"
+          />
+      </a>
       <!--user-->
     </header>
 
@@ -74,7 +79,7 @@
               >Segurança
             </li></a
           >
-          <a href="index.html" class="choice"
+          <a href="index.php" class="choice"
             ><li>
               <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i
               >Endereço
@@ -86,16 +91,16 @@
       <div class="endereco">
         <p class="title">Endereço</p>
 
-        <a href="detalhes.html">
+        <a href="detalhes.php">
           <div class="setor_endereco">
             <h1>Endereço 1</h1>
-            <p>Rua xxxxxxxx, xx</p>
+            <p><?php echo $_SESSION["cli_endereco"];?></p>
             <i class="fa-solid fa-arrow-right fa-lg"></i>
           </div>
         </a>
 
         <div class="add_endereco">
-          <a href="adicionar.html">
+          <a href="adicionar.php">
             <i class="fa-solid fa-plus" style="color: #fdf2e6"></i>
             
           </a>
