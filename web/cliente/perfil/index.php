@@ -23,7 +23,19 @@
       src="https://kit.fontawesome.com/a1d8234c07.js"
       crossorigin="anonymous"
     ></script>
-    <?php require_once("../../conexao.php"); session_start(); ?>
+    <script src="../cadastrar/formatacao.js" defer></script>
+    <?php 
+      session_start(); 
+      require_once "../../conexao.php"; 
+      require_once "funcoes.php"; 
+
+
+      $dados_usuario = buscarDadosUsuario($conexao, $_SESSION['cli_id']);
+
+      if (!$dados_usuario) {
+          $erro = "Erro ao carregar dados do usuário.";
+      }
+    ?>
   </head>
 
   <body>
@@ -129,7 +141,7 @@
             id="input"
             type="text"
             class="input"
-            value="<?php echo $_GET["cli_cpf"];?>"
+            value="<?php echo formatarCPF($dados_usuario["cli_cpf"]);?>"
             disabled
           />
           <p class="label">Email</p>
@@ -147,7 +159,7 @@
             id="input"
             type="tel"
             class="input"
-            value="<?php echo $_SESSION["cli_telefone"];?>"
+            value="<?php echo formatarTelefone($dados_usuario["cli_telefone"]);?>"
             
           />
           <p class="label">Data de nascimento</p>
@@ -155,7 +167,7 @@
             id="input"
             type="date"
             class="input"
-            value="<?php echo $_GET["cli_nascimento"];?>"
+            value="<?php echo $dados_usuario["cli_nascimento"];?>"
             disabled
           />
 

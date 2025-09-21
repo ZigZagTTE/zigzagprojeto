@@ -22,6 +22,17 @@
         crossorigin="anonymous"></script>
 </head>
 
+<?php 
+    session_start();
+    require_once '../../conexao.php';
+    require_once 'funcoes.php';
+    if (!isset($_SESSION['cli_id'])) {
+        header("Location: ../../login.php");
+        exit();
+    }
+
+    ?>
+
 <body>
     <!-- HEADER -->
     <header class="top">
@@ -60,7 +71,7 @@
             </ul>
         </div>
 
-        <div class="informacoes">
+        <form class="informacoes" method="POST" action="funcoes.php">
             <div class="info_enredeco">
                 <p class="title">Novo Endereço</p>
                 <p class="label">CEP</p>
@@ -85,8 +96,8 @@
                 <input type="text" class="input" placeholder="xxxxxxxx" />
             </div>
 
-            <button class="btn_salvar">Salvar Endereço</button>
-        </div>
+            <button type="submit" class="btn_salvar">Salvar Endereço</button>
+        </form>
     </div>
 
     <!-- FOOTER -->

@@ -11,7 +11,17 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
-    <?php require_once("../../conexao.php"); session_start(); ?>
+    <?php 
+      session_start();
+      require_once "../../conexao.php"; 
+      require_once "../perfil/funcoes.php";
+
+      $dados_usuario = buscarDadosUsuario($conexao, $_SESSION['cli_id']);
+
+      if (!$dados_usuario) {
+          $erro = "Erro ao carregar dados do usuário.";
+      }
+    ?>
 </head>
 
 <body>
@@ -50,7 +60,7 @@
             <p class="title">Segurança</p> 
 
             <p class="label">Telefone</p>
-            <input type="text" class="input" value="<?php echo $_SESSION["cli_telefone"];?>" disabled>
+            <input type="text" class="input" value="<?php echo formatarTelefone($dados_usuario["cli_telefone"]);?>" disabled>
             <p class="label">Email</p>
             <input type="text" class="input" value="<?php echo $_SESSION["cli_email"];?>" disabled>
             <p class="label">Senha</p>

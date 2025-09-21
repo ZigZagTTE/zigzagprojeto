@@ -23,7 +23,16 @@
       src="https://kit.fontawesome.com/a1d8234c07.js"
       crossorigin="anonymous"
     ></script>
-    <?php require_once("../../conexao.php"); session_start(); ?>
+    <?php 
+      session_start();
+      require_once "../../conexao.php"; 
+      require_once "funcoes.php";
+      
+      $dados_endereco = buscarDadosUsuario($conexao, $_SESSION["cli_id"]);
+      if (!$dados_endereco) {
+          $erro = "Erro ao carregar dados do endereço.";
+      }
+    ?>
   </head>
 
   <body>
@@ -91,15 +100,15 @@
       <div class="endereco">
         <p class="title">Endereço</p>
 
-        <a href="detalhes.php">
-          <div class="setor_endereco">
-            <h1>Endereço 1</h1>
-            <p><?php echo $_SESSION["cli_endereco"];?></p>
+        <!--<a href="detalhes.php">
+        <div class="setor_endereco">
+          <h1>Endereço 1</h1>
+            <p><?php echo $dados_endereco["end_rua"];?></p>
             <i class="fa-solid fa-arrow-right fa-lg"></i>
           </div>
-        </a>
+        </a> -->
 
-        <div class="add_endereco">
+        <div id="add" class="add_endereco">
           <a href="adicionar.php">
             <i class="fa-solid fa-plus" style="color: #fdf2e6"></i>
             
@@ -157,28 +166,5 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      function onScrollFadeIn() {
-        const elements = document.querySelectorAll(".fade-in");
-        const windowBottom = window.innerHeight + window.scrollY;
-
-        elements.forEach((el) => {
-          const elementTop = el.getBoundingClientRect().top + window.scrollY;
-          if (windowBottom > elementTop + 100) {
-            // 100px antes de aparecer totalmente
-            el.classList.add("visible");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", onScrollFadeIn);
-      window.addEventListener("DOMContentLoaded", onScrollFadeIn);
-    </script>
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
   </body>
 </html>
