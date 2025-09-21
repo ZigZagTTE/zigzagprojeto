@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="perfil.css" />
+  <link rel="stylesheet" href="endereco.css" />
+  <link rel="stylesheet" href="../home.css" />
   <link
     rel="icon"
     href="../../assets/images/MiniLogo.png"
@@ -20,133 +21,73 @@
   <script
     src="https://kit.fontawesome.com/a1d8234c07.js"
     crossorigin="anonymous"></script>
-  <?php require_once("../../conexao.php");
-  session_start(); ?>
 </head>
 
 <body>
   <!-- HEADER -->
   <header class="top">
-    <a href="../../index.php">
-      <img
-        class="logo_header"
-        src="../../assets/svg/logo.svg"
-        width="90"
-        height="90"
-        alt="Logo ZigZag" />
-    </a>
-    <p class="zigzag_txt">igzag</p>
+    <div class="header_logo">
+      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+          alt="Logo ZigZag">
+        <p class="zigzag_txt">igzag</p>
+        <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="costureiro">
+      </a>
+    </div>
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i>
-    </a>
+    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
-    </a>
+    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
     <!--carrinho-->
-    <a class="icon" href="index.php"><img
-        class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
-        alt="Foto de perfil" />
-    </a>
+    <a class="icon" href="../perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a>
     <!--user-->
   </header>
 
   <!-- INFORMACOES -->
 
-  <section class="secoes">
+  <div class="secoes">
     <div class="paginas">
       <ul>
-        <a href="index.html" class="choice">
-          <li autofocus>
-            <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
-          </li>
+        <a href="../perfil/" class="choice">
+          <li><i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados</li>
         </a>
         <a href="../seguranca/" class="choice">
-          <li>
-            <i
-              class="fa-solid fa-shield-halved fa-lg"
-              style="color: #fdf2e6"></i>Segurança
-          </li>
+          <li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li>
         </a>
-        <a href="../endereco/" class="choice">
-          <li>
-            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço
-          </li>
+        <a href="index.html" class="choice">
+          <li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço</li>
         </a>
       </ul>
     </div>
 
     <div class="informacoes">
-
-      <div>
-        <p class="title">Informações pessoais</p>
-
-        <div class="box_img">
-          <img
-            class="icon_img_perfil"
-            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
-            alt="Foto de perfil" />
-          <div class="input_img">
-            <input id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
-            <img src="../../assets/images/camera.png" />
-          </div>
-        </div>
-
-        <button class="btn-editar" onclick="enableInput()">
-          Alterar Informações
-        </button>
-
-        <button class="btn-salvar" style="display: none;">
-          Salvar alterações
-        </button>
+      <div class="info_enredeco">
+        <p class="title">Endereço</p>
+        <p class="label">CEP</p>
+        <input type="text" class="input" value="<?php echo $_SESSION["end_cep"]; ?>" placeholder="xxxxxxx" disabled />
+        <p class="label">Cidade</p>
+        <input type="text" class="input" value="<?php echo $_SESSION["end_cidade"]; ?>" placeholder="xxxxxxxx" disabled />
+        <p class="label">Bairro</p>
+        <input type="text" class="input" value="<?php echo $_SESSION["end_bairro"]; ?>" placeholder="xxxxxxxx" disabled />
+        <p class="label">Rua</p>
+        <input
+          type="text"
+          class="input"
+          value="<?php echo $_SESSION["end_rua"]; ?>"
+          disabled />
       </div>
 
-      <div class="dados">
-        <p class="label">Nome</p>
-        <input
-          id="input"
-          type="text"
-          class="input"
-          value="<?php echo $_SESSION["cli_nome"]; ?>"
-          disabled />
-        <p class="label">CPF</p>
-        <input
-          id="input"
-          type="text"
-          class="input"
-          value="<?php echo $_GET["cli_cpf"]; ?>"
-          disabled />
-        <p class="label">Email</p>
-        <input
-          id="input"
-          type="email"
-          class="input"
-          value="<?php echo $_SESSION["cli_email"]; ?>"
-          disabled />
-
-        <p class="label">Telefone</p>
-        <input
-          disabled
-          id="input"
-          type="tel"
-          class="input"
-          value="<?php echo $_SESSION["cli_telefone"]; ?>" />
-        <p class="label">Data de nascimento</p>
-        <input
-          id="input"
-          type="date"
-          class="input"
-          value="<?php echo $_GET["cli_nascimento"]; ?>"
-          disabled />
-
-        <button class="btn-excluir">
-          Excluir Conta
-        </button>
+      <div class="info_endereco_dois">
+        <p class="label">Número</p>
+        <input type="text" class="input" value="<?php echo $_SESSION["end_numero"]; ?>" disabled />
+        <p class="label">Complemento</p>
+        <input type="text" class="input" value="<?php echo $_SESSION["end_complemento"]; ?>" disabled />
+        <p class="label">Estado</p>
+        <input type="text" class="input" value="<?php echo $_SESSION["end_estado"]; ?>" disabled />
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -192,15 +133,6 @@
   </footer>
 
   <script>
-    function enableInput() {
-      const inputs = document.querySelectorAll(".input");
-      const btnSalvar = document.querySelector(".btn-salvar");
-      inputs.forEach((input) => {
-        input.disabled = !input.disabled;
-      });
-      btnSalvar.style.display = "block";
-    }
-
     function onScrollFadeIn() {
       const elements = document.querySelectorAll(".fade-in");
       const windowBottom = window.innerHeight + window.scrollY;

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
   <link rel="stylesheet" href="perfil.css" />
+  <link rel="stylesheet" href="../home.css" />
   <link
     rel="icon"
     href="../../assets/images/MiniLogo.png"
@@ -27,19 +28,17 @@
 <body>
   <!-- HEADER -->
   <header class="top">
-    <a href="../../index.php">
-      <img
-        class="logo_header"
-        src="../../assets/svg/logo.svg"
-        width="90"
-        height="90"
-        alt="Logo ZigZag" />
-    </a>
-    <p class="zigzag_txt">igzag</p>
+    <div class="header_logo">
+      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+          alt="Logo ZigZag">
+        <p class="zigzag_txt">igzag</p>
+        <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="costureiro">
+      </a>
+    </div>
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i>
+    <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
     </a>
     <!--casa-->
     <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
@@ -47,7 +46,7 @@
     <!--carrinho-->
     <a class="icon" href="index.php"><img
         class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -58,7 +57,7 @@
   <section class="secoes">
     <div class="paginas">
       <ul>
-        <a href="index.html" class="choice">
+        <a href="../perfil/" class="choice">
           <li autofocus>
             <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
           </li>
@@ -86,7 +85,7 @@
         <div class="box_img">
           <img
             class="icon_img_perfil"
-            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
+            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
             alt="Foto de perfil" />
           <div class="input_img">
             <input id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
@@ -109,21 +108,21 @@
           id="input"
           type="text"
           class="input"
-          value="<?php echo $_SESSION["cli_nome"]; ?>"
+          value="<?php echo $_SESSION["cos_nome"]; ?>"
           disabled />
         <p class="label">CPF</p>
         <input
           id="input"
           type="text"
           class="input"
-          value="<?php echo $_GET["cli_cpf"]; ?>"
+          value="<?php echo $_SESSION["cos_cpf"]; ?>"
           disabled />
         <p class="label">Email</p>
         <input
           id="input"
           type="email"
           class="input"
-          value="<?php echo $_SESSION["cli_email"]; ?>"
+          value="<?php echo $_SESSION["cos_email"]; ?>"
           disabled />
 
         <p class="label">Telefone</p>
@@ -132,13 +131,20 @@
           id="input"
           type="tel"
           class="input"
-          value="<?php echo $_SESSION["cli_telefone"]; ?>" />
+          value="<?php echo $_SESSION["cos_telefone"]; ?>" />
         <p class="label">Data de nascimento</p>
         <input
           id="input"
           type="date"
           class="input"
-          value="<?php echo $_GET["cli_nascimento"]; ?>"
+          value="<?php echo $_SESSION["cos_nascimento"]; ?>"
+          disabled />
+        <p class="label">CNPJ</p>
+        <input
+          id="input"
+          type="cnpj"
+          class="input"
+          value="<?php echo $_SESSION["cos_cnpj"]; ?>"
           disabled />
 
         <button class="btn-excluir">

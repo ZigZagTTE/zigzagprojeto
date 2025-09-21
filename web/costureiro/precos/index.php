@@ -28,11 +28,11 @@
         <div class="icon_header">
             <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
             <a class="icon" href="../../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-            <a class="icon" href="../../cliente/cadastrar/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
+            <a class="icon" href="../../"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
         </div>
     </header>
 
-    <p class="title">Faça já seu pedido em costureiras próximas!</p>
+    <p class="title">Atribuir preços:</p>
 
     <div class="category-card-costurar-atribut">
         <div class="category-icon">
@@ -52,6 +52,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -60,6 +61,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -68,6 +70,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -76,6 +79,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -84,6 +88,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -92,6 +97,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -100,6 +106,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -108,6 +115,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -116,6 +124,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
             <li>
@@ -124,6 +133,7 @@
                 <div class="valor_list">
                     <p>Valor:</p>
                     <input type="text" placeholder="R$ 00,00">
+                    <button>Salvar</button>
                 </div>
             </li>
         </ul>

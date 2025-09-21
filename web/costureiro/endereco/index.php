@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="perfil.css" />
+  <link rel="stylesheet" href="endereco.css" />
+  <link rel="stylesheet" href="../home.css" />
   <link
     rel="icon"
     href="../../assets/images/MiniLogo.png"
@@ -27,27 +28,23 @@
 <body>
   <!-- HEADER -->
   <header class="top">
-    <a href="../../index.php">
-      <img
-        class="logo_header"
-        src="../../assets/svg/logo.svg"
-        width="90"
-        height="90"
-        alt="Logo ZigZag" />
-    </a>
-    <p class="zigzag_txt">igzag</p>
+    <div class="header_logo">
+      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+          alt="Logo ZigZag">
+        <p class="zigzag_txt">igzag</p>
+        <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="costureiro">
+      </a>
+    </div>
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i>
-    </a>
+    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
-    </a>
+    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
     <!--carrinho-->
-    <a class="icon" href="index.php"><img
+    <a class="icon" href="../perfil/"><img
         class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -55,11 +52,11 @@
 
   <!-- INFORMACOES -->
 
-  <section class="secoes">
+  <div class="secoes">
     <div class="paginas">
       <ul>
-        <a href="index.html" class="choice">
-          <li autofocus>
+        <a href="../perfil/" class="choice">
+          <li>
             <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
           </li>
         </a>
@@ -70,7 +67,7 @@
               style="color: #fdf2e6"></i>Segurança
           </li>
         </a>
-        <a href="../endereco/" class="choice">
+        <a href="index.php" class="choice">
           <li>
             <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço
           </li>
@@ -78,75 +75,25 @@
       </ul>
     </div>
 
-    <div class="informacoes">
+    <div class="endereco">
+      <p class="title">Endereço</p>
 
-      <div>
-        <p class="title">Informações pessoais</p>
-
-        <div class="box_img">
-          <img
-            class="icon_img_perfil"
-            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
-            alt="Foto de perfil" />
-          <div class="input_img">
-            <input id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
-            <img src="../../assets/images/camera.png" />
-          </div>
+      <a href="detalhes.php">
+        <div class="setor_endereco">
+          <h1>Endereço 1</h1>
+          <p><?php echo $_SESSION["cos_endereco"]; ?></p>
+          <i class="fa-solid fa-arrow-right fa-lg"></i>
         </div>
+      </a>
 
-        <button class="btn-editar" onclick="enableInput()">
-          Alterar Informações
-        </button>
+      <div class="add_endereco">
+        <a href="adicionar.php">
+          <i class="fa-solid fa-plus" style="color: #fdf2e6"></i>
 
-        <button class="btn-salvar" style="display: none;">
-          Salvar alterações
-        </button>
-      </div>
-
-      <div class="dados">
-        <p class="label">Nome</p>
-        <input
-          id="input"
-          type="text"
-          class="input"
-          value="<?php echo $_SESSION["cli_nome"]; ?>"
-          disabled />
-        <p class="label">CPF</p>
-        <input
-          id="input"
-          type="text"
-          class="input"
-          value="<?php echo $_GET["cli_cpf"]; ?>"
-          disabled />
-        <p class="label">Email</p>
-        <input
-          id="input"
-          type="email"
-          class="input"
-          value="<?php echo $_SESSION["cli_email"]; ?>"
-          disabled />
-
-        <p class="label">Telefone</p>
-        <input
-          disabled
-          id="input"
-          type="tel"
-          class="input"
-          value="<?php echo $_SESSION["cli_telefone"]; ?>" />
-        <p class="label">Data de nascimento</p>
-        <input
-          id="input"
-          type="date"
-          class="input"
-          value="<?php echo $_GET["cli_nascimento"]; ?>"
-          disabled />
-
-        <button class="btn-excluir">
-          Excluir Conta
-        </button>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -173,7 +120,7 @@
           <ul>
             <li>Email: contato@zigzag.com.br</li>
             <li>Telefone: (11) 99123-4567</li>
-            <li>WhatsApp: (11) 99123-4567</li>
+            <li>WhatsApp: (12) 99656-5618</li>
           </ul>
         </div>
         <div class="footer-section">
@@ -192,15 +139,6 @@
   </footer>
 
   <script>
-    function enableInput() {
-      const inputs = document.querySelectorAll(".input");
-      const btnSalvar = document.querySelector(".btn-salvar");
-      inputs.forEach((input) => {
-        input.disabled = !input.disabled;
-      });
-      btnSalvar.style.display = "block";
-    }
-
     function onScrollFadeIn() {
       const elements = document.querySelectorAll(".fade-in");
       const windowBottom = window.innerHeight + window.scrollY;
@@ -222,8 +160,6 @@
       document.body.classList.add("loaded");
     });
   </script>
-  <script src="maps.js"></script>
-  <script src="scroll-smoth.js"></script>
 </body>
 
 </html>
