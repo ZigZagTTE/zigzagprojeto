@@ -25,7 +25,7 @@ VALUES  ('Rua A', 'Bairro A', 100, 'Taubaté', 'SP', 12345123, 1),
 
 INSERT INTO tbl_entregador (entgd_email, entgd_senha, entgd_nome, entgd_cnh, entgd_cpf, entgd_telefone, entgd_perfil)
 VALUES  ('entregadorA@exemplo.com', '1234abcD', 'Entregador A', 000123456789, 12345678902, 12123456790, 'default.png'),
-        ('entregadorB@exemplo.com', 'ABCd1234', 'Entregador B', 000123456790, 98765432111, 12987654322, 'default.png);
+        ('entregadorB@exemplo.com', 'ABCd1234', 'Entregador B', 000123456790, 98765432111, 12987654322, 'default.png');
 
 
 -- Costureiros

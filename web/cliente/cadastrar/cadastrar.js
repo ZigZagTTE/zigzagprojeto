@@ -176,11 +176,14 @@ function mudancaDaImagem(evento) {
         avisoImg.style.color = "#f73151";
         avisoImg.innerHTML = "A imagem escolhida é muito grande";
         avisoImg.style.display = "block";
-        evento.target.files[0] = "";
+        evento.target.value = "";
     }
     else {
-        imagemDePreview.src = URL.createObjectURL(evento.target.files[0]);
-        URL.revokeObjectURL(imagemDePreview.src); //libera memória
+        const objetoURL = URL.createObjectURL(evento.target.files[0]);
+        imagemDePreview.src = objetoURL;
+        imagemDePreview.onload = function () {
+            URL.revokeObjectURL(objetoURL);
+        }
     }
 
 }

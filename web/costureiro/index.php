@@ -36,7 +36,7 @@
         </nav>
         <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
         <a class="icon" href="../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="../cliente/cadastrar/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
+        <a class="icon" href="perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
     </header>
 
     <p class="title">Faça já seu pedido em costureiras próximas!</p>

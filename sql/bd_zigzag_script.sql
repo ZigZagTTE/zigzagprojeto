@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS tbl_catalogo
 (
     cat_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
-    cat_descricao varchar(256),
+    cat_descricao text,
     cat_valor decimal(5,2),
 
     cos_id integer NOT NULL,

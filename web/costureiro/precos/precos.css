@@ -51,7 +51,7 @@
 .list-precos {
   height: auto;
   width: 50%;
-  margin: auto;
+  margin: 0px auto 100px auto;
   border: solid 3px var(--roxo-claro);
 }
 
@@ -106,6 +106,21 @@
 }
 
 .valor_list input {
-  width: 400px;
+  width: 300px;
   text-align: center;
+}
+
+.valor_list button {
+  background-color: var(--roxo-principal);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.valor_list button:hover {
+  background-color: var(--roxo-claro);
 }

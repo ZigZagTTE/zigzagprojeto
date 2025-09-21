@@ -295,12 +295,15 @@ table {
 /* BODY DO SITE                                                              */
 /* ========================================================================== */
 
-.secoes {
+.secoes{
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
 
-  .paginas {
+
+
+  .paginas{
+    
     li {
       margin-top: 20px;
       margin-bottom: -10px;
@@ -311,92 +314,43 @@ table {
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
       transition: transform 0.3s ease;
+      
 
-      i {
-        margin-right: 24px;
-      }
-    }
-
-    li:hover {
-      transform: scale(1.1);
-    }
-
-    .choice {
-      margin: 10px;
-      font-size: 22px;
-      font-weight: bold;
-      vertical-align: middle;
-      background-color: var(--roxo-claro);
-      text-decoration: none;
-      color: black;
+    i {
+      margin-right: 24px;
     }
   }
 
-  .informacoes {
-    display: flex;
+  li:hover {
+    transform: scale(1.1);
+  }
 
+  .choice {
+    margin: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    vertical-align: middle;
+    background-color: var(--roxo-claro);
+    text-decoration: none;
+    color: black;
+  }
+  }
+    
 
-    .title {
-      font-size: 54px;
-      margin: 16px;
+  .informacoes{
+    grid-area: 2fr;
+
+    .title{
+    font-size: 54px;
+    margin: 16px;
     }
 
-    img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      display: flex;
-      margin: auto;
-      box-shadow: #303030 0px 0px 8px;
-
-    }
-
-    .input_img {
-      position: relative;
-      left: 55%;
-      transform: translate(0, -100%);
-      background: var(--roxo-principal);
-      width: 51px;
-      height: 51px;
-      font-size: 1.5rem;
-      line-height: 41px;
-      border-radius: 50%;
-      border: 2px solid var(--bege);
-      overflow: hidden;
-    }
-
-    .input_img img {
-      position: relative;
-      width: 48px;
-      height: 48px;
-      margin: auto;
-    }
-
-    .input_img input[type="file"] {
-      position: absolute;
-      transform: scale(2);
-      z-index: 1;
-      opacity: 0;
-    }
-
-    input[type="file"]:hover {
-      cursor: pointer;
-    }
-
-
-    .dados {
-      display: block;
-      justify-content: center;
-      margin: auto;
-
-    }
-
-    .label {
+    .label{
       font-size: 20px;
       margin: 16px;
     }
 
-    .input {
+    .input{
       width: 300px;
       height: 40px;
       border-radius: 20px;
@@ -405,52 +359,29 @@ table {
       font-size: 16px;
     }
 
-    .btn-editar {
-      display: block;
-      margin: 20px auto;
+    .btn_alt{
+      width: 150px;
+      height: 40px;
+      border-radius: 20px;
       background-color: var(--roxo-principal);
       color: var(--bege);
-      text-decoration: none;
-      border-radius: 5rem;
-      font-size: 1.2rem;
-      padding: 0.6rem 3rem;
-      transition: all 0.3s ease;
-      transform-origin: center;
-      position: relative;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 16px;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .btn-salvar {
-      display: none;
-      margin: 20px auto;
-      border: var(--amarelo) 2px solid;
-      background-color: var(--bege);
-      color: var(--amarelo);
-      text-decoration: none;
-      border-radius: 5rem;
-      font-size: 1.2rem;
-      padding: 0.6rem 3rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn-excluir {
-      display: block;
-      margin: 20px auto;
-      border: red 2px solid;
-      background-color: var(--bege);
-      color: red;
-      text-decoration: none;
-      border-radius: 5rem;
-      font-size: 1.2rem;
-      padding: 0.6rem 3rem;
-      transition: all 0.3s ease;
-      transform-origin: center;
-      position: relative;
-      cursor: pointer;
+    .btn_alt:hover{
+      background-color: var(--roxo-claro);
+      color: var(--preto);
+      transform: scale(1.05);
     }
   }
+  
 }
+
+
 
 /* ==========================================================================
    FOOTER
@@ -459,16 +390,16 @@ table {
   width: 100%;
   background-color: var(--preto);
   padding: 4rem 0 2rem;
-  margin-top: 50px;
+  margin-top: 200px;
 }
 
-.footer-logo {
+.footer-logo{
   background-color: var(--roxo-principal);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
-.footer-logo:hover {
+.footer-logo:hover{
   scale: 1.06;
 }
 
@@ -548,3 +479,4 @@ table {
   color: var(--roxo-claro);
   font-size: 0.9em;
 }
+
