@@ -63,8 +63,6 @@
             <input type="text" class="input" value="<?php echo formatarTelefone($dados_usuario["cli_telefone"]);?>" disabled>
             <p class="label">Email</p>
             <input type="text" class="input" value="<?php echo $_SESSION["cli_email"];?>" disabled>
-            <p class="label">Senha</p>
-            <input type="text" class="input" value="<?php echo $_SESSION["cli_senha"];?>" disabled>
             
             <button onclick="alterarSenha()" class="btn_alt">Alterar senha</button>
             
