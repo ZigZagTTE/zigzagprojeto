@@ -1,0 +1,69 @@
+:root {
+  /* Paleta de cores - Tema Claro */
+  --roxo-rincipal: #b450f5;
+  --roxo-claro: #d89ffd;
+  --roxo-mais-claro: #e7cef6;
+  --preto: #303030;
+  --cinza-escuro: #545454;
+  --cinza: #a6a6a6;
+  --bege: #e1d5c7;
+  --bege-claro: #f5e9db;
+  --amarelo: #edbd44;
+}
+
+
+body {
+  background-image: url(../assets/images/ZigZagwpp.png);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  display: grid;
+  background-color: var(--bege-claro);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.ent-img {
+  display: flex;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.cli-img {
+  display: flex;
+  width: 200px;
+  margin: 5px auto;
+}
+
+.cost-img {
+  display: flex;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.box-buttons {
+  background-color: var(--roxo-claro);
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  gap: 20px;
+}
