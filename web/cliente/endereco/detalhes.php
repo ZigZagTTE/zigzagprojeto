@@ -49,8 +49,12 @@
       ></a>
       <!--carrinho-->
       <a class="icon" href="../perfil/"
-        ><i class="fa-solid fa-circle-user fa-2x"></i
-      ></a>
+        ><img
+            class="icon_img_perfil"
+            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
+            alt="Foto de perfil"
+          />
+        </a>
       <!--user-->
     </header>
 

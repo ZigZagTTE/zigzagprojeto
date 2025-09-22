@@ -50,7 +50,13 @@
         <!--casa-->
         <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
         <!--carrinho-->
-        <a class="icon" href="../perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a>
+        <a class="icon" href="../perfil/">
+            <img
+            class="icon_img_perfil"
+            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
+            alt="Foto de perfil"
+            />
+        </a>
         <!--user-->
     </header>
 
@@ -71,7 +77,7 @@
             </ul>
         </div>
 
-        <form class="informacoes" method="POST" action="funcoes.php">
+        <form class="informacoes" method="POST" action="index.php">
             <div class="info_enredeco">
                 <p class="title">Novo Endereço</p>
                 <p class="label">CEP</p>
@@ -96,7 +102,7 @@
                 <input type="text" class="input" placeholder="xxxxxxxx" />
             </div>
 
-            <button type="submit" class="btn_salvar">Salvar Endereço</button>
+            <button onclick="salvarEndereco()" type="submit" class="btn_salvar">Salvar Endereço</button>
         </form>
     </div>
 
