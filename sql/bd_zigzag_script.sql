@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS tbl_cliente
     cli_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
     cli_email varchar(320) NOT NULL,
-    cli_senha varchar(32) NOT NULL,
+    cli_senhaHash varchar(128) NOT NULL,
 
     cli_cpf bigint,
     cli_nome varchar(64),
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS tbl_entregador
     entgd_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
     entgd_email varchar(320) NOT NULL,
-    entgd_senha varchar(32) NOT NULL,
+    entgd_senhaHash varchar(128) NOT NULL,
 
     entgd_nome varchar(64),
     entgd_cnh bigint,
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS tbl_costureiro
     cos_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
     cos_email varchar(320) NOT NULL,
-    cos_senha varchar(32) NOT NULL,
+    cos_senhaHash varchar(128) NOT NULL,
 
     cos_nome varchar(64),
     cos_cpf bigint,

@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
 
-    <script type="text/javascript" src="formatacao.js" defer></script>
+    <script type="text/javascript" src="../../formatacao.js" defer></script>
     <script type="text/javascript" src="cadastrar.js" defer></script>
 </head>
 
@@ -95,7 +95,7 @@
             <div class="doisBotoes">
                 <input class="btnCompostoUm" id="btnRegredir2" type="button" value="←">
 
-                <input class="btnCompostoDois" type="submit" value="Cadastrar">
+                <input class="btnCompostoDois" id="btnCadastrar" type="submit" value="Cadastrar">
             </div>
         </section>
         <p class="erro_cad" id="erroVazio">Todos os campos precisam ser preenchidos</p><br>

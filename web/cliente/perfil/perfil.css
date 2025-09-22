@@ -360,16 +360,19 @@ table {
       height: 51px;
       font-size: 1.5rem;
       line-height: 41px;
-      border-radius: 50%;
       border: 2px solid var(--bege);
+      border-radius: 50%;
       overflow: hidden;
     }
 
     .input_img img {
       position: relative;
-      width: 48px;
-      height: 48px;
+      top:2px;
+      border-radius: 0;
+      width: 40px;
+      height: 40px;
       margin: auto;
+      box-shadow: unset;
     }
 
     .input_img input[type="file"] {

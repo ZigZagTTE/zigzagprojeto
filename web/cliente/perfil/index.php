@@ -1,53 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZigZag</title>
-    <link rel="stylesheet" href="perfil.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/MiniLogo.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a1d8234c07.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../cadastrar/formatacao.js" defer></script>
-    <?php 
-      session_start(); 
-      require_once "../../conexao.php"; 
-      require_once "funcoes.php"; 
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZigZag</title>
+  <link rel="stylesheet" href="perfil.css" />
+  <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+  <script src="../../formatacao.js" defer></script>
+  <script src="./perfil.js" defer></script>
 
-      $dados_usuario = buscarDadosUsuario($conexao, $_SESSION['cli_id']);
-
-      if (!$dados_usuario) {
-          $erro = "Erro ao carregar dados do usuário.";
-      }
-    ?>
-  </head>
+  <?php
+  session_start();
+  require_once "../../conexao.php";
+  ?>
+</head>
 
 <body>
   <!-- HEADER -->
   <header class="top">
     <a href="../../index.php">
-      <img
-        class="logo_header"
-        src="../../assets/svg/logo.svg"
-        width="90"
-        height="90"
-        alt="Logo ZigZag" />
+      <img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90" alt="Logo ZigZag" />
     </a>
     <p class="zigzag_txt">igzag</p>
     <nav class="nav_header">
@@ -59,129 +36,85 @@
     <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
     </a>
     <!--carrinho-->
-    <a class="icon" href="index.php"><img
-        class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
-        alt="Foto de perfil" />
+    <a class="icon" href="index.php"><img class="icon_img_perfil"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
     </a>
     <!--user-->
   </header>
 
-    <!-- INFORMACOES -->
+  <!-- INFORMACOES -->
 
-    <section class="secoes">
-      <div class="paginas">
-        <ul>
-          <a href="index.html" class="choice"
-            ><li autofocus>
-              <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i
-              >Meus dados
-            </li></a
-          >
-          <a href="../seguranca/" class="choice"
-            ><li>
-              <i
-                class="fa-solid fa-shield-halved fa-lg"
-                style="color: #fdf2e6"
-              ></i
-              >Segurança
-            </li></a
-          >
-          <a href="../endereco/" class="choice"
-            ><li>
-              <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i
-              >Endereço
-            </li></a
-          >
-        </ul>
-      </div>
+  <section class="secoes">
+    <div class="paginas">
+      <ul>
+        <a href="index.html" class="choice">
+          <li autofocus>
+            <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
+          </li>
+        </a>
+        <a href="../seguranca/" class="choice">
+          <li>
+            <i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6"></i>Segurança
+          </li>
+        </a>
+        <a href="../endereco/" class="choice">
+          <li>
+            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço
+          </li>
+        </a>
+      </ul>
+    </div>
 
-      <div class="informacoes">
+    <div class="informacoes">
 
-          <div>
-            <p class="title">Informações pessoais</p>
+      <form class="dados">
 
-            <div class="box_img">
-              <img
-                class="icon_img_perfil"
-                src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
-                alt="Foto de perfil"
-              />
-              <div class="input_img">
+        <div>
+          <p class="title">Informações pessoais</p>
+
+          <div class="box_img">
+            <img class="icon_img_perfil"
+              src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
+            <div class="input_img">
               <input id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
               <img src="../../assets/images/camera.png" />
-              </div>
             </div>
-
-            <button class="btn-editar" onclick="enableInput()">
-              Alterar Informações
-            </button>
-
-            <button class="btn-salvar" style="display: none;">
-              Salvar alterações
-            </button>
           </div>
 
-        <div class="dados">
-          <p class="label">Nome</p>
-          <input
-            id="input"
-            type="text"
-            class="input"
-            value="<?php echo $_SESSION["cli_nome"];?>"
-            disabled
-          />
-          <p class="label">CPF</p>
-          <input
-            id="input"
-            type="text"
-            class="input"
-            value="<?php echo formatarCPF($dados_usuario["cli_cpf"]);?>"
-            disabled
-          />
-          <p class="label">Email</p>
-          <input
-            id="input"
-            type="email"
-            class="input"
-            value="<?php echo $_SESSION["cli_email"];?>"
-            disabled
-          />
-
-          <p class="label">Telefone</p>
-          <input
-            disabled
-            id="input"
-            type="tel"
-            class="input"
-            value="<?php echo formatarTelefone($dados_usuario["cli_telefone"]);?>"
-            
-          />
-          <p class="label">Data de nascimento</p>
-          <input
-            id="input"
-            type="date"
-            class="input"
-            value="<?php echo $dados_usuario["cli_nascimento"];?>"
-            disabled
-          />
-
-          <button class="btn-excluir" >
-            Excluir Conta
+          <button class="btn-editar">
+            Alterar Informações
           </button>
+
         </div>
-      </div>
-    </section>
+
+        <p class="label">Nome</p>
+        <input disabled id="txtNome" type="text" class="input" value="<?php echo $_SESSION["cli_nome"]; ?>" />
+
+        <p class="label">CPF</p>
+        <input disabled id="txtCPF" type="text" class="input" value="<?php echo $_SESSION["cli_cpf"]; ?>" />
+
+        <p class="label">Email</p>
+        <input disabled id="txtEmail" type="email" class="input" value="<?php echo $_SESSION["cli_email"]; ?>" />
+
+        <p class="label">Telefone</p>
+        <input disabled id="txtTelefone" type="tel" class="input" value="<?php echo $_SESSION["cli_telefone"]; ?>" />
+
+        <p class="label">Data de nascimento</p>
+        <input disabled id="txtEmail" type="date" class="input" value="<?php echo $_SESSION["cli_nascimento"]; ?>" />
+
+        <input type="submit" name="salvar" class="btn-salvar" style="display: none;" value="Salvar alterações">
+
+        <input type="submit" name="excluir" class="btn-excluir" value="Excluir Conta">
+      </form>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <img
-            src="../../assets/svg/logo.svg"
-            alt="ZigZag Logo"
-            class="footer-logo" />
+          <img src="../../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
         </div>
         <div class="footer-section">
@@ -205,7 +138,8 @@
           <h3>Redes Sociais</h3>
           <div class="social-links">
             <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg"
+                alt="Instagram" /></a>
             <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
@@ -216,39 +150,6 @@
     </div>
   </footer>
 
-  <script>
-    function enableInput() {
-      const inputs = document.querySelectorAll(".input");
-      const btnSalvar = document.querySelector(".btn-salvar");
-      inputs.forEach((input) => {
-        input.disabled = !input.disabled;
-      });
-      btnSalvar.style.display = "block";
-    }
-
-    function onScrollFadeIn() {
-      const elements = document.querySelectorAll(".fade-in");
-      const windowBottom = window.innerHeight + window.scrollY;
-
-      elements.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top + window.scrollY;
-        if (windowBottom > elementTop + 100) {
-          // 100px antes de aparecer totalmente
-          el.classList.add("visible");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", onScrollFadeIn);
-    window.addEventListener("DOMContentLoaded", onScrollFadeIn);
-  </script>
-  <script>
-    window.addEventListener("DOMContentLoaded", function() {
-      document.body.classList.add("loaded");
-    });
-  </script>
-  <script src="maps.js"></script>
-  <script src="scroll-smoth.js"></script>
 </body>
 
 </html>
