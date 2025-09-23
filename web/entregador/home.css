@@ -1,0 +1,334 @@
+/* ========================================================================== */
+/* RESET E CONFIGURAÇÕES GLOBAIS                                            */
+/* ========================================================================== */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Iansui", cursive;
+  cursor: default;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Configuração de elementos HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Variáveis de Cores e Breakpoints */
+:root {
+  /* Paleta de cores - Tema Claro */
+  --roxo-principal: #b450f5;
+  --roxo-claro: #d89ffd;
+  --roxo-mais-claro: #e7cef6;
+  --preto: #303030;
+  --cinza-escuro: #545454;
+  --cinza: #a6a6a6;
+  --bege: #f5e9dc;
+  --bege-claro: #f5e9db;
+  --amarelo: #edbd44;
+
+  /* Breakpoints */
+  --mobile-pequeno: 320px;
+  --mobile-normal: 480px;
+  --tablet: 768px;
+  --notebook: 1024px;
+  --desktop: 1280px;
+  --ultra-wide: 1440px;
+}
+
+/* [data-theme="dark"] {
+    /* Paleta de cores - Tema Escuro 
+    --bege: #f5e9dc;
+    --roxo-principal: #b450f5;
+    --roxo-escuro: #894faf;
+    --bege-claro: #f5e9db;
+    --amarelo-claro: #fdf2e6;
+    --cinza: #a6a6a6;
+    --roxo-medio: #824db7;
+    --roxo-muito-escuro: #1c0d2b;
+    --amarelo: #b450f5;
+    }*/
+
+/* Configurações Base */
+html,
+body {
+  width: 100%;
+  position: relative;
+}
+
+body {
+  line-height: 1;
+  background-color: var(--bege);
+  overflow-x: hidden;
+}
+
+/* Reset de Listas e Citações */
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Reset de Tabelas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Utilitários */
+.fixFloat {
+  clear: both;
+}
+
+/* ========================================================================== */
+/* HEADER E NAVEGAÇÃO                                                        */
+/* ========================================================================== */
+.top {
+  background: linear-gradient(90deg, var(--roxo-principal), var(--roxo-claro));
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.header_logo a {
+  text-decoration: none;
+  display: flex;
+}
+
+.ent_text {
+  width: max-content;
+  height: 100px;
+  margin: 0 0 -25px -60px;
+  scale: 0.5;
+  align-self: flex-end;
+}
+
+.nav_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.zigzag_txt {
+  color: #f5e9db;
+  font-family: "Iansui";
+  font-size: 40px;
+  align-self: last baseline;
+  margin: 0 0 15px 0;
+}
+
+.logo_header {
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s ease
+}
+
+.logo_header:hover {
+  scale: 1.05;
+}
+.icons{
+  display: flex;
+  gap: 5px;
+}
+/*ICON*/
+
+.icon {
+  align-self: center;
+  padding-right: 20px;
+  color: #f5e9db;
+  transition: all 0.3s ease;
+}
+
+.icon::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: 0;
+  background-color: var(--bege-claro);
+  transition: all 1s ease;
+  transform: translateX(-50%);
+}
+
+.icon:hover {
+  color: var(--bege);
+  transform: scale(1.1);
+}
+
+/* ========================================================================== */
+/* BBODY DO SITE                                                              */
+/* ========================================================================== */
+
+/*TÍTULO*/
+
+.title {
+  font-size: 30px;
+  margin: 30px 0 20px 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/* ==========================================================================
+   ÁREA DOS PEDIDOS
+   ========================================================================== */
+.pedidos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+
+
+  .pedido {
+    display: flex;
+  background-color: #e1d5c7;
+  width: 500px;
+  height: 160px;
+  border-radius: 10px;
+  margin: 30px;
+  text-decoration: none;
+  color: black;
+
+  .pedido-img{
+    width: 120px;
+    height: 120px;
+    margin: 20px;
+  }
+
+  .costureira{
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  width: 100%;
+  background-color: var(--preto);
+  padding: 4rem 0 2rem;
+}
+
+.footer-logo {
+  background-color: var(--roxo-principal);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+  scale: 1.06;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  color: var(--roxo-claro);
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  color: var(--roxo-claro);
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  color: var(--roxo-claro);
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: var(--roxo);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-section ul li a:hover {
+  color: var(--cinza-escuro);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--roxo-claro);
+}
+
+.footer-bottom p {
+  color: var(--roxo-claro);
+  font-size: 0.9em;
+}
