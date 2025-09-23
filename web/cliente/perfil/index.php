@@ -14,9 +14,10 @@
   <script src="../../formatacao.js" defer></script>
   <script src="./perfil.js" defer></script>
 
-  <?php
-  session_start();
-  require_once "../../conexao.php";
+  <?php session_start();
+  if (!isset($_SESSION["cli_id"])) {
+    header("Location: ../cadastrar");
+  }
   ?>
 </head>
 
@@ -65,48 +66,45 @@
       </ul>
     </div>
 
-    <div class="informacoes">
-
-      <form class="dados">
-
-        <div>
+      <form class="dados" method="post" action="alterarInformacoes.php" enctype="multipart/form-data">
+        <div class="titulo_imagem">
           <p class="title">Informações pessoais</p>
+          <br>
 
           <div class="box_img">
-            <img class="icon_img_perfil"
-              src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
+            <img class="icon_img_perfil" id="imagemPreview" src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
             <div class="input_img">
               <input id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
               <img src="../../assets/images/camera.png" />
             </div>
+            <p class="erro_aviso" id="erroImagem"></p>
           </div>
 
-          <button class="btn-editar">
-            Alterar Informações
-          </button>
+          <input type="button" class="btn-editar" value="Alterar Informações">
+          <input type="submit" name="excluir" class="btn-excluir" value="Excluir Conta">
 
         </div>
+        <div>
+          <p class="label">Nome</p>
+          <input disabled id="txtNome" name="txtNome" type="text" class="input" value="<?php echo $_SESSION["cli_nome"]; ?>" />
 
-        <p class="label">Nome</p>
-        <input disabled id="txtNome" type="text" class="input" value="<?php echo $_SESSION["cli_nome"]; ?>" />
+          <p class="label">CPF</p>
+          <input disabled id="txtCPF" name="txtCPF" type="text" class="input" value="<?php echo $_SESSION["cli_cpf"]; ?>" />
 
-        <p class="label">CPF</p>
-        <input disabled id="txtCPF" type="text" class="input" value="<?php echo $_SESSION["cli_cpf"]; ?>" />
+          <p class="label">Email</p>
+          <input disabled id="txtEmail" name="txtEmail" type="email" class="input" value="<?php echo $_SESSION["cli_email"]; ?>" />
+          <br>
+          <p class="erro_aviso" id="erroEmail"></p>
 
-        <p class="label">Email</p>
-        <input disabled id="txtEmail" type="email" class="input" value="<?php echo $_SESSION["cli_email"]; ?>" />
+          <p class="label">Telefone</p>
+          <input disabled id="txtTelefone" name="txtTelefone" type="tel" class="input" value="<?php echo $_SESSION["cli_telefone"]; ?>" />
 
-        <p class="label">Telefone</p>
-        <input disabled id="txtTelefone" type="tel" class="input" value="<?php echo $_SESSION["cli_telefone"]; ?>" />
+          <p class="label">Data de nascimento</p>
+          <input disabled id="txtData" name="txtData" type="date" class="input" value="<?php echo $_SESSION["cli_nascimento"]; ?>" />
 
-        <p class="label">Data de nascimento</p>
-        <input disabled id="txtEmail" type="date" class="input" value="<?php echo $_SESSION["cli_nascimento"]; ?>" />
-
-        <input type="submit" name="salvar" class="btn-salvar" style="display: none;" value="Salvar alterações">
-
-        <input type="submit" name="excluir" class="btn-excluir" value="Excluir Conta">
+          <input type="submit" name="salvar" class="btn-salvar" style="display: none;" value="Salvar alterações">
+        </div>
       </form>
-    </div>
   </section>
 
   <!-- FOOTER -->

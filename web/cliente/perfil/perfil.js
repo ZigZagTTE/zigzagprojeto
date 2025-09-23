@@ -1,10 +1,31 @@
+//Inputs
 const btnEditar = document.querySelector(".btn-editar");
 const txtCPF = document.getElementById("txtCPF");
 const txtTelefone = document.getElementById("txtTelefone");
+const inputImagem = document.getElementById("inputImagem");
+
+//Preview da Imagem
+const imagemDePreview = document.getElementById("imagemPreview");
+
+//Erros
+const erroImagem = document.getElementById("erroImagem");
+const erroEmail = document.getElementById("erroEmail");
 
 txtCPF.value = formatarCPF(txtCPF.value);
 txtTelefone.value = formatarTelefone(txtTelefone.value);
+inputImagem.addEventListener("change", mudancaDaImagem);
 
+endereco = window.location.search;
+listaDeParametros = new URLSearchParams(endereco);
+
+if (listaDeParametros.get("erroImagem") === "1") {
+    erroImagem.style.display = "inline";
+    erroImagem.innerHTML = "Sua imagem é maior do que 15 MB";
+}
+if (listaDeParametros.get("erroEmail") === "1") {
+    erroEmail.style.display = "inline";
+    erroEmail.innerHTML = "&emsp;Este email está sendo utilizado";
+}
 
 btnEditar.addEventListener("click", ativarInput);
 txtCPF.addEventListener("input", function (evento) {
@@ -38,22 +59,23 @@ function ativarInput() {
     }
 }
 
-function onScrollFadeIn() {
-    const elements = document.querySelectorAll(".fade-in");
-    const windowBottom = window.innerHeight + window.scrollY;
+function mudancaDaImagem(evento) {
+    erroImagem.style.color = "green";
+    erroImagem.innerHTML = "Imagem escolhida";
+    erroImagem.style.display = "inline";
 
-    elements.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top + window.scrollY;
-        if (windowBottom > elementTop + 100) {
-            // 100px antes de aparecer totalmente
-            el.classList.add("visible");
+    if (evento.target.files[0].size > 1048576 * 15) {
+        erroImagem.style.color = "#f73151";
+        erroImagem.innerHTML = "A imagem escolhida é muito grande (máximo: 15 MB)";
+        erroImagem.style.display = "inline";
+        evento.target.value = "";
+    }
+    else {
+        const objetoURL = URL.createObjectURL(evento.target.files[0]);
+        imagemDePreview.src = objetoURL;
+        imagemDePreview.onload = function () {
+            URL.revokeObjectURL(objetoURL);
         }
-    });
+    }
+
 }
-
-window.addEventListener("scroll", onScrollFadeIn);
-window.addEventListener("DOMContentLoaded", onScrollFadeIn);
-
-window.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("loaded");
-});

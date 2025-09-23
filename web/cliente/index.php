@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
-    <?php session_start();?>
+    <?php session_start();
+    if (!isset($_SESSION["cli_id"])){
+        header("Location: ./cadastrar");
+    }
+    ?>
 </head>
 
 <body>

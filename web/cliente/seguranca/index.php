@@ -11,16 +11,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+    <script src="../../formatacao.js" defer></script>
+    <script src="./seguranca.js" defer></script>
     <?php 
       session_start();
       require_once "../../conexao.php"; 
-      require_once "../perfil/funcoes.php";
-
-      $dados_usuario = buscarDadosUsuario($conexao, $_SESSION['cli_id']);
-
-      if (!$dados_usuario) {
-          $erro = "Erro ao carregar dados do usuário.";
-      }
     ?>
 </head>
 
@@ -56,17 +51,19 @@
             </ul>
         </div>
 
-        <div class="informacoes">
+        <form class="informacoes">
             <p class="title">Segurança</p> 
+            <br>
 
             <p class="label">Telefone</p>
-            <input type="text" class="input" value="<?php echo formatarTelefone($dados_usuario["cli_telefone"]);?>" disabled>
+            <input type="text" id="txtTelefone" class="input" value="<?php echo $_SESSION["cli_telefone"];?>" disabled>
             <p class="label">Email</p>
             <input type="text" class="input" value="<?php echo $_SESSION["cli_email"];?>" disabled>
             
-            <button onclick="alterarSenha()" class="btn_alt">Alterar senha</button>
+            <br>
+            <button class="btn_alt">Alterar senha</button>
             
-        </div>
+        </form>
     </div>
 
 <!-- FOOTER -->
@@ -118,42 +115,5 @@
         </div>
       </div>
     </footer>
-
-    <script>
-
-      function alterarSenha() {
-        var inputSenha = document.querySelector('.input');
-         inputSenha.forEach((input) => {
-          input.disable = !input.disabled;
-         });
-        var novaSenha = prompt("Digite sua nova senha:");
-        if (novaSenha) {
-          // Aqui você pode adicionar a lógica para atualizar a senha no servidor
-          alert("Senha alterada com sucesso!");
-        }
-      }
-      function onScrollFadeIn() {
-        const elements = document.querySelectorAll(".fade-in");
-        const windowBottom = window.innerHeight + window.scrollY;
-
-        elements.forEach((el) => {
-          const elementTop = el.getBoundingClientRect().top + window.scrollY;
-          if (windowBottom > elementTop + 100) {
-            // 100px antes de aparecer totalmente
-            el.classList.add("visible");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", onScrollFadeIn);
-      window.addEventListener("DOMContentLoaded", onScrollFadeIn);
-    </script>
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
-    <script src="maps.js"></script>
-    <script src="scroll-smoth.js"></script>
   </body>
 </html>
