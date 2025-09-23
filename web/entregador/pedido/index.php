@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZigZag</title>
     <link rel="stylesheet" href="home.css">
-    <link rel="icon" href="../assets/images/MiniLogo.png" type="image/x-icon">
+    <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -18,10 +18,10 @@
     <!-- HEADER -->
     <header class="top">
         <div class="header_logo">
-            <a href="../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
+            <a href="../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
                     alt="Logo ZigZag">
                 <p class="zigzag_txt">igzag</p>
-                <img class="ent_text" src="../assets\images\ent_img\entregadores.png" alt="costureiro">
+                <img class="ent_text" src="../../assets\images\ent_img\entregadores.png" alt="costureiro">
             </a>
         </div>
         <div class="icons">
@@ -31,7 +31,7 @@
         </div>
     </header>
 
-    <p class="title">Pedidos disponíveis para entrega</p>
+    <p class="title">Pedido #A78569</p>
 
     <section class="pedidos">
         <a href="pedido/" class="pedido">
@@ -39,43 +39,16 @@
             <div class="pedido-info">
                 <p class="costureira">Costureira xxxxx</p>
                 <p class="endereco">Endereço</p>
-
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
             </div>
         </a>
 
-        <a href="pedido/" class="pedido">
+        <a class="pedido">
             <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
             <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
-
                 <p class="costureira">Cliente xxxxx</p>
                 <p class="endereco">Endereço</p>
             </div>
-        </a>
-
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
-
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
-
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
-
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
+            <span class="status">Valor</span>
         </a>
 
     </section>
@@ -86,7 +59,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <img
-                        src="../assets/svg/logo.svg"
+                        src="../../assets/svg/logo.svg"
                         alt="ZigZag Logo"
                         class="footer-logo" />
                     <p>Conectando talentos e necessidades na arte da costura.</p>
@@ -111,9 +84,9 @@
                 <div class="footer-section">
                     <h3>Redes Sociais</h3>
                     <div class="social-links">
-                        <a href="#"><img src="../assets/svg/facebook.svg" alt="Facebook" /></a>
-                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../assets/svg/instagram.svg" alt="Instagram" /></a>
-                        <a href="#"><img src="../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+                        <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
                     </div>
                 </div>
             </div>

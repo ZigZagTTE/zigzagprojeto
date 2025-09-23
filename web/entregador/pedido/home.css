@@ -195,7 +195,7 @@ table {
 
 .title {
   font-size: 30px;
-  margin: 30px 0 20px 50px;
+  margin: 30px 0 0 50px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -205,24 +205,19 @@ table {
    ========================================================================== */
 .pedidos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-rows: 1fr 1fr;
   padding: 20px;
-  margin: 0 auto;
-  max-width: 1200px;
 }
-
-
 
   .pedido {
     display: flex;
   background-color: #e1d5c7;
-  width: 500px;
+  width: 70%;
   height: 160px;
   border-radius: 10px;
-  margin: 30px;
-  text-decoration: none;
-  color: black;
+  margin: 15px;
+  align-items: center;
+  justify-self: center;
 
   .pedido-img{
     width: 120px;
