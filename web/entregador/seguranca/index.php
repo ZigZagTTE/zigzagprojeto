@@ -24,7 +24,7 @@
       <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="costureiro">
+        <img class="ent_text" src="../../assets/images/ent_img/entregadores.png" alt="costureiro">
       </a>
     </div>
     <div class="buttons_home">
@@ -34,7 +34,7 @@
     <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
     <a class="icon" href="../perfil/"><img
         class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
         alt="Foto de perfil" />
     </a> <!--user-->
 
@@ -51,8 +51,8 @@
         <a href="index.html" class="choice">
           <li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li>
         </a>
-        <a href="../endereco/" class="choice">
-          <li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6;"></i>Endereço</li>
+        <a href="../entregas/" class="choice">
+          <li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6;"></i>Entregas Feitas</li>
         </a>
       </ul>
     </div>
@@ -61,13 +61,14 @@
       <p class="title">Segurança</p>
 
       <p class="label">Telefone</p>
-      <input type="text" class="input" value="<?php echo $_SESSION["cos_telefone"]; ?>" disabled>
+      <input type="text" class="input" value="<?php echo $_SESSION["entgd_telefone"]; ?>" disabled>
       <p class="label">Email</p>
-      <input type="text" class="input" value="<?php echo $_SESSION["cos_email"]; ?>" disabled>
+      <input type="text" class="input" value="<?php echo $_SESSION["entgd_email"]; ?>" disabled>
       <p class="label">Senha</p>
-      <input type="password" class="input" value="<?php echo $_SESSION["cos_senha"]; ?>" disabled>
-
+      <input type="password" class="input" value="<?php echo $_SESSION["entgd_senha"]; ?>" disabled>
       <button onclick="alterarSenha()" class="btn_alt">Alterar senha</button>
+      <p class="label">Situação</p>
+      <input type="password" class="input" value="<?php echo $_SESSION["entgd_verificado"]; ?>" disabled>
 
     </div>
   </div>

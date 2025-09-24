@@ -32,7 +32,7 @@
       <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="costureiro">
+        <img class="ent_text" src="../../assets/images/ent_img/entregadores.png" alt="costureiro">
       </a>
     </div>
     <nav class="nav_header">
@@ -46,7 +46,7 @@
     <!--carrinho-->
     <a class="icon" href="index.php"><img
         class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -69,9 +69,9 @@
               style="color: #fdf2e6"></i>Segurança
           </li>
         </a>
-        <a href="../endereco/" class="choice">
+        <a href="../entregas/" class="choice">
           <li>
-            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço
+            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Entregas Feitas
           </li>
         </a>
       </ul>
@@ -85,7 +85,7 @@
         <div class="box_img">
           <img
             class="icon_img_perfil"
-            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
+            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
             alt="Foto de perfil" />
           <div class="input_img">
             <input id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
@@ -108,21 +108,21 @@
           id="input"
           type="text"
           class="input"
-          value="<?php echo $_SESSION["cos_nome"]; ?>"
+          value="<?php echo $_SESSION["entgd_nome"]; ?>"
           disabled />
         <p class="label">CPF</p>
         <input
           id="input"
           type="text"
           class="input"
-          value="<?php echo $_SESSION["cos_cpf"]; ?>"
+          value="<?php echo $_SESSION["entgd_cpf"]; ?>"
           disabled />
         <p class="label">Email</p>
         <input
           id="input"
           type="email"
           class="input"
-          value="<?php echo $_SESSION["cos_email"]; ?>"
+          value="<?php echo $_SESSION["entgd_email"]; ?>"
           disabled />
 
         <p class="label">Telefone</p>
@@ -131,20 +131,20 @@
           id="input"
           type="tel"
           class="input"
-          value="<?php echo $_SESSION["cos_telefone"]; ?>" />
+          value="<?php echo $_SESSION["entgd_telefone"]; ?>" />
         <p class="label">Data de nascimento</p>
         <input
           id="input"
           type="date"
           class="input"
-          value="<?php echo $_SESSION["cos_nascimento"]; ?>"
+          value="<?php echo $_SESSION["entgd_nascimento"]; ?>"
           disabled />
-        <p class="label">CNPJ</p>
+        <p class="label">CNH</p>
         <input
           id="input"
           type="cnpj"
           class="input"
-          value="<?php echo $_SESSION["cos_cnpj"]; ?>"
+          value="<?php echo $_SESSION["entgd_cnh"]; ?>"
           disabled />
 
         <button class="btn-excluir">

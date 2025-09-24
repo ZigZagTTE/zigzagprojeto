@@ -52,7 +52,7 @@
             
         </div>
 
-        <a href="detalhes/" class="btn-aceitar">Aceitar Pedido</a>
+        <button href="detalhes/" class="btn-aceitar">Aceitar Pedido</button>
 
     </section>
 

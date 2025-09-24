@@ -126,6 +126,14 @@ table {
   box-sizing: border-box;
 }
 
+.ent_text {
+  width: max-content;
+  height: 100px;
+  margin: 0 0 -25px -60px;
+  scale: 0.5;
+  align-self: flex-end;
+}
+
 .zigzag_txt {
   color: #f5e9db;
   font-family: "Iansui";
@@ -394,14 +402,19 @@ table {
 
   justify-content: center;
   .setor_endereco {
-    background-color: var(--roxo-claro);
+    background-color: #fdf2e6;
+    border: #e1d5c7 5px solid;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 4px 8px var(--preto);
+    
     width: 50%;
-    height: 30%;
+    height: 35%;
     margin-bottom: 20px;
+
+    p{
+      gap: 10px;
+    }
 
     h1 {
       font-size: 22px;
