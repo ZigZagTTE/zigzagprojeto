@@ -18,16 +18,16 @@
     <!-- HEADER -->
     <header class="top">
         <div class="header_logo">
-            <a href="../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+            <a href="../"><img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90"
                     alt="Logo ZigZag">
                 <p class="zigzag_txt">igzag</p>
-                <img class="ent_text" src="../../assets\images\ent_img\entregadores.png" alt="costureiro">
+                <img class="ent_text" src="../../../assets/images/ent_img/entregadores.png" alt="entregador">
             </a>
         </div>
         <div class="icons">
-            <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-            <a class="icon" href="../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-            <a class="icon" href="perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
+            <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
+            <a class="icon" href="../../../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
+            <a class="icon" href="../perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
         </div>
     </header>
 
@@ -37,19 +37,22 @@
         <div class="pedido">
             <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
             <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
+                <p class="costureira">Costureira</p>
                 <p class="endereco">Endereço</p>
+                <p class="endereco">Peça</p>
             </div>
-            <span class="status">Valor</span>
+            <span class="status">Horário</span>
         </div>
 
         <div class="pedido">
             <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
             <div class="pedido-info">
-                <p class="costureira">Cliente xxxxx</p>
+                <p class="costureira">Cliente</p>
                 <p class="endereco">Endereço</p>
+                <p class="endereco">Serviço</p>
+                <p class="endereco">Valor</p>
             </div>
-            
+            <span class="status">Horário</span>
         </div>
 
         <button href="detalhes/" class="btn-aceitar">Aceitar Pedido</button>
@@ -62,7 +65,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <img
-                        src="../../assets/svg/logo.svg"
+                        src="../../../assets/svg/logo.svg"
                         alt="ZigZag Logo"
                         class="footer-logo" />
                     <p>Conectando talentos e necessidades na arte da costura.</p>
@@ -87,9 +90,9 @@
                 <div class="footer-section">
                     <h3>Redes Sociais</h3>
                     <div class="social-links">
-                        <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
-                        <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+                        <a href="#"><img src="../../../assets/svg/facebook.svg" alt="Facebook" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../../assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="#"><img src="../../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
                     </div>
                 </div>
             </div>
