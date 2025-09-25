@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
   <link rel="stylesheet" href="perfil.css" />
+  <link rel="stylesheet" href="../home.css" />
   <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -23,10 +24,13 @@
 <body>
   <!-- HEADER -->
   <header class="top">
-    <a href="../../index.php">
-      <img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90" alt="Logo ZigZag" />
-    </a>
-    <p class="zigzag_txt">igzag</p>
+    <div class="header_logo">
+      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+          alt="Logo ZigZag">
+        <p class="zigzag_txt">igzag</p>
+        <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="costureiro">
+      </a>
+    </div>
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
@@ -47,7 +51,7 @@
   <section class="secoes">
     <div class="paginas">
       <ul>
-        <a href="index.html" class="choice">
+        <a href="" class="choice">
           <li autofocus>
             <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
           </li>

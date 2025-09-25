@@ -11,16 +11,20 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
-    <?php session_start();?>
+    <?php session_start(); ?>
 </head>
 
 <body>
 
     <!-- HEADER -->
     <header class="top">
-        <a href="../index.php"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
-                alt="Logo ZigZag"></a>
-        <p class="zigzag_txt">igzag</p>
+        <div class="header_logo">
+            <a href="../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
+                    alt="Logo ZigZag">
+                <p class="zigzag_txt">igzag</p>
+                <img class="cost_text" src="../assets\images\usu_img\ZigZag.png" alt="costureiro">
+            </a>
+        </div>
         <nav class="nav_header">
             <div class="buttons_home">
                 <div class="search-container">
@@ -33,7 +37,7 @@
         </nav>
         <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
         <a class="icon" href="loja/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"></a> <!--user-->
+        <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"></a> <!--user-->
     </header>
 
     <p class="title">Faça já seu pedido em costureiras próximas!</p>

@@ -44,7 +44,7 @@
             $imagemExtensao = explode('.', $imagemNome);
             $imagemExtensao = strtolower(end($imagemExtensao));
 
-            $imagemNomeNovo = date('Y-m-d-His') . $nome . "." . $imagemExtensao;
+            $imagemNomeNovo = date('Y-m-d-His') . "." . $nome . "." . $imagemExtensao;
 
             $uploadDir = '../../assets/uploads/profilepictures/';
             $uploadDestino = $uploadDir . $imagemNomeNovo;

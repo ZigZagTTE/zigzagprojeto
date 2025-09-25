@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZigZag</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../home.css">
     <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -17,22 +18,28 @@
 
     <!-- HEADER -->
     <header class="top">
-        <a href="../../index.php"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90" alt="Logo ZigZag"></a>
-        <p class="zigzag_txt">igzag</p>
+        <div class="header_logo">
+            <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+                    alt="Logo ZigZag">
+                <p class="zigzag_txt">igzag</p>
+                <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="costureiro">
+            </a>
+        </div>
         <nav class="nav_header">
-            <div class="buttons_home">
-                <div class="search-container">
-                    <div class="search-box">
-                        <img src="../../assets/svg/search.svg" alt="Buscar" class="search-icon">
-                        <input type="text" placeholder="Busque costureiras e faça seu orçamento!" class="search-input">
-                    </div>
-                </div>
-            </div>
+            <div class="buttons_home"></div>
         </nav>
-        <a class="icon" href="../../index.php"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-        <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="../../login/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
-
+        <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
+        </a>
+        <!--casa-->
+        <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+        </a>
+        <!--carrinho-->
+        <a class="icon" href="index.php"><img
+                class="icon_img_perfil"
+                src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
+                alt="Foto de perfil" />
+        </a>
+        <!--user-->
     </header>
 
     <div class="info-loja">
