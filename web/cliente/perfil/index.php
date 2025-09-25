@@ -74,7 +74,7 @@
           <div class="box_img">
             <img class="icon_img_perfil" id="imagemPreview" src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
             <div class="input_img">
-              <input id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
+              <input disabled id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
               <img src="../../assets/images/camera.png" />
             </div>
             <p class="erro_aviso" id="erroImagem"></p>
@@ -101,6 +101,8 @@
 
           <p class="label">Data de nascimento</p>
           <input disabled id="txtData" name="txtData" type="date" class="input" value="<?php echo $_SESSION["cli_nascimento"]; ?>" />
+          <br>
+          <p class="erro_aviso" id="erro"></p>
 
           <input type="submit" name="salvar" class="btn-salvar" style="display: none;" value="Salvar alterações">
         </div>

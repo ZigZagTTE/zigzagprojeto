@@ -28,7 +28,7 @@ if (array_key_exists('excluir', $_POST)) {
             $imagemExtensao = explode('.', $imagemNome);
             $imagemExtensao = strtolower(end($imagemExtensao));
 
-            $imagemNomeNovo = date('Y-m-d-His') . $nome . "." . $imagemExtensao;
+            $imagemNomeNovo = date('Y-m-d-His') . str_replace(' ','',$nome) . "." . $imagemExtensao;
 
             $uploadDir = '../../assets/uploads/profilepictures/';
             $uploadDestino = $uploadDir . $imagemNomeNovo;
@@ -52,7 +52,7 @@ if (array_key_exists('excluir', $_POST)) {
             $resultadoUpdate = mysqli_query($conexao, $queryUpdate);
 
             if (mysqli_affected_rows($conexao) != 1) {
-                echo "Erro";
+                header("Location: ./?erro=1");
             } else {
 
                 $_SESSION["cli_nome"] = $nome;

@@ -10,6 +10,7 @@ const imagemDePreview = document.getElementById("imagemPreview");
 //Erros
 const erroImagem = document.getElementById("erroImagem");
 const erroEmail = document.getElementById("erroEmail");
+const erro = document.getElementById("erro");
 
 txtCPF.value = formatarCPF(txtCPF.value);
 txtTelefone.value = formatarTelefone(txtTelefone.value);
@@ -25,6 +26,10 @@ if (listaDeParametros.get("erroImagem") === "1") {
 if (listaDeParametros.get("erroEmail") === "1") {
     erroEmail.style.display = "inline";
     erroEmail.innerHTML = "&emsp;Este email está sendo utilizado";
+}
+if (listaDeParametros.get("erro") === "1") {
+    erro.style.display = "inline";
+    erro.innerHTML = "&emsp;Algo deu errado.";
 }
 
 btnEditar.addEventListener("click", ativarInput);
@@ -45,6 +50,8 @@ function ativarInput() {
     inputs.forEach((input) => {
         input.disabled = !input.disabled;
     });
+    inputImagem.disabled = !inputImagem.disabled;
+
     switch (isExcluirNone) {
         case 0:
             btnExcluir.style.display = "none";
