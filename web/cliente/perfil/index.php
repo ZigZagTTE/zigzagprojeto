@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
   <link rel="stylesheet" href="perfil.css" />
+  <link rel="stylesheet" href="../home.css" />
   <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -24,10 +25,13 @@
 <body>
   <!-- HEADER -->
   <header class="top">
-    <a href="../../index.php">
-      <img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90" alt="Logo ZigZag" />
-    </a>
-    <p class="zigzag_txt">igzag</p>
+    <div class="header_logo">
+      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+          alt="Logo ZigZag">
+        <p class="zigzag_txt">igzag</p>
+        <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="costureiro">
+      </a>
+    </div>
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
@@ -48,7 +52,7 @@
   <section class="secoes">
     <div class="paginas">
       <ul>
-        <a href="index.html" class="choice">
+        <a href="" class="choice">
           <li autofocus>
             <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
           </li>
@@ -66,47 +70,73 @@
       </ul>
     </div>
 
-      <form class="dados" method="post" action="alterarInformacoes.php" enctype="multipart/form-data">
-        <div class="titulo_imagem">
-          <p class="title">Informações pessoais</p>
-          <br>
+    <form class="dados" method="post" action="alterarInformacoes.php" enctype="multipart/form-data">
+      <div class="titulo_imagem">
+        <p class="title">Informações pessoais</p>
+        <br>
 
-          <div class="box_img">
-            <img class="icon_img_perfil" id="imagemPreview" src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
-            <div class="input_img">
-              <input disabled id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
-              <img src="../../assets/images/camera.png" />
-            </div>
-            <p class="erro_aviso" id="erroImagem"></p>
+        <div class="box_img">
+          <img class="icon_img_perfil" id="imagemPreview"
+            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
+          <div class="input_img">
+            <input disabled id="inputImagem" type="file" name="arquivoImagem" accept="image/*" id="inputImg">
+            <img src="../../assets/images/camera.png" />
           </div>
+          <p class="erro_aviso" id="erroPerfil"></p>
+        </div>
 
-          <input type="button" class="btn-editar" value="Alterar Informações">
+        <input id="btnAlterar" type="button" class="btn" value="Alterar Informações">
+        <input type="submit" name="sair" class="btn" value="Sair">
+        <input id="btnExcluir" type="button" name="excluir" class="btn-excluir" value="Excluir Conta">
+
+
+        <div class="popup">
+          <p class="label">Para confirmar a exclusão da conta,
+            <br><br><br>
+            &ensp;confirme a sua senha:
+            <br><br>
+            <input class="input" id="txtConfirmaSenha" name="txtConfirmaSenha" type="password" value="" />
+            <br><br>
+            <label class="container">mostrar a senha
+              <input id="mostrarSenha" type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <!-- &ensp;<input id="mostrarSenha" type="checkbox"> Mostrar senha</input> -->
+          </p>
+          <br>
+          <input id="btnCancelar" type="button" class="btn" value="Cancelar">
           <input type="submit" name="excluir" class="btn-excluir" value="Excluir Conta">
-
         </div>
-        <div>
-          <p class="label">Nome</p>
-          <input disabled id="txtNome" name="txtNome" type="text" class="input" value="<?php echo $_SESSION["cli_nome"]; ?>" />
 
-          <p class="label">CPF</p>
-          <input disabled id="txtCPF" name="txtCPF" type="text" class="input" value="<?php echo $_SESSION["cli_cpf"]; ?>" />
+      </div>
+      <div class="informacoes">
+        <p class="label">Nome:</p>
+        <input disabled id="txtNome" name="txtNome" type="text" class="input"
+          value="<?php echo $_SESSION["cli_nome"]; ?>" />
 
-          <p class="label">Email</p>
-          <input disabled id="txtEmail" name="txtEmail" type="email" class="input" value="<?php echo $_SESSION["cli_email"]; ?>" />
-          <br>
-          <p class="erro_aviso" id="erroEmail"></p>
+        <p class="label">CPF:</p>
+        <input disabled id="txtCPF" name="txtCPF" type="text" class="input"
+          value="<?php echo $_SESSION["cli_cpf"]; ?>" />
 
-          <p class="label">Telefone</p>
-          <input disabled id="txtTelefone" name="txtTelefone" type="tel" class="input" value="<?php echo $_SESSION["cli_telefone"]; ?>" />
+        <p class="label">Email:</p>
+        <input disabled id="txtEmail" name="txtEmail" type="email" class="input"
+          value="<?php echo $_SESSION["cli_email"]; ?>" />
+        <br>
+        <p class="erro_aviso" id="erroEmail"></p>
 
-          <p class="label">Data de nascimento</p>
-          <input disabled id="txtData" name="txtData" type="date" class="input" value="<?php echo $_SESSION["cli_nascimento"]; ?>" />
-          <br>
-          <p class="erro_aviso" id="erro"></p>
+        <p class="label">Telefone:</p>
+        <input disabled id="txtTelefone" name="txtTelefone" type="tel" class="input"
+          value="<?php echo $_SESSION["cli_telefone"]; ?>" />
 
-          <input type="submit" name="salvar" class="btn-salvar" style="display: none;" value="Salvar alterações">
-        </div>
-      </form>
+        <p class="label">Data de nascimento:</p>
+        <input disabled id="txtData" name="txtData" type="date" class="input"
+          value="<?php echo $_SESSION["cli_nascimento"]; ?>" />
+        <br>
+        <p class="erro_aviso" id="erro"></p>
+
+        <input type="submit" name="salvar" class="btn-salvar" style="display: none;" value="Salvar alterações">
+      </div>
+    </form>
   </section>
 
   <!-- FOOTER -->

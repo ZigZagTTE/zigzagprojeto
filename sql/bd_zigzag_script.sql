@@ -40,7 +40,9 @@ CREATE TABLE IF NOT EXISTS tbl_endereco_cliente
     end_cep int,
 
     cli_id integer NOT NULL,
-    FOREIGN KEY (cli_id) REFERENCES tbl_cliente(cli_id)
+    FOREIGN KEY (cli_id) 
+    REFERENCES tbl_cliente(cli_id)
+    ON DELETE CASCADE
 
 );
 
@@ -132,13 +134,17 @@ CREATE TABLE IF NOT EXISTS tbl_catalogo
     cat_valor decimal(5,2),
 
     cos_id integer NOT NULL,
-    FOREIGN KEY (cos_id) REFERENCES tbl_costureiro(cos_id),
+    FOREIGN KEY (cos_id)
+    REFERENCES tbl_costureiro(cos_id)
+    ON DELETE SET NULL,
 
     pec_id integer NOT NULL,
-    FOREIGN KEY (pec_id) REFERENCES tbl_peca(pec_id),
+    FOREIGN KEY (pec_id)
+    REFERENCES tbl_peca(pec_id),
 
     ser_id integer NOT NULL,
-    FOREIGN KEY (ser_id) REFERENCES tbl_servico(ser_id)
+    FOREIGN KEY (ser_id)
+    REFERENCES tbl_servico(ser_id)
 );
 
 CREATE TABLE IF NOT EXISTS tbl_pedido
@@ -154,10 +160,14 @@ CREATE TABLE IF NOT EXISTS tbl_pedido
     ped_concluido tinyint DEFAULT 0,
 
     cli_id integer NOT NULL,
-    FOREIGN KEY (cli_id) REFERENCES tbl_cliente(cli_id),
+    FOREIGN KEY (cli_id)
+    REFERENCES tbl_cliente(cli_id)
+    ON DELETE SET NULL,
 
     end_id integer NOT NULL,
-    FOREIGN KEY (end_id) REFERENCES tbl_endereco_cliente(end_id)
+    FOREIGN KEY (end_id)
+    REFERENCES tbl_endereco_cliente(end_id)
+    ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS tbl_item
@@ -165,10 +175,12 @@ CREATE TABLE IF NOT EXISTS tbl_item
     ite_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
     cat_id integer NOT NULL,
-    FOREIGN KEY (cat_id) REFERENCES tbl_catalogo(cat_id),
+    FOREIGN KEY (cat_id) 
+    REFERENCES tbl_catalogo(cat_id),
 
     ped_id integer NOT NULL,
-    FOREIGN KEY (ped_id) REFERENCES tbl_pedido(ped_id)
+    FOREIGN KEY (ped_id) 
+    REFERENCES tbl_pedido(ped_id)
 );
 
 CREATE TABLE IF NOT EXISTS tbl_entrega
@@ -183,9 +195,11 @@ CREATE TABLE IF NOT EXISTS tbl_entrega
     entrg_confimacao_cos tinyint DEFAULT 0,
 
     ped_id integer NOT NULL,
-    FOREIGN KEY (ped_id) REFERENCES tbl_pedido(ped_id),
+    FOREIGN KEY (ped_id)
+    REFERENCES tbl_pedido(ped_id),
 
     entgd_id integer NOT NULL,
-    FOREIGN KEY (entgd_id) REFERENCES tbl_entregador(entgd_id)
+    FOREIGN KEY (entgd_id)
+    REFERENCES tbl_entregador(entgd_id)
 );
 

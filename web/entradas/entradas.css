@@ -1,40 +1,135 @@
+/* ========================================================================== */
+/* RESET E CONFIGURAÇÕES GLOBAIS                                            */
+/* ========================================================================== */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Iansui", cursive;
+  cursor: default;
+  vertical-align: baseline;
+}
+
+/* Configuração de elementos HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores - Tema Claro */
-  --roxo-rincipal: #b450f5;
+  --roxo-principal: #b450f5;
   --roxo-claro: #d89ffd;
   --roxo-mais-claro: #e7cef6;
   --preto: #303030;
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
-  --bege: #e1d5c7;
+  --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
+
+  /* Breakpoints */
+  --mobile-pequeno: 320px;
+  --mobile-normal: 480px;
+  --tablet: 768px;
+  --notebook: 1024px;
+  --desktop: 1280px;
+  --ultra-wide: 1440px;
 }
 
+/*[data-theme="dark"] {
+    /* Paleta de cores - Tema Escuro 
+    --bege: #f5e9dc;
+    --roxo-principal: #b450f5;
+    --roxo-escuro: #894faf;
+    --bege-claro: #f5e9db;
+    --amarelo-claro: #fdf2e6;
+    --cinza: #a6a6a6;
+    --roxo-medio: #824db7;
+    --roxo-muito-escuro: #1c0d2b;
+    --amarelo: #b450f5;
+    }*/
 
+/* Configurações Base */
+html,
 body {
+  width: 100%;
+  position: relative;
   background-image: url(../assets/images/ZigZagwpp.png);
 }
+
+body {
+  line-height: 1;
+  background-color: var(--bege);
+  overflow-x: hidden;
+}
+
+/* Reset de Listas e Citações */
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Reset de Tabelas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Utilitários */
+.fixFloat {
+  clear: both;
+}
+
+/* ========================================================================== */
+/* BODY                                                                       */
+/* ========================================================================== */
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .box {
   display: grid;
+  align-items: center;
+  align-content: center;
   background-color: var(--bege-claro);
   padding: 20px;
   border-radius: 20px;
   text-align: center;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  min-height: min-content;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
-  text-align: center;
 }
 
 .box:hover {
@@ -42,28 +137,58 @@ body {
   transform: scale(1.05);
 }
 
-.ent-img {
-  display: flex;
-  width: 300px;
-  margin: 20px auto;
-}
-
-.cli-img {
-  display: flex;
-  width: 200px;
-  margin: 5px auto;
-}
-
-.cost-img {
-  display: flex;
-  width: 300px;
-  margin: 20px auto;
-}
-
 .box-buttons {
+  display: flex;
   background-color: var(--roxo-claro);
-  width: 100%;
-  height: 40px;
+  width: 80px;
+  height: 45px;
+  padding: 5px 40px;
   border-radius: 10px;
   gap: 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.box-buttons:hover {
+  background-color: var(--roxo-principal);
+  transform: scale(1.05);
+}
+
+.box-buttons p {
+  color: var(--roxo-principal);
+  font-weight: bold;
+  width: min-content;
+  margin: auto;
+}
+
+.box-buttons:hover p {
+  color: var(--bege-claro);
+  cursor: pointer;
+}
+
+.opcao-login {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.opcao-login a {
+  text-decoration: none;
+}
+
+.img-opcao {
+  display: flex;
+  width: 150px;
+  margin: auto;
+}
+
+.text {
+  margin: 20px auto;
+  padding: 3px;
+  border-radius: 5px;
+  height: 50px;
+  scale: 1.6;
+  background-color: var(--roxo-principal);
 }

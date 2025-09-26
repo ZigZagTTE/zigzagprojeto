@@ -31,7 +31,7 @@
         <li class="li_header">
           <a href="cadastro/index.php">Seja afiliada(o)</a>
         </li>
-        <li class="li_header"><a href="cliente/entrar/">Entrar</a></li>
+        <li class="li_header"><a href="entradas/">Entrar</a></li>
         <li>
           <a class="button_cadastro" href="cliente/cadastrar/">Cadastre-se</a>
         </li>
@@ -140,7 +140,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer" id ="contato">
+  <footer class="footer" id="contato">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">

@@ -2,10 +2,36 @@
 
 require_once("../../conexao.php");
 session_start();
-if (array_key_exists('excluir', $_POST)) {
 
+$id = $_SESSION['cli_id'];
+
+
+if (array_key_exists('sair', $_POST)) {
+    apagarSessao();
+    header("Location: ./");
+} else if (array_key_exists('excluir', $_POST)) {
+    $senha = $_POST['txtConfirmaSenha'];
+
+    $queryTesteSenha = "SELECT cli_senhaHash FROM tbl_cliente WHERE cli_id='$id'";
+    $resultadoTesteSenha = mysqli_query($conexao, $queryTesteSenha);
+
+    $registroTesteSenha = mysqli_fetch_row($resultadoTesteSenha);
+    $senhaHash = $registroTesteSenha[0];
+
+    if (password_verify($senha, $senhaHash)) {
+        
+        $queryApagarConta = "DELETE FROM tbl_cliente "
+                        ."WHERE cli_id='$id'";
+        mysqli_query($conexao, $queryApagarConta);
+
+        apagarSessao();
+
+        header("Location: ./");
+    }
+    else {
+        header("Location: ./?erroPerfil=2");
+    }
 } else if (array_key_exists('salvar', $_POST)) {
-    $id = $_SESSION['cli_id'];
     $nome = $_POST['txtNome'];
     $cpf = preg_replace('/[^0-9]/', '', $_POST['txtCPF']);
     $email = $_POST['txtEmail'];
@@ -18,7 +44,7 @@ if (array_key_exists('excluir', $_POST)) {
     $imagemTmp = $_FILES['arquivoImagem']['tmp_name'];
 
     if ($tamanhoImagem > $maxTamanhoImagem) {
-        header("Location: ./?erroImagem=1");
+        header("Location: ./?erroPerfil=1");
     } else {
         if (!$imagemTmp) {
             $imagemNomeNovo = $_SESSION['cli_perfil'];
@@ -28,7 +54,7 @@ if (array_key_exists('excluir', $_POST)) {
             $imagemExtensao = explode('.', $imagemNome);
             $imagemExtensao = strtolower(end($imagemExtensao));
 
-            $imagemNomeNovo = date('Y-m-d-His') . str_replace(' ','',$nome) . "." . $imagemExtensao;
+            $imagemNomeNovo = date('Y-m-d-His') . str_replace(' ', '', $nome) . "." . $imagemExtensao;
 
             $uploadDir = '../../assets/uploads/profilepictures/';
             $uploadDestino = $uploadDir . $imagemNomeNovo;
@@ -49,7 +75,7 @@ if (array_key_exists('excluir', $_POST)) {
             $queryUpdate = "UPDATE tbl_cliente"
                 . " SET cli_email = '$email', cli_nome = '$nome', cli_perfil = '$imagemNomeNovo', cli_cpf = $cpf, cli_nascimento = '$data', cli_telefone = $telefone"
                 . " WHERE cli_id = $id";
-            $resultadoUpdate = mysqli_query($conexao, $queryUpdate);
+            mysqli_query($conexao, $queryUpdate);
 
             if (mysqli_affected_rows($conexao) != 1) {
                 header("Location: ./?erro=1");
@@ -67,5 +93,15 @@ if (array_key_exists('excluir', $_POST)) {
         }
         mysqli_close($conexao);
     }
+}
+
+function apagarSessao() {
+    unset($_SESSION["cli_id"]);
+    unset($_SESSION["cli_email"]);
+    unset($_SESSION["cli_nome"]);
+    unset($_SESSION["cli_perfil"]);
+    unset($_SESSION["cli_cpf"]);
+    unset($_SESSION["cli_telefone"]);
+    unset($_SESSION["cli_nascimento"]);
 }
 ?>

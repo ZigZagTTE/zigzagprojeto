@@ -15,16 +15,20 @@
     if (!isset($_SESSION["cli_id"])){
         header("Location: ./cadastrar");
     }
-    ?>
+     ?>
 </head>
 
 <body>
 
     <!-- HEADER -->
     <header class="top">
-        <a href="../index.php"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
-                alt="Logo ZigZag"></a>
-        <p class="zigzag_txt">igzag</p>
+        <div class="header_logo">
+            <a href="../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
+                    alt="Logo ZigZag">
+                <p class="zigzag_txt">igzag</p>
+                <img class="cost_text" src="../assets\images\usu_img\ZigZag.png" alt="costureiro">
+            </a>
+        </div>
         <nav class="nav_header">
             <div class="buttons_home">
                 <div class="search-container">
@@ -37,7 +41,7 @@
         </nav>
         <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
         <a class="icon" href="loja/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"></a> <!--user-->
+        <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"></a> <!--user-->
     </header>
 
     <p class="title">Faça já seu pedido em costureiras próximas!</p>

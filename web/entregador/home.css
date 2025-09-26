@@ -223,6 +223,12 @@ table {
   margin: 30px;
   text-decoration: none;
   color: black;
+  transition: all 0.3s ease;
+  }
+
+  .pedido:hover {
+    transform: scale(1.05);
+  }
 
   .pedido-img{
     width: 120px;
@@ -235,7 +241,7 @@ table {
     margin-top: 20px;
     font-size: 18px;
   }
-}
+
 
 /* ==========================================================================
    FOOTER

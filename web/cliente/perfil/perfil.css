@@ -333,136 +333,234 @@ table {
       color: black;
     }
   }
-
-  .title {
-    font-size: 54px;
-    margin: 16px;
-  }
-
-  img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: flex;
-    margin: auto;
-    box-shadow: #303030 0px 0px 8px;
-  }
-
-  .input_img {
-    position: relative;
-    left: 55%;
-    transform: translate(0, -100%);
-    background: var(--roxo-principal);
-    width: 51px;
-    height: 51px;
-    font-size: 1.5rem;
-    line-height: 41px;
-    border: 2px solid var(--bege);
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  .input_img img {
-    position: relative;
-    top: 2px;
-    border-radius: 0;
-    width: 40px;
-    height: 40px;
-    margin: auto;
-    box-shadow: unset;
-  }
-
-  .input_img input[type="file"] {
-    position: absolute;
-    transform: scale(2);
-    z-index: 1;
-    opacity: 0;
-  }
-
-  input[type="file"]:hover {
-    cursor: pointer;
-  }
-
-  .erro_aviso {
-    display: none;
-    margin: 0 auto 0 auto;
-    text-align: justify;
-    font-size: 0.9rem;
-    font-family: "Calibri";
-    font-weight: bold;
-    width: 20rem;
-    color: var(--vermelho-erro);
-  }
-
   .dados {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     grid-template-rows: 1fr;
     justify-content: center;
     margin: auto;
-  }
 
-  .titulo_imagem {
-    text-align: center;
-  }
+    .title {
+      font-size: 54px;
+      margin: 16px;
+    }
 
-  .label {
-    font-size: 20px;
-    margin: 16px;
-  }
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      margin: auto;
+      box-shadow: #303030 0px 0px 8px;
+    }
 
-  .input {
-    width: 300px;
-    height: 40px;
-    border-radius: 20px;
-    border: 1px solid var(--roxo-principal);
-    padding: 8px;
-    font-size: 16px;
-  }
+    .input_img {
+      position: relative;
+      left: 55%;
+      transform: translate(0, -100%);
+      background: var(--roxo-principal);
+      width: 51px;
+      height: 51px;
+      font-size: 1.5rem;
+      line-height: 41px;
+      border: 2px solid var(--bege);
+      border-radius: 50%;
+      overflow: hidden;
+    }
 
-  .btn-editar {
-    display: block;
-    margin: 20px auto;
-    background-color: var(--roxo-principal);
-    color: var(--bege);
-    text-decoration: none;
-    border-radius: 5rem;
-    font-size: 1.2rem;
-    padding: 0.6rem 3rem;
-    transition: all 0.3s ease;
-    transform-origin: center;
-    position: relative;
-    cursor: pointer;
-  }
+    .input_img img {
+      position: relative;
+      top: 2px;
+      border-radius: 0;
+      width: 40px;
+      height: 40px;
+      margin: auto;
+      box-shadow: unset;
+    }
 
-  .btn-salvar {
-    display: none;
-    margin: 20px auto;
-    border: var(--amarelo) 2px solid;
-    background-color: var(--bege);
-    color: var(--amarelo);
-    text-decoration: none;
-    border-radius: 5rem;
-    font-size: 1.2rem;
-    padding: 0.6rem 3rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
+    .input_img input[type="file"] {
+      position: absolute;
+      transform: scale(2);
+      z-index: 1;
+      opacity: 0;
+    }
 
-  .btn-excluir {
-    display: block;
-    margin: 20px auto;
-    border: var(--vermelho-erro) 2px solid;
-    background-color: var(--bege);
-    color: var(--vermelho-erro);
-    text-decoration: none;
-    border-radius: 5rem;
-    font-size: 1.2rem;
-    padding: 0.6rem 3rem;
-    transition: all 0.3s ease;
-    transform-origin: center;
-    position: relative;
-    cursor: pointer;
+    input[type="file"]:hover {
+      cursor: pointer;
+    }
+
+    .titulo_imagem {
+      text-align: center;
+    }
+
+    .informacoes {
+      text-align: left;
+    }
+
+    .popup {
+      display: none;
+      position: absolute;
+      top: 40vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--bege);
+      border-radius: 20px;
+      box-shadow: 0 0 800px rgb(15, 15, 15);
+      width: 35%;
+      padding: 2rem 0 2rem 0;
+      height: auto;
+      max-height: 120vh;
+      margin: 30px auto 30px auto;
+      overflow: hidden;
+
+      .label {
+        margin: 16px auto 16px auto;
+        width: 18rem;
+      }
+
+      .input {
+        width: 18rem;
+      }
+
+      /* The container */
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: inherit;
+        user-select: none;
+      }
+
+      /* Hide the browser's default checkbox */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        background-color: white;
+        border: solid var(--roxo-principal) 1px;
+        border-radius: 100%;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+
+      /* When the checkbox is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        background-color: var(--roxo-principal);
+      }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the checkmark when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Style the checkmark/indicator */
+      .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    .erro_aviso {
+      display: none;
+      margin: 0 auto 0 auto;
+      text-align: justify;
+      font-size: 0.9rem;
+      font-family: "Calibri";
+      font-weight: bold;
+      width: 20rem;
+      color: var(--vermelho-erro);
+    }
+
+    .label {
+      font-size: 20px;
+      margin: 16px 0 16px 0;
+      width: 16rem;
+      text-align: justify;
+    }
+
+    .input {
+      width: 300px;
+      height: 40px;
+      border-radius: 20px;
+      border: 1px solid var(--roxo-principal);
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .btn {
+      display: block;
+      margin: 20px auto;
+      width: 18rem;
+      background-color: var(--roxo-principal);
+      color: var(--bege);
+      text-decoration: none;
+      text-align: center;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 0;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      cursor: pointer;
+    }
+
+    .btn-salvar {
+      display: none;
+      margin: 16px 0;
+      border: green 2px solid;
+      background-color: var(--bege);
+      color: green;
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-excluir {
+      display: block;
+      margin: 20px auto;
+      width: 18rem;
+      border: var(--vermelho-erro) 2px solid;
+      background-color: var(--bege);
+      color: var(--vermelho-erro);
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      position: relative;
+      cursor: pointer;
+    }
   }
 }
 

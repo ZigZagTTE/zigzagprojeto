@@ -32,7 +32,7 @@
       <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="costureiro">
+        <img class="ent_text" src="../../assets/images/ent_img/entregadores.png" alt="costureiro">
       </a>
     </div>
     <nav class="nav_header">
@@ -44,7 +44,7 @@
     <!--carrinho-->
     <a class="icon" href="../perfil/"><img
         class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -69,29 +69,23 @@
         </a>
         <a href="index.php" class="choice">
           <li>
-            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço
+            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Entregas Feitas
           </li>
         </a>
       </ul>
     </div>
 
     <div class="endereco">
-      <p class="title">Endereço</p>
+      <p class="title">Entregas Realizadas</p>
 
       <a href="detalhes.php">
         <div class="setor_endereco">
-          <h1>Endereço 1</h1>
-          <p><?php echo $_SESSION["cos_endereco"]; ?></p>
+          <h1>Id do pedido</h1>
+          <p>Data do pedido</p>
+          <p>Destino final do pedido</p>
           <i class="fa-solid fa-arrow-right fa-lg"></i>
         </div>
       </a>
-
-      <div class="add_endereco">
-        <a href="adicionar.php">
-          <i class="fa-solid fa-plus" style="color: #fdf2e6"></i>
-
-        </a>
-      </div>
     </div>
   </div>
 

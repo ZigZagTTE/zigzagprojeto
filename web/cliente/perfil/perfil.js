@@ -1,5 +1,9 @@
 //Inputs
-const btnEditar = document.querySelector(".btn-editar");
+const btnAlterar = document.querySelector("#btnAlterar");
+const btnExcluir = document.querySelector("#btnExcluir");
+const btnCancelar = document.querySelector("#btnCancelar");
+
+const chkMostrarSenha = document.getElementById("mostrarSenha");
 const txtCPF = document.getElementById("txtCPF");
 const txtTelefone = document.getElementById("txtTelefone");
 const inputImagem = document.getElementById("inputImagem");
@@ -8,20 +12,24 @@ const inputImagem = document.getElementById("inputImagem");
 const imagemDePreview = document.getElementById("imagemPreview");
 
 //Erros
-const erroImagem = document.getElementById("erroImagem");
+const erroPerfil = document.getElementById("erroPerfil");
 const erroEmail = document.getElementById("erroEmail");
 const erro = document.getElementById("erro");
 
+
 txtCPF.value = formatarCPF(txtCPF.value);
 txtTelefone.value = formatarTelefone(txtTelefone.value);
-inputImagem.addEventListener("change", mudancaDaImagem);
+
 
 endereco = window.location.search;
 listaDeParametros = new URLSearchParams(endereco);
 
-if (listaDeParametros.get("erroImagem") === "1") {
-    erroImagem.style.display = "inline";
-    erroImagem.innerHTML = "Sua imagem é maior do que 15 MB";
+if (listaDeParametros.get("erroPerfil") === "1") {
+    erroPerfil.style.display = "inline";
+    erroPerfil.innerHTML = "Sua imagem é maior do que 15 MB";
+} else if (listaDeParametros.get("erroPerfil") === "2") {
+    erroPerfil.style.display = "inline";
+    erroPerfil.innerHTML = "A senha está incorreta";
 }
 if (listaDeParametros.get("erroEmail") === "1") {
     erroEmail.style.display = "inline";
@@ -32,7 +40,11 @@ if (listaDeParametros.get("erro") === "1") {
     erro.innerHTML = "&emsp;Algo deu errado.";
 }
 
-btnEditar.addEventListener("click", ativarInput);
+btnAlterar.addEventListener("click", ativarInput);
+chkMostrarSenha.addEventListener("click", mostrarSenha);
+btnExcluir.addEventListener("click", function () {mostrarPopupDeConfirmacao(1)});
+btnCancelar.addEventListener("click", function () {mostrarPopupDeConfirmacao(0)});
+inputImagem.addEventListener("change", mudancaDaImagem);
 txtCPF.addEventListener("input", function (evento) {
     evento.target.value = formatarCPF(evento.target.value);
 });
@@ -41,6 +53,19 @@ txtTelefone.addEventListener("input", function (evento) {
 });
 
 var isExcluirNone = 0;
+
+function mostrarPopupDeConfirmacao(mostrar) {
+    const popup = document.querySelector(".popup");
+
+    switch (mostrar) {
+        case 0:
+            popup.style.display = "none";
+            break;
+        case 1:
+            popup.style.display = "block";
+            break;
+    }
+}
 
 function ativarInput() {
     const inputs = document.querySelectorAll(".input");
@@ -66,15 +91,29 @@ function ativarInput() {
     }
 }
 
+function mostrarSenha() {
+    const txtConfirmaSenha = document.querySelector("#txtConfirmaSenha");
+
+    switch (txtConfirmaSenha.type){
+        case "text":
+            txtConfirmaSenha.type = "password";
+            break;
+        case "password":
+            txtConfirmaSenha.type = "text";
+            break;
+    }
+}
+
+
 function mudancaDaImagem(evento) {
-    erroImagem.style.color = "green";
-    erroImagem.innerHTML = "Imagem escolhida";
-    erroImagem.style.display = "inline";
+    erroPerfil.style.color = "green";
+    erroPerfil.innerHTML = "Imagem escolhida";
+    erroPerfil.style.display = "inline";
 
     if (evento.target.files[0].size > 1048576 * 15) {
-        erroImagem.style.color = "#f73151";
-        erroImagem.innerHTML = "A imagem escolhida é muito grande (máximo: 15 MB)";
-        erroImagem.style.display = "inline";
+        erroPerfil.style.color = "#f73151";
+        erroPerfil.innerHTML = "A imagem escolhida é muito grande (máximo: 15 MB)";
+        erroPerfil.style.display = "inline";
         evento.target.value = "";
     }
     else {

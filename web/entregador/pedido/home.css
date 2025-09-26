@@ -219,6 +219,20 @@ table {
   align-items: center;
   justify-self: center;
 
+  .pedido-info{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 16px;
+  }
+
+  .status{
+    display: flex;
+    justify-self: end;
+    margin: auto 20px 20px auto;
+    text-align: end;
+  }
+
   .pedido-img{
     width: 120px;
     height: 120px;
@@ -232,9 +246,28 @@ table {
   }
 }
 
+.btn-aceitar{
+  background-color: var(--roxo-principal);
+  color: var(--bege);
+  border: none;
+  width: 150px;
+  margin-left: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-aceitar:hover {
+  background-color: var(--roxo-claro);
+  transform: scale(1.05);
+}
+
 /* ==========================================================================
-   FOOTER
-   ========================================================================== */
+  FOOTER
+========================================================================== */
 .footer {
   width: 100%;
   background-color: var(--preto);
