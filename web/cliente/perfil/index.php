@@ -93,15 +93,16 @@
         <div class="popup">
           <p class="label">Para confirmar a exclusão da conta,
             <br><br><br>
-            &ensp;confirme a sua senha:
+            confirme a sua senha:
             <br><br>
             <input class="input" id="txtConfirmaSenha" name="txtConfirmaSenha" type="password" value="" />
             <br><br>
-            <label class="container">mostrar a senha
+            <label class="container_mostrar_senha">mostrar a senha
               <input id="mostrarSenha" type="checkbox">
               <span class="checkmark"></span>
             </label>
-            <!-- &ensp;<input id="mostrarSenha" type="checkbox"> Mostrar senha</input> -->
+            <br>
+            <p class="excluir_aviso">A EXCLUSÃO DA CONTA É PERMANENTE</p>
           </p>
           <br>
           <input id="btnCancelar" type="button" class="btn" value="Cancelar">

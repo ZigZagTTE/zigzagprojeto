@@ -67,6 +67,11 @@
         <p class="txt_log">Senha</p><br>
         <input class="input_log" type="password" name="txtSenha" required>
 
+        <label class="container_mostrar_senha">mostrar a senha
+          <input id="mostrarSenha" type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+
         <?php
         if (isset($_GET["erroSenha"])) {
           ?>

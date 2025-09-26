@@ -16,6 +16,7 @@ const inputImagem = document.getElementById("inputImagem");
 const txtCPF = document.getElementById("txtCPF");
 const txtNascimento = document.getElementById("txtNascimento");
 const txtTelefone = document.getElementById("txtTelefone");
+const chkMostrarSenha = document.getElementById("mostrarSenha");
 
 //Buttons
 const btnCadastrar = document.getElementById("btnCadastrar");
@@ -53,6 +54,8 @@ txtCPF.addEventListener("input", function (evento) {
 txtTelefone.addEventListener("input", function (evento) {
     evento.target.value = formatarTelefone(evento.target.value);
 });
+
+chkMostrarSenha.addEventListener("click", mostrarSenha);
 
 btnCadastrar.addEventListener("click", testeVazioGeral);
 btnProximo1.addEventListener("click", progredirCadastro);
@@ -141,6 +144,27 @@ function testeSenhas(evento) {
     }
 
     testeVazio(evento);
+}
+
+function mostrarSenha() {
+
+    switch (txtSenha.type){
+        case "text":
+            txtSenha.type = "password";
+            break;
+        case "password":
+            txtSenha.type = "text";
+            break;
+    }
+
+    switch (txtConfirmarSenha.type){
+        case "text":
+            txtConfirmarSenha.type = "password";
+            break;
+        case "password":
+            txtConfirmarSenha.type = "text";
+            break;
+    }
 }
 
 function progredirCadastro() {

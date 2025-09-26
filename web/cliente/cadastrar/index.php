@@ -41,6 +41,11 @@
                 <input class="input_cad" id="txtSenha" type="password" name="txtSenha" required
                     placeholder="crie sua senha*" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
 
+                <label class="container_mostrar_senha">mostrar a senha
+                    <input id="mostrarSenha" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+
                 <p class="desc_cad">*Crie uma senha com no mínimo 8 caracteres, havendo uma letra maíuscula, uma
                     minúscula e
                     um número. </p><br>
