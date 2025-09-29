@@ -16,8 +16,10 @@ const inputImagem = document.getElementById("inputImagem");
 const txtCPF = document.getElementById("txtCPF");
 const txtNascimento = document.getElementById("txtNascimento");
 const txtTelefone = document.getElementById("txtTelefone");
+const chkMostrarSenha = document.getElementById("mostrarSenha");
 
 //Buttons
+const btnCadastrar = document.getElementById("btnCadastrar");
 const btnProximo1 = document.getElementById("btnProximo1");
 const btnProximo2 = document.getElementById("btnProximo2");
 const btnRegredir1 = document.getElementById("btnRegredir1");
@@ -31,36 +33,31 @@ var passoDaProgessao = 0;
 var isSenhasIguais = -1;
 
 //Eventos
-['mouseover', 'keyup'].forEach(function (evento) {
-    txtEmail.addEventListener(evento, testeEmail);
-});
 
-['mouseover', 'keyup'].forEach(function (evento) {
-    txtSenha.addEventListener(evento, testeSenhas);
-});
+txtEmail.addEventListener('input', testeEmail);
 
-['mouseover', 'keyup'].forEach(function (evento) {
-    txtConfirmarSenha.addEventListener(evento, testeSenhas);
-});
+txtSenha.addEventListener('input', testeSenhas);
+txtConfirmarSenha.addEventListener('input', testeSenhas);
+
+txtNome.addEventListener('input', testeVazio);
+txtCPF.addEventListener('input', testeVazio);
+txtNascimento.addEventListener('input', testeVazio);
+txtTelefone.addEventListener('input', testeVazio);
+
 
 inputImagem.addEventListener("change", mudancaDaImagem);
 
-['mouseover', 'keyup'].forEach(function (evento) {
-    txtNome.addEventListener(evento, testeVazio);
+txtCPF.addEventListener("input", function (evento) {
+    evento.target.value = formatarCPF(evento.target.value);
 });
 
-['mouseover', 'keyup'].forEach(function (evento) {
-    txtCPF.addEventListener(evento, testeVazio);
+txtTelefone.addEventListener("input", function (evento) {
+    evento.target.value = formatarTelefone(evento.target.value);
 });
 
-['mouseover', 'keyup'].forEach(function (evento) {
-    txtNascimento.addEventListener(evento, testeVazio);
-});
+chkMostrarSenha.addEventListener("click", mostrarSenha);
 
-['mouseover', 'keyup'].forEach(function (evento) {
-    txtTelefone.addEventListener(evento, testeVazio);
-});
-
+btnCadastrar.addEventListener("click", testeVazioGeral);
 btnProximo1.addEventListener("click", progredirCadastro);
 btnProximo2.addEventListener("click", progredirCadastro);
 btnRegredir1.addEventListener("click", regredirCadastro);
@@ -81,13 +78,34 @@ if (listaDeParametros.get("erroImagem") === "1") {
 
 function testeVazio(evento) {
     elemento = evento.target;
-    if (elemento.value === "") {
-        elemento.style.borderColor = "#f73151";
+
+    if (elemento.value !== "") {
+        elemento.style.borderColor = "#b450f5";
+    }
+}
+
+function testeVazioGeral() {
+    const inputs = document.querySelectorAll(".input_cad");
+    let inputsVazios = 0;
+
+    inputs.forEach(function (input) {
+        if (input.value === "") {
+            input.style.borderColor = "#f73151";
+            inputsVazios += 1;
+        }
+        else {
+            input.style.borderColor = "#b450f5";
+        }
+    });
+
+    if (inputsVazios > 0) {
         erroVazio.style.display = "block";
     }
     else {
-        elemento.style.borderColor = "#b450f5";
         erroVazio.style.display = "none";
+    }
+    if (elemento.value !== "") {
+        elemen
     }
 }
 
@@ -100,11 +118,13 @@ function testeEmail(evento) {
     else {
         erroEmail.style.display = "none";
     }
-    testeVazio(evento)
+
+    testeVazio(evento);
 }
 
 function testeSenhas(evento) {
     let pattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
     if (!(pattern.test(txtSenha.value))) {
         erroSenha.style.display = "block";
         erroSenha.innerHTML = "É preciso ter ao menos 8 caracteres, uma letra maíuscula, uma minúscula e um número";
@@ -122,7 +142,29 @@ function testeSenhas(evento) {
         txtConfirmarSenha.style.borderColor = "#b450f5";
         isSenhasIguais = 1;
     }
-    testeVazio(evento)
+
+    testeVazio(evento);
+}
+
+function mostrarSenha() {
+
+    switch (txtSenha.type){
+        case "text":
+            txtSenha.type = "password";
+            break;
+        case "password":
+            txtSenha.type = "text";
+            break;
+    }
+
+    switch (txtConfirmarSenha.type){
+        case "text":
+            txtConfirmarSenha.type = "password";
+            break;
+        case "password":
+            txtConfirmarSenha.type = "text";
+            break;
+    }
 }
 
 function progredirCadastro() {

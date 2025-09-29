@@ -4,18 +4,25 @@ require_once "../../conexao.php";
 
 session_start();
 
-if (isset($_GET["cancelarEntrada"])) {
-    unset($_SESSION["cos_idtemp"]);
-    unset($_SESSION["cos_nometemp"]);
-    unset($_SESSION["cos_emailtemp"]);
-    unset($_SESSION["cos_perfiltemp"]);
+function apagarDadosTemps() {
+    unset($_SESSION["cli_idtemp"]);
+    unset($_SESSION["cli_nometemp"]);
+    unset($_SESSION["cli_emailtemp"]);
+    unset($_SESSION["cli_perfiltemp"]);
+    unset($_SESSION["cli_cpftemp"]);
+    unset($_SESSION["cli_telefonetemp"]);
+    unset($_SESSION["cli_nascimentotemp"]);
     unset($_SESSION["senhasErradas"]);
+}
+
+if (isset($_GET["cancelarEntrada"])) {
+    apagarDadosTemps();
     header("Location: ./");
 
 } else if (isset($_POST['txtEmail'])) {
     $email = $_POST['txtEmail'];
 
-    $queryInfoConta = "SELECT cos_id, cos_nome, cos_email, cos_perfil FROM tbl_costureiro WHERE cos_email='$email'";
+    $queryInfoConta = "SELECT cli_id, cli_nome, cli_email, cli_perfil, cli_cpf, cli_telefone, cli_nascimento FROM tbl_cliente WHERE cli_email='$email'";
     $resultadoInfoConta = mysqli_query($conexao, $queryInfoConta);
 
     if (mysqli_num_rows($resultadoInfoConta) == 0) {
@@ -26,35 +33,42 @@ if (isset($_GET["cancelarEntrada"])) {
         $nome = $registroInfoConta[1];
         $email = $registroInfoConta[2];
         $perfil = $registroInfoConta[3];
+        $cpf = $registroInfoConta[4];
+        $telefone = $registroInfoConta[5];
+        $data = $registroInfoConta[6];
 
-        $_SESSION["cos_idtemp"] = $id;
-        $_SESSION["cos_nometemp"] = $nome;
-        $_SESSION["cos_emailtemp"] = $email;
-        $_SESSION["cos_perfiltemp"] = $perfil;
+        $_SESSION["cli_idtemp"] = $id;
+        $_SESSION["cli_nometemp"] = $nome;
+        $_SESSION["cli_emailtemp"] = $email;
+        $_SESSION["cli_perfiltemp"] = $perfil;
+        $_SESSION["cli_cpftemp"] = $cpf;
+        $_SESSION["cli_telefonetemp"] = $telefone;
+        $_SESSION["cli_nascimentotemp"] = $data;
 
         header("Location: ./");
+
     }
 } else if (isset($_POST["txtSenha"])) {
 
-    $id = $_SESSION["cos_idtemp"];
+    $id = $_SESSION["cli_idtemp"];
 
-    $queryTesteSenha = "SELECT cos_senhaHash FROM tbl_costureiro WHERE cos_id='$id'";
+    $queryTesteSenha = "SELECT cli_senhaHash FROM tbl_cliente WHERE cli_id='$id'";
     $resultadoTesteSenha = mysqli_query($conexao, $queryTesteSenha);
 
     $registroTesteSenha = mysqli_fetch_row($resultadoTesteSenha);
-    $senha = $registroTesteSenha[0];
+    $senhaHash = $registroTesteSenha[0];
+    $senha = $_POST["txtSenha"];
 
-    if ($senha == $_POST['txtSenha']) {
-        $_SESSION["cos_id"] = $_SESSION["cos_idtemp"];
-        $_SESSION["cos_nome"] = $_SESSION["cos_nometemp"];
-        $_SESSION["cos_email"] = $_SESSION["cos_emailtemp"];
-        $_SESSION["cos_perfil"] = $_SESSION["cos_perfiltemp"];
+    if (password_verify($senha, $senhaHash)) {
+        $_SESSION["cli_id"] = $_SESSION["cli_idtemp"];
+        $_SESSION["cli_nome"] = $_SESSION["cli_nometemp"];
+        $_SESSION["cli_email"] = $_SESSION["cli_emailtemp"];
+        $_SESSION["cli_perfil"] = $_SESSION["cli_perfiltemp"];
+        $_SESSION["cli_cpf"] = $_SESSION["cli_cpftemp"];
+        $_SESSION["cli_telefone"] = $_SESSION["cli_telefonetemp"];
+        $_SESSION["cli_nascimento"] = $_SESSION["cli_nascimentotemp"];
 
-        unset($_SESSION["cos_idtemp"]);
-        unset($_SESSION["cos_nometemp"]);
-        unset($_SESSION["cos_emailtemp"]);
-        unset($_SESSION["cos_perfiltemp"]);
-        unset($_SESSION["senhasErradas"]);
+        apagarDadosTemps();
 
         header("Location: ../");
     } else if ($_SESSION["senhasErradas"] >= 3) {
@@ -62,7 +76,9 @@ if (isset($_GET["cancelarEntrada"])) {
         header("Location: ./?erroSenha=2");
     } else {
         $_SESSION["senhasErradas"] += 1;
-        header("Location: ./?erroSenha=1");
+        header("Location: ./?erroSenha=1&senha=$senhaHash");
     }
 }
 mysqli_close($conexao);
+
+?>

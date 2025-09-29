@@ -196,40 +196,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function enableInput() {
-      const inputs = document.querySelectorAll(".input");
-      const btnSalvar = document.querySelector(".btn-salvar");
-      inputs.forEach((input) => {
-        input.disabled = !input.disabled;
-      });
-      btnSalvar.style.display = "block";
-    }
-
-    function onScrollFadeIn() {
-      const elements = document.querySelectorAll(".fade-in");
-      const windowBottom = window.innerHeight + window.scrollY;
-
-      elements.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top + window.scrollY;
-        if (windowBottom > elementTop + 100) {
-          // 100px antes de aparecer totalmente
-          el.classList.add("visible");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", onScrollFadeIn);
-    window.addEventListener("DOMContentLoaded", onScrollFadeIn);
-  </script>
-  <script>
-    window.addEventListener("DOMContentLoaded", function() {
-      document.body.classList.add("loaded");
-    });
-  </script>
-  <script src="maps.js"></script>
-  <script src="scroll-smoth.js"></script>
 </body>
 
 </html>

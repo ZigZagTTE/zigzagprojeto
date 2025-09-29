@@ -242,6 +242,68 @@ body {
   scale: 1.1;
 }
 
+.container_mostrar_senha {
+  display: inline-block;
+  text-align: left;
+  
+  height: 24px;
+  width: 20rem;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: inherit;
+  user-select: none;
+  color: var(--roxo-principal);
+}
+
+.container_mostrar_senha input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: solid var(--roxo-principal) 1px;
+  border-radius: 100%;
+}
+
+.container_mostrar_senha:hover input ~ .checkmark {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.container_mostrar_senha input:checked ~ .checkmark {
+  background-color: var(--roxo-principal);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container_mostrar_senha input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container_mostrar_senha .checkmark:after {
+  left: 5px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 100%;
+}
+
 .btnSeta {
   background-color: var(--roxo-principal);
   color: var(--bege);

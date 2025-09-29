@@ -1,11 +1,17 @@
 <?php
 
-//A ARRUMAR
-
 session_start();
 
-echo $_SESSION["cos_id"];
+echo $_SESSION["cli_id"];
+echo"<br>";
+echo $_SESSION["cli_nome"];
 echo "<br>";
-echo $_SESSION["cos_nome"];
+echo $_SESSION["cli_perfil"];
 echo "<br>";
-echo $_SESSION["cos_perfil"];
+echo $_SESSION["cli_cpf"];
+echo "<br>";
+echo $_SESSION["cli_telefone"];
+echo "<br>";
+echo $_SESSION["cli_data"];
+
+?>
