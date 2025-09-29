@@ -397,91 +397,6 @@ table {
       text-align: left;
     }
 
-    .popup {
-      display: none;
-      position: absolute;
-      top: 40vh;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      background-color: var(--bege);
-      border-radius: 20px;
-      box-shadow: 0 0 800px rgb(15, 15, 15);
-      width: 30%;
-      padding: 2rem 0 2rem 0;
-      height: auto;
-      max-height: 120vh;
-      margin: 30px auto 30px auto;
-      overflow: hidden;
-
-      .label {
-        font-size: 18px;
-        margin: 16px auto 16px auto;
-        width: 18rem;
-      }
-
-      .input {
-        width: 18rem;
-      }
-
-      .container_mostrar_senha {
-        display: block;
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 12px;
-        cursor: pointer;
-        font-size: inherit;
-        user-select: none;
-      }
-
-      .container_mostrar_senha input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-      }
-
-      .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 24px;
-        width: 24px;
-        background-color: white;
-        border: solid var(--roxo-principal) 1px;
-        border-radius: 100%;
-      }
-
-      .container_mostrar_senha:hover input ~ .checkmark {
-        background-color: #ccc;
-        cursor: pointer;
-      }
-
-      .container_mostrar_senha input:checked ~ .checkmark {
-        background-color: var(--roxo-principal);
-      }
-
-      .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-      }
-
-      .container_mostrar_senha input:checked ~ .checkmark:after {
-        display: block;
-      }
-
-      .container_mostrar_senha .checkmark:after {
-        left: 7px;
-        top: 7px;
-        width: 8px;
-        height: 8px;
-        background-color: white;
-        border-radius: 100%;
-      }
-    }
-
     .erro_aviso {
       display: none;
       margin: 0 auto 0 auto;
@@ -490,12 +405,6 @@ table {
       font-family: "Calibri";
       font-weight: bold;
       width: 20rem;
-      color: var(--vermelho-erro);
-    }
-
-    .excluir_aviso{
-      font-family: "Calibri";
-      font-weight: bold;
       color: var(--vermelho-erro);
     }
 
