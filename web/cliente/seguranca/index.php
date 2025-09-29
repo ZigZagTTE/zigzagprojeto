@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZigZag</title>
     <link rel="stylesheet" href="seguranca.css">
+    <link rel="stylesheet" href="../home.css" />
     <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+
     <script src="../../formatacao.js" defer></script>
     <script src="./seguranca.js" defer></script>
     <?php 
@@ -68,9 +70,9 @@
       <p class="title">Segurança</p>
             <br>
 
-      <p class="label">Telefone</p>
+      <p class="label">Telefone:</p>
       <input type="text" id="txtTelefone" class="input" value="<?php echo $_SESSION["cli_telefone"]; ?>" disabled>
-      <p class="label">Email</p>
+      <p class="label">Email:</p>
       <input type="text" class="input" value="<?php echo $_SESSION["cli_email"]; ?>" disabled>
 
             <br>

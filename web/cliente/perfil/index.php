@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+
   <script src="../../formatacao.js" defer></script>
   <script src="./perfil.js" defer></script>
 
@@ -29,7 +30,7 @@
       <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="costureiro">
+        <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="cliente">
       </a>
     </div>
     <nav class="nav_header">
