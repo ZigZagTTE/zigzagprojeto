@@ -4,8 +4,8 @@
 
 session_start();
 
-echo $_SESSION["cli_id"];
-echo"<br>";
-echo $_SESSION["cli_nome"];
+echo $_SESSION["cos_id"];
 echo "<br>";
-echo $_SESSION["cli_perfil"];
+echo $_SESSION["cos_nome"];
+echo "<br>";
+echo $_SESSION["cos_perfil"];

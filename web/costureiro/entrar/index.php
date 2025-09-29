@@ -25,8 +25,8 @@
       igZag
     </div>
     <?php
-    if (!isset($_SESSION["cli_nometemp"]) and !isset($_SESSION["cli_emailtemp"]) and !isset($_SESSION["cli_perfiltemp"])) {
-      ?>
+    if (!isset($_SESSION["cli_nometemp"]) and !isset($_SESSION["cos_emailtemp"]) and !isset($_SESSION["cos_perfiltemp"])) {
+    ?>
       <section id="insercao_email">
         <div class="tit_log">
           Entre na sua Conta
@@ -37,29 +37,29 @@
         </div>
         <?php
         if (isset($_GET["erroEmail"])) {
-          ?>
+        ?>
           <p class="erro_log">Email não encontrado</p><br>
-          <?php
+        <?php
         }
         ?>
 
         <input class="btnSeta" type="submit" name="procuraEmail" value="Entrar"><br>
         <a class="cadastro" href="../cadastrar/">Não tenho conta</a><br><br>
       </section>
-      <?php
+    <?php
     } else {
-      ?>
+    ?>
 
       <section id="insercao_senha">
         <img id="preview_img" class="img_pfp"
-          src="../../assets/uploads/profilepictures/<?php echo $_SESSION['cli_perfiltemp']; ?>">
+          src="../../assets/uploads/profilepictures/<?php echo $_SESSION['cos_perfiltemp']; ?>">
 
         <br>
         <p class="desc_log">
-          <?php echo $_SESSION['cli_nometemp']; ?>
+          <?php echo $_SESSION['cos_nometemp']; ?>
         </p>
         <p class="desc_log">
-          <?php echo $_SESSION['cli_emailtemp']; ?>
+          <?php echo $_SESSION['cos_emailtemp']; ?>
         </p>
         <br>
 
@@ -69,9 +69,9 @@
 
         <?php
         if (isset($_GET["erroSenha"])) {
-          ?>
+        ?>
           <p class="erro_log">Senha errada</p><br>
-          <?php
+        <?php
         }
         ?>
 
@@ -81,7 +81,7 @@
         </div>
 
       </section>
-      <?php
+    <?php
     }
     ?>
   </form>

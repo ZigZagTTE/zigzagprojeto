@@ -29,7 +29,7 @@
     <nav class="nav_header">
       <ul class="ul_header">
         <li class="li_header">
-          <a href="cadastro/index.php">Seja afiliada(o)</a>
+          <a href="entradas-afiliados/">Seja afiliada(o)</a>
         </li>
         <li class="li_header"><a href="entradas/">Entrar</a></li>
         <li>
