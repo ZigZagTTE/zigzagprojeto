@@ -187,6 +187,15 @@ table {
   transform: scale(1.1);
 }
 
+.icon_img_perfil {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  justify-content: center;
+  box-shadow: #303030 0px 0px 8px;
+  object-fit: cover;
+}
+
 /* ========================================================================== */
 /* BBODY DO SITE                                                              */
 /* ========================================================================== */
@@ -204,9 +213,10 @@ table {
    ÁREA DOS PEDIDOS
    ========================================================================== */
 .pedidos {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
   .pedido {
@@ -247,20 +257,27 @@ table {
 }
 
 .btn-aceitar{
-  background-color: var(--roxo-principal);
-  color: var(--bege);
+  background-color: var(--roxo-claro);
+  color: var(--preto);
   border: none;
-  width: 150px;
-  margin-left: auto;
+  width: 200px;
+  margin: auto;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
+.confirmar{
+  gap: 10px;
+  text-align: left;
+  font-size: medium;
+}
+
 .btn-aceitar:hover {
-  background-color: var(--roxo-claro);
+  background-color: var(--roxo-principal);
+  color: var(--bege-claro);
   transform: scale(1.05);
 }
 

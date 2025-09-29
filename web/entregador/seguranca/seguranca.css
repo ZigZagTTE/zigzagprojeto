@@ -297,6 +297,7 @@ table {
   border-radius: 100%;
   justify-content: center;
   box-shadow: #303030 0px 0px 8px;
+  object-fit: cover;
 }
 
 /* ========================================================================== */

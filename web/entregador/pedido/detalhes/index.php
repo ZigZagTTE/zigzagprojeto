@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZigZag</title>
     <link rel="stylesheet" href="home.css">
-    <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon">
+    <link rel="icon" href="../../../assets/images/MiniLogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
 </head>
+
+<?php session_start();
+    if (!isset($_SESSION["entgd_id"])){
+        header("Location: ./cadastrar");
+    }
+?>
 
 <body>
 
@@ -27,11 +33,11 @@
         <div class="icons">
             <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
             <a class="icon" href="../../../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-            <a class="icon" href="../perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
+            <a class="icon" href="../../perfil/"><img class="icon_img_perfil" src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"></a> <!--user-->
         </div>
     </header>
 
-    <p class="title">Pedido #A78569</p>
+    <p class="title">Pedido #A78569 em andamento</p>
 
     <section class="pedidos">
         <div class="pedido">
@@ -55,7 +61,9 @@
             <span class="status">Horário</span>
         </div>
 
-        <button href="detalhes/" class="btn-aceitar">Aceitar Pedido</button>
+        <p class="confirmar">Confirmar entrega do pedido?</p>
+
+        <button href="detalhes/" class="btn-aceitar">Confirmar Pedido</button>
 
     </section>
 

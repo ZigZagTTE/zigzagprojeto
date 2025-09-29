@@ -1,29 +1,29 @@
 <?php
 session_start();
 
-echo $_SESSION["cli_id"];
+echo $_SESSION["entgd_id"];
 echo "<br>";
-echo $_SESSION["cli_email"];
+echo $_SESSION["entgd_email"];
 echo "<br>";
-echo $_SESSION["cli_nome"];
+echo $_SESSION["entgd_nome"];
 echo "<br>";
-echo $_SESSION["cli_perfil"];
+echo $_SESSION["entgd_perfil"];
 echo "<br>";
 
-unset($_SESSION["cli_id"]);
-unset($_SESSION["cli_email"]);
-unset($_SESSION["cli_nome"]);
-unset($_SESSION["cli_perfil"]);
-unset($_SESSION["cli_cpf"]);
-unset($_SESSION["cli_telefone"]);
-unset($_SESSION["cli_nascimento"]);
+unset($_SESSION["entgd_id"]);
+unset($_SESSION["entgd_email"]);
+unset($_SESSION["entgd_nome"]);
+unset($_SESSION["entgd_perfil"]);
+unset($_SESSION["entgd_cpf"]);
+unset($_SESSION["entgd_telefone"]);
+unset($_SESSION["entgd_cnh"]);
 
-echo $_SESSION["cli_id"];
+echo $_SESSION["entgd_id"];
 echo "<br>";
-echo $_SESSION["cli_email"];
+echo $_SESSION["entgd_email"];
 echo "<br>";
-echo $_SESSION["cli_nome"];
+echo $_SESSION["entgd_nome"];
 echo "<br>";
-echo $_SESSION["cli_perfil"];
+echo $_SESSION["entgd_perfil"];
 
 ?>

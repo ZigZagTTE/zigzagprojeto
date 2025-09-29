@@ -12,7 +12,7 @@
   <script type="text/javascript" src="entrar.js" defer></script>
   <?php
   session_start();
-  if (isset($_SESSION["cli_id"])) {
+  if (isset($_SESSION["entgd_id"])) {
     header("Location: ../");
   }
   ?>
@@ -25,7 +25,7 @@
       igZag
     </div>
     <?php
-    if (!isset($_SESSION["cli_nometemp"]) and !isset($_SESSION["cli_emailtemp"]) and !isset($_SESSION["cli_perfiltemp"])) {
+    if (!isset($_SESSION["entgd_nometemp"]) and !isset($_SESSION["entgd_emailtemp"]) and !isset($_SESSION["entgd_perfiltemp"])) {
       ?>
       <section id="insercao_email">
         <div class="tit_log">
@@ -52,14 +52,14 @@
 
       <section id="insercao_senha">
         <img id="preview_img" class="img_pfp"
-          src="../../assets/uploads/profilepictures/<?php echo $_SESSION['cli_perfiltemp']; ?>">
+          src="../../assets/uploads/profilepictures/<?php echo $_SESSION['entgd_perfiltemp']; ?>">
 
         <br>
         <p class="desc_log">
-          <?php echo $_SESSION['cli_nometemp']; ?>
+          <?php echo $_SESSION['entgd_nometemp']; ?>
         </p>
         <p class="desc_log">
-          <?php echo $_SESSION['cli_emailtemp']; ?>
+          <?php echo $_SESSION['entgd_emailtemp']; ?>
         </p>
         <br>
 

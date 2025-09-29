@@ -41,6 +41,11 @@
                 <input class="input_cad" id="txtSenha" type="password" name="txtSenha" required
                     placeholder="crie sua senha*" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
 
+                <label class="container_mostrar_senha">mostrar a senha
+                    <input id="mostrarSenha" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+
                 <p class="desc_cad">*Crie uma senha com no mínimo 8 caracteres, havendo uma letra maíuscula, uma
                     minúscula e
                     um número. </p><br>
@@ -70,8 +75,8 @@
                 </div>
 
 
-                <p class="txt_cad">Nome de usuário</p><br>
-                <input class="input_cad" id="txtNome" type="text" name="txtNome" placeholder="seu nome de usuário aqui"
+                <p class="txt_cad">Nome completo</p><br>
+                <input class="input_cad" id="txtNome" type="text" name="txtNome" placeholder="seu nome completo aqui"
                     required>
 
             </div>
@@ -87,8 +92,7 @@
             <input class="input_cad" id="txtCPF" type="text" name="txtCPF"
                 pattern="([0-9]{3}).([0-9]{3}).([0-9]{3})-([0-9]{2})$" placeholder="seu CPF aqui" required>
             <p class="txt_cad">CNH</p><br>
-            <input class="input_cad" id="txtCPF" type="text" name="txtCPF"
-                placeholder="sua CNH aqui" required>
+            <input class="input_cad" id="txtCNH" type="text" name="txtCNH" placeholder="sua CNH aqui" required>
             <p class="txt_cad">Telefone</p><br>
             <input class="input_cad" id="txtTelefone" type="tel" name="txtTelefone"
                 pattern="(\([0-9]{2}\))([0-9]{5})-([0-9]{4})$" placeholder="(12) 34567-8901" required>

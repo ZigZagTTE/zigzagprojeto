@@ -187,6 +187,16 @@ table {
   transform: scale(1.1);
 }
 
+.icon_img_perfil {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  justify-content: center;
+  box-shadow: #303030 0px 0px 8px;
+  object-fit: cover;
+}
+
+
 /* ========================================================================== */
 /* BBODY DO SITE                                                              */
 /* ========================================================================== */

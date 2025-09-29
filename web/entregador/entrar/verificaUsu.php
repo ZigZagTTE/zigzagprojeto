@@ -6,21 +6,21 @@ session_start();
 
 //Se não tiver variáveis registradas, retorna para tela de login
 
-echo $_SESSION["cli_id"];
+echo $_SESSION["entgd_id"];
 echo "<br>";
-echo $_SESSION["cli_email"];
+echo $_SESSION["entgd_email"];
 echo "<br>";
-echo $_SESSION["cli_nome"];
+echo $_SESSION["entgd_nome"];
 echo "<br>";
-echo $_SESSION["cli_perfil"];
+echo $_SESSION["entgd_perfil"];
 echo "<br>";
 echo "<h1>Temporários</h1><br>";
-echo $_SESSION["cli_idtemp"];
+echo $_SESSION["entgd_idtemp"];
 echo "<br>";
-echo $_SESSION["cli_emailtemp"];
+echo $_SESSION["entgd_emailtemp"];
 echo "<br>";
-echo $_SESSION["cli_nometemp"];
+echo $_SESSION["entgd_nometemp"];
 echo "<br>";
-echo $_SESSION["cli_perfiltemp"];
+echo $_SESSION["entgd_perfiltemp"];
 echo "<br>";
 echo $_SESSION["senhasErradas"];

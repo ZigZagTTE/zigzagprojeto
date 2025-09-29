@@ -5,13 +5,13 @@ require_once "../../conexao.php";
 session_start();
 
 function apagarDadosTemps() {
-    unset($_SESSION["cli_idtemp"]);
-    unset($_SESSION["cli_nometemp"]);
-    unset($_SESSION["cli_emailtemp"]);
-    unset($_SESSION["cli_perfiltemp"]);
-    unset($_SESSION["cli_cpftemp"]);
-    unset($_SESSION["cli_telefonetemp"]);
-    unset($_SESSION["cli_nascimentotemp"]);
+    unset($_SESSION["entgd_idtemp"]);
+    unset($_SESSION["entgd_nometemp"]);
+    unset($_SESSION["entgd_emailtemp"]);
+    unset($_SESSION["entgd_perfiltemp"]);
+    unset($_SESSION["entgd_cpftemp"]);
+    unset($_SESSION["entgd_telefonetemp"]);
+    unset($_SESSION["entgd_cnhtemp"]);
     unset($_SESSION["senhasErradas"]);
 }
 
@@ -22,7 +22,7 @@ if (isset($_GET["cancelarEntrada"])) {
 } else if (isset($_POST['txtEmail'])) {
     $email = $_POST['txtEmail'];
 
-    $queryInfoConta = "SELECT cli_id, cli_nome, cli_email, cli_perfil, cli_cpf, cli_telefone, cli_nascimento FROM tbl_cliente WHERE cli_email='$email'";
+    $queryInfoConta = "SELECT entgd_id, entgd_nome, entgd_email, entgd_perfil, entgd_cpf, entgd_telefone, entgd_cnh FROM tbl_entregador WHERE entgd_email='$email'";
     $resultadoInfoConta = mysqli_query($conexao, $queryInfoConta);
 
     if (mysqli_num_rows($resultadoInfoConta) == 0) {
@@ -37,22 +37,22 @@ if (isset($_GET["cancelarEntrada"])) {
         $telefone = $registroInfoConta[5];
         $data = $registroInfoConta[6];
 
-        $_SESSION["cli_idtemp"] = $id;
-        $_SESSION["cli_nometemp"] = $nome;
-        $_SESSION["cli_emailtemp"] = $email;
-        $_SESSION["cli_perfiltemp"] = $perfil;
-        $_SESSION["cli_cpftemp"] = $cpf;
-        $_SESSION["cli_telefonetemp"] = $telefone;
-        $_SESSION["cli_nascimentotemp"] = $data;
+        $_SESSION["entgd_idtemp"] = $id;
+        $_SESSION["entgd_nometemp"] = $nome;
+        $_SESSION["entgd_emailtemp"] = $email;
+        $_SESSION["entgd_perfiltemp"] = $perfil;
+        $_SESSION["entgd_cpftemp"] = $cpf;
+        $_SESSION["entgd_telefonetemp"] = $telefone;
+        $_SESSION["entgd_nascimentotemp"] = $data;
 
         header("Location: ./");
 
     }
 } else if (isset($_POST["txtSenha"])) {
 
-    $id = $_SESSION["cli_idtemp"];
+    $id = $_SESSION["entgd_idtemp"];
 
-    $queryTesteSenha = "SELECT cli_senhaHash FROM tbl_cliente WHERE cli_id='$id'";
+    $queryTesteSenha = "SELECT entgd_senhaHash FROM tbl_entregador WHERE entgd_id='$id'";
     $resultadoTesteSenha = mysqli_query($conexao, $queryTesteSenha);
 
     $registroTesteSenha = mysqli_fetch_row($resultadoTesteSenha);
@@ -60,13 +60,13 @@ if (isset($_GET["cancelarEntrada"])) {
     $senha = $_POST["txtSenha"];
 
     if (password_verify($senha, $senhaHash)) {
-        $_SESSION["cli_id"] = $_SESSION["cli_idtemp"];
-        $_SESSION["cli_nome"] = $_SESSION["cli_nometemp"];
-        $_SESSION["cli_email"] = $_SESSION["cli_emailtemp"];
-        $_SESSION["cli_perfil"] = $_SESSION["cli_perfiltemp"];
-        $_SESSION["cli_cpf"] = $_SESSION["cli_cpftemp"];
-        $_SESSION["cli_telefone"] = $_SESSION["cli_telefonetemp"];
-        $_SESSION["cli_nascimento"] = $_SESSION["cli_nascimentotemp"];
+        $_SESSION["entgd_id"] = $_SESSION["entgd_idtemp"];
+        $_SESSION["entgd_nome"] = $_SESSION["entgd_nometemp"];
+        $_SESSION["entgd_email"] = $_SESSION["entgd_emailtemp"];
+        $_SESSION["entgd_perfil"] = $_SESSION["entgd_perfiltemp"];
+        $_SESSION["entgd_cpf"] = $_SESSION["entgd_cpftemp"];
+        $_SESSION["entgd_telefone"] = $_SESSION["entgd_telefonetemp"];
+        $_SESSION["entgd_cnh"] = $_SESSION["entgd_cnhtemp"];
 
         apagarDadosTemps();
 

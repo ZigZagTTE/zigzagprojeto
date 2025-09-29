@@ -13,6 +13,12 @@
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
 </head>
 
+<?php session_start();
+    if (!isset($_SESSION["entgd_id"])){
+        header("Location: ./cadastrar");
+    }
+?>
+
 <body>
 
     <!-- HEADER -->
@@ -27,7 +33,7 @@
         <div class="icons">
             <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
             <a class="icon" href="../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-            <a class="icon" href="perfil/"><i class="fa-solid fa-circle-user fa-2x"></i></a> <!--user-->
+            <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"></a> <!--user-->
         </div>
     </header>
 
