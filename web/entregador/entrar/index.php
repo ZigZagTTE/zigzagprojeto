@@ -12,7 +12,7 @@
   <script type="text/javascript" src="entrar.js" defer></script>
   <?php
   session_start();
-  if (isset($_SESSION["cost_id"])) {
+  if (isset($_SESSION["cli_id"])) {
     header("Location: ../");
   }
   ?>
