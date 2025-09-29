@@ -3,7 +3,6 @@ const btnAlterar = document.querySelector("#btnAlterar");
 const btnExcluir = document.querySelector("#btnExcluir");
 const btnCancelar = document.querySelector("#btnCancelar");
 
-const chkMostrarSenha = document.getElementById("mostrarSenha");
 const txtCPF = document.getElementById("txtCPF");
 const txtTelefone = document.getElementById("txtTelefone");
 const inputImagem = document.getElementById("inputImagem");
@@ -41,9 +40,6 @@ if (listaDeParametros.get("erro") === "1") {
 }
 
 btnAlterar.addEventListener("click", ativarInput);
-chkMostrarSenha.addEventListener("click", mostrarSenha);
-btnExcluir.addEventListener("click", function () {mostrarPopupDeConfirmacao(1)});
-btnCancelar.addEventListener("click", function () {mostrarPopupDeConfirmacao(0)});
 inputImagem.addEventListener("change", mudancaDaImagem);
 txtCPF.addEventListener("input", function (evento) {
     evento.target.value = formatarCPF(evento.target.value);
@@ -52,41 +48,26 @@ txtTelefone.addEventListener("input", function (evento) {
     evento.target.value = formatarTelefone(evento.target.value);
 });
 
-var isExcluirNone = 0;
+var isSalvarNone = 1;
 
-function mostrarPopupDeConfirmacao(mostrar) {
-    const popup = document.querySelector(".popup");
-
-    switch (mostrar) {
-        case 0:
-            popup.style.display = "none";
-            break;
-        case 1:
-            popup.style.display = "block";
-            break;
-    }
-}
 
 function ativarInput() {
     const inputs = document.querySelectorAll(".input");
     const btnSalvar = document.querySelector(".btn-salvar");
-    const btnExcluir = document.querySelector(".btn-excluir");
 
     inputs.forEach((input) => {
         input.disabled = !input.disabled;
     });
     inputImagem.disabled = !inputImagem.disabled;
 
-    switch (isExcluirNone) {
+    switch (isSalvarNone) {
         case 0:
-            btnExcluir.style.display = "none";
-            btnSalvar.style.display = "block";
-            isExcluirNone = 1;
+            btnSalvar.style.display = "none";
+            isSalvarNone = 1;
             break;
         case 1:
-            btnExcluir.style.display = "block";
-            btnSalvar.style.display = "none";
-            isExcluirNone = 0;
+            btnSalvar.style.display = "block";
+            isSalvarNone = 0;
             break;
     }
 }
