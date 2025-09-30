@@ -4,17 +4,6 @@ require_once "../../conexao.php";
 
 session_start();
 
-function apagarDadosTemps() {
-    unset($_SESSION["cli_idtemp"]);
-    unset($_SESSION["cli_nometemp"]);
-    unset($_SESSION["cli_emailtemp"]);
-    unset($_SESSION["cli_perfiltemp"]);
-    unset($_SESSION["cli_cpftemp"]);
-    unset($_SESSION["cli_telefonetemp"]);
-    unset($_SESSION["cli_nascimentotemp"]);
-    unset($_SESSION["senhasErradas"]);
-}
-
 if (isset($_GET["cancelarEntrada"])) {
     apagarDadosTemps();
     header("Location: ./");
@@ -71,14 +60,25 @@ if (isset($_GET["cancelarEntrada"])) {
         apagarDadosTemps();
 
         header("Location: ../");
-    } else if ($_SESSION["senhasErradas"] >= 3) {
-        unset($_SESSION["senhasErradas"]);
-        header("Location: ./?erroSenha=2");
+    } else if ($_SESSION["senhasErradas"] > 2) {
+        apagarDadosTemps();
+        header("Location: ./");
     } else {
         $_SESSION["senhasErradas"] += 1;
-        header("Location: ./?erroSenha=1&senha=$senhaHash");
+        header("Location: ./?erroSenha=".$_SESSION["senhasErradas"]);
     }
 }
 mysqli_close($conexao);
+
+function apagarDadosTemps() {
+    unset($_SESSION["cli_idtemp"]);
+    unset($_SESSION["cli_nometemp"]);
+    unset($_SESSION["cli_emailtemp"]);
+    unset($_SESSION["cli_perfiltemp"]);
+    unset($_SESSION["cli_cpftemp"]);
+    unset($_SESSION["cli_telefonetemp"]);
+    unset($_SESSION["cli_nascimentotemp"]);
+    unset($_SESSION["senhasErradas"]);
+}
 
 ?>

@@ -1,8 +1,15 @@
+const txtSenhaNova = document.querySelector("#txtSenhaNova");
+const txtConfirmaSenhaNova = document.querySelector("#txtConfirmaSenhaNova");
+
 const btnAlterar = document.querySelector("#btnAlterar");
 const btnExcluir = document.querySelector("#btnExcluir");
 const btnCancelar = document.querySelector("#btnCancelar");
 const btnCancelarSenha = document.querySelector("#btnCancelarSenha");
+const btnSalvarSenha = document.querySelector(".btn-salvar");
+
 const chkMostrarSenha = document.querySelectorAll("#mostrarSenha");
+
+const erroSenha = document.querySelector(".erro_aviso");
 
 btnAlterar.addEventListener("click", function () {mostrarAlterarSenha(1)})
 btnExcluir.addEventListener("click", function () {mostrarPopupDeConfirmacao(1)});
@@ -12,6 +19,18 @@ btnCancelarSenha.addEventListener("click", function () {mostrarAlterarSenha(0)})
 chkMostrarSenha[0].addEventListener("click", function () {mostrarSenha(0)});
 chkMostrarSenha[1].addEventListener("click", function () {mostrarSenhaNova()});
 chkMostrarSenha[2].addEventListener("click", function () {mostrarSenha(1)});
+
+txtSenhaNova.addEventListener("input", function () {testeSenhas()});
+txtConfirmaSenhaNova.addEventListener("input", function () {testeSenhas()});
+btnSalvarSenha.addEventListener("click", function () {testeSenhas()});
+
+endereco = window.location.search;
+listaDeParametros = new URLSearchParams(endereco);
+
+if (listaDeParametros.get("erroSenha") !== null){
+    erroSenha.style.display = "inline";
+    erroSenha.innerHTML = "Você errou sua senha, você tem mais " + (3-parseInt(listaDeParametros.get("erroSenha"))).toString() + " tentativa(s).";
+}
 
 function mostrarAlterarSenha(mostrar) {
     const formulario = document.querySelector(".form_alterar_senha");

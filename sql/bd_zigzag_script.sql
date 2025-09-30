@@ -151,8 +151,6 @@ CREATE TABLE IF NOT EXISTS tbl_pedido
 (
     ped_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
-    ped_descricao text,
-
     ped_data date,
     ped_horario time,
 
@@ -174,13 +172,17 @@ CREATE TABLE IF NOT EXISTS tbl_item
 (
     ite_id integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
 
+    ite_descricao text,
+
     cat_id integer NOT NULL,
     FOREIGN KEY (cat_id) 
-    REFERENCES tbl_catalogo(cat_id),
+    REFERENCES tbl_catalogo(cat_id)
+    ON DELETE SET NULL,
 
     ped_id integer NOT NULL,
     FOREIGN KEY (ped_id) 
     REFERENCES tbl_pedido(ped_id)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tbl_entrega
