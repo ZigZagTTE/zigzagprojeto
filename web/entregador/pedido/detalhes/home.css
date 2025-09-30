@@ -259,9 +259,10 @@ table {
 .btn-aceitar{
   background-color: var(--roxo-claro);
   color: var(--preto);
+  font-weight: bold;
   border: none;
   width: 200px;
-  margin: auto;
+  margin-bottom: 48px;
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
@@ -270,9 +271,10 @@ table {
 }
 
 .confirmar{
-  gap: 10px;
-  text-align: left;
-  font-size: medium;
+  margin: 10px 48px;
+  align-self: start;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .btn-aceitar:hover {
