@@ -76,6 +76,9 @@
                 $_SESSION["entgd_nome"] = $nome;
                 $_SESSION["entgd_email"] = $email;
                 $_SESSION["entgd_perfil"] = $imagemNomeNovo;
+                $_SESSION["entgd_cpf"] = $cpf;
+                $_SESSION["entgd_cnh"] = $cnh;
+                $_SESSION["entgd_telefone"] = $telefone;
                 header("Location: ../");
             }
         }

@@ -35,7 +35,7 @@ if (isset($_GET["cancelarEntrada"])) {
         $perfil = $registroInfoConta[3];
         $cpf = $registroInfoConta[4];
         $telefone = $registroInfoConta[5];
-        $data = $registroInfoConta[6];
+        $cnh = $registroInfoConta[6];
 
         $_SESSION["entgd_idtemp"] = $id;
         $_SESSION["entgd_nometemp"] = $nome;
@@ -43,7 +43,7 @@ if (isset($_GET["cancelarEntrada"])) {
         $_SESSION["entgd_perfiltemp"] = $perfil;
         $_SESSION["entgd_cpftemp"] = $cpf;
         $_SESSION["entgd_telefonetemp"] = $telefone;
-        $_SESSION["entgd_nascimentotemp"] = $data;
+        $_SESSION["entgd_cnhtemp"] = $cnh;
 
         header("Location: ./");
 
