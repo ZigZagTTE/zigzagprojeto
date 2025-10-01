@@ -35,3 +35,27 @@ function formatarCPF(valor) {
 
   return formatoCPF;
 };
+
+function formatarCNPJ(valor) {
+  let formatoCNPJ = "";
+  
+  valor = valor.replace(/\D/g, "");
+  valor = valor.substring(0, 14);
+  if (valor.length > 12) {
+    formatoCNPJ = `${valor.substring(0, 2)}.${valor.substring(2, 5)}.${valor.substring(5, 8)}/${valor.substring(8, 12)}-${valor.substring(12, 14)}`;
+  }
+  else if (valor.length > 8) {
+    formatoCNPJ = `${valor.substring(0, 2)}.${valor.substring(2, 5)}.${valor.substring(5, 8)}/${valor.substring(8, 12)}`;
+  }
+  else if (valor.length > 5) {
+    formatoCNPJ = `${valor.substring(0, 2)}.${valor.substring(2, 5)}.${valor.substring(5, 8)}`;
+  }
+  else if (valor.length > 2) {
+    formatoCNPJ = `${valor.substring(0, 2)}.${valor.substring(2, 5)}`;
+  }
+  else if (valor.length > 0) {
+    formatoCNPJ = `${valor.substring(0, 2)}`;
+  }
+
+  return formatoCNPJ;
+};

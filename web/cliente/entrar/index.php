@@ -72,13 +72,7 @@
           <span class="checkmark"></span>
         </label>
 
-        <?php
-        if (isset($_GET["erroSenha"])) {
-          ?>
-          <p class="erro_log">Senha errada</p><br>
-          <?php
-        }
-        ?>
+          <br><p class="erro_log" style="display:none;"></p><br><br>
 
         <div class="doisBotoes">
           <input class="btnCompostoUm" id="btnCancelar" type="button" value="Cancelar">

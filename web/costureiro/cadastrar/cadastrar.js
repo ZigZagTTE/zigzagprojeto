@@ -14,16 +14,20 @@ const txtConfirmarSenha = document.getElementById("txtConfirmarSenha");
 const txtNome = document.getElementById("txtNome");
 const inputImagem = document.getElementById("inputImagem");
 const txtCPF = document.getElementById("txtCPF");
-const txtNascimento = document.getElementById("txtNascimento");
-const txtTelefone = document.getElementById("txtTelefone");
+const txtCNPJ = document.getElementById("txtCNPJ");
+const txtRua = document.getElementById("txtRua");
+const txtBairro = document.getElementById("txtBairro");
+const txtNumero = document.getElementById("txtNumero");
 const chkMostrarSenha = document.getElementById("mostrarSenha");
 
 //Buttons
 const btnCadastrar = document.getElementById("btnCadastrar");
 const btnProximo1 = document.getElementById("btnProximo1");
 const btnProximo2 = document.getElementById("btnProximo2");
+const btnProximo3 = documento.getElementById("btnProximo3");
 const btnRegredir1 = document.getElementById("btnRegredir1");
 const btnRegredir2 = document.getElementById("btnRegredir2");
+const btnRegredir3 = document.getElementById("btnRegredir3");
 
 // Preview para imagem
 const imagemDePreview = document.getElementById("preview_img");
@@ -60,8 +64,10 @@ chkMostrarSenha.addEventListener("click", mostrarSenha);
 btnCadastrar.addEventListener("click", testeVazioGeral);
 btnProximo1.addEventListener("click", progredirCadastro);
 btnProximo2.addEventListener("click", progredirCadastro);
+btnProximo3.addEventListener("click", progredirCadastro);
 btnRegredir1.addEventListener("click", regredirCadastro);
 btnRegredir2.addEventListener("click", regredirCadastro);
+btnRegredir3.addEventListener("click", regredirCadastro);
 
 endereco = window.location.search;
 listaDeParametros = new URLSearchParams(endereco);
@@ -148,7 +154,7 @@ function testeSenhas(evento) {
 
 function mostrarSenha() {
 
-    switch (txtSenha.type){
+    switch (txtSenha.type) {
         case "text":
             txtSenha.type = "password";
             break;
@@ -157,7 +163,7 @@ function mostrarSenha() {
             break;
     }
 
-    switch (txtConfirmarSenha.type){
+    switch (txtConfirmarSenha.type) {
         case "text":
             txtConfirmarSenha.type = "password";
             break;
@@ -195,17 +201,25 @@ function displayEtapa() {
             document.getElementById("infoDeEntrada").style.display = "block";
             document.getElementById("infoDeApresentacao").style.display = "none";
             document.getElementById("infoPessoais").style.display = "none";
+            document.getElementById("infoLocalizacao").style.display = "none";
             break;
         case 1:
             document.getElementById("infoDeEntrada").style.display = "none";
             document.getElementById("infoDeApresentacao").style.display = "block";
             document.getElementById("infoPessoais").style.display = "none";
+            document.getElementById("infoLocalizacao").style.display = "none";
             break;
         case 2:
             document.getElementById("infoDeEntrada").style.display = "none";
             document.getElementById("infoDeApresentacao").style.display = "none";
             document.getElementById("infoPessoais").style.display = "block";
+            document.getElementById("infoLocalizacao").style.display = "none";
             break;
+        case 3:
+            document.getElementById("infoDeEntrada").style.display = "none";
+            document.getElementById("infoDeApresentacao").style.display = "none";
+            document.getElementById("infoPessoais").style.display = "none";
+            document.getElementById("infoLocalizacao").style.display = "block";
     }
 }
 

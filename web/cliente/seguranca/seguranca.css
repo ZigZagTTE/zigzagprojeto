@@ -396,60 +396,18 @@ table {
       }
 
       .container_mostrar_senha {
-        display: block;
-        position: relative;
         padding-left: 30px;
-        margin-bottom: 12px;
-        cursor: pointer;
         font-size: inherit;
-        user-select: none;
-      }
-
-      .container_mostrar_senha input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
       }
 
       .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
         height: 24px;
         width: 24px;
-        background-color: white;
-        border: solid var(--roxo-principal) 1px;
-        border-radius: 100%;
-      }
-
-      .container_mostrar_senha:hover input ~ .checkmark {
-        background-color: #ccc;
-        cursor: pointer;
-      }
-
-      .container_mostrar_senha input:checked ~ .checkmark {
-        background-color: var(--roxo-principal);
-      }
-
-      .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-      }
-
-      .container_mostrar_senha input:checked ~ .checkmark:after {
-        display: block;
       }
 
       .container_mostrar_senha .checkmark:after {
         left: 7px;
         top: 7px;
-        width: 8px;
-        height: 8px;
-        background-color: white;
-        border-radius: 100%;
       }
 
       .excluir_aviso {
@@ -459,7 +417,7 @@ table {
       }
     }
 
-    .form_alterar_senha{
+    .form_alterar_senha {
       display: none;
     }
 
@@ -518,6 +476,17 @@ table {
       height: 8px;
       background-color: white;
       border-radius: 100%;
+    }
+
+    .erro_aviso {
+      display: none;
+      margin: 0 auto 0 auto;
+      text-align: justify;
+      font-size: 0.9rem;
+      font-family: "Calibri";
+      font-weight: bold;
+      width: 20rem;
+      color: var(--vermelho-erro);
     }
 
     .btn {

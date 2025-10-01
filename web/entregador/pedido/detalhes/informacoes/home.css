@@ -151,13 +151,13 @@ table {
 .logo_header {
   cursor: pointer;
   margin-left: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease
 }
 
 .logo_header:hover {
   scale: 1.05;
 }
-.icons {
+.icons{
   display: flex;
   gap: 5px;
 }
@@ -213,91 +213,68 @@ table {
    ÁREA DOS PEDIDOS
    ========================================================================== */
 .pedidos {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.pedido {
+  .pedido {
+    display: flex;
   border: #e1d5c7 3px solid;
-  width: 90%;
+  width: 70%;
   height: 160px;
   margin: 15px;
   align-items: center;
   justify-self: center;
 
-  .pedido-info {
-    margin-left: 10px;
+  .pedido-info{
     display: flex;
-    height: 100%;
     flex-direction: column;
-    font-size: 18px;
+    gap: 16px;
+    font-size: 16px;
+    margin: 20px;
   }
 
-  .status {
+  .status{
     display: flex;
     justify-self: end;
     margin: auto 20px 20px auto;
     text-align: end;
-    font-size: 16px;
   }
 
-  .costureira {
+  .pedido-img{
+    width: 120px;
+    height: 120px;
+    margin: 20px;
+  }
+
+  .costureira{
     font-weight: bold;
     margin-top: 20px;
-    font-size: 24px;
-  }
-
-  .endereco{
-    font-size: 14px;
-    margin-top: 6px;
-  }
-}
-
-.etapa {
-  border: #e1d5c7 3px solid;
-  width: 90%;
-  height: 25%;
-  margin: 15px 0 auto 0;
-
-  .etapa-info{
-    justify-content: space-between;
-    display: flex;
-    margin-top: 12px;
-
-    p {
-    font-weight: bold;
     font-size: 18px;
-    align-self: center;
-    width: fit-content;
   }
-
-  span {
-    font-size: 16px;
-  }
-
-  }
-
 }
 
-.btn-aceitar {
-    justify-self: end;
-    align-self: end;
-    background-color: var(--roxo-claro);
-    color: var(--preto);
-    font-weight: bold;
-    border: none;
-    text-decoration: none;
-    text-align: center;
-    width: 200px;
-    margin-bottom: 48px;
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+.btn-aceitar{
+  background-color: var(--roxo-claro);
+  color: var(--preto);
+  font-weight: bold;
+  border: none;
+  width: 200px;
+  margin-bottom: 48px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.confirmar{
+  margin: 10px 48px;
+  align-self: start;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .btn-aceitar:hover {

@@ -168,7 +168,6 @@ function mostrarSenha() {
 }
 
 function progredirCadastro() {
-    passoDaProgessao++;
     if (txtEmail.value === "") {
         erroVazio.style.display = "block";
         txtEmail.style.borderColor = "#f73151";
@@ -180,6 +179,7 @@ function progredirCadastro() {
         txtConfirmarSenha.style.borderColor = "#f73151";
     }
     else if (isSenhasIguais == 1) {
+        passoDaProgessao++;
         displayEtapa();
     }
 }

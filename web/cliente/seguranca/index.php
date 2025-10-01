@@ -73,7 +73,7 @@
 
       <div class="form_alterar_senha">
         <p class="label">Confirme sua senha:</p>
-        <input class="input" id="txtConfirmaSenha" name="txtConfirmaSenha" type="password" value="" /><br>
+        <input class="input" id="txtConfirmaSenha" name="txtSenha" type="password" value="" /><br>
         <br>
         <label class="container_mostrar_senha">mostrar a senha
           <input id="mostrarSenha" type="checkbox">
@@ -82,23 +82,26 @@
         <br>
 
         <p class="label">Sua senha nova:</p>
-        <input class="input" id="txtSenhaNova" name="txtSenhaNova" type="password" value="" /><br><br>
+        <input class="input" id="txtSenhaNova" name="txtSenhaNova" type="password" value="" />
 
+        <p class="label">Confirme sua senha nova:</p>
+        <input class="input" id="txtConfirmaSenhaNova" name="txtConfirmaSenhaNova" type="password" value="" />
+        <br><br>
         <label class="container_mostrar_senha">mostrar a senha nova
           <input id="mostrarSenha" type="checkbox">
           <span class="checkmark"></span>
         </label>
-
-        <p class="label">Confirme sua senha nova:</p>
-        <input class="input" id="txtConfirmaSenhaNova" name="txtConfirmaSenhaNova" type="password" value="" />
+        
         <input id="btnCancelarSenha" type="button" class="btn" value="Cancelar">
-        <input id="btnSalvarSenha" type="button" class="btn-salvar" value="Salvar senha">
+        
+        <input disabled id="btnSalvarSenha" type="submit" name="salvar" class="btn-salvar" value="Salvar senha">
       </div>
+
+      <p class="erro_aviso"></p>
 
       <input id="btnAlterar" type="button" class="btn" value="Alterar senha">
 
       <input id="btnExcluir" type="button" class="btn-excluir" value="Excluir Conta">
-
 
       <div class="popup">
         <p class="label">Para confirmar a exclusão da conta,
