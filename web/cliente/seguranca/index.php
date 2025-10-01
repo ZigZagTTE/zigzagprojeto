@@ -97,11 +97,11 @@
         <input disabled id="btnSalvarSenha" type="submit" name="salvar" class="btn-salvar" value="Salvar senha">
       </div>
 
+      <p class="erro_aviso"></p>
+
       <input id="btnAlterar" type="button" class="btn" value="Alterar senha">
 
       <input id="btnExcluir" type="button" class="btn-excluir" value="Excluir Conta">
-
-      <p class="erro_aviso"></p>
 
       <div class="popup">
         <p class="label">Para confirmar a exclusão da conta,

@@ -1,3 +1,4 @@
+const txtConfirmaSenha = document.querySelector("#txtConfirmaSenha");
 const txtSenhaNova = document.querySelector("#txtSenhaNova");
 const txtConfirmaSenhaNova = document.querySelector("#txtConfirmaSenhaNova");
 
@@ -22,7 +23,7 @@ chkMostrarSenha[2].addEventListener("click", function () {mostrarSenha(1)});
 
 txtSenhaNova.addEventListener("input", function () {testeSenhas()});
 txtConfirmaSenhaNova.addEventListener("input", function () {testeSenhas()});
-btnSalvarSenha.addEventListener("click", function () {testeSenhas()});
+btnSalvarSenha.addEventListener("mouseover", function () {testeSenhas(); console.log(1);});
 
 endereco = window.location.search;
 listaDeParametros = new URLSearchParams(endereco);
@@ -89,4 +90,36 @@ function mostrarSenhaNova() {
             txtConfirmaSenhaNova.type = "text";
             break;
     }
+}
+
+function testeSenhas() {
+    let pattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+    if (!txtSenhaNova.value || !txtConfirmaSenhaNova.value || !txtConfirmaSenha.value) {
+        erroSenha.style.display = "inline";
+        erroSenha.innerHTML = "*Você precisa preencher as senhas";
+        txtSenhaNova.style.borderColor = "#f73151";
+        txtConfirmaSenhaNova.style.borderColor = "#f73151";
+        btnSalvarSenha.disabled = true;
+    }
+    else if (!(pattern.test(txtSenhaNova.value))) {
+        erroSenha.style.display = "inline";
+        txtSenhaNova.style.borderColor = "#f73151";
+        txtConfirmaSenhaNova.style.borderColor ="#b450f5";
+        erroSenha.innerHTML = "*É preciso ter ao menos 8 caracteres, uma letra maíuscula, uma minúscula e um número";
+    }
+    else if (!(txtSenhaNova.value === txtConfirmaSenhaNova.value)) {
+        erroSenha.style.display = "inline";
+        erroSenha.innerHTML = "*AS SENHAS PRECISAM SER IGUAIS";
+        txtSenhaNova.style.borderColor = "#f73151";
+        txtConfirmaSenhaNova.style.borderColor = "#f73151";
+        btnSalvarSenha.disabled = true;
+    }
+    else {
+        erroSenha.style.display = "none";
+        txtSenhaNova.style.borderColor = "#b450f5";
+        txtConfirmaSenhaNova.style.borderColor = "#b450f5";
+        btnSalvarSenha.disabled = false;
+    }
+
 }
