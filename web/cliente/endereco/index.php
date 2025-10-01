@@ -24,7 +24,7 @@
   <?php
   session_start();
   require_once "../../conexao.php";
-  require_once ".php";
+  require_once "bancoEndereco.php";
 
   $dados_endereco = buscarDadosUsuario($conexao, $_SESSION["cli_id"]);
   if (!$dados_endereco) {

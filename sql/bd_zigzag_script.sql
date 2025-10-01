@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS tbl_costureiro
     cos_senhaHash varchar(128) NOT NULL,
 
     cos_nome varchar(64),
+    cos_telefone bigint,
     cos_cpf bigint,
     cos_cnpj bigint,
 
