@@ -91,7 +91,7 @@
             <input class="input_cad" id="txtCPF" type="text" name="txtCPF"
                 pattern="([0-9]{3}).([0-9]{3}).([0-9]{3})-([0-9]{2})$" placeholder="seu CPF aqui" required>
             <p class="txt_cad">CNPJ</p><br>
-            <input class="input_cad" id="txtCNPJ" type="text" name="txtCNPJ" pattern="^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$" placeholder="XX.XXX.XXX/YYYY-ZZ" required>
+            <input class="input_cad" id="txtCNPJ" type="text" name="txtCNPJ" pattern="^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$" placeholder="seu CNPJ aqui" />
 
             <div class="doisBotoes">
                 <input class="btnCompostoUm" id="btnRegredir2" type="button" value="←">
@@ -106,7 +106,11 @@
             <p class="txt_cad">Bairro</p><br>
             <input class="input_cad" id="txtBairro" type="text" name="txtBairro" required>
             <p class="txt_cad">Numero do local</p><br>
-            <input class="input_cad" id="txtnumero" type="text" name="txtNumero" required>
+            <input class="input_cad" id="txtNumero" type="text" name="txtNumero" required>
+            <p class="txt_cad">Complemento</p><br>
+            <input class="input_cad" id="txtComplemento" type="text" name="txtComplemento" required>
+            <p class="txt_cad">Cep</p><br>
+            <input class="input_cad" id="txtCEP" type="text" name="txtCEP" required>
 
             <div class="doisBotoes">
                 <input class="btnCompostoUm" id="btnRegredir3" type="button" value="←">

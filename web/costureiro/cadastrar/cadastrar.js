@@ -18,13 +18,15 @@ const txtCNPJ = document.getElementById("txtCNPJ");
 const txtRua = document.getElementById("txtRua");
 const txtBairro = document.getElementById("txtBairro");
 const txtNumero = document.getElementById("txtNumero");
+const txtComplemento = document.getElementById("txtComplemento");
+const txtCEP = document.getElementById("txtCEP");
 const chkMostrarSenha = document.getElementById("mostrarSenha");
 
 //Buttons
 const btnCadastrar = document.getElementById("btnCadastrar");
 const btnProximo1 = document.getElementById("btnProximo1");
 const btnProximo2 = document.getElementById("btnProximo2");
-const btnProximo3 = documento.getElementById("btnProximo3");
+const btnProximo3 = document.getElementById("btnProximo3");
 const btnRegredir1 = document.getElementById("btnRegredir1");
 const btnRegredir2 = document.getElementById("btnRegredir2");
 const btnRegredir3 = document.getElementById("btnRegredir3");
@@ -45,8 +47,14 @@ txtConfirmarSenha.addEventListener('input', testeSenhas);
 
 txtNome.addEventListener('input', testeVazio);
 txtCPF.addEventListener('input', testeVazio);
-txtNascimento.addEventListener('input', testeVazio);
-txtTelefone.addEventListener('input', testeVazio);
+txtCNPJ.addEventListener('input', testeVazio);
+txtRua.addEventListener('input', testeVazio);
+txtBairro.addEventListener('input', testeVazio);
+txtNumero.addEventListener('input', testeVazio);
+txtComplemento.addEventListener('input', testeVazio);
+txtCEP.addEventListener('input', testeVazio);
+
+
 
 
 inputImagem.addEventListener("change", mudancaDaImagem);
@@ -55,9 +63,17 @@ txtCPF.addEventListener("input", function (evento) {
     evento.target.value = formatarCPF(evento.target.value);
 });
 
-txtTelefone.addEventListener("input", function (evento) {
-    evento.target.value = formatarTelefone(evento.target.value);
+txtCNPJ.addEventListener("input", function (evento) {
+    evento.target.value = formatarCNPJ(evento.target.value);
 });
+
+txtCEP.addEventListener("input", function (evento) {
+    evento.target.value = formatarCEP(evento.target.value);
+})
+
+txtNumero.addEventListener("input", function (evento) {
+    evento.target.value = evento.target.value.replace(/\D/g, "");
+})
 
 chkMostrarSenha.addEventListener("click", mostrarSenha);
 
@@ -109,9 +125,6 @@ function testeVazioGeral() {
     }
     else {
         erroVazio.style.display = "none";
-    }
-    if (elemento.value !== "") {
-        elemen
     }
 }
 
@@ -174,7 +187,6 @@ function mostrarSenha() {
 }
 
 function progredirCadastro() {
-    passoDaProgessao++;
     if (txtEmail.value === "") {
         erroVazio.style.display = "block";
         txtEmail.style.borderColor = "#f73151";
@@ -186,6 +198,7 @@ function progredirCadastro() {
         txtConfirmarSenha.style.borderColor = "#f73151";
     }
     else if (isSenhasIguais == 1) {
+        passoDaProgessao++;
         displayEtapa();
     }
 }

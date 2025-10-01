@@ -5,7 +5,6 @@
     <title>ZigZag</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="cadastro.css">
-    <link rel="stylesheet" href="responsivo.css">
     <link rel="icon" href="../../design/images/MiniLogo.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +19,14 @@
     $senha = $_POST["txtSenha"];
     $nome = $_POST['txtNome'];
     $cpf = preg_replace('/[^0-9]/', '', $_POST['txtCPF']);
-    $data = $_POST['txtData'];
-    $telefone = preg_replace('/[^0-9]/', '', $_POST['txtTelefone']);
+    $cnpj = preg_replace('/[^0-9]/', '', $_POST['txtCNPJ']);
+    $rua = $_POST['txtRua'];
+    $bairro = $_POST['txtBairro'];
+    $numero = $_POST['txtNumero'];
+    $complemento = $_POST['txtComplemento'];
+    $cep = $_POST["txtCEP"];
+
+
 
     $maxTamanhoImagem = 1000000 * 15;
 
@@ -29,9 +34,9 @@
     $imagemTmp = $_FILES['arquivoImagem']['tmp_name'];
     $imagemNome = $_FILES['arquivoImagem']['name'];
 
-    $queryTesteEmail = "SELECT cli_email "
-        . "FROM tbl_cliente "
-        . "WHERE cli_email = '$email'";
+    $queryTesteEmail = "SELECT cos_email "
+        . "FROM tbl_costureiro "
+        . "WHERE cos_email = '$email'";
 
     $resultadoTeste = mysqli_query($conexao, $queryTesteEmail);
 
@@ -44,7 +49,7 @@
             $imagemExtensao = explode('.', $imagemNome);
             $imagemExtensao = strtolower(end($imagemExtensao));
 
-            $imagemNomeNovo = date('Y-m-d-His') . str_replace(' ','',$nome) . "." . $imagemExtensao;
+            $imagemNomeNovo = date('Y-m-d-His') . str_replace(' ', '', $nome) . "." . $imagemExtensao;
 
             $uploadDir = '../../assets/uploads/profilepictures/';
             $uploadDestino = $uploadDir . $imagemNomeNovo;
@@ -56,13 +61,13 @@
         } else {
             $senha = password_hash($senha, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO tbl_cliente(cli_email, cli_senhaHash, cli_nome, cli_perfil, cli_cpf, cli_nascimento, cli_telefone)"
-                . "VALUES('$email', '$senha', '$nome', '$imagemNomeNovo', $cpf, '$data', $telefone)";
+            $sql = "INSERT INTO tbl_costureiro(cos_email, cos_senhaHash, cos_nome, cos_perfil, cos_cnpj, cos_rua, cos_bairro, cos_numero, cos_complemento, cos_cep)"
+                . "VALUES('$email', '$senha', '$nome', '$imagemNomeNovo', '$cnpj', '$rua', '$bairro', '$numero', '$complemento', '$cep')";
             mysqli_query($conexao, $sql);
 
-            $queryID = "SELECT cli_id "
-                . "FROM tbl_cliente "
-                . "WHERE cli_email = '$email'";
+            $queryID = "SELECT cos_id "
+                . "FROM tbl_costureiro "
+                . "WHERE cos_email = '$email'";
             $resultadoID = mysqli_query($conexao, $queryID);
 
             if (mysqli_num_rows($resultadoID) == 0) {
@@ -71,13 +76,17 @@
                 $registro = mysqli_fetch_row($resultadoID);
 
                 session_start();
-                $_SESSION["cli_id"] = $registro[0];
-                $_SESSION["cli_nome"] = $nome;
-                $_SESSION["cli_email"] = $email;
-                $_SESSION["cli_perfil"] = $imagemNomeNovo;
-                $_SESSION["cli_cpf"] = $cpf;
-                $_SESSION["cli_telefone"] = $telefone;
-                $_SESSION["cli_nascimento"] = $data;
+                $_SESSION["cos_id"] = $registro[0];
+                $_SESSION["cos_email"] = $email;
+                $_SESSION["cos_nome"] = $nome;
+                $_SESSION["cos_cpf"] = $cpf;
+                $_SESSION["cos_cnpj"] = $cnpj;
+                $_SESSION["cos_perfil"] = $imagemNomeNovo;
+                $_SESSION["cos_rua"] = $rua;
+                $_SESSION["cos_bairro"] = $bairro;
+                $_SESSION["cos_numero"] = $numero;
+                $_SESSION["cos_complemento"] = $complemento;
+                $_SESSION["cos_cep"] = $cep;
 
                 header("Location: ../");
             }
