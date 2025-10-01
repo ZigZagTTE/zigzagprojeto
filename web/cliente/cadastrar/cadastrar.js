@@ -104,9 +104,6 @@ function testeVazioGeral() {
     else {
         erroVazio.style.display = "none";
     }
-    if (elemento.value !== "") {
-        elemen
-    }
 }
 
 function testeEmail(evento) {
