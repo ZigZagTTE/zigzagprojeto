@@ -25,7 +25,7 @@
 <?php 
     session_start();
     require_once '../../conexao.php';
-    require_once 'funcoes.php';
+    require_once '../bancoEndereco.php';
     if (!isset($_SESSION['cli_id'])) {
         header("Location: ../../login.php");
         exit();

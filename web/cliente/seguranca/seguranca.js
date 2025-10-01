@@ -39,6 +39,7 @@ function mostrarAlterarSenha(mostrar) {
     switch (mostrar) {
         case 0:
             formulario.style.display = "none";
+            erroSenha.style.display = "none";
             btnAlterar.style.display = "block";
             btnExcluir.style.display = "block";
             break;

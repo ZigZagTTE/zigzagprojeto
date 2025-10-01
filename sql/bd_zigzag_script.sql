@@ -154,6 +154,8 @@ CREATE TABLE IF NOT EXISTS tbl_pedido
     ped_data date,
     ped_horario time,
 
+    ped_descricao text,
+
     ped_viagens tinyint DEFAULT 0,
     ped_concluido tinyint DEFAULT 0,
 
