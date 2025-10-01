@@ -103,9 +103,6 @@ function testeVazioGeral() {
   } else {
     erroVazio.style.display = "none";
   }
-  if (elemento.value !== "") {
-    elemen;
-  }
 }
 
 function testeEmail(evento) {
@@ -164,7 +161,7 @@ function mostrarSenha() {
 }
 
 function progredirCadastro() {
-  passoDaProgessao++;
+  
   if (txtEmail.value === "") {
     erroVazio.style.display = "block";
     txtEmail.style.borderColor = "#f73151";
@@ -174,6 +171,7 @@ function progredirCadastro() {
     txtSenha.style.borderColor = "#f73151";
     txtConfirmarSenha.style.borderColor = "#f73151";
   } else if (isSenhasIguais == 1) {
+    passoDaProgessao++;
     displayEtapa();
   }
 }
