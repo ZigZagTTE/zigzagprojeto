@@ -292,7 +292,7 @@ table {
     text-decoration: none;
     text-align: center;
     width: 200px;
-    margin-bottom: 48px;
+    margin: 0 20px 28px 0;
     padding: 10px 20px;
     border-radius: 50px;
     cursor: pointer;
