@@ -59,3 +59,19 @@ function formatarCNPJ(valor) {
 
   return formatoCNPJ;
 };
+
+function formatarCEP(valor) {
+  let formatoCEP = "";
+  
+  valor = valor.replace(/\D/g, "");
+  valor = valor.substring(0, 8);
+  if (valor.length > 5) {
+    formatoCEP = `${valor.substring(0, 5)}-${valor.substring(5, 8)}`;
+  }
+  else{
+    formatoCEP = `${valor.substring(0, 5)}`;
+  }
+
+
+  return formatoCEP;
+};

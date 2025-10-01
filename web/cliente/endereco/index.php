@@ -97,7 +97,7 @@
         </a> -->
 
       <div id="add" class="add_endereco">
-        <a href="adicionar.php">
+        <a href="/adicionar">
           <i class="fa-solid fa-plus" style="color: #fdf2e6"></i>
 
         </a>

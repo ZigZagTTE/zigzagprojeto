@@ -28,34 +28,28 @@
   <body>
     <!-- HEADER -->
     <header class="top">
-      <a href="../../index.php"
-        ><img
-          class="logo_header"
-          src="../../assets/svg/logo.svg"
-          width="90"
-          height="90"
-          alt="Logo ZigZag"
-      /></a>
-      <p class="zigzag_txt">igzag</p>
-      <nav class="nav_header">
-        <div class="buttons_home"></div>
-      </nav>
-      <a class="icon" href="../index.php"
-        ><i class="fa-solid fa-house fa-2x"></i
-      ></a>
-      <!--casa-->
-      <a class="icon" href="index.php"
-        ><i class="fa-solid fa-cart-shopping fa-2x"></i
-      ></a>
-      <!--carrinho-->
-      <a class="icon" href="../perfil/"
-        ><img
+        <a href="../../index.php"><img
+                class="logo_header"
+                src="../../../assets/svg/logo.svg"
+                width="90"
+                height="90"
+                alt="Logo ZigZag" /></a>
+        <p class="zigzag_txt">igzag</p>
+        <nav class="nav_header">
+            <div class="buttons_home"></div>
+        </nav>
+        <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a>
+        <!--casa-->
+        <a class="icon" href="../"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+        <!--carrinho-->
+        <a class="icon" href="../../perfil/">
+            <img
             class="icon_img_perfil"
-            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
+            src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
             alt="Foto de perfil"
-          />
+            />
         </a>
-      <!--user-->
+        <!--user-->
     </header>
 
     <!-- INFORMACOES -->
@@ -63,9 +57,9 @@
     <div class="secoes">
       <div class="paginas">
         <ul>
-          <a href="../perfil/" class="choice"><li><i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados</li></a>
-          <a href="../seguranca/" class="choice"><li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li></a>
-          <a href="index.html" class="choice"><li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço</li></a>
+          <a href="../../perfil/" class="choice"><li><i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados</li></a>
+          <a href="../../seguranca/" class="choice"><li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li></a>
+          <a href="../" class="choice"><li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço</li></a>
         </ul>
       </div>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZigZag</title>
-    <link rel="stylesheet" href="endereco.css" />
+    <link rel="stylesheet" href="../endereco.css" />
     <link
         rel="icon"
         href="../../assets/images/MiniLogo.png"
@@ -24,7 +24,7 @@
 
 <?php 
     session_start();
-    require_once '../../conexao.php';
+    require_once '../../../conexao.php';
     require_once '../bancoEndereco.php';
     if (!isset($_SESSION['cli_id'])) {
         header("Location: ../../login.php");
@@ -38,7 +38,7 @@
     <header class="top">
         <a href="../../index.php"><img
                 class="logo_header"
-                src="../../assets/svg/logo.svg"
+                src="../../../assets/svg/logo.svg"
                 width="90"
                 height="90"
                 alt="Logo ZigZag" /></a>
@@ -46,14 +46,14 @@
         <nav class="nav_header">
             <div class="buttons_home"></div>
         </nav>
-        <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
+        <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a>
         <!--casa-->
-        <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+        <a class="icon" href="../"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
         <!--carrinho-->
-        <a class="icon" href="../perfil/">
+        <a class="icon" href="../../perfil/">
             <img
             class="icon_img_perfil"
-            src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
+            src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"];?>"
             alt="Foto de perfil"
             />
         </a>
@@ -65,13 +65,13 @@
     <div class="secoes">
         <div class="paginas">
             <ul>
-                <a href="../perfil/" class="choice">
+                <a href="../../perfil/" class="choice">
                     <li><i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados</li>
                 </a>
-                <a href="../seguranca/" class="choice">
+                <a href="../../seguranca/" class="choice">
                     <li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li>
                 </a>
-                <a href="index.html" class="choice">
+                <a href="../" class="choice">
                     <li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço</li>
                 </a>
             </ul>
