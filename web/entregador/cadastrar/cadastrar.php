@@ -20,7 +20,7 @@
     $senha = $_POST["txtSenha"];
     $nome = $_POST['txtNome'];
     $cpf = preg_replace('/[^0-9]/', '', $_POST['txtCPF']);
-    $cnh = $_POST['txtCNH'];
+    $cnh = $_POST['txtcnh'];
     $telefone = preg_replace('/[^0-9]/', '', $_POST['txtTelefone']);
 
     $maxTamanhoImagem = 1000000 * 15;

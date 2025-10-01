@@ -110,7 +110,7 @@
           value="<?php echo $_SESSION["entgd_telefone"]; ?>" />
 
         <p class="label">CNH:</p>
-        <input disabled id="txtCNH" name="txtCNH" type="text" class="input"
+        <input disabled id="txtcnh" name="txtcnh" type="text" class="input"
           value="<?php echo $_SESSION["entgd_cnh"]; ?>" />
         <br>
         <p class="erro_aviso" id="erro"></p>
