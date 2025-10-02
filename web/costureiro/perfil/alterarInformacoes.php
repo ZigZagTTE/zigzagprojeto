@@ -3,7 +3,7 @@
 require_once("../../conexao.php");
 session_start();
 
-$id = $_SESSION['cli_id'];
+$id = $_SESSION['cos_id'];
 
 
 if (array_key_exists('sair', $_POST)) {
@@ -25,7 +25,7 @@ if (array_key_exists('sair', $_POST)) {
         header("Location: ./?erroPerfil=1");
     } else {
         if (!$imagemTmp) {
-            $imagemNomeNovo = $_SESSION['cli_perfil'];
+            $imagemNomeNovo = $_SESSION['cos_perfil'];
         } else {
             $imagemNome = $_FILES['arquivoImagem']['name'];
 
@@ -39,9 +39,9 @@ if (array_key_exists('sair', $_POST)) {
             move_uploaded_file($imagemTmp, $uploadDestino);
         }
 
-        $queryTesteEmail = "SELECT cli_email "
-            . "FROM tbl_cliente "
-            . "WHERE cli_email = '$email'";
+        $queryTesteEmail = "SELECT cos_email "
+            . "FROM tbl_costureiro "
+            . "WHERE cos_email = '$email'";
 
         $resultadoTesteEmail = mysqli_query($conexao, $queryTesteEmail);
         $registroTesteEmail = mysqli_fetch_assoc($resultadoTesteEmail);
@@ -50,21 +50,28 @@ if (array_key_exists('sair', $_POST)) {
             header("Location: ./?erroEmail=1");
         } else {
 
-            $queryUpdate = "UPDATE tbl_cliente"
-                . " SET cli_email = '$email', cli_nome = '$nome', cli_perfil = '$imagemNomeNovo', cli_cpf = $cpf, cli_nascimento = '$data', cli_telefone = $telefone"
-                . " WHERE cli_id = $id";
+            $queryUpdate = "UPDATE tbl_costureiro "
+                . " SET cos_email = '$email', cos_nome = '$nome', cos_perfil = '$imagemNomeNovo', cos_cpf = $cpf, cos_nascimento = '$data', cos_telefone = $telefone"
+                . " WHERE cos_id = $id";
             mysqli_query($conexao, $queryUpdate);
 
             if (mysqli_affected_rows($conexao) != 1) {
                 header("Location: ./?erro=1");
             } else {
 
-                $_SESSION["cli_nome"] = $nome;
-                $_SESSION["cli_email"] = $email;
-                $_SESSION["cli_perfil"] = $imagemNomeNovo;
-                $_SESSION["cli_cpf"] = $cpf;
-                $_SESSION["cli_telefone"] = $telefone;
-                $_SESSION["cli_nascimento"] = $data;
+                $_SESSION["cos_nome"] = $nome;
+                $_SESSION["cos_email"] = $email;
+                $_SESSION["cos_cpf"] = $cpf;
+                $_SESSION["cos_cnpj"] = $cnpj;
+                $_SESSION["cos_perfil"] = $imagemNomeNovo;
+                $_SESSION["cos_rua"] = $rua;
+                $_SESSION["cos_bairro"] = $bairro;
+                $_SESSION["cos_numero"] = $numero;
+                $_SESSION["cos_complemento"] = $complemento;
+                $_SESSION["cos_cidade"] = $cidade;
+                $_SESSION["cos_estado"] = $estado;
+                $_SESSION["cos_cep"] = $cep;
+
 
                 header("Location: ./");
             }
@@ -73,13 +80,18 @@ if (array_key_exists('sair', $_POST)) {
 }
 mysqli_close($conexao);
 
-function apagarSessao() {
-    unset($_SESSION["cli_id"]);
-    unset($_SESSION["cli_email"]);
-    unset($_SESSION["cli_nome"]);
-    unset($_SESSION["cli_perfil"]);
-    unset($_SESSION["cli_cpf"]);
-    unset($_SESSION["cli_telefone"]);
-    unset($_SESSION["cli_nascimento"]);
+function apagarSessao()
+{
+    unset($_SESSION["cos_nome"]);
+    unset($_SESSION["cos_email"]);
+    unset($_SESSION["cos_cpf"]);
+    unset($_SESSION["cos_cnpj"]);
+    unset($_SESSION["cos_perfil"]);
+    unset($_SESSION["cos_rua"]);
+    unset($_SESSION["cos_bairro"]);
+    unset($_SESSION["cos_numero"]);
+    unset($_SESSION["cos_complemento"]);
+    unset($_SESSION["cos_cidade"]);
+    unset($_SESSION["cos_estado"]);
+    unset($_SESSION["cos_cep"]);
 }
-?>

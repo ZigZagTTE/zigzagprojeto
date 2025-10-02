@@ -105,9 +105,9 @@
         <br>
         <p class="erro_aviso" id="erroEmail"></p>
 
-        <p class="label">Telefone:</p>
-        <input disabled id="txtTelefone" name="txtTelefone" type="tel" class="input"
-          value="<?php echo $_SESSION["cos_telefone"]; ?>" />
+        <p class="label">CNPJ:</p>
+        <input disabled id="txtCNPJ" name="txtCNPJ" type="tel" class="input"
+          value="<?php echo $_SESSION["cos_cnpj"]; ?>" />
 
         <br>
         <p class="erro_aviso" id="erro"></p>
