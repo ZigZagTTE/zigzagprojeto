@@ -30,7 +30,7 @@
       <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="cliente">
+        <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="cliente">
       </a>
     </div>
     <nav class="nav_header">
@@ -106,7 +106,7 @@
         <p class="erro_aviso" id="erroEmail"></p>
 
         <p class="label">CNPJ:</p>
-        <input disabled id="txtCNPJ" name="txtCNPJ" type="tel" class="input"
+        <input disabled id="txtCNPJ" name="txtCNPJ" type="text" class="input"
           value="<?php echo $_SESSION["cos_cnpj"]; ?>" />
 
         <br>

@@ -13,8 +13,8 @@ if (array_key_exists('sair', $_POST)) {
     $nome = $_POST['txtNome'];
     $cpf = preg_replace('/[^0-9]/', '', $_POST['txtCPF']);
     $email = $_POST['txtEmail'];
-    $telefone = preg_replace('/[^0-9]/', '', $_POST['txtTelefone']);
-    $data = $_POST['txtData'];
+    $cnpj = preg_replace('/[^0-9]/', '', $_POST['txtCNPJ']);
+
 
     $maxTamanhoImagem = 1000000 * 15;
 
@@ -46,12 +46,12 @@ if (array_key_exists('sair', $_POST)) {
         $resultadoTesteEmail = mysqli_query($conexao, $queryTesteEmail);
         $registroTesteEmail = mysqli_fetch_assoc($resultadoTesteEmail);
 
-        if (mysqli_num_rows($resultadoTesteEmail) != 1 and $registroTesteEmail[0] != $email) {
+        if (mysqli_num_rows($resultadoTesteEmail) == 1 and $registroTesteEmail[0] == $email) {
             header("Location: ./?erroEmail=1");
         } else {
 
             $queryUpdate = "UPDATE tbl_costureiro "
-                . " SET cos_email = '$email', cos_nome = '$nome', cos_perfil = '$imagemNomeNovo', cos_cpf = $cpf, cos_nascimento = '$data', cos_telefone = $telefone"
+                . " SET cos_email = '$email', cos_nome = '$nome', cos_perfil = '$imagemNomeNovo', cos_cpf = $cpf, cos_cnpj = '$cnpj'"
                 . " WHERE cos_id = $id";
             mysqli_query($conexao, $queryUpdate);
 

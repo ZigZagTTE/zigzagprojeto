@@ -4,7 +4,7 @@ const btnExcluir = document.querySelector("#btnExcluir");
 const btnCancelar = document.querySelector("#btnCancelar");
 
 const txtCPF = document.getElementById("txtCPF");
-const txtTelefone = document.getElementById("txtTelefone");
+const txtCNPJ = document.getElementById("txtCNPJ");
 const inputImagem = document.getElementById("inputImagem");
 
 //Preview da Imagem
@@ -17,7 +17,7 @@ const erro = document.getElementById("erro");
 
 
 txtCPF.value = formatarCPF(txtCPF.value);
-txtTelefone.value = formatarTelefone(txtTelefone.value);
+txtCNPJ.value = formatarTelefone(txtCNPJ.value);
 
 
 endereco = window.location.search;
@@ -44,8 +44,8 @@ inputImagem.addEventListener("change", mudancaDaImagem);
 txtCPF.addEventListener("input", function (evento) {
     evento.target.value = formatarCPF(evento.target.value);
 });
-txtTelefone.addEventListener("input", function (evento) {
-    evento.target.value = formatarTelefone(evento.target.value);
+txtCNPJ.addEventListener("input", function (evento) {
+    evento.target.value = formatarCNPJ(evento.target.value);
 });
 
 var isSalvarNone = 1;
