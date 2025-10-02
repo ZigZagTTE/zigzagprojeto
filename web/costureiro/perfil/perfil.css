@@ -31,6 +31,7 @@ section {
 /* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores - Tema Claro */
+  --vermelho-erro: #f73151;
   --roxo-principal: #b450f5;
   --roxo-claro: #d89ffd;
   --roxo-mais-claro: #e7cef6;
@@ -284,6 +285,7 @@ table {
 }
 
 .icon_img_perfil {
+  object-fit: cover;
   width: 48px;
   height: 48px;
   border-radius: 100%;
@@ -331,10 +333,12 @@ table {
       color: black;
     }
   }
-
-  .informacoes {
-    display: flex;
-
+  .dados {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    margin: auto;
 
     .title {
       font-size: 54px;
@@ -348,7 +352,6 @@ table {
       display: flex;
       margin: auto;
       box-shadow: #303030 0px 0px 8px;
-
     }
 
     .input_img {
@@ -360,16 +363,19 @@ table {
       height: 51px;
       font-size: 1.5rem;
       line-height: 41px;
-      border-radius: 50%;
       border: 2px solid var(--bege);
+      border-radius: 50%;
       overflow: hidden;
     }
 
     .input_img img {
       position: relative;
-      width: 48px;
-      height: 48px;
+      top: 2px;
+      border-radius: 0;
+      width: 40px;
+      height: 40px;
       margin: auto;
+      box-shadow: unset;
     }
 
     .input_img input[type="file"] {
@@ -383,17 +389,30 @@ table {
       cursor: pointer;
     }
 
+    .titulo_imagem {
+      text-align: center;
+    }
 
-    .dados {
-      display: block;
-      justify-content: center;
-      margin: auto;
+    .informacoes {
+      text-align: left;
+    }
 
+    .erro_aviso {
+      display: none;
+      margin: 0 auto 0 auto;
+      text-align: justify;
+      font-size: 0.9rem;
+      font-family: "Calibri";
+      font-weight: bold;
+      width: 20rem;
+      color: var(--vermelho-erro);
     }
 
     .label {
       font-size: 20px;
-      margin: 16px;
+      margin: 16px 0 16px 0;
+      width: 16rem;
+      text-align: justify;
     }
 
     .input {
@@ -405,27 +424,28 @@ table {
       font-size: 16px;
     }
 
-    .btn-editar {
+    .btn {
       display: block;
       margin: 20px auto;
+      width: 18rem;
       background-color: var(--roxo-principal);
       color: var(--bege);
       text-decoration: none;
+      text-align: center;
       border-radius: 5rem;
       font-size: 1.2rem;
-      padding: 0.6rem 3rem;
+      padding: 0.6rem 0;
       transition: all 0.3s ease;
       transform-origin: center;
-      position: relative;
       cursor: pointer;
     }
 
     .btn-salvar {
       display: none;
-      margin: 20px auto;
-      border: var(--amarelo) 2px solid;
+      margin: 16px 0;
+      border: green 2px solid;
       background-color: var(--bege);
-      color: var(--amarelo);
+      color: green;
       text-decoration: none;
       border-radius: 5rem;
       font-size: 1.2rem;
@@ -437,9 +457,10 @@ table {
     .btn-excluir {
       display: block;
       margin: 20px auto;
-      border: red 2px solid;
+      width: 18rem;
+      border: var(--vermelho-erro) 2px solid;
       background-color: var(--bege);
-      color: red;
+      color: var(--vermelho-erro);
       text-decoration: none;
       border-radius: 5rem;
       font-size: 1.2rem;

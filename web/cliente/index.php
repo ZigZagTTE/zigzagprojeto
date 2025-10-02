@@ -12,10 +12,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
     <?php session_start();
-    if (!isset($_SESSION["cli_id"])){
+    if (!isset($_SESSION["cli_id"])) {
         header("Location: ./cadastrar");
     }
-     ?>
+    ?>
 </head>
 
 <body>
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </nav>
-        <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
+        <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
         <a class="icon" href="loja/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
         <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"></a> <!--user-->
     </header>

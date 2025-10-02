@@ -300,6 +300,7 @@ table {
 }
 
 .icon_img_perfil {
+  object-fit: cover;
   width: 48px;
   height: 48px;
   border-radius: 100%;
@@ -778,7 +779,7 @@ E ASSIM POR DIANTE*/
   color: var(--cinza-escuro);
 }
 
-.personalizado_grid{
+.personalizado_grid {
   background-color: #c0b9b9;
   display: flex;
   flex-direction: column;
@@ -786,19 +787,19 @@ E ASSIM POR DIANTE*/
   align-items: center;
   border-radius: 20px;
 
-  h1{
+  h1 {
     font-size: 24px;
     color: var(--preto);
     margin: 30px 10px 10px 10px;
   }
 
-  p{
+  p {
     font-size: 24px;
     color: var(--preto);
     margin: 10px;
   }
 
-  textarea{
+  textarea {
     width: 80%;
     height: 200px;
     border-radius: 10px;
@@ -807,9 +808,9 @@ E ASSIM POR DIANTE*/
     border: none;
     margin-bottom: 20px;
     resize: none;
-  } 
+  }
 
-  
+
   .file_customizada {
     margin: 10px;
     padding: 10px;
@@ -819,7 +820,7 @@ E ASSIM POR DIANTE*/
     color: var(--preto);
     font-size: 16px;
   }
-  
+
   button {
     background-color: var(--roxo-principal);
     color: var(--bege);
@@ -925,4 +926,5 @@ E ASSIM POR DIANTE*/
 
 .footer-bottom p {
   color: var(--roxo-claro);
-  font-size: 0.9em; }
+  font-size: 0.9em;
+}
