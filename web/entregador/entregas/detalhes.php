@@ -30,7 +30,7 @@
       <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="costureiro">
+        <img class="ent_text" src="../../assets\images\ent_img\entregadores.png" alt="entregador">
       </a>
     </div>
     <nav class="nav_header">
@@ -56,38 +56,27 @@
           <li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li>
         </a>
         <a href="index.html" class="choice">
-          <li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço</li>
+          <li><i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Entregas feitas</li>
         </a>
       </ul>
     </div>
 
     <div class="informacoes">
       <div class="info_enredeco">
-        <p class="title">Endereço</p>
-        <p class="label">CEP</p>
+        <p class="title">Pedido #A78569</p>
+        <p class="label">Etapa</p>
         <input type="text" class="input" value="<?php echo $_SESSION["end_cep"]; ?>" placeholder="xxxxxxx" disabled />
-        <p class="label">Cidade</p>
+        <p class="label">Endereço Costureiro</p>
         <input type="text" class="input" value="<?php echo $_SESSION["end_cidade"]; ?>" placeholder="xxxxxxxx" disabled />
-        <p class="label">Bairro</p>
+        <p class="label">Endereço CLiente</p>
         <input type="text" class="input" value="<?php echo $_SESSION["end_bairro"]; ?>" placeholder="xxxxxxxx" disabled />
-        <p class="label">Rua</p>
+        <p class="label">Valor</p>
         <input
           type="text"
           class="input"
           value="<?php echo $_SESSION["end_rua"]; ?>"
           disabled />
       </div>
-
-      <div class="info_endereco_dois">
-        <p class="label">Número</p>
-        <input type="text" class="input" value="<?php echo $_SESSION["end_numero"]; ?>" disabled />
-        <p class="label">Complemento</p>
-        <input type="text" class="input" value="<?php echo $_SESSION["end_complemento"]; ?>" disabled />
-        <p class="label">Estado</p>
-        <input type="text" class="input" value="<?php echo $_SESSION["end_estado"]; ?>" disabled />
-      </div>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="footer">

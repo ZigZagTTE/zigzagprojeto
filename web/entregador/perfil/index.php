@@ -63,7 +63,7 @@
             <i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6"></i>Segurança
           </li>
         </a>
-        <a href="../endereco/" class="choice">
+        <a href="../entregas/" class="choice">
           <li>
             <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Entregas feitas
           </li>
