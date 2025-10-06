@@ -67,7 +67,7 @@
               style="color: #fdf2e6"></i>Segurança
           </li>
         </a>
-        <a href="index.php" class="choice">
+        <a href="../endereco/" class="choice">
           <li>
             <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço
           </li>

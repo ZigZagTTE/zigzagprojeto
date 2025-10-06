@@ -6,14 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZigZag</title>
   <link rel="stylesheet" href="seguranca.css">
-  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="../home.css" />
   <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
-  <?php require_once("../../conexao.php");
-  session_start(); ?>
+
+  <script src="../../formatacao.js" defer></script>
+  <script src="./seguranca.js" defer></script>
+  <?php
+  session_start();
+
+
+  if (!isset($_SESSION["cos_id"])) {
+    header("Location: ../cadastrar");
+  }
+  ?>
 </head>
 
 <body>
@@ -27,17 +36,19 @@
         <img class="cost_text" src="../../assets\images\cost_img\ZigZag.png" alt="costureiro">
       </a>
     </div>
-    <div class="buttons_home">
-    </div>
+    <nav class="nav_header">
+      <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-    <a class="icon" href="../perfil/"><img
-        class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
-        alt="Foto de perfil" />
-    </a> <!--user-->
-
+    <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
+    </a>
+    <!--casa-->
+    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    </a>
+    <!--carrinho-->
+    <a class="icon" href="index.php"><img class="icon_img_perfil"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>" alt="Foto de perfil" />
+    </a>
+    <!--user-->
   </header>
 
   <!-- INFORMACOES -->
@@ -48,7 +59,7 @@
         <a href="../perfil/" class="choice">
           <li><i class="fa-regular fa-user fa-lg" style="color: #fdf2e6;"></i>Meus dados</li>
         </a>
-        <a href="index.html" class="choice">
+        <a href="../seguranca/" class="choice">
           <li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li>
         </a>
         <a href="../endereco/" class="choice">
@@ -57,19 +68,61 @@
       </ul>
     </div>
 
-    <div class="informacoes">
+    <form class="informacoes" method="POST" action="alterarDadosSeguranca.php">
       <p class="title">Segurança</p>
 
-      <p class="label">Telefone</p>
-      <input type="text" class="input" value="<?php echo $_SESSION["cos_telefone"]; ?>" disabled>
-      <p class="label">Email</p>
-      <input type="text" class="input" value="<?php echo $_SESSION["cos_email"]; ?>" disabled>
-      <p class="label">Senha</p>
-      <input type="password" class="input" value="<?php echo $_SESSION["cos_senha"]; ?>" disabled>
+      <div class="form_alterar_senha">
+        <p class="label">Confirme sua senha:</p>
+        <input class="input" id="txtConfirmaSenha" name="txtSenha" type="password" value="" /><br>
+        <br>
+        <label class="container_mostrar_senha">mostrar a senha
+          <input id="mostrarSenha" type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <br>
 
-      <button onclick="alterarSenha()" class="btn_alt">Alterar senha</button>
+        <p class="label">Sua senha nova:</p>
+        <input class="input" id="txtSenhaNova" name="txtSenhaNova" type="password" value="" />
 
-    </div>
+        <p class="label">Confirme sua senha nova:</p>
+        <input class="input" id="txtConfirmaSenhaNova" name="txtConfirmaSenhaNova" type="password" value="" />
+        <br><br>
+        <label class="container_mostrar_senha">mostrar a senha nova
+          <input id="mostrarSenha" type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+
+        <input id="btnCancelarSenha" type="button" class="btn" value="Cancelar">
+
+        <input disabled id="btnSalvarSenha" type="submit" name="salvar" class="btn-salvar" value="Salvar senha">
+      </div>
+
+      <p class="erro_aviso"></p>
+
+      <input id="btnAlterar" type="button" class="btn" value="Alterar senha">
+
+      <input id="btnExcluir" type="button" class="btn-excluir" value="Excluir Conta">
+
+      <div class="popup">
+        <p class="label">Para confirmar a exclusão da conta,
+          <br><br><br>
+          confirme a sua senha:
+          <br><br>
+          <input class="input" id="txtConfirmaSenha" name="txtConfirmaSenha" type="password" value="" />
+          <br><br>
+          <label class="container_mostrar_senha">mostrar a senha
+            <input id="mostrarSenha" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <br>
+        <p class="excluir_aviso">A EXCLUSÃO DA CONTA É PERMANENTE</p>
+        </p>
+        <br>
+        <input id="btnCancelar" type="button" class="btn" value="Cancelar">
+        <input type="submit" name="excluir" class="btn-excluir" value="Excluir Conta">
+      </div>
+
+    </form>
   </div>
 
   <!-- FOOTER -->
@@ -77,10 +130,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <img
-            src="../../assets/svg/logo.svg"
-            alt="ZigZag Logo"
-            class="footer-logo" />
+          <img src="../../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
         </div>
         <div class="footer-section">
@@ -104,7 +154,8 @@
           <h3>Redes Sociais</h3>
           <div class="social-links">
             <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg"
+                alt="Instagram" /></a>
             <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
@@ -114,43 +165,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function alterarSenha() {
-      var inputSenha = document.querySelector('.input');
-      inputSenha.forEach((input) => {
-        input.disable = !input.disabled;
-      });
-      var novaSenha = prompt("Digite sua nova senha:");
-      if (novaSenha) {
-        // Aqui você pode adicionar a lógica para atualizar a senha no servidor
-        alert("Senha alterada com sucesso!");
-      }
-    }
-
-    function onScrollFadeIn() {
-      const elements = document.querySelectorAll(".fade-in");
-      const windowBottom = window.innerHeight + window.scrollY;
-
-      elements.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top + window.scrollY;
-        if (windowBottom > elementTop + 100) {
-          // 100px antes de aparecer totalmente
-          el.classList.add("visible");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", onScrollFadeIn);
-    window.addEventListener("DOMContentLoaded", onScrollFadeIn);
-  </script>
-  <script>
-    window.addEventListener("DOMContentLoaded", function() {
-      document.body.classList.add("loaded");
-    });
-  </script>
-  <script src="maps.js"></script>
-  <script src="scroll-smoth.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@ $id = $_SESSION['cos_id'];
 
 if (array_key_exists('sair', $_POST)) {
     apagarSessao();
-    header("Location: ./");
+    header("Location: ../cadastrar");
 } else if (array_key_exists('salvar', $_POST)) {
     $nome = $_POST['txtNome'];
     $cpf = preg_replace('/[^0-9]/', '', $_POST['txtCPF']);
@@ -82,6 +82,7 @@ mysqli_close($conexao);
 
 function apagarSessao()
 {
+    unset($_SESSION["cos_id"]);
     unset($_SESSION["cos_nome"]);
     unset($_SESSION["cos_email"]);
     unset($_SESSION["cos_cpf"]);
