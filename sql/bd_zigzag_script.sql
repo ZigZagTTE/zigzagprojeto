@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS tbl_catalogo
     cat_descricao text,
     cat_valor decimal(5,2),
 
-    cos_id integer NOT NULL,
+    cos_id integer,
     FOREIGN KEY (cos_id)
     REFERENCES tbl_costureiro(cos_id)
     ON DELETE SET NULL,
@@ -160,12 +160,12 @@ CREATE TABLE IF NOT EXISTS tbl_pedido
     ped_viagens tinyint DEFAULT 0,
     ped_concluido tinyint DEFAULT 0,
 
-    cli_id integer NOT NULL,
+    cli_id integer,
     FOREIGN KEY (cli_id)
     REFERENCES tbl_cliente(cli_id)
     ON DELETE SET NULL,
 
-    end_id integer NOT NULL,
+    end_id integer,
     FOREIGN KEY (end_id)
     REFERENCES tbl_endereco_cliente(end_id)
     ON DELETE SET NULL
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS tbl_item
 
     ite_descricao text,
 
-    cat_id integer NOT NULL,
+    cat_id integer,
     FOREIGN KEY (cat_id) 
     REFERENCES tbl_catalogo(cat_id)
     ON DELETE SET NULL,
