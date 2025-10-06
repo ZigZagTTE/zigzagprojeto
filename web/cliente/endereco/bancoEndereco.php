@@ -1,47 +1,36 @@
 <?php
-function buscarDadosUsuario($conexao, $cli_id)
+function buscarEnderecosUsuario($conexao, $cli_id)
 {
     // Preparar consulta para evitar SQL injection
-    $stmt = $conexao->prepare("
-        SELECT 
-            end_id, 
-            end_rua, 
-            end_bairro, 
-            end_complemento, 
-            end_numero, 
-            end_cep,
-            end_cidade,
-            end_estado
+    $queryEnderecos = "SELECT end_id, end_rua, end_bairro, end_numero, end_complemento, end_cidade, end_estado, end_cep 
         FROM tbl_endereco_cliente 
-        WHERE cli_id = ?
-    ");
+        WHERE cli_id = $cli_id";
 
-    if (!$stmt) {
-        error_log("Erro ao preparar consulta: " . $conexao->error);
-        return false;
-    }
+    $resultadoEnderecos = mysqli_query($conexao, $queryEnderecos);
 
-    // Bind do parâmetro
-    $stmt->bind_param("i", $cli_id);
 
-    // Executar
-    $stmt->execute();
-
-    // Obter resultado
-    $resultado = $stmt->get_result();
-
-    if ($resultado->num_rows > 0) {
-        return $resultado->fetch_assoc();
+    if ($resultadoEnderecos) {
+        return mysqli_fetch_all($resultadoEnderecos, MYSQLI_ASSOC);
     } else {
         return false;
     }
 }
 
-function formatarCEP($cep)
+function buscarEnderecoUnico($conexao, $end_id)
 {
-    if (empty($cep)) return '';
-    $cep = preg_replace('/[^0-9]/', '', $cep);
-    return preg_replace("/(\d{5})(\d{3})/", "$1-$2", $cep);
+    // Preparar consulta para evitar SQL injection
+    $queryEnderecos = "SELECT end_id, end_rua, end_bairro, end_numero, end_complemento, end_cidade, end_estado, end_cep, cli_id  
+        FROM tbl_endereco_cliente 
+        WHERE end_id = $end_id";
+
+    $resultadoEnderecos = mysqli_query($conexao, $queryEnderecos);
+
+
+    if ($resultadoEnderecos) {
+        return mysqli_fetch_array($resultadoEnderecos, MYSQLI_ASSOC);
+    } else {
+        return false;
+    }
 }
 
 function inserirEndereco($conexao, $end_cep, $end_cidade, $end_bairro, $end_rua, $end_numero, $end_complemento, $end_estado, $cli_id)

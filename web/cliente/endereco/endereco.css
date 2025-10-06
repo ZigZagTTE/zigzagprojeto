@@ -319,8 +319,6 @@ table {
     li:hover {
       transform: scale(1.1);
     }
-    
-
 
     .choice {
       margin: 10px;
@@ -331,8 +329,6 @@ table {
       text-decoration: none;
       color: black;
     }
-
-    
   }
 
   .informacoes {
@@ -343,55 +339,86 @@ table {
       margin: 16px;
     }
 
-    .label {
-      font-size: 20px;
-      margin: 16px;
+    .endereco_grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+
+      .label {
+        font-size: 18px;
+        margin: 16px 0;
+      }
+
+      .dado_endereco {
+        display: inline-block;
+      }
+
+      .input {
+        border-radius: 20px;
+        border: 1px solid var(--roxo-principal);
+        padding: 8px;
+        font-size: 16px;
+      }
+
+      #rua {
+        width: 300px;
+        margin: 0 10px 0 0;
+      }
+      #numero {
+        width: 75px;
+      }
+      #bairro {
+        width: 390px;
+      }
+      #complemento {
+        width: 390px;
+        resize: none;
+        word-break: break-word;
+      }
+      #cidade {
+        width: 200px;
+      }
+      #estado {
+        width: 80px;
+        text-align: center;
+      }
+      #cep {
+        width: 285px;
+      }
     }
 
-    .input {
-      width: 300px;
-      height: 40px;
-      border-radius: 20px;
-      border: 1px solid var(--roxo-principal);
-      padding: 8px;
-      font-size: 16px;
-    }
-
-    .btn_alt {
-      width: 150px;
-      height: 40px;
-      border-radius: 20px;
+    .btn {
+      display: block;
+      margin: 20px 0;
+      width: 18rem;
       background-color: var(--roxo-principal);
       color: var(--bege);
-      font-size: 18px;
-      font-weight: bold;
-      margin: 16px;
-      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 0;
       transition: all 0.3s ease;
+      transform-origin: center;
+      cursor: pointer;
     }
 
-    .btn_alt:hover {
-      background-color: var(--roxo-claro);
-      color: var(--preto);
-      transform: scale(1.05);
-    }
-
-    .btn_salvar {
-      width: 200px;
-      height: 50px;
-      border-radius: 25px;
-      background-color: var(--roxo-principal);
-      color: var(--bege);
-      font-size: 20px;
-      font-weight: bold;
-      margin: 16px;
-      cursor: pointer;
+    .btn-salvar {
+      display: block;
+      margin: 16px 0;
+      width: 18rem;
+      border: green 2px solid;
+      background-color: var(--bege);
+      color: green;
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
   }
 }
 .endereco {
-
   justify-content: center;
   .setor_endereco {
     background-color: var(--roxo-claro);
