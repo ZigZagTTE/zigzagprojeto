@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="endereco.css" />
-  <link rel="stylesheet" href="../home.css" />
+  <link rel="stylesheet" href="detalhes.css" />
+  <link rel="stylesheet" href="../../home.css" />
   <link
     rel="icon"
     href="../../assets/images/MiniLogo.png"
@@ -21,7 +21,7 @@
   <script
     src="https://kit.fontawesome.com/a1d8234c07.js"
     crossorigin="anonymous"></script>
-  <?php require_once("../../conexao.php");
+  <?php require_once("../../../conexao.php");
   session_start(); ?>
 </head>
 
@@ -29,10 +29,10 @@
   <!-- HEADER -->
   <header class="top">
     <div class="header_logo">
-      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+      <a href="../../"><img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="ent_text" src="../../assets/images/ent_img/entregadores.png" alt="costureiro">
+        <img class="ent_text" src="../../../assets/images/ent_img/entregadores.png" alt="costureiro">
       </a>
     </div>
     <nav class="nav_header">
@@ -44,7 +44,7 @@
     <!--carrinho-->
     <a class="icon" href="../perfil/"><img
         class="icon_img_perfil"
-        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -67,7 +67,7 @@
               style="color: #fdf2e6"></i>Segurança
           </li>
         </a>
-        <a href="index.php" class="choice">
+        <a href="../" class="choice">
           <li>
             <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Entregas Feitas
           </li>
@@ -76,18 +76,8 @@
     </div>
 
     <div class="endereco">
-      <p class="title">Entregas Feitas</p>
-
-      <a href="detalhes/">
-        <div class="setor_endereco">
-          <p><?php echo $_SESSION["ped_id"]; ?></p>
-          <p><?php echo $_SESSION["ped_data"]; ?></p>
-          <p>Destino final do pedido</p>
-          <i class="fa-solid fa-arrow-right fa-lg"></i>
-        </div>
-      </a>
+      
     </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -95,7 +85,7 @@
       <div class="footer-content">
         <div class="footer-section">
           <img
-            src="../../assets/svg/logo.svg"
+            src="../../../assets/svg/logo.svg"
             alt="ZigZag Logo"
             class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
@@ -120,9 +110,9 @@
         <div class="footer-section">
           <h3>Redes Sociais</h3>
           <div class="social-links">
-            <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
-            <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+            <a href="#"><img src="../../../assets/svg/facebook.svg" alt="Facebook" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../../assets/svg/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="../../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
       </div>

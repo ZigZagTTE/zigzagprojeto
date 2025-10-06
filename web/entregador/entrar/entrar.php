@@ -12,6 +12,8 @@ function apagarDadosTemps() {
     unset($_SESSION["entgd_cpftemp"]);
     unset($_SESSION["entgd_telefonetemp"]);
     unset($_SESSION["entgd_cnhtemp"]);
+    unset($_SESSION["ped_idtemp"]);
+    unset($_SESSION["ped_datatemp"]);
     unset($_SESSION["senhasErradas"]);
 }
 
