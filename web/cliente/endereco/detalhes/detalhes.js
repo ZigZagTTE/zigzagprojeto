@@ -1,12 +1,17 @@
 txtCEP = document.getElementById("cep");
-btnAlterar = document.querySelector(".btn");
+btnAlterar = document.querySelector("#btnAlterar");
 btnSalvar = document.querySelector(".btn-salvar");
+btnExcluir = document.querySelector(".btn-excluir");
+btnCancelar = document.querySelector("#btnCancelar");
 
 txtCEP.value = formatarCEP(txtCEP.value);
 
 btnAlterar.addEventListener("click", ativarInput);
+btnExcluir.addEventListener("click", function(){mostrarPopupDeConfirmacao(1);});
+btnCancelar.addEventListener("click", function(){mostrarPopupDeConfirmacao(0);});
 
 var isSalvarNone = 1;
+
 function ativarInput() {
     const inputs = document.querySelectorAll(".input");
 
@@ -17,11 +22,28 @@ function ativarInput() {
     switch (isSalvarNone) {
         case 0:
             btnSalvar.style.display = "none";
+            btnExcluir.style.display = "block";
+            btnAlterar.value = "Alterar endereço";
             isSalvarNone = 1;
             break;
         case 1:
             btnSalvar.style.display = "block";
+            btnExcluir.style.display = "none";
+            btnAlterar.value = "Cancelar";
             isSalvarNone = 0;
+            break;
+    }
+}
+
+function mostrarPopupDeConfirmacao(mostrar) {
+    const popup = document.querySelector(".popup");
+
+    switch (mostrar) {
+        case 0:
+            popup.style.display = "none";
+            break;
+        case 1:
+            popup.style.display = "block";
             break;
     }
 }
