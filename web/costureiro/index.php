@@ -40,7 +40,7 @@
             </div>
         </nav>
         <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-        <a class="icon" href="../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
+        <a class="icon" href="pedidos/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
         <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"></a> <!--user-->
     </header>
 
