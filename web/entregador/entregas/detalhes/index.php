@@ -21,8 +21,13 @@
   <script
     src="https://kit.fontawesome.com/a1d8234c07.js"
     crossorigin="anonymous"></script>
-  <?php require_once("../../../conexao.php");
-  session_start(); ?>
+  <?php 
+  
+  require_once("../../../conexao.php");
+
+    
+  
+  ?>
 </head>
 
 <body>
@@ -44,7 +49,7 @@
     <!--carrinho-->
     <a class="icon" href="../perfil/"><img
         class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
+        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -76,9 +81,14 @@
     </div>
 
     <div class="endereco">
-      
-    </div>
+      <p class="title">Entrega do pedido #AK2RD</p>
 
+      <div class="setor_endereco">
+        <p>Etapa:</p>
+        <input type="text" placeholder="Etapa" disabled/>
+      </div>
+    </div>
+  </div>
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">

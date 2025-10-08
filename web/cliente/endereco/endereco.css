@@ -31,6 +31,7 @@ section {
 /* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores - Tema Claro */
+  --vermelho-erro: #f73151;
   --roxo-principal: #b450f5;
   --roxo-claro: #d89ffd;
   --roxo-mais-claro: #e7cef6;
@@ -321,11 +322,13 @@ table {
     }
 
     .choice {
-      margin: 10px;
+      display: inline-block;
       font-size: 22px;
       font-weight: bold;
+      margin: 10px 0 10px 0;
+      height: fit-content;
+      width: fit-content;
       vertical-align: middle;
-      background-color: var(--roxo-claro);
       text-decoration: none;
       color: black;
     }
@@ -355,6 +358,7 @@ table {
       .input {
         border-radius: 20px;
         border: 1px solid var(--roxo-principal);
+        background-color: #FAF4EE;
         padding: 8px;
         font-size: 16px;
       }
@@ -386,10 +390,68 @@ table {
       }
     }
 
+    .popup {
+      display: none;
+      position: absolute;
+      top: 40vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      background-color: var(--bege);
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgb(15, 15, 15);
+      width: 26%;
+      padding: 2rem 0 2rem 0;
+      height: auto;
+      max-height: 120vh;
+      margin: 30px auto 30px auto;
+      overflow: hidden;
+
+      .label {
+        font-size: 18px;
+        margin: 16px auto 16px auto;
+        width: 15rem;
+      }
+
+      .excluir_aviso {
+        text-align: center;
+      }
+
+      input[type="button"],
+      input[type="submit"] {
+        margin: 20px auto;
+      }
+
+      .btn {
+        font-size: 16px;
+        width: 15rem;
+        height: 2.8rem;
+      }
+
+      .btn-excluir {
+        font-size: 16px;
+        width: 15rem;
+        height: 2.8rem;
+      }
+
+      .excluir_aviso {
+        font-family: "Calibri";
+        font-weight: bold;
+        color: var(--vermelho-erro);
+      }
+    }
+
+    .box_botoes {
+      display: grid;
+      align-items: top;
+      grid-template-columns: 20rem 1fr;
+    }
+
     .btn {
       display: block;
       margin: 20px 0;
       width: 18rem;
+      height: 3rem;
       background-color: var(--roxo-principal);
       color: var(--bege);
       text-decoration: none;
@@ -406,6 +468,7 @@ table {
       display: block;
       margin: 16px 0;
       width: 18rem;
+      height: 3rem;
       border: green 2px solid;
       background-color: var(--bege);
       color: green;
@@ -414,6 +477,23 @@ table {
       font-size: 1.2rem;
       padding: 0.6rem 3rem;
       transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-excluir {
+      display: block;
+      margin: 20px 0;
+      width: 18rem;
+      height: 3rem;
+      border: var(--vermelho-erro) 2px solid;
+      background-color: var(--bege);
+      color: var(--vermelho-erro);
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      position: relative;
       cursor: pointer;
     }
   }

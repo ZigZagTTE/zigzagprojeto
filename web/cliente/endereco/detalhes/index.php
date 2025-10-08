@@ -70,25 +70,26 @@
       </ul>
     </div>
 
-    <form class="informacoes">
+    <form class="informacoes" method="POST" action="alterarEnderecoDetalhes.php">
       <p class="title">Endereço</p>
+      <input hidden name="txtID" value="<?php echo $dados_endereco_unico["end_id"]; ?>">
       <div class="endereco_grid">
         <div class="info_endereco">
           <div class="dado_endereco">
             <p class="label">Rua</p>
-            <input type="text" id="rua" class="input" value="<?php echo $dados_endereco_unico["end_rua"]; ?>"
-              disabled />
+            <input name="txtRua" type="text" id="rua" class="input"
+              value="<?php echo $dados_endereco_unico["end_rua"]; ?>" disabled />
           </div>
           <div class="dado_endereco">
             <p class="label">Número</p>
-            <input type="text" id="numero" class="input" value="<?php echo $dados_endereco_unico["end_numero"]; ?>"
-              disabled />
+            <input name="txtNumero" type="text" id="numero" class="input"
+              value="<?php echo $dados_endereco_unico["end_numero"]; ?>" placeholder="123" disabled />
           </div>
           <p class="label">Bairro</p>
-          <input type="text" id="bairro" class="input" value="<?php echo $dados_endereco_unico["end_bairro"]; ?>"
-            placeholder="xxxxxxxx" disabled />
+          <input name="txtBairro" type="text" id="bairro" class="input"
+            value="<?php echo $dados_endereco_unico["end_bairro"]; ?>" disabled />
           <p class="label">Complemento</p>
-          <textarea id="complemento" class="input" rows="4" disabled>
+          <textarea name="txtComplemento" id="complemento" class="input" rows="4" disabled>
             <?php echo $dados_endereco_unico["end_complemento"]; ?>
           </textarea>
         </div>
@@ -96,22 +97,48 @@
         <div class="info_endereco_dois">
           <div class="dado_endereco">
             <p class="label">Cidade</p>
-            <input type="text" id="cidade" class="input" value="<?php echo $dados_endereco_unico["end_cidade"]; ?>"
-              placeholder="xxxxxxxx" disabled />
+            <input type="text" name="txtCidade" id="cidade" class="input"
+              value="<?php echo $dados_endereco_unico["end_cidade"]; ?>" disabled />
           </div>
           <div class="dado_endereco">
             <p class="label">Estado</p>
-            <input type="text" id="estado" class="input" value="<?php echo $dados_endereco_unico["end_estado"]; ?>"
-              disabled />
+            <select name="txtEstado" id="estado" class="input" disabled>
+              <?php
+              $listaDosEstados = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
+              
+              for ($i=0; $i < 27; $i++) {
+                $codigoCategoria = $listaDosEstados[$i];
+
+                echo "<option value=\"$listaDosEstados[$i]\"";
+
+                if ($dados_endereco_unico["end_estado"] == $listaDosEstados[$i]) {
+                  echo " selected ";
+                }
+
+                echo ">$listaDosEstados[$i]</option>\n";
+              }
+              ?>
+            </select>
           </div>
           <p class="label">CEP</p>
-          <input type="text" id="cep" class="input" value="<?php echo $dados_endereco_unico["end_cep"]; ?>"
-            placeholder="xxxxxxx" disabled />
+          <input type="text" name="txtCEP" id="cep" class="input"
+            value="<?php echo $dados_endereco_unico["end_cep"]; ?>" placeholder="00000-00" disabled />
         </div>
       </div>
-      <input id="btnAlterar" class="btn" type="button" value="Alterar endereço">
-      <input disabled id="btnSalvarSenha" class="btn-salvar" style="display:none;" type="submit" name="salvar"
-        value="Salvar senha">
+      <div class="box_botoes">
+        <div>
+          <input id="btnAlterar" class="btn" type="button" value="Alterar endereço">
+          <input disabled id="btnSalvarAlteracoes" class="btn-salvar" style="display:none;" type="submit" name="salvar"
+            value="Salvar endereço">
+        </div>
+        <input id="btnExcluir" type="button" class="btn-excluir" value="Excluir endereço">
+      </div>
+      <div class="popup">
+        <p class="label">Você tem certeza que quer excluir este endereço?
+          <br><br><br>
+          <input id="btnCancelar" type="button" class="btn" value="Cancelar">
+          <input type="submit" name="excluir" class="btn-excluir" value="Excluir endereço">
+      </div>
     </form>
   </div>
 

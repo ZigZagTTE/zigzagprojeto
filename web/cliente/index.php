@@ -66,9 +66,8 @@
                         <p class="store-name">Costura Express</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
-                                Entrega rápida<br>
                                 Aberto • Fecha 18h
                             </p>
                         </div>
