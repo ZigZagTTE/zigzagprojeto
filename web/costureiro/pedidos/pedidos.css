@@ -1,0 +1,139 @@
+/* ========================================================================== */
+/* RESET E CONFIGURAÇÕES GLOBAIS                                            */
+/* ========================================================================== */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: "Iansui", cursive;
+    cursor: default;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/* Configuração de elementos HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* Variáveis de Cores e Breakpoints */
+:root {
+    /* Paleta de cores - Tema Claro */
+    --vermelho-erro: #f73151;
+    --roxo-principal: #b450f5;
+    --roxo-claro: #d89ffd;
+    --roxo-mais-claro: #e7cef6;
+    --preto: #303030;
+    --cinza-escuro: #545454;
+    --cinza: #a6a6a6;
+    --bege: #f5e9dc;
+    --bege-claro: #f5e9db;
+    --amarelo: #edbd44;
+
+    /* Breakpoints */
+    --mobile-pequeno: 320px;
+    --mobile-normal: 480px;
+    --tablet: 768px;
+    --notebook: 1024px;
+    --desktop: 1280px;
+    --ultra-wide: 1440px;
+}
+
+/*[data-theme="dark"] {
+    /* Paleta de cores - Tema Escuro 
+    --bege: #f5e9dc;
+    --roxo-principal: #b450f5;
+    --roxo-escuro: #894faf;
+    --bege-claro: #f5e9db;
+    --amarelo-claro: #fdf2e6;
+    --cinza: #a6a6a6;
+    --roxo-medio: #824db7;
+    --roxo-muito-escuro: #1c0d2b;
+    --amarelo: #b450f5;
+    }*/
+
+/* Configurações Base */
+html,
+body {
+    width: 100%;
+    position: relative;
+}
+
+body {
+    line-height: 1;
+    background-color: var(--bege);
+    overflow-x: hidden;
+}
+
+/* Reset de Listas e Citações */
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+/* Reset de Tabelas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Utilitários */
+.fixFloat {
+    clear: both;
+}
+
+
+/* ========================================================================== */
+/* ESTILIZAÇÕES ESPECÍFICAS DA PÁGINA DE PEDIDOS                              */
+/* ========================================================================== */
+
+.container-pedidos {
+    height: auto;
+    margin: 40px;
+
+    p {
+        padding: 20px;
+        font-size: 2rem;
+    }
+}
+
+.grid-pedidos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-pedidos {
+    border: solid 2px var(--roxo-principal);
+    min-height: 200px;
+    max-width: 400px;
+    padding: 10px;
+    background-color: #a6a6a667;
+    transition: all 0.3s ease;
+}

@@ -42,8 +42,7 @@
     <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
     </a>
     <!--casa-->
-    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
-    </a>
+    <a class="icon" href="index.php"><i class="fa-duotone fa-solid fa-clipboard-list fa-2xl" style="--fa-primary-color: #b450f5; --fa-secondary-color: #f5e9db;"></i></a> <!--carrinho-->
     <!--carrinho-->
     <a class="icon" href="index.php"><img class="icon_img_perfil"
         src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>" alt="Foto de perfil" />

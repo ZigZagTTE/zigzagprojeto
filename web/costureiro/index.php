@@ -2,46 +2,49 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZigZag</title>
-    <link rel="stylesheet" href="home.css">
-    <link rel="icon" href="../assets/images/MiniLogo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+
+    <script src="../../formatacao.js" defer></script>
+    <script src="./perfil.js" defer></script>
+
     <?php session_start();
     if (!isset($_SESSION["cos_id"])) {
-        header("Location: ./cadastrar");
+        header("Location: ../cadastrar");
     }
     ?>
 </head>
 
 <body>
-
     <!-- HEADER -->
     <header class="top">
         <div class="header_logo">
-            <a href="../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
+            <a href="../../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
                     alt="Logo ZigZag">
                 <p class="zigzag_txt">igzag</p>
-                <img class="cost_text" src="../assets\images\cost_img\ZigZag.png" alt="costureiro">
+                <img class="cost_text" src="../assets\images\cost_img\ZigZag.png" alt="cliente">
             </a>
         </div>
         <nav class="nav_header">
-            <div class="buttons_home">
-                <div class="search-container">
-                    <div class="search-box">
-                        <img src="../assets/svg/search.svg" alt="Buscar" class="search-icon">
-                        <input type="text" placeholder="Busque costureiras e faça seu orçamento!" class="search-input">
-                    </div>
-                </div>
-            </div>
+            <div class="buttons_home"></div>
         </nav>
-        <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-        <a class="icon" href="pedidos/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"></a> <!--user-->
+        <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i></a>
+        <!--casa-->
+        <a class="icon" href="pedidos/"><i class="fa-duotone fa-solid fa-clipboard-list fa-2xl" style="--fa-primary-color: #b450f5; --fa-secondary-color: #f5e9db;"></i></a>
+        <!--lista de pedidos-->
+        <a class="icon" href="perfil/"><img
+                class="icon_img_perfil"
+                src="../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
+                alt="Foto de perfil" />
+        </a>
+        <!--user-->
     </header>
 
     <p class="title">Faça já seu pedido em costureiras próximas!</p>
