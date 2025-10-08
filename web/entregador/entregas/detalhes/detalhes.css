@@ -340,13 +340,15 @@ table {
 
 
     .choice {
-      margin: 10px;
+      display: inline-block;
       font-size: 22px;
       font-weight: bold;
+      margin: 10px 0 10px 0;
+      height: fit-content;
+      width: fit-content;
       vertical-align: middle;
-      background-color: var(--roxo-claro);
       text-decoration: none;
-      color: black;
+      color:black;
     }
 
     
@@ -409,60 +411,20 @@ table {
 }
 .endereco {
 
-  justify-content: center;
-  .setor_endereco {
-    background-color: #fdf2e6;
-    border: #e1d5c7 5px solid;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    width: 50%;
-    height: 35%;
-    margin-bottom: 20px;
+  .setor_endereco {  
+    width: 70%;
+    background-color: #e1d5c7;
 
     p{
-      gap: 10px;
+      margin:10px;
+      font-size: large;
     }
 
-    h1 {
-      font-size: 22px;
-      margin: 12px;
+    input{
+      border: #545454 2px solid;
+      margin: 0 10px;
+      border-radius: 20px;
     }
-
-    i {
-      margin-right: 20px;
-      padding: auto;
-      transition: width 1s, height 1s, transform 1s ease;
-    }
-
-    i:hover {
-      transform: scale(1.4);
-    }
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-  .title {
-    font-size: 54px;
-    margin: 16px;
-  }
-
-  .add_endereco {
-    background-color: var(--roxo-claro);
-    font-size: 30px;
-    margin-left: 22.5%;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px var(--preto);
   }
 }
 
