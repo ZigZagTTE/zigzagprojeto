@@ -61,7 +61,7 @@
         <div class="carousel-warp-costurar">
             <div class="carousel-section" id="carousel1">
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost1-perfil.jpeg">
                     <div class="store-info">
                         <p class="store-name">Costura Express</p>
                         <div class="store-rating">
@@ -74,12 +74,12 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost2-logo.jpeg">
                     <div class="store-info">
                         <p class="store-name">Ateliê Elegância</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -88,12 +88,12 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost2-perfil.jpeg">
                     <div class="store-info">
                         <p class="store-name">Mãos de Ouro</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -102,12 +102,12 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost3-logo.png">
                     <div class="store-info">
                         <p class="store-name">Costura Premium</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -116,12 +116,12 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost3-perfil.jpeg">
                     <div class="store-info">
                         <p class="store-name">Ateliê Moda & Estilo</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -130,7 +130,7 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost1-logo.jpeg">
                     <div class="store-info">
                         <p class="store-name">Costura Rápida</p>
                         <div class="store-rating">
@@ -167,12 +167,12 @@
         <div class="carousel-warp-criar">
             <div class="carousel-section" id="carousel2">
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost4-logo.jpeg">
                     <div class="store-info">
                         <p class="store-name">Ateliê da Ana</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -181,12 +181,12 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost4-perfil.jpeg">
                     <div class="store-info">
                         <p class="store-name">Costura & Criação</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -195,12 +195,12 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost5-logo.jpeg">
                     <div class="store-info">
                         <p class="store-name">Ateliê Perfeição</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -209,12 +209,12 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/images/cost_img/cost6-logo.jpeg">
                     <div class="store-info">
                         <p class="store-name">Costura Artesanal</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -223,12 +223,12 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/cost_img/cost5-perfil.jpeg">
                     <div class="store-info">
                         <p class="store-name">Ateliê Fashion</p>
                         <div class="store-rating">
                             <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
+                            <span class="rating-text">5,0</span>
                             <p class="store-details">
                                 Entrega rápida<br>
                                 Aberto • Fecha 18h
@@ -237,7 +237,7 @@
                     </div>
                 </a>
                 <a href="loja/" class="store-card">
-                    <img class="store-image" src="">
+                    <img class="store-image" src="../assets/cost_img/cost6-perfil.jpeg">
                     <div class="store-info">
                         <p class="store-name">Costura Profissional</p>
                         <div class="store-rating">

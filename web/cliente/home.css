@@ -505,6 +505,7 @@ E ASSIM POR DIANTE*/
 }
 
 .store-image {
+  object-fit: cover;
   width: 80px;
   height: 80px;
   background: white;

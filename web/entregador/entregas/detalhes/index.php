@@ -23,10 +23,9 @@
     crossorigin="anonymous"></script>
   <?php 
   
-  require_once("../../../conexao.php");
-
-    
-  
+  require_once "../../../conexao.php";
+  require_once "../bancoEntregas.php";
+  session_start();
   ?>
 </head>
 
@@ -85,7 +84,7 @@
 
       <div class="setor_endereco">
         <p>Etapa:</p>
-        <input type="text" placeholder="Etapa" disabled/>
+        <input bancoPedido() type="text" placeholder="Etapa" disabled/>
       </div>
     </div>
   </div>

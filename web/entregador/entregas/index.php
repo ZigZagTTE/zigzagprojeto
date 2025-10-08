@@ -21,8 +21,19 @@
   <script
     src="https://kit.fontawesome.com/a1d8234c07.js"
     crossorigin="anonymous"></script>
-  <?php require_once("../../conexao.php");
-  session_start(); ?>
+  <?php 
+
+    require_once "../../conexao.php";
+    require_once "bancoPedidos.php";
+    session_start();
+    if (!isset($_SESSION['entgd_id'])) {
+    header("Location: ../entrar");
+    exit();
+  }
+
+  $pedido = bancoPedidoUnico($conexao, $_GET['entrg_id']);
+
+  ?>
 </head>
 
 <body>
@@ -80,8 +91,8 @@
 
       <a href="detalhes/">
         <div class="setor_endereco">
-          <p><?php echo $_SESSION["ped_id"]; ?></p>
-          <p><?php echo $_SESSION["ped_data"]; ?></p>
+          <p><?php echo $pedido["entrg_id"]; ?></p>
+          <p><?php echo $pedido["entrg_data"]; ?></p>
           <p>Destino final do pedido</p>
           <i class="fa-solid fa-arrow-right fa-lg"></i>
         </div>

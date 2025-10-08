@@ -13,7 +13,6 @@ function apagarDadosTemps() {
     unset($_SESSION["entgd_telefonetemp"]);
     unset($_SESSION["entgd_cnhtemp"]);
     unset($_SESSION["ped_idtemp"]);
-    unset($_SESSION["ped_datatemp"]);
     unset($_SESSION["senhasErradas"]);
 }
 
@@ -24,13 +23,13 @@ if (isset($_GET["cancelarEntrada"])) {
 } else if (isset($_POST['txtEmail'])) {
     $email = $_POST['txtEmail'];
 
-    $queryInfoConta = "SELECT entgd_id, entgd_nome, entgd_email, entgd_perfil, entgd_cpf, entgd_telefone, entgd_cnh FROM tbl_entregador WHERE entgd_email='$email'";
+    $queryInfoConta = "SELECT entgd_id, entgd_nome, entgd_email, entgd_perfil, entgd_cpf, entgd_telefone, entgd_cnh, ped_id FROM tbl_entregador, tbl_pedido WHERE entgd_email='$email'";
     $resultadoInfoConta = mysqli_query($conexao, $queryInfoConta);
 
     if (mysqli_num_rows($resultadoInfoConta) == 0) {
         header("Location: ./?erroEmail=1");
     } else {
-        $registroInfoConta = mysqli_fetch_row($resultadoInfoConta);
+        $registroInfoConta = mysqli_fetch_all($resultadoInfoConta);
         $id = $registroInfoConta[0];
         $nome = $registroInfoConta[1];
         $email = $registroInfoConta[2];
@@ -38,6 +37,7 @@ if (isset($_GET["cancelarEntrada"])) {
         $cpf = $registroInfoConta[4];
         $telefone = $registroInfoConta[5];
         $cnh = $registroInfoConta[6];
+        $ped_id = $registroInfoConta[7];
 
         $_SESSION["entgd_idtemp"] = $id;
         $_SESSION["entgd_nometemp"] = $nome;
@@ -46,6 +46,7 @@ if (isset($_GET["cancelarEntrada"])) {
         $_SESSION["entgd_cpftemp"] = $cpf;
         $_SESSION["entgd_telefonetemp"] = $telefone;
         $_SESSION["entgd_cnhtemp"] = $cnh;
+        $_SESSION["ped_idtemp"] = $ped_id;
 
         header("Location: ./");
 
