@@ -358,7 +358,7 @@ table {
       .input {
         border-radius: 20px;
         border: 1px solid var(--roxo-principal);
-        background-color: #FAF4EE;
+        background-color: #faf4ee;
         padding: 8px;
         font-size: 16px;
       }
@@ -439,6 +439,23 @@ table {
         font-weight: bold;
         color: var(--vermelho-erro);
       }
+    }
+
+    .erro_aviso {
+      display: none;
+      margin: 24px auto 0 auto;
+      text-align: center;
+      font-size: 1rem;
+      font-family: "Calibri";
+      font-weight: bold;
+      color: var(--vermelho-erro);
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      width: fit-content;
+      height: fit-content;
     }
 
     .box_botoes {

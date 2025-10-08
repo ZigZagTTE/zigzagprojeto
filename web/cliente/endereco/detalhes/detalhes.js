@@ -1,8 +1,11 @@
 txtCEP = document.getElementById("cep");
+
 btnAlterar = document.querySelector("#btnAlterar");
 btnSalvar = document.querySelector(".btn-salvar");
 btnExcluir = document.querySelector(".btn-excluir");
 btnCancelar = document.querySelector("#btnCancelar");
+
+erroAviso = document.querySelector(".erro_aviso");
 
 txtCEP.value = formatarCEP(txtCEP.value);
 
@@ -10,7 +13,16 @@ btnAlterar.addEventListener("click", ativarInput);
 btnExcluir.addEventListener("click", function(){mostrarPopupDeConfirmacao(1);});
 btnCancelar.addEventListener("click", function(){mostrarPopupDeConfirmacao(0);});
 
+txtCEP.addEventListener("input", function(){txtCEP.value = formatarCEP(txtCEP.value)});
+
 var isSalvarNone = 1;
+
+endereco = window.location.search;
+listaDeParametros = new URLSearchParams(endereco);
+
+if (listaDeParametros.get("erro") !== null){
+    erroAviso.style.display = "inline-block";
+}
 
 function ativarInput() {
     const inputs = document.querySelectorAll(".input");

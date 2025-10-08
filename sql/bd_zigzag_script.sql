@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS tbl_endereco_cliente
     end_rua varchar(64),
     end_bairro varchar(32),
     end_numero int,
-    end_complemento varchar(64),
+    end_complemento tinytext,
     end_cidade varchar(32),
     end_estado varchar(2),
     end_cep int,
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS tbl_costureiro
     cos_rua varchar(64),
     cos_bairro varchar(32),
     cos_numero int,
-    cos_complemento varchar(64),
+    cos_complemento tinytext,
     cos_cidade varchar(32),
     cos_estado varchar(2),
     cos_cep int

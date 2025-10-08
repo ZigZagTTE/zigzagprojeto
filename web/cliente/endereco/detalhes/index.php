@@ -89,9 +89,7 @@
           <input name="txtBairro" type="text" id="bairro" class="input"
             value="<?php echo $dados_endereco_unico["end_bairro"]; ?>" disabled />
           <p class="label">Complemento</p>
-          <textarea name="txtComplemento" id="complemento" class="input" rows="4" disabled>
-            <?php echo $dados_endereco_unico["end_complemento"]; ?>
-          </textarea>
+          <textarea name="txtComplemento" id="complemento" class="input" rows="4" placeholder="Escreva no máximo 255 caracteres" disabled><?php echo $dados_endereco_unico["end_complemento"]; ?></textarea>
         </div>
 
         <div class="info_endereco_dois">
@@ -125,12 +123,15 @@
             value="<?php echo $dados_endereco_unico["end_cep"]; ?>" placeholder="00000-00" disabled />
         </div>
       </div>
+      <p class="erro_aviso">Algo deu errado.</p>
       <div class="box_botoes">
         <div>
           <input id="btnAlterar" class="btn" type="button" value="Alterar endereço">
-          <input disabled id="btnSalvarAlteracoes" class="btn-salvar" style="display:none;" type="submit" name="salvar"
+          
+          <input id="btnSalvarAlteracoes" class="btn-salvar" style="display:none;" type="submit" name="salvar"
             value="Salvar endereço">
         </div>
+        
         <input id="btnExcluir" type="button" class="btn-excluir" value="Excluir endereço">
       </div>
       <div class="popup">
@@ -147,7 +148,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <img src="../../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
+          <img src="../../../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
         </div>
         <div class="footer-section">
@@ -170,10 +171,10 @@
         <div class="footer-section">
           <h3>Redes Sociais</h3>
           <div class="social-links">
-            <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg"
+            <a href="#"><img src="../../../assets/svg/facebook.svg" alt="Facebook" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../../assets/svg/instagram.svg"
                 alt="Instagram" /></a>
-            <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+            <a href="#"><img src="../../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
       </div>
