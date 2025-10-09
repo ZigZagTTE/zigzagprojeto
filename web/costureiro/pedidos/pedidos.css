@@ -116,7 +116,7 @@ table {
     height: auto;
     margin: 40px;
 
-    p {
+    h1 {
         padding: 20px;
         font-size: 2rem;
     }
@@ -130,10 +130,57 @@ table {
 }
 
 .card-pedidos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px;
     border: solid 2px var(--roxo-principal);
     min-height: 200px;
     max-width: 400px;
     padding: 10px;
     background-color: #a6a6a667;
     transition: all 0.3s ease;
+}
+
+.card-pedidos:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pedido-info {
+    grid-row: span 2 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--preto);
+}
+
+.pedido-info p {
+    margin: 5px 0;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    max-height: 150px;
+}
+
+.pedido-detalhes {
+    grid-column-start: 2;
+    display: flex;
+    align-items: last baseline;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--preto);
+
 }

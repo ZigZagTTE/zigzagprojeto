@@ -26,7 +26,7 @@
     <!-- HEADER -->
     <header class="top">
         <div class="header_logo">
-            <a href="../../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
+            <a href="../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
                     alt="Logo ZigZag">
                 <p class="zigzag_txt">igzag</p>
                 <img class="cost_text" src="../assets\images\cost_img\ZigZag.png" alt="cliente">

@@ -20,6 +20,10 @@
     if (!isset($_SESSION["cos_id"])) {
         header("Location: ../cadastrar");
     }
+
+    require_once '../../conexao.php';
+    require_once 'bancoPedidos.php';
+    $pedidos = buscarPedidosDisponiveis($conexao);
     ?>
 </head>
 
@@ -50,41 +54,27 @@
 
     <div class="container-pedidos">
 
-        <p>Pedidos disponíveis</p>
+        <h1>Pedidos disponíveis</h1>
 
         <div class="grid-pedidos">
-            <div class="card-pedidos">
-                
-            </div>
-
-            <div class="card-pedidos">
-                
-            </div>
-
-            <div class="card-pedidos">
-                
-            </div>
-
-            <div class="card-pedidos">
-                
-            </div>
-
-            <div class="card-pedidos">
-                
-            </div>
-
-            <div class="card-pedidos">
-                
-            </div>
-
-            <div class="card-pedidos">
-                
-            </div>
-
-            <div class="card-pedidos">
-                
-            </div>
-
+            <?php foreach ($pedidos as $pedido) : ?>
+                <div class="card-pedidos">
+                    <div class="pedido-info">
+                        <h3><?php echo htmlspecialchars($pedido['']); ?></h3>
+                        <p>Descrição: <?php echo htmlspecialchars($pedido['ped_descricao']); ?></p>
+                        <p>Data do Pedido: <?php echo date('d/m/Y', strtotime($pedido['ped_data'])); ?></p>
+                        <p>Valor: R$ <?php echo number_format($pedido['ped_valor'], 2, ',', '.'); ?></p>
+                    </div>
+                    <?php
+                    // Define uma imagem padrão caso não haja uma no pedido
+                    $imagem = !empty($pedido['ped_imagem_ref']) ? '../../assets/uploads/references/' . htmlspecialchars($pedido['ped_imagem_ref']) : '../../assets/images/cost_img/default_pedido.png';
+                    ?>
+                    <img src="<?php echo $imagem; ?>" alt="pedido" class="card-image">
+                    <div class="pedido-detalhes">
+                        <a href="detalhes.php?id=<?php echo $pedido['ped_id']; ?>">Detalhes</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
 
     </div>
