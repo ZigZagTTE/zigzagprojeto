@@ -33,20 +33,3 @@ function buscarEnderecoUnico($conexao, $end_id)
     }
 }
 
-function inserirEndereco($conexao, $end_cep, $end_cidade, $end_bairro, $end_rua, $end_numero, $end_complemento, $end_estado, $cli_id)
-{
-    $stmt = $conexao->prepare("INSERT INTO tbl_endereco_cliente ( end_cep, end_cidade, end_bairro, end_rua, end_numero, end_complemento, end_estado, cli_id) VALUES ($end_cep, $end_cidade, $end_bairro, $end_rua, $end_numero, $end_complemento, $end_estado, $cli_id)");
-    if (!$stmt) {
-        error_log("Erro ao preparar consulta: " . $conexao->error);
-        return false;
-    }
-
-
-    // Executar
-    if ($stmt->execute()) {
-        return true;
-    } else {
-        error_log("Erro ao executar consulta: " . $stmt->error);
-        return false;
-    }
-}
