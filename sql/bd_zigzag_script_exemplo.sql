@@ -5,14 +5,14 @@
 USE bd_zigzag_main;
 
 
--- Clientes de exemplo
+-- # Clientes de exemplo
 
 INSERT INTO tbl_cliente (cli_email, cli_senhaHash, cli_cpf, cli_nome, cli_nascimento, cli_telefone, cli_perfil)
 VALUES  ('clienteA@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi', 12345678901, 'Cliente A', '2001-01-01', 12123456789, 'default.png'),
         ('clienteB@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi', 98765432110, 'Cliente B', '2002-02-02', 12987654321, 'default.png');
 
 
--- Endereços de Clientes
+-- # Endereços de Clientes
 
 INSERT INTO tbl_endereco_cliente (end_rua, end_bairro, end_numero, end_cidade, end_estado, end_cep, cli_id)
 VALUES  ('Rua A', 'Bairro A', 100, 'Taubaté', 'SP', 12345123, 1),
@@ -21,14 +21,14 @@ VALUES  ('Rua A', 'Bairro A', 100, 'Taubaté', 'SP', 12345123, 1),
         ('Rua BB', 'Bairro B', 201, 'Taubaté', 'SP', 54321456, 2);
 
 
--- Entregadores
+-- # Entregadores
 
 INSERT INTO tbl_entregador (entgd_email, entgd_senhaHash, entgd_nome, entgd_cnh, entgd_cpf, entgd_telefone, entgd_perfil)
 VALUES  ('entregadorA@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi', 'Entregador A', 000123456789, 12345678902, 12123456790, 'default.png'),
         ('entregadorB@exemplo.com', 'ABCd$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi1234', 'Entregador B', 000123456790, 98765432111, 12987654322, 'default.png');
 
 
--- Costureiros
+-- # Costureiros
 
 INSERT INTO tbl_costureiro (cos_email, cos_senhaHash, cos_nome, cos_cpf, cos_cnpj, cos_perfil,
             cos_rua, cos_bairro, cos_numero, cos_cidade, cos_estado, cos_cep)
@@ -40,10 +40,13 @@ VALUES  ('costureiroA@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4p
         'Rua B', 'Bairro B', 210, 'Taubaté', 'SP', 54321123);
 
 
--- Catálogos
+-- # Catálogos
 
 INSERT INTO tbl_catalogo (cat_descricao, cat_valor, cos_id, pec_id, ser_id)
-VALUES  ('pequenas costuras de blusas', 50.99, 1, 1, 1),
+-- Costureira A
+VALUES  ('pequenas costuras de blusas', 50.99, 1, 1, 1), 
         ('sob medida de camisa', 60.99, 1, 2, 5),
-        ('pequenas costuras de blusas', 70.99, 2, 1, 1),
+-- Costureira B
+        ('pequenas costuras de blusas', 70.99, 2, 1, 1), 
         ('sob medida de camisa', 80.99, 2, 2, 5);
+
