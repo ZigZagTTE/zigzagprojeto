@@ -23,7 +23,6 @@
 
     require_once '../../conexao.php';
     require_once 'bancoPedidos.php';
-    $pedidos = buscarPedidosDisponiveis($conexao);
     ?>
 </head>
 
@@ -57,24 +56,19 @@
         <h1>Pedidos disponíveis</h1>
 
         <div class="grid-pedidos">
-            <?php foreach ($pedidos as $pedido) : ?>
-                <div class="card-pedidos">
-                    <div class="pedido-info">
-                        <h3><?php echo htmlspecialchars($pedido['']); ?></h3>
-                        <p>Descrição: <?php echo htmlspecialchars($pedido['ped_descricao']); ?></p>
-                        <p>Data do Pedido: <?php echo date('d/m/Y', strtotime($pedido['ped_data'])); ?></p>
-                        <p>Valor: R$ <?php echo number_format($pedido['ped_valor'], 2, ',', '.'); ?></p>
-                    </div>
-                    <?php
-                    // Define uma imagem padrão caso não haja uma no pedido
-                    $imagem = !empty($pedido['ped_imagem_ref']) ? '../../assets/uploads/references/' . htmlspecialchars($pedido['ped_imagem_ref']) : '../../assets/images/cost_img/default_pedido.png';
-                    ?>
-                    <img src="<?php echo $imagem; ?>" alt="pedido" class="card-image">
-                    <div class="pedido-detalhes">
-                        <a href="detalhes.php?id=<?php echo $pedido['ped_id']; ?>">Detalhes</a>
-                    </div>
+            <div class="card-pedidos">
+                <div class="pedido-info">
+                    <h3>Nome do cliente</h3>
+                    <p>Data do Pedido: 01/01/2024</p>
+                    <p>Valor: R$ 50,00</p>
+                    <p>Descrição: Ajuste em calça jeans.</p>
                 </div>
-            <?php endforeach; ?>
+
+                <img src="../../assets/images/cost_img/default_pedido.png" alt="pedido" class="card-image">
+                <div class="pedido-detalhes">
+                    <a href="detalhes.php?id=1">Detalhes</a>
+                </div>
+            </div>
         </div>
 
     </div>
