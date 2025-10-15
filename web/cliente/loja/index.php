@@ -93,6 +93,127 @@
 
         <!-- Grid de Serviços -->
         <div id="conteudo1" class="servicos_grid active">
+<<<<<<< HEAD
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/agulha.png" alt="Pequenas costuras">
+                </div>
+                <a href="peca/" class="servico-info">
+                    <div class="servico-nome">Pequenas costuras</div>
+                    <div class="servico-descricao">Reparos e ajustes simples</div>
+                </a>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/ziper.png" alt="Zíper comum">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Trocas de zíper comum</div>
+                    <div class="servico-descricao">Substituição de zíperes fáceis</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/ziper.png" alt="Zíper invisivel">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Trocas de zíper invisível</div>
+                    <div class="servico-descricao">Substituição de zíperes complicados</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/calca.png" alt="Barras">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Ajuste de barra</div>
+                    <div class="servico-descricao">Ajustes de comprimento</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/calça.png" alt="Sob medida">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Sob Medida</div>
+                    <div class="servico-descricao">Ajuste de comprimento personalizado</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/vestido.png" alt="Roupas ornamentadas">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Roupas ornamentadas</div>
+                    <div class="servico-descricao">Peças complicadas de costura</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/tecido.png" alt="Remendos">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Remendos</div>
+                    <div class="servico-descricao">Reparos em tecidos danificados</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/bordar.png" alt="Bordados">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Bordados</div>
+                    <div class="servico-descricao">Decoração de pecas</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/confeccao.png" alt="Confecção">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Confecção</div>
+                    <div class="servico-descricao">Costuras em larga escala</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/patchwork.png" alt="Patchwork">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Patchwork</div>
+                    <div class="servico-descricao">Cria padrões atravéz de tecidos variados</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <img class="servico-icon" src="../../assets/images/usu_img/personalizado.png" alt="Personalizados">
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Personalizado</div>
+                    <div class="servico-descricao">Ajustes personalizados de acordo com as ordens do cliente.</div>
+                </div>
+            </div>
+
+            <div class="servico-card">
+                <div class="servico-icon-container">
+                    <i class="fa-solid fa-file-lines servico-icon"></i>
+                </div>
+                <div class="servico-info">
+                    <div class="servico-nome">Pequenas costuras</div>
+                    <div class="servico-descricao">Reparos e ajustes simples</div>
+                </div>
+            </div>
+=======
             <?php
             foreach ($listaDeCatalogos as $catalogo) {
                 switch ($catalogo['ser_id']) {
@@ -147,6 +268,7 @@
                     </div>
             </a>
             <?php } ?>
+>>>>>>> 0439d1bcb04d2e6a176ac150c4fe4bd3f567188e
         </div>
         <div id="conteudo2" class="personalizado_grid" style="display: none;">
             <h1>Digite a maneira como você quer que sua criação seja feita.</h1>
