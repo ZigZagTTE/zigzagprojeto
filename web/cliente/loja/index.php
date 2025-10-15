@@ -178,8 +178,7 @@
                 <div class="servico-icon-container">
                     <img class="servico-icon" src="../../assets/images/usu_img/confeccao.png" alt="Confecção">
                 </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Confecção</div>
+                           <div class="servico-nome">Confecção</div>
                     <div class="servico-descricao">Costuras em larga escala</div>
                 </div>
             </div>
@@ -212,7 +211,8 @@
                     <div class="servico-nome">Pequenas costuras</div>
                     <div class="servico-descricao">Reparos e ajustes simples</div>
                 </div>
-            </div>
+            </div>div>       <div class="servico-info">
+  
 =======
             <?php
             foreach ($listaDeCatalogos as $catalogo) {
