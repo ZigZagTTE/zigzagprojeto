@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+    <script defer src="loja.js"></script>
+    <?php
+    session_start();
+
+    require_once "../bancoCliente.php";
+    require_once "../../conexao.php";
+
+    $costureiraInfo = buscarCostureira($conexao, $_GET['cos']);
+
+    $listaDeCatalogos = buscarServicosDaCostureira($conexao, $_GET['cos']);
+    ?>
 </head>
 
 <body>
@@ -34,8 +45,7 @@
         <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
         </a>
         <!--carrinho-->
-        <a class="icon" href="index.php"><img
-                class="icon_img_perfil"
+        <a class="icon" href="index.php"><img class="icon_img_perfil"
                 src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
                 alt="Foto de perfil" />
         </a>
@@ -45,20 +55,12 @@
     <div class="info-loja">
         <!-- Header da Loja -->
         <div class="loja-header">
-            <img src="https://media.istockphoto.com/id/520137102/pt/foto/desenhar-e-do-conselho.jpg?s=612x612&w=0&k=20&c=eqVmb2JzXO-Y-Rf6NUyhPucFZvT67NcW6qBFxpV-X84=" alt="Foto da loja" class="loja-imagem">
+            <img src="../../assets/uploads/profilepictures/<?php echo $costureiraInfo['cos_perfil']; ?>"
+                alt="Foto da loja" class="loja-imagem">
             <div class="loja-info">
                 <div class="loja-nome">
-                    Nome da loja
-                    <div class="rating">
-                        <span class="star">★</span>
-                        <span class="rating-text">5,0</span>
-                    </div>
+                    <?php echo $costureiraInfo['cos_nome']; ?>
                 </div>
-                <div class="loja-detalhes">Tempo e frete</div>
-            </div>
-            <div class="loja-status">
-                <div class="status-info">Distância</div>
-                <div class="status-info">Aberto/ Fechado</div>
             </div>
         </div>
 
@@ -92,129 +94,65 @@
 
         <!-- Grid de Serviços -->
         <div id="conteudo1" class="servicos_grid active">
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/agulha.png" alt="Pequenas costuras">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Pequenas costuras</div>
-                    <div class="servico-descricao">Reparos e ajustes simples</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/ziper.png" alt="Zíper comum">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Trocas de zíper comum</div>
-                    <div class="servico-descricao">Substituição de zíperes fáceis</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/ziper.png" alt="Zíper invisivel">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Trocas de zíper invisível</div>
-                    <div class="servico-descricao">Substituição de zíperes complicados</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/calca.png" alt="Barras">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Ajuste de barra</div>
-                    <div class="servico-descricao">Ajustes de comprimento</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/calça.png" alt="Sob medida">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Sob Medida</div>
-                    <div class="servico-descricao">Ajuste de comprimento personalizado</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/vestido.png" alt="Roupas ornamentadas">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Roupas ornamentadas</div>
-                    <div class="servico-descricao">Peças complicadas de costura</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/tecido.png" alt="Remendos">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Remendos</div>
-                    <div class="servico-descricao">Reparos em tecidos danificados</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/bordar.png" alt="Bordados">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Bordados</div>
-                    <div class="servico-descricao">Decoração de pecas</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/confeccao.png" alt="Confecção">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Confecção</div>
-                    <div class="servico-descricao">Costuras em larga escala</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/patchwork.png" alt="Patchwork">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Patchwork</div>
-                    <div class="servico-descricao">Cria padrões atravéz de tecidos variados</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <img class="servico-icon" src="../../assets/images/usu_img/personalizado.png" alt="Personalizados">
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Personalizado</div>
-                    <div class="servico-descricao">Ajustes personalizados de acordo com as ordens do cliente.</div>
-                </div>
-            </div>
-
-            <div class="servico-card">
-                <div class="servico-icon-container">
-                    <i class="fa-solid fa-file-lines servico-icon"></i>
-                </div>
-                <div class="servico-info">
-                    <div class="servico-nome">Pequenas costuras</div>
-                    <div class="servico-descricao">Reparos e ajustes simples</div>
-                </div>
-            </div>
+            <?php
+            foreach ($listaDeCatalogos as $catalogo) {
+                switch ($catalogo['ser_id']) {
+                    case '1':
+                        $imagem = "agulha.png";
+                        $descricao = "Reparos e ajustes simples";
+                        break;
+                    case '2':
+                        $imagem = "ziper.png";
+                        $descricao = "Substituição de zíperes fáceis";
+                        break;
+                    case '3':
+                        $imagem = "ziper.png";
+                        $descricao = "Substituição de zíperes complicados";
+                        break;
+                    case '4':
+                        $imagem = "calca.png";
+                        $descricao = "Ajustes de comprimento";
+                        break;
+                    case '5':
+                        $imagem = "calça.png";
+                        $descricao = "Ajuste de comprimento personalizado";
+                        break;
+                    case '6':
+                        $imagem = "vestido.png";
+                        $descricao = "Peças complicadas de costura";
+                        break;
+                    case '7':
+                        $imagem = "tecido.png";
+                        $descricao = "Reparos em tecidos danificados";
+                        break;
+                    case '8':
+                        $imagem = "bordar.png";
+                        $descricao = "Decoração de peças";
+                        break;
+                    case '9':
+                        $imagem = "patchwork.png";
+                        $descricao = "Cria padrões atravéz de tecidos variados";
+                        break;
+                }
+                ?>
+                <a class="servico-card" href="peca/<?php echo "?ser=" . $catalogo['ser_id'] . "&cos=" . $_GET['cos']; ?>">
+                    <div class="servico-icon-container">
+                        <img class="servico-icon" src="../../assets/images/usu_img/<?php echo $imagem; ?>"
+                            alt="<?php echo $catalogo['ser_nome']; ?>" />
+                    </div>
+                    <div class="servico-info">
+                        <div class="servico-nome"><?php echo $catalogo['ser_nome']; ?></div>
+                        <div class="servico-descricao">
+                            <?php echo $descricao; ?>
+                        </div>
+                    </div>
+            </a>
+            <?php } ?>
         </div>
         <div id="conteudo2" class="personalizado_grid" style="display: none;">
             <h1>Digite a maneira como você quer que sua criação seja feita.</h1>
-            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descreva aqui o seu projeto..."></textarea>
+            <textarea name="descricao" id="descricao" cols="30" rows="10"
+                placeholder="Descreva aqui o seu projeto..."></textarea>
             <p>Envie uma imagem de referência (opcional):</p>
             <input type="file" id="file" name="file" accept="image/*" class="file_customizada">
             <button type="submit">Enviar pedido</button>
@@ -226,10 +164,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img
-                        src="../../assets/svg/logo.svg"
-                        alt="ZigZag Logo"
-                        class="footer-logo" />
+                    <img src="../../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
                     <p>Conectando talentos e necessidades na arte da costura.</p>
                 </div>
                 <div class="footer-section">
@@ -253,7 +188,8 @@
                     <h3>Redes Sociais</h3>
                     <div class="social-links">
                         <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg"
+                                alt="Instagram" /></a>
                         <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
                     </div>
                 </div>
@@ -263,43 +199,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        // Funcionalidade dos botões de categoria
-        document.querySelectorAll('.categoria-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.categoria-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Funcionalidade dos cards de serviço
-        document.querySelectorAll('.servico-card').forEach(card => {
-            card.addEventListener('click', function() {
-                console.log('Serviço selecionado:', this.querySelector('.servico-nome').textContent);
-                // Aqui você pode adicionar a lógica para abrir detalhes do serviço
-            });
-        });
-        // Função para mostrar o conteúdo baseado no botão clicado
-        function mostrarConteudoUm() {
-            let conteudoUm = document.querySelector('#conteudo1');
-            let conteudoUmPropriedadeDisplay = window.getComputedStyle(conteudoUm).display;
-
-            if (conteudoUmPropriedadeDisplay == "none") {
-                document.getElementById("conteudo1").style.display = "grid";
-                document.getElementById("conteudo2").style.display = "none";
-            }
-        }
-
-        function mostrarConteudoDois() {
-            let conteudoDois = document.querySelector('#conteudo2');
-            let conteudoDoisPropriedadeDisplay = window.getComputedStyle(conteudoDois).display;
-
-            if (conteudoDoisPropriedadeDisplay == "none") {
-                document.getElementById("conteudo2").style.display = "flex";
-                document.getElementById("conteudo1").style.display = "none";
-            }
-        }
-    </script>
 </body>
 
 </html>
