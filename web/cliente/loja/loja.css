@@ -116,6 +116,19 @@ table {
   box-sizing: border-box;
 }
 
+.header_logo a {
+  text-decoration: none;
+  display: flex;
+}
+
+.cost_text {
+  width: max-content;
+  height: 90px;
+  scale: 0.5;
+  margin: 0 0 -20px -80px;
+  align-self: flex-end;
+}
+
 .nav_header {
   width: 100%;
   display: flex;
@@ -130,7 +143,8 @@ table {
   color: #f5e9db;
   font-family: "Iansui";
   font-size: 40px;
-  align-self: center;
+  align-self: last baseline;
+  margin: 0 0 5px 0;
 }
 
 .logo_header {
@@ -141,6 +155,39 @@ table {
 
 .logo_header:hover {
   scale: 1.05;
+}
+
+.icon {
+  align-self: center;
+  padding-right: 20px;
+  color: #f5e9db;
+  transition: all 0.3s ease;
+}
+
+.icon::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: 0;
+  background-color: var(--bege-claro);
+  transition: all 1s ease;
+  transform: translateX(-50%);
+}
+
+.icon:hover {
+  color: var(--bege);
+  transform: scale(1.1);
+}
+
+.icon_img_perfil {
+  object-fit: cover;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  justify-content: center;
+  box-shadow: #303030 0px 0px 8px;
 }
 
 /* BOTÃO DE BUSCA*/
@@ -730,6 +777,7 @@ E ASSIM POR DIANTE*/
   background-color: white;
   border-radius: 12px;
   padding: 15px;
+  cursor: pointer;
   flex-shrink: 0;
 }
 
@@ -737,10 +785,12 @@ E ASSIM POR DIANTE*/
   width: 60px;
   height: 60px;
   color: var(--roxo-principal);
+  cursor: inherit;
 }
 
 .servico-info {
   flex: 1;
+  cursor: pointer;
 }
 
 .servico-nome {
@@ -748,11 +798,13 @@ E ASSIM POR DIANTE*/
   font-weight: bold;
   color: var(--preto);
   margin-bottom: 5px;
+  cursor: inherit;
 }
 
 .servico-descricao {
   font-size: 14px;
   color: var(--cinza-escuro);
+  cursor: inherit;
 }
 
 .personalizado_grid{
