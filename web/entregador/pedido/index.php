@@ -13,10 +13,16 @@
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
 </head>
 
-<?php session_start();
+<?php 
+session_start();
     if (!isset($_SESSION["entgd_id"])){
         header("Location: ./cadastrar");
     }
+
+    $_GET["id"];
+    require_once "../../conexao.php";
+    require_once "pedidoInfo.php";
+    $pedido = pedidoInfo($conexao, $_GET["id"]);
 ?>
 
 <body>
@@ -37,14 +43,14 @@
         </div>
     </header>
 
-    <p class="title">Pedido #A78569</p>
+    <p class="title">Pedido #<?php echo $_GET["id"] ?></p>
 
     <section class="pedidos">
         <div class="pedido">
             <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
             <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
+                <p class="costureira"><?php echo $pedido[0]["cos_nome"]; ?></p>
+                <p class="endereco"><?php echo $pedido[0]["cos_rua"] . ", " . $pedido[0]["cos_numero"]; ?></p>
             </div>
             <span class="status">Valor</span>
         </div>

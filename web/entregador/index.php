@@ -13,15 +13,15 @@
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
 </head>
 
-<?php 
-    require_once "../conexao.php";
-    require_once "pedidosEntrega.php";
-    session_start();
-    if (!isset($_SESSION["entgd_id"])){
-        header("Location: ./cadastrar");
-    }
+<?php
+require_once "../conexao.php";
+require_once "pedidosEntrega.php";
+session_start();
+if (!isset($_SESSION["entgd_id"])) {
+    header("Location: ./cadastrar");
+}
 
-    $pedido = pedidosSelecionados($conexao, $_SESSION["entgd_id"]);
+$pedidos = pedidosId($conexao);
 ?>
 
 <body>
@@ -45,30 +45,25 @@
     <p class="title">Pedidos disponíveis para entrega</p>
 
     <section class="pedidos">
+        
         <?php
-
-        if ($pedido[0]['ped_concluido'] == 0){
-        foreach ($pedido as $linha => $valores) {
-             
+            foreach ($pedidos as $linha) {
+                $pedidoSelecionado = pedidoSelecionado($conexao, $linha["ped_id"]);
         ?>
-            <a href="pedido/" class="pedido">
-                
+            <a href="pedido/?id=<?php echo $pedidoSelecionado[0]["ped_id"]; ?>" class="pedido">
                 <div class="pedido-info">
-                    <p class="costureira"><?php echo $pedido[$linha]["cos_nome"]; ?></p>
-                    <p class="endereco"><?php echo $pedido[$linha]["cos_rua"] . ", " . $pedido[$linha]["cos_numero"]; ?></p>
+                    <p class="costureira"><?php echo $pedidoSelecionado[0]["cos_nome"]; ?></p>
+                    <p class="endereco"><?php echo $pedidoSelecionado[0]["cos_rua"] . ", " . $pedidoSelecionado[0]["cos_numero"]; ?></p>
 
-                    <p class="costureira"><?php echo $pedido[$linha]["cli_nome"]; ?></p>
-                    <p class="endereco"><?php echo $pedido[$linha]["end_rua"] . ", " . $pedido[$linha]["end_numero"]; ?></p>
+                    <p class="costureira"><?php echo $pedidoSelecionado[0]["cli_nome"]; ?></p>
+                    <p class="endereco"><?php echo $pedidoSelecionado[0]["end_rua"] . ", " . $pedidoSelecionado[0]["end_numero"]; ?></p>
                 </div>
             </a>
-        <?php 
-
-        $pedido = $pedido[$linha + 1];
+        <?php
         }
-
-    } else {
-        echo "<p class='no-pedidos'>Nenhum pedido disponível no momento.</p>";
-    }
+        if (empty($pedidos)) {
+            echo "<p class='no-pedidos'>Nenhum pedido disponível no momento.</p>";
+        }
         ?>
 
     </section>
