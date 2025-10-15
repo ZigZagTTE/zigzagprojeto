@@ -21,11 +21,18 @@
   <script
     src="https://kit.fontawesome.com/a1d8234c07.js"
     crossorigin="anonymous"></script>
-  <?php 
-  
+  <?php
+
   require_once "../../../conexao.php";
-  require_once "../bancoEntregas.php";
+  require_once "bancoPedidos.php";
   session_start();
+  if (!isset($_SESSION['entgd_id'])) {
+    header("Location: ../entrar");
+    exit();
+  }
+
+  $pedido = bancoPedidoUnico($conexao, $_GET['id']);
+
   ?>
 </head>
 
@@ -80,11 +87,25 @@
     </div>
 
     <div class="endereco">
-      <p class="title">Entrega do pedido #AK2RD</p>
+      <p class="title">Entrega do pedido <?php echo $pedido["ped_id"]; ?></p>
 
       <div class="setor_endereco">
         <p>Etapa:</p>
-        <input bancoPedido() type="text" placeholder="Etapa" disabled/>
+        <input type="text" placeholder="<?php echo $pedido["ped_viagens"]; ?>" disabled />
+
+        <p>Data:</p>
+        <input type="text" placeholder="<?php echo $pedido["ped_data"]; ?>" disabled />
+
+        <p>Horário:</p>
+        <input type="text" placeholder="<?php echo $pedido["ped_horario"]; ?>" disabled />
+
+        <p>Endereço cliente:</p>
+        <input type="text" placeholder="<?php echo $pedido["end_rua"] . $pedido["end_numero"]; ?>" disabled />
+
+        <p>Endereço costureiro:</p>
+        <input type="text" placeholder="<?php echo $pedido["cos_rua"] . $pedido["cos_numero"]; ?>" disabled />
+
+
       </div>
     </div>
   </div>

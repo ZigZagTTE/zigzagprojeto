@@ -13,10 +13,15 @@
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
 </head>
 
-<?php session_start();
+<?php 
+    require_once "../conexao.php";
+    require_once "pedidosEntrega.php";
+    session_start();
     if (!isset($_SESSION["entgd_id"])){
         header("Location: ./cadastrar");
     }
+
+    $pedido = pedidosSelecionados($conexao, $_SESSION["entgd_id"]);
 ?>
 
 <body>
@@ -40,49 +45,31 @@
     <p class="title">Pedidos disponíveis para entrega</p>
 
     <section class="pedidos">
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
+        <?php
 
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
+        if ($pedido[0]['ped_concluido'] == 0){
+        foreach ($pedido as $linha => $valores) {
+             
+        ?>
+            <a href="pedido/" class="pedido">
+                
+                <div class="pedido-info">
+                    <p class="costureira"><?php echo $pedido[$linha]["cos_nome"]; ?></p>
+                    <p class="endereco"><?php echo $pedido[$linha]["cos_rua"] . ", " . $pedido[$linha]["cos_numero"]; ?></p>
 
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
+                    <p class="costureira"><?php echo $pedido[$linha]["cli_nome"]; ?></p>
+                    <p class="endereco"><?php echo $pedido[$linha]["end_rua"] . ", " . $pedido[$linha]["end_numero"]; ?></p>
+                </div>
+            </a>
+        <?php 
 
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
+        $pedido = $pedido[$linha + 1];
+        }
 
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
-
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
-
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
-
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
+    } else {
+        echo "<p class='no-pedidos'>Nenhum pedido disponível no momento.</p>";
+    }
+        ?>
 
     </section>
 

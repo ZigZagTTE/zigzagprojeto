@@ -21,17 +21,17 @@
   <script
     src="https://kit.fontawesome.com/a1d8234c07.js"
     crossorigin="anonymous"></script>
-  <?php 
+  <?php
 
-    require_once "../../conexao.php";
-    require_once "bancoPedidos.php";
-    session_start();
-    if (!isset($_SESSION['entgd_id'])) {
+  require_once "../../conexao.php";
+  require_once "bancoPedidos.php";
+  session_start();
+  if (!isset($_SESSION['entgd_id'])) {
     header("Location: ../entrar");
     exit();
   }
 
-  $pedido = bancoPedidoUnico($conexao, $_GET['entrg_id']);
+  $pedido = bancoEntrega($conexao, 1);
 
   ?>
 </head>
@@ -89,7 +89,7 @@
     <div class="endereco">
       <p class="title">Entregas Feitas</p>
 
-      <a href="detalhes/">
+      <a href="detalhes/?id=<?php echo $pedido["ped_id"]; ?>">
         <div class="setor_endereco">
           <p><?php echo $pedido["entrg_id"]; ?></p>
           <p><?php echo $pedido["entrg_data"]; ?></p>
