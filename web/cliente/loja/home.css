@@ -710,10 +710,11 @@ E ASSIM POR DIANTE*/
 }
 
 .servico-card {
+  display: flex;
   background-color: #c0b9b9;
   border-radius: 15px;
   padding: 20px;
-  display: flex;
+  text-decoration: none;
   align-items: center;
   gap: 20px;
   transition: all 0.3s ease;

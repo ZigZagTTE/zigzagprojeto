@@ -115,17 +115,16 @@ CREATE TABLE IF NOT EXISTS tbl_servico
 -- Valores definidos para serviços
 
 INSERT INTO tbl_servico (ser_nome)
-VALUES  ('pequenas costuras'),
-        ('troca de zíper comum'),
-        ('troca de zíper invisível'),
-        ('ajuste de barra'),
-        ('sob medida'),
-        ('roupas ornamentadas'),
-        ('remendos'),
-        ('bordados'),
-        ('confecção'),
-        ('patchwork'),
-        ('criação');
+VALUES  ('Pequenas costuras'),
+        ('Troca de zíper comum'),
+        ('Troca de zíper invisível'),
+        ('Ajuste de barra'),
+        ('Sob medida'),
+        ('Roupas ornamentadas'),
+        ('Remendos'),
+        ('Bordados'),
+        ('Patchwork');
+--        ('criação');
 
 CREATE TABLE IF NOT EXISTS tbl_catalogo
 (
