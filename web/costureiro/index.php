@@ -17,7 +17,7 @@
 
     <?php session_start();
     if (!isset($_SESSION["cos_id"])) {
-        header("Location: ../cadastrar");
+        header("Location: ./cadastrar");
     }
     ?>
 </head>

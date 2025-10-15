@@ -96,10 +96,10 @@
                 <div class="servico-icon-container">
                     <img class="servico-icon" src="../../assets/images/usu_img/agulha.png" alt="Pequenas costuras">
                 </div>
-                <div class="servico-info">
+                <a href="peca/" class="servico-info">
                     <div class="servico-nome">Pequenas costuras</div>
                     <div class="servico-descricao">Reparos e ajustes simples</div>
-                </div>
+                </a>
             </div>
 
             <div class="servico-card">
