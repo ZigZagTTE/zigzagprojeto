@@ -13,10 +13,15 @@
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
 </head>
 
-<?php session_start();
-    if (!isset($_SESSION["entgd_id"])){
-        header("Location: ./cadastrar");
-    }
+<?php
+require_once "../conexao.php";
+require_once "pedidosEntrega.php";
+session_start();
+if (!isset($_SESSION["entgd_id"])) {
+    header("Location: ./cadastrar");
+}
+
+$pedidos = pedidosId($conexao);
 ?>
 
 <body>
@@ -40,49 +45,26 @@
     <p class="title">Pedidos disponíveis para entrega</p>
 
     <section class="pedidos">
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
+        
+        <?php
+            foreach ($pedidos as $linha) {
+                $pedidoSelecionado = pedidoSelecionado($conexao, $linha["ped_id"]);
+        ?>
+            <a href="pedido/?id=<?php echo $pedidoSelecionado[0]["ped_id"]; ?>" class="pedido">
+                <div class="pedido-info">
+                    <p class="costureira"><?php echo $pedidoSelecionado[0]["cos_nome"]; ?></p>
+                    <p class="endereco"><?php echo $pedidoSelecionado[0]["cos_rua"] . ", " . $pedidoSelecionado[0]["cos_numero"]; ?></p>
 
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
-
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
-
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
-
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
-
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
-
-        <a href="pedido/" class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
-            <div class="pedido-info">
-                <p class="costureira">Costureira xxxxx</p>
-                <p class="endereco">Endereço</p>
-
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
-            </div>
-        </a>
+                    <p class="costureira"><?php echo $pedidoSelecionado[0]["cli_nome"]; ?></p>
+                    <p class="endereco"><?php echo $pedidoSelecionado[0]["end_rua"] . ", " . $pedidoSelecionado[0]["end_numero"]; ?></p>
+                </div>
+            </a>
+        <?php
+        }
+        if (empty($pedidos)) {
+            echo "<p class='no-pedidos'>Nenhum pedido disponível no momento.</p>";
+        }
+        ?>
 
     </section>
 

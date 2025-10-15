@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS tbl_entrega
     entrg_fim time,
 
     entrg_confirmacao_cli tinyint DEFAULT 0,
-    entrg_confimacao_cos tinyint DEFAULT 0,
+    entrg_confirmacao_cos tinyint DEFAULT 0,
 
     ped_id integer NOT NULL,
     FOREIGN KEY (ped_id)
