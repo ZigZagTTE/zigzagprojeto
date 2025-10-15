@@ -22,7 +22,7 @@
     }
 
     require_once '../../conexao.php';
-    require_once 'bancoPedidos.php';
+    // require_once 'bancoPedidos.php';
     ?>
 </head>
 

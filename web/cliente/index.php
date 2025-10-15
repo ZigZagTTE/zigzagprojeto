@@ -11,10 +11,16 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
-    <?php session_start();
+    <?php
+    session_start();
     if (!isset($_SESSION["cli_id"])) {
         header("Location: ./cadastrar");
     }
+    require_once "../conexao.php";
+    require_once "bancoCliente.php";
+
+    $listaCostureiras = buscarCostureiras($conexao);
+    $listaCostureirasCriadoras = buscarCostureirasCriadoras($conexao);
     ?>
 </head>
 
@@ -41,7 +47,8 @@
         </nav>
         <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
         <a class="icon" href="loja/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
-        <a class="icon" href="perfil/"><img class="icon_img_perfil" src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"></a> <!--user-->
+        <a class="icon" href="perfil/"><img class="icon_img_perfil"
+                src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"></a> <!--user-->
     </header>
 
     <p class="title">Faça já seu pedido em costureiras próximas!</p>
@@ -60,94 +67,23 @@
         </div>
         <div class="carousel-warp-costurar">
             <div class="carousel-section" id="carousel1">
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost1-perfil.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Costura Express</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
+                <?php foreach ($listaCostureiras as $costureira) { ?>
+                    <a href="loja/?id=<?php echo $costureira['cos_id']; ?>"" class="store-card">
+                        <img class="store-image"
+                            src="../assets/uploads/profilepictures/<?php echo $costureira['cos_perfil']; ?>">
+                        <div class="store-info">
+                            <p class="store-name"><?php echo $costureira['cos_nome']; ?></p>
                             <p class="store-details">
-                                Aberto • Fecha 18h
+                                <?php echo $costureira['cos_rua'] . ", " . $costureira['cos_cidade'] . " - " . $costureira['cos_estado']; ?>
                             </p>
                         </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost2-logo.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Ateliê Elegância</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost2-perfil.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Mãos de Ouro</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost3-logo.png">
-                    <div class="store-info">
-                        <p class="store-name">Costura Premium</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost3-perfil.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Ateliê Moda & Estilo</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost1-logo.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Costura Rápida</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                <?php } ?>
             </div>
         </div>
         <div class="carousel-controls-costurar">
-            <button class="carousel-btn left" data-carousel="carousel1" disabled>&lt;</button>
-            <button class="carousel-btn right" data-carousel="carousel1">&gt;</button>
+            <button class="carousel-btn left" data-carousel="carousel1" disabled>‹</button>
+            <button class="carousel-btn right" data-carousel="carousel1">›</button>
         </div>
         <div class="linha">
             <span class="ponto"></span>
@@ -166,95 +102,23 @@
         </div>
         <div class="carousel-warp-criar">
             <div class="carousel-section" id="carousel2">
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost4-logo.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Ateliê da Ana</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
+                <?php foreach ($listaCostureirasCriadoras as $costureira) { ?>
+                    <a href="loja/?id=<?php echo $costureira['cos_id']; ?>"" class="store-card">
+                        <img class="store-image"
+                            src="../assets/uploads/profilepictures/<?php echo $costureira['cos_perfil']; ?>">
+                        <div class="store-info">
+                            <p class="store-name"><?php echo $costureira['cos_nome']; ?></p>
                             <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
+                                <?php echo $costureira['cos_rua'] . ", " . $costureira['cos_cidade'] . " - " . $costureira['cos_estado']; ?>
                             </p>
                         </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost4-perfil.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Costura & Criação</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost5-logo.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Ateliê Perfeição</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/images/cost_img/cost6-logo.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Costura Artesanal</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/cost_img/cost5-perfil.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Ateliê Fashion</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="loja/" class="store-card">
-                    <img class="store-image" src="../assets/cost_img/cost6-perfil.jpeg">
-                    <div class="store-info">
-                        <p class="store-name">Costura Profissional</p>
-                        <div class="store-rating">
-                            <span class="star">★</span>
-                            <span class="rating-text">5,0 • 2.5km</span>
-                            <p class="store-details">
-                                Entrega rápida<br>
-                                Aberto • Fecha 18h
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                <?php } ?>
             </div>
         </div>
         <div class="carousel-controls-criar">
-            <button class="carousel-btn left" data-carousel="carousel2" disabled>&lt;</button>
-            <button class="carousel-btn right" data-carousel="carousel2">&gt;</button>
+            <button class="carousel-btn left" data-carousel="carousel2" disabled>‹</button>
+            <button class="carousel-btn right" data-carousel="carousel2">›</button>
         </div>
     </div>
     </div>
@@ -265,10 +129,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img
-                        src="../assets/svg/logo.svg"
-                        alt="ZigZag Logo"
-                        class="footer-logo" />
+                    <img src="../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
                     <p>Conectando talentos e necessidades na arte da costura.</p>
                 </div>
                 <div class="footer-section">
@@ -292,7 +153,8 @@
                     <h3>Redes Sociais</h3>
                     <div class="social-links">
                         <a href="#"><img src="../assets/svg/facebook.svg" alt="Facebook" /></a>
-                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../assets/svg/instagram.svg"
+                                alt="Instagram" /></a>
                         <a href="#"><img src="../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
                     </div>
                 </div>
