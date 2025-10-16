@@ -53,6 +53,10 @@
     <div class="container-pedidos">
 
         <h1>Pedidos disponíveis</h1>
+
+        <div class="grid-pedidos">
+        
+        </div>
     </div>
 
     <!-- FOOTER -->
