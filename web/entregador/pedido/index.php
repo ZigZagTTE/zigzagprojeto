@@ -38,7 +38,6 @@ session_start();
         </div>
         <div class="icons">
             <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-            <a class="icon" href="../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
             <a class="icon" href="../perfil/"><img class="icon_img_perfil" src="../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"></a> <!--user-->
         </div>
     </header>
@@ -58,8 +57,8 @@ session_start();
         <div class="pedido">
             <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
             <div class="pedido-info">
-                <p class="costureira">Cliente xxxxx</p>
-                <p class="endereco">Endereço</p>
+                <p class="costureira"><?php echo $pedido[0]["cli_nome"]; ?></p>
+                <p class="endereco"><?php echo $pedido[0]["end_rua"] . ", " . $pedido[0]["end_numero"]; ?></p>
             </div>
             
         </div>
