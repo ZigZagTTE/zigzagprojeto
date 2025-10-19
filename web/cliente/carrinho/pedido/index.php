@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="detalhes.css" />
+  <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="../../home.css" />
   <link
     rel="icon"
-    href="../../assets/images/MiniLogo.png"
+    href="../../../assets/images/MiniLogo.png"
     type="image/x-icon" />
   <link
     href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
@@ -22,16 +22,11 @@
     src="https://kit.fontawesome.com/a1d8234c07.js"
     crossorigin="anonymous"></script>
   <?php
-
-  require_once "../../../conexao.php";
-  require_once "bancoPedidos.php";
   session_start();
-  if (!isset($_SESSION['entgd_id'])) {
+  if (!isset($_SESSION['cli_id'])) {
     header("Location: ../entrar");
     exit();
   }
-
-  $pedido = bancoPedidoUnico($conexao, $_GET['id']);
 
   ?>
 </head>
@@ -43,17 +38,20 @@
       <a href="../../"><img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="ent_text" src="../../../assets/images/ent_img/entregadores.png" alt="costureiro">
+        <img class="ent_text" src="../../../assets/images/usu_img/ZigZag.png" alt="cliente">
       </a>
     </div>
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
+    <a class="icon" href="../../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-    <a class="icon" href="../perfil/"><img
+    <a class="icon" href="../../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    </a>
+    <!--carrinho-->
+    <a class="icon" href="../../perfil/"><img
         class="icon_img_perfil"
-        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
+        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -61,52 +59,37 @@
 
   <!-- INFORMACOES -->
 
-  <div class="secoes">
-    <div class="paginas">
-      <ul>
-        <a href="../perfil/" class="choice">
-          <li>
-            <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
-          </li>
-        </a>
-        <a href="../seguranca/" class="choice">
-          <li>
-            <i
-              class="fa-solid fa-shield-halved fa-lg"
-              style="color: #fdf2e6"></i>Segurança
-          </li>
-        </a>
-        <a href="../" class="choice">
-          <li>
-            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Entregas Feitas
-          </li>
-        </a>
-      </ul>
-    </div>
+  <p class="title">Pedido #</p>
 
-    <div class="endereco">
-      <p class="title">Entrega do pedido <?php echo $pedido["ped_id"]; ?></p>
+    <section class="pedidos">
+        <div class="pedido">
+            <div class="pedido-info">
+                <p class="costureira">Costureira</p>
+                <p class="endereco">Endereço</p>
+                <p class="endereco">Valor</p>
+                <span class="status">Horário</span>
+            </div>
+        </div>
 
-      <div class="setor_endereco">
-        <p>Etapa:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_viagens"]; ?>" disabled />
+        <div class="etapa">
+            <div class="etapa-info">
+                <p class="costureira">Etapa</p>
+                <span class="costureira">0</span>
+            </div>
+        </div>
+        
+        <div class="pedido">
+            <div class="pedido-info">
+                <p class="costureira">Cliente</p>
+                <p class="endereco">Endereço</p>
+                <span class="status">Horário</span>
+            </div>
+        </div>
 
-        <p>Data:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_data"]; ?>" disabled />
+        <a href="pedido/" class="btn-aceitar">Confirmação de entrega</a>
 
-        <p>Horário:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_horario"]; ?>" disabled />
+    </section>
 
-        <p>Endereço cliente:</p>
-        <input type="text" placeholder="<?php echo $pedido["end_rua"] . $pedido["end_numero"]; ?>" disabled />
-
-        <p>Endereço costureiro:</p>
-        <input type="text" placeholder="<?php echo $pedido["cos_rua"] . $pedido["cos_numero"]; ?>" disabled />
-
-
-      </div>
-    </div>
-  </div>
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">

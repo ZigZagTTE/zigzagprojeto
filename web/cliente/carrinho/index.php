@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="detalhes.css" />
-  <link rel="stylesheet" href="../../home.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="../home.css" />
   <link
     rel="icon"
     href="../../assets/images/MiniLogo.png"
@@ -23,15 +23,12 @@
     crossorigin="anonymous"></script>
   <?php
 
-  require_once "../../../conexao.php";
-  require_once "bancoPedidos.php";
+  require_once "../../conexao.php";
   session_start();
-  if (!isset($_SESSION['entgd_id'])) {
+  if (!isset($_SESSION['cli_id'])) {
     header("Location: ../entrar");
     exit();
   }
-
-  $pedido = bancoPedidoUnico($conexao, $_GET['id']);
 
   ?>
 </head>
@@ -40,10 +37,10 @@
   <!-- HEADER -->
   <header class="top">
     <div class="header_logo">
-      <a href="../../"><img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90"
+      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="ent_text" src="../../../assets/images/ent_img/entregadores.png" alt="costureiro">
+        <img class="ent_text" src="../../assets/images/usu_img/ZigZag.png" alt="cliente">
       </a>
     </div>
     <nav class="nav_header">
@@ -51,9 +48,12 @@
     </nav>
     <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
+    <a class="icon" href="../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    </a>
+    <!--carrinho-->
     <a class="icon" href="../perfil/"><img
         class="icon_img_perfil"
-        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
+        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -61,59 +61,34 @@
 
   <!-- INFORMACOES -->
 
-  <div class="secoes">
-    <div class="paginas">
-      <ul>
-        <a href="../perfil/" class="choice">
-          <li>
-            <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
-          </li>
-        </a>
-        <a href="../seguranca/" class="choice">
-          <li>
-            <i
-              class="fa-solid fa-shield-halved fa-lg"
-              style="color: #fdf2e6"></i>Segurança
-          </li>
-        </a>
-        <a href="../" class="choice">
-          <li>
-            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Entregas Feitas
-          </li>
-        </a>
-      </ul>
+  <section class="secoes">
+    <p class="titulo_secoes">Carrinho de Compras</p>
+    <div class="subtitulo_secoes">
+      <p>Costureira</p>
+      <p>Endereço</p>
     </div>
+    <div class="carrinho">
+      <p style="font-weight: bold">Serviço</p>
+      <p>1x peça de serviço</p>
+      <p>1x peça de serviço</p>
 
-    <div class="endereco">
-      <p class="title">Entrega do pedido <?php echo $pedido["ped_id"]; ?></p>
-
-      <div class="setor_endereco">
-        <p>Etapa:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_viagens"]; ?>" disabled />
-
-        <p>Data:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_data"]; ?>" disabled />
-
-        <p>Horário:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_horario"]; ?>" disabled />
-
-        <p>Endereço cliente:</p>
-        <input type="text" placeholder="<?php echo $pedido["end_rua"] . $pedido["end_numero"]; ?>" disabled />
-
-        <p>Endereço costureiro:</p>
-        <input type="text" placeholder="<?php echo $pedido["cos_rua"] . $pedido["cos_numero"]; ?>" disabled />
-
-
+      <div class="descricao">
+        Descrição
       </div>
+
+      <a href="pedido/" class="pedido">
+        Fazer pedido
+      </a>
     </div>
-  </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
           <img
-            src="../../../assets/svg/logo.svg"
+            src="../../assets/svg/logo.svg"
             alt="ZigZag Logo"
             class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
@@ -138,9 +113,9 @@
         <div class="footer-section">
           <h3>Redes Sociais</h3>
           <div class="social-links">
-            <a href="#"><img src="../../../assets/svg/facebook.svg" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../../assets/svg/instagram.svg" alt="Instagram" /></a>
-            <a href="#"><img src="../../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+            <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
       </div>

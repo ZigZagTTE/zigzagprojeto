@@ -17,6 +17,11 @@
     if (!isset($_SESSION["entgd_id"])){
         header("Location: ./cadastrar");
     }
+
+    $_GET["id"];
+    require_once "../../../conexao.php";
+    require_once "pedidoInfo.php";
+    $pedido = pedidoInfo($conexao, $_GET["id"]);
 ?>
 
 <body>
@@ -32,20 +37,19 @@
         </div>
         <div class="icons">
             <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-            <a class="icon" href="../../../costureiro"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
             <a class="icon" href="../../perfil/"><img class="icon_img_perfil" src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"></a> <!--user-->
         </div>
     </header>
 
-    <p class="title">Pedido #A78569 em andamento</p>
+    <p class="title">Pedido #<?php echo $_GET["id"] ?></p>
 
     <section class="pedidos">
         <div class="pedido">
             <div class="pedido-info">
-                <p class="costureira">Costureira</p>
-                <p class="endereco">Endereço</p>
-                <p class="endereco">Peça</p>
-                <p class="endereco">Serviço</p>
+                <p class="costureira"><?php echo $pedido[0]["cos_nome"]; ?></p>
+                <p class="endereco"><?php echo $pedido[0]["cos_rua"] . ", " . $pedido[0]["cos_numero"]; ?></p>
+                <p class="endereco"><?php echo $pedido[0]["pec_nome"]; ?></p>
+                <p class="endereco"><?php echo $pedido[0]["ser_nome"]; ?></p>
                 <p class="endereco">Valor</p>
                 <span class="status">Horário</span>
             </div>
@@ -54,19 +58,19 @@
         <div class="etapa">
             <div class="etapa-info">
                 <p class="costureira">Etapa</p>
-                <span class="costureira">0</span>
+                <span class="costureira"><?php echo $pedido[0]["ped_viagens"]; ?></span>
             </div>
         </div>
         
         <div class="pedido">
             <div class="pedido-info">
-                <p class="costureira">Cliente</p>
-                <p class="endereco">Endereço</p>
+                <p class="costureira"><?php echo $pedido[0]["cli_nome"]; ?></p>
+                <p class="endereco"><?php echo $pedido[0]["end_rua"] . ", " . $pedido[0]["end_numero"]; ?></p>
                 <span class="status">Horário</span>
             </div>
         </div>
 
-        <a href="detalhes/" class="btn-aceitar">Confirmação de entrega</a>
+        <a href="pedido/?id=<?php echo $_GET["id"] ?>" class="btn-aceitar">Confirmação de entrega</a>
 
     </section>
 

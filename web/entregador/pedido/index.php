@@ -63,7 +63,7 @@ session_start();
             
         </div>
 
-        <a href="detalhes/" class="btn-aceitar">Aceitar Pedido</a>
+        <a href="detalhes/?id=<?php echo $_GET["id"] ?>" class="btn-aceitar">Aceitar Pedido</a>
 
     </section>
 

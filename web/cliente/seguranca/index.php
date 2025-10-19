@@ -42,7 +42,7 @@
     <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
     </a>
     <!--casa-->
-    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    <a class="icon" href="../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
     </a>
     <!--carrinho-->
     <a class="icon" href="index.php"><img class="icon_img_perfil"
