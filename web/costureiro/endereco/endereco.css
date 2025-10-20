@@ -31,6 +31,7 @@ section {
 /* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores - Tema Claro */
+  --vermelho-erro: #f73151;
   --roxo-principal: #b450f5;
   --roxo-claro: #d89ffd;
   --roxo-mais-claro: #e7cef6;
@@ -299,6 +300,7 @@ table {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
+
   .paginas {
     li {
       margin-top: 20px;
@@ -319,20 +321,18 @@ table {
     li:hover {
       transform: scale(1.1);
     }
-    
-
 
     .choice {
-      margin: 10px;
+      display: inline-block;
       font-size: 22px;
       font-weight: bold;
+      margin: 10px 0 10px 0;
+      height: fit-content;
+      width: fit-content;
       vertical-align: middle;
-      background-color: var(--roxo-claro);
       text-decoration: none;
       color: black;
     }
-
-    
   }
 
   .informacoes {
@@ -343,61 +343,195 @@ table {
       margin: 16px;
     }
 
-    .label {
-      font-size: 20px;
-      margin: 16px;
+    .endereco_grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+
+      .label {
+        font-size: 18px;
+        margin: 16px 0;
+      }
+
+      .dado_endereco {
+        display: inline-block;
+      }
+
+      .input {
+        border-radius: 20px;
+        border: 1px solid var(--roxo-principal);
+        background-color: #faf4ee;
+        padding: 8px;
+        font-size: 16px;
+      }
+
+      #rua {
+        width: 300px;
+        margin: 0 10px 0 0;
+      }
+
+      #numero {
+        width: 75px;
+      }
+
+      #bairro {
+        width: 390px;
+      }
+
+      #complemento {
+        width: 390px;
+        resize: none;
+        word-break: break-word;
+      }
+
+      #cidade {
+        width: 200px;
+      }
+
+      #estado {
+        width: 80px;
+        text-align: center;
+      }
+
+      #cep {
+        width: 285px;
+      }
     }
 
-    .input {
-      width: 300px;
-      height: 40px;
+    .popup {
+      display: none;
+      position: absolute;
+      top: 40vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      background-color: var(--bege);
       border-radius: 20px;
-      border: 1px solid var(--roxo-principal);
-      padding: 8px;
-      font-size: 16px;
+      box-shadow: 0 0 10px rgb(15, 15, 15);
+      width: 26%;
+      padding: 2rem 0 2rem 0;
+      height: auto;
+      max-height: 120vh;
+      margin: 30px auto 30px auto;
+      overflow: hidden;
+
+      .label {
+        font-size: 18px;
+        margin: 16px auto 16px auto;
+        width: 15rem;
+      }
+
+      .excluir_aviso {
+        text-align: center;
+      }
+
+      input[type="button"],
+      input[type="submit"] {
+        margin: 20px auto;
+      }
+
+      .btn {
+        font-size: 16px;
+        width: 15rem;
+        height: 2.8rem;
+      }
+
+      .btn-excluir {
+        font-size: 16px;
+        width: 15rem;
+        height: 2.8rem;
+      }
+
+      .excluir_aviso {
+        font-family: "Calibri";
+        font-weight: bold;
+        color: var(--vermelho-erro);
+      }
     }
 
-    .btn_alt {
-      width: 150px;
-      height: 40px;
-      border-radius: 20px;
+    .erro_aviso {
+      display: none;
+      margin: 24px auto 0 auto;
+      text-align: center;
+      font-size: 1rem;
+      font-family: "Calibri";
+      font-weight: bold;
+      color: var(--vermelho-erro);
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .box_botoes {
+      display: grid;
+      align-items: top;
+      grid-template-columns: 20rem 1fr;
+    }
+
+    .btn {
+      display: block;
+      margin: 20px 0;
+      width: 18rem;
+      height: 3rem;
       background-color: var(--roxo-principal);
       color: var(--bege);
-      font-size: 18px;
-      font-weight: bold;
-      margin: 16px;
-      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 0;
       transition: all 0.3s ease;
+      transform-origin: center;
+      cursor: pointer;
     }
 
-    .btn_alt:hover {
-      background-color: var(--roxo-claro);
-      color: var(--preto);
-      transform: scale(1.05);
+    .btn-salvar {
+      display: block;
+      margin: 16px 0;
+      width: 18rem;
+      height: 3rem;
+      border: green 2px solid;
+      background-color: var(--bege);
+      color: green;
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
-    .btn_salvar {
-      width: 200px;
-      height: 50px;
-      border-radius: 25px;
-      background-color: var(--roxo-principal);
-      color: var(--bege);
-      font-size: 20px;
-      font-weight: bold;
-      margin: 16px;
-      cursor: pointer;
+    .btn-excluir {
+      display: block;
+      margin: 20px 0;
+      width: 18rem;
+      height: 3rem;
+      border: var(--vermelho-erro) 2px solid;
+      background-color: var(--bege);
+      color: var(--vermelho-erro);
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
       transition: all 0.3s ease;
+      transform-origin: center;
+      position: relative;
+      cursor: pointer;
     }
   }
 }
-.endereco {
 
+.endereco {
   justify-content: center;
+
   .setor_endereco {
     background-color: var(--roxo-claro);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
     box-shadow: 0 4px 8px var(--preto);
     width: 50%;
     height: 30%;
@@ -432,11 +566,11 @@ table {
   .add_endereco {
     background-color: var(--roxo-claro);
     font-size: 30px;
-    margin-left: 22.5%;
+    margin-left: 150px;
     cursor: pointer;
-    width: 50px;
+    width: 150px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;

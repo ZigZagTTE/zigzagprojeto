@@ -170,6 +170,7 @@ table {
 }
 
 .pedido-detalhes {
+    text-decoration: none;
     display: flex;
     align-items: last baseline;
     justify-content: end;
@@ -179,4 +180,12 @@ table {
     font-weight: bold;
     color: var(--preto);
 
+    a {
+        text-decoration: none;
+        color: var(--roxo-principal);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 }

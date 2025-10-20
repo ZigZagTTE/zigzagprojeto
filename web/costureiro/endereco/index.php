@@ -7,22 +7,23 @@
   <title>ZigZag</title>
   <link rel="stylesheet" href="endereco.css" />
   <link rel="stylesheet" href="../home.css" />
-  <link
-    rel="icon"
-    href="../../assets/images/MiniLogo.png"
-    type="image/x-icon" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
-    rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script
-    src="https://kit.fontawesome.com/a1d8234c07.js"
-    crossorigin="anonymous"></script>
-  <?php require_once("../../conexao.php");
-  session_start(); ?>
+  <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
+  <?php
+  session_start();
+  require_once "../../conexao.php";
+  require_once "bancoEndereco.php";
+
+  if (!isset($_SESSION['cos_id'])) {
+    header("Location: ../../login.php");
+    exit();
+  }
+
+  $dados_endereco = buscarEnderecosUsuario($conexao, $_SESSION["cos_id"]);
+  ?>
 </head>
 
 <body>
@@ -38,14 +39,14 @@
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i></a>
+    <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
+    </a>
     <!--casa-->
-    <a class="icon" href="../pedidos"><i class="fa-duotone fa-solid fa-clipboard-list fa-2xl" style="--fa-primary-color: #b450f5; --fa-secondary-color: #f5e9db;"></i></a> 
-    <!--lista de pedidos-->
-    <a class="icon" href="../perfil/"><img
-        class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
-        alt="Foto de perfil" />
+    <a class="icon" href="index.php"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    </a>
+    <!--carrinho-->
+    <a class="icon" href="index.php"><img class="icon_img_perfil"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>" alt="Foto de perfil" />
     </a>
     <!--user-->
   </header>
@@ -62,12 +63,10 @@
         </a>
         <a href="../seguranca/" class="choice">
           <li>
-            <i
-              class="fa-solid fa-shield-halved fa-lg"
-              style="color: #fdf2e6"></i>Segurança
+            <i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6"></i>Segurança
           </li>
         </a>
-        <a href="../endereco/" class="choice">
+        <a href="index.php" class="choice">
           <li>
             <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço
           </li>
@@ -77,19 +76,20 @@
 
     <div class="endereco">
       <p class="title">Endereço</p>
-
-      <a href="detalhes.php">
-        <div class="setor_endereco">
-          <h1>Endereço 1</h1>
-          <p><?php echo $_SESSION["cos_endereco"]; ?></p>
-          <i class="fa-solid fa-arrow-right fa-lg"></i>
-        </div>
-      </a>
-
-      <div class="add_endereco">
-        <a href="adicionar.php">
-          <i class="fa-solid fa-plus" style="color: #fdf2e6"></i>
-
+      <?php
+      foreach ($dados_endereco as $linha => $valores) {
+      ?>
+          <div class="setor_endereco">
+            <h1>Endereço</h1>
+            <p><?php echo $valores['cos_rua'] . ", " . $valores['cos_numero'] . ", " . $valores['cos_bairro']; ?></p>
+          </div>
+        </a>
+      <?php
+      }
+      ?>
+      <div id="add" class="add_endereco">
+        <a href="./alterar">
+          <p>Alterar</p>
         </a>
       </div>
     </div>
@@ -100,10 +100,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <img
-            src="../../assets/svg/logo.svg"
-            alt="ZigZag Logo"
-            class="footer-logo" />
+          <img src="../../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
         </div>
         <div class="footer-section">
@@ -127,7 +124,8 @@
           <h3>Redes Sociais</h3>
           <div class="social-links">
             <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg"
+                alt="Instagram" /></a>
             <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
@@ -137,29 +135,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function onScrollFadeIn() {
-      const elements = document.querySelectorAll(".fade-in");
-      const windowBottom = window.innerHeight + window.scrollY;
-
-      elements.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top + window.scrollY;
-        if (windowBottom > elementTop + 100) {
-          // 100px antes de aparecer totalmente
-          el.classList.add("visible");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", onScrollFadeIn);
-    window.addEventListener("DOMContentLoaded", onScrollFadeIn);
-  </script>
-  <script>
-    window.addEventListener("DOMContentLoaded", function() {
-      document.body.classList.add("loaded");
-    });
-  </script>
 </body>
 
 </html>
