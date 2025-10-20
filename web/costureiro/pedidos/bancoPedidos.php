@@ -1,6 +1,5 @@
 <?php
 
-require_once '../../conexao.php';
 
 function buscarPedidos($conexao, $id)
 

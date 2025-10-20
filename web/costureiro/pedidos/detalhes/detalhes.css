@@ -122,61 +122,11 @@ table {
     }
 }
 
-.grid-pedidos {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
-}
-
-.card-pedidos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-radius: 15px;
-    min-height: 200px;
-    max-width: 400px;
-    padding: 10px;
+.detalhes {
+    margin-top: 20px;
+    border-radius: 10px;
     background-color: #a6a6a667;
-    transition: all 0.3s ease;
-}
-
-.card-pedidos:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.pedido-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--preto);
-}
-
-.pedido-info p {
-    margin: 5px 0;
-}
-
-.card-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    max-height: 150px;
-}
-
-.pedido-detalhes {
-    display: flex;
-    align-items: last baseline;
-    justify-content: end;
-    padding: 10px;
-    gap: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--preto);
+    min-width: 100px;
+    min-height: 200px;
 
 }
