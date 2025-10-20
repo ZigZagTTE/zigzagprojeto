@@ -25,6 +25,7 @@
     require_once 'bancoPedidos.php';
     $id = $_SESSION["cos_id"];
     $buscarPedidos = buscarPedidos($conexao, $id);
+
     ?>
 </head>
 
@@ -68,13 +69,14 @@
             ?>
                 <div class="card-pedidos">
                     <div class="pedido-info">
+                        <?php echo "<h2>Pedido #" . $exibirPedidos[0]["ped_id"] . "</h2>"; ?>
                         <h3>Nome do cliente:<br><?php echo $exibirPedidos[0]["cli_nome"]; ?> </h3>
                         <p>data do pedido: <br><?php echo $exibirPedidos[0]["ped_data"] . "<br>" . $exibirPedidos[0]["ped_horario"]; ?></p>
-                        <p>Valor: R$ <?php echo $exibirPedidos[0]["cat_valor"]; ?></p>
+                        <p>Valor: R$ <?php echo $soma; ?></p>
 
                     </div>
                     <div class="pedido-detalhes">
-                        <a href="detalhes/?id=<?php echo $pedido["ped_id"]; ?>">Detalhes</a>
+                        <a href="detalhes/?id=<?php echo $exibirPedidos[0]["ped_id"]; ?>">Detalhes</a>
                     </div>
                 </div>
 
@@ -85,7 +87,7 @@
             }
             ?>
         </div>
-
+    </div>
         <!-- FOOTER -->
         <footer class="footer">
             <div class="container">
