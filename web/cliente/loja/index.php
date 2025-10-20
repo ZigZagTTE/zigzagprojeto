@@ -21,6 +21,15 @@
     $costureiraInfo = buscarCostureira($conexao, $_GET['cos']);
 
     $listaDeCatalogos = buscarServicosDaCostureira($conexao, $_GET['cos']);
+
+    $listaCostureirasCriadoras = buscarListaDeCostureirasCriadoras($conexao);
+
+    $isCriadora = false;
+    foreach ($listaCostureirasCriadoras as $costureira) {
+        if ($costureira['cos_id'] == $_GET['cos']) {
+            $isCriadora = true;
+        }
+    }
     ?>
 </head>
 
@@ -81,10 +90,12 @@
                     <i class="fa-solid fa-scissors categoria-icon"></i>
                     Ajustes e reformas
                 </button>
-                <button id="botao2" onclick="mostrarConteudoDois()" class="categoria-btn">
-                    <i class="fa-solid fa-plus categoria-icon"></i>
-                    Costurar minhas peças
-                </button>
+                <?php if ($isCriadora) { ?>
+                    <button id="botao2" onclick="mostrarConteudoDois()" class="categoria-btn">
+                        <i class="fa-solid fa-plus categoria-icon"></i>
+                        Costurar minhas peças
+                    </button>
+                <?php } ?>
             </div>
         </div>
 
@@ -145,17 +156,35 @@
                             <?php echo $descricao; ?>
                         </div>
                     </div>
-            </a>
+                </a>
             <?php } ?>
         </div>
-        <div id="conteudo2" class="personalizado_grid" style="display: none;">
-            <h1>Digite a maneira como você quer que sua criação seja feita.</h1>
-            <textarea name="descricao" id="descricao" cols="30" rows="10"
-                placeholder="Descreva aqui o seu projeto..."></textarea>
-            <p>Envie uma imagem de referência (opcional):</p>
-            <input type="file" id="file" name="file" accept="image/*" class="file_customizada">
-            <button type="submit">Enviar pedido</button>
-        </div>
+        <?php if ($isCriadora) { ?>
+            <form method="POST" action="confirmacao/index.php" id="conteudo2" class="personalizado_grid" style="display: none;">
+                <h1>Escolha a peça para criar.</h1>
+                <select name="peca" class="input">
+                    <?php
+
+                    $listaDePecasCriacao = buscarPecasDoServicoDaCostureira($conexao, $_GET['cos'], 10);
+
+                    foreach ($listaDePecasCriacao AS $peca) {
+
+                        echo "<option value=\"$peca[pec_id]\"";
+
+                        echo ">$peca[pec_nome]</option>\n";
+                    }
+                    ?>
+                </select>
+
+                <h1>Digite a maneira como você quer que sua criação seja feita.</h1>
+                <textarea name="txtDescricao" id="descricao" cols="30" rows="10"
+                    placeholder="Descreva aqui o seu projeto..."></textarea>
+                <input hidden value="10" name="servico">
+                <input hidden value="<?php echo $_GET['cos'];?>" name="costureira">
+
+                <button type="submit">Inserir item no carrinho</button>
+            </form>
+        <?php } ?>
     </div>
 
     <!-- FOOTER -->

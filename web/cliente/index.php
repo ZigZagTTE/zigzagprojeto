@@ -20,7 +20,7 @@
     require_once "bancoCliente.php";
 
     $listaCostureiras = buscarListaDeCostureiras($conexao);
-    // $listaCostureirasCriadoras = buscarCostureirasCriadoras($conexao);
+    $listaCostureirasCriadoras = buscarListaDeCostureirasCriadoras($conexao);
     ?>
 </head>
 
@@ -92,7 +92,7 @@
         <!--========================================================================== 
         Segunda linha - Criar peças
         ==============================================================================-->
-        <!-- <div class="category-card-criar">
+        <div class="category-card-criar">
             <div class="category-icon">
                 <img class="category-icon" src="../assets/images/usu_img/cabide.png">
             </div>
@@ -102,24 +102,24 @@
         </div>
         <div class="carousel-warp-criar">
             <div class="carousel-section" id="carousel2">
-                <?php // foreach ($listaCostureirasCriadoras as $costureira) { ?>
-                    <a href="loja/?id=<?php //echo $costureira['cos_id']; ?>"" class=" store-card">
+                <?php foreach ($listaCostureirasCriadoras as $costureira) { ?>
+                    <a href="loja/?cos=<?php echo $costureira['cos_id']; ?>" class=" store-card">
                         <img class="store-image"
                             src="../assets/uploads/profilepictures/<?php echo $costureira['cos_perfil']; ?>">
                         <div class="store-info">
                             <p class="store-name"><?php echo $costureira['cos_nome']; ?></p>
                             <p class="store-details">
-                                <?php //echo $costureira['cos_rua'] . ", " . $costureira['cos_cidade'] . " - " . $costureira['cos_estado']; ?>
+                                <?php echo $costureira['cos_rua'] . ", " . $costureira['cos_cidade'] . " - " . $costureira['cos_estado']; ?>
                             </p>
                         </div>
                     </a>
-                <?php // } ?>
+                <?php  } ?>
             </div>
         </div>
         <div class="carousel-controls-criar">
             <button class="carousel-btn left" data-carousel="carousel2" disabled>‹</button>
             <button class="carousel-btn right" data-carousel="carousel2">›</button>
-        </div> -->
+        </div>
     </div>
 
     <!-- FOOTER -->

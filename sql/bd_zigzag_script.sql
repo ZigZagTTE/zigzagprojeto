@@ -124,7 +124,7 @@ VALUES  ('Pequenas costuras'),
         ('Remendos'),
         ('Bordados'),
         ('Patchwork');
---        ('criação');
+        ('Criação');
 
 CREATE TABLE IF NOT EXISTS tbl_catalogo
 (
