@@ -6,14 +6,16 @@ function buscarPedidos($conexao, $id)
 
 {
 
-    $query = "SELECT tbl_pedido.ped_id 
-    FROM tbl_pedido, tbl_item, tbl_catalogo, tbl_costureiro 
-    WHERE tbl_pedido.ped_id = tbl_item.ped_id 
-    AND tbl_item.cat_id = tbl_catalogo.cat_id 
-    AND tbl_catalogo.cos_id = tbl_costureiro.cos_id 
-    AND tbl_costureiro.cos_id = $id 
-    AND ped_concluido = 0
-    AND ped_viagens = 0";
+    $query = "SELECT *
+    FROM tbl_pedido AS ped 
+    WHERE ped_concluido = 0
+    AND ped_id = ANY(
+	    SELECT ped_id
+	    FROM tbl_item AS ite 
+	    JOIN tbl_catalogo AS cat ON cat.cat_id = ite.cat_id 
+	    JOIN tbl_costureiro AS cost ON cost.cos_id = cat.cos_id
+	    WHERE cost.cos_id = $id
+    );";
 
     $sqlexecutar = mysqli_query($conexao, $query);
 

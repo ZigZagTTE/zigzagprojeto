@@ -146,6 +146,7 @@ table {
 
 .pedido-info {
     display: flex;
+    gap: 5px;
     flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
