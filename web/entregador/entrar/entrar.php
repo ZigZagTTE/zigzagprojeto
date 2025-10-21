@@ -29,7 +29,7 @@ if (isset($_GET["cancelarEntrada"])) {
     if (mysqli_num_rows($resultadoInfoConta) == 0) {
         header("Location: ./?erroEmail=1");
     } else {
-        $registroInfoConta = mysqli_fetch_all($resultadoInfoConta);
+        $registroInfoConta = mysqli_fetch_row($resultadoInfoConta);
         $id = $registroInfoConta[0];
         $nome = $registroInfoConta[1];
         $email = $registroInfoConta[2];
