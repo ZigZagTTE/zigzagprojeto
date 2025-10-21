@@ -123,10 +123,99 @@ table {
 }
 
 .detalhes {
-    margin-top: 20px;
+    margin: 20px;
     border-radius: 10px;
     background-color: #a6a6a667;
     min-width: 100px;
     min-height: 200px;
 
 }
+
+.text-detalhes{
+    background-color: #a6a6a699;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+.info-detalhes {
+    padding: 20px;
+    display:grid;
+    gap: 10px;
+
+    h3 {
+        font-size: 1.5rem;
+        padding: 0 0 5px 0;
+    }
+    p{
+        width: 50%;
+        height: min-content;
+        overflow-wrap: break-word;
+    }
+}
+
+.item-detalhes {
+    padding: 20px;
+    display: grid;
+    gap: 10px;
+
+    h4 {
+        font-size: 1.2rem;
+    }
+    p{
+        width: 50%;
+        height: min-content;
+        overflow-wrap: break-word;
+    }
+}
+
+
+.grid-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.pedido-info{
+    background-color: #a6a6a667;
+    border-radius: 5px;
+    padding: 10px;
+
+    h3{
+        padding: 2px 0;
+        width: fit-content;
+    }
+
+    p{
+        width: fit-content;
+    }
+
+}
+
+.footer-pedido{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-pedido{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+}   
+
+.btn-concluir{
+    background-color: var(--roxo-principal);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+
+    &:hover{
+        background-color: var(--roxo-claro);
+    }
+}   

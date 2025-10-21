@@ -24,7 +24,10 @@
     require_once '../../../conexao.php';
     require_once '../bancoPedidos.php';
 
+    $buscarPedidos = buscarPedidos($conexao, $id);
     $exibirPedidos = exibirPedidos($conexao, $ped_id);
+    $datadoPedido = $exibirPedidos[0]["ped_data"];
+    $data = date("d/m/Y", strtotime($datadoPedido));
     ?>
 </head>
 
@@ -47,7 +50,7 @@
         <!--lista de pedidos-->
         <a class="icon" href="../../perfil/"><img
                 class="icon_img_perfil"
-                src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
+                src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
                 alt="Foto de perfil" />
         </a>
         <!--user-->
@@ -58,7 +61,67 @@
         <h1>Detalhes do pedido</h1>
 
         <div class="detalhes">
-            <h3>Pedido do cliente <?php echo $exibirPedidos[0]["cli_nome"]; ?></h3>
+
+            <div class="info-detalhes">
+                <h3>Pedido do cliente: <br> <?php echo $exibirPedidos[0]["cli_nome"]; ?></h3>
+
+                <h4>Data do pedido: </h4>
+                <p><?php echo $data . "<br>" . $exibirPedidos[0]["ped_horario"]; ?></p>
+
+                <h4>Descrição do pedido: </h4>
+                <p class="text-detalhes"><?php echo $exibirPedidos[0]["ped_descricao"]; ?></p>
+
+                <h4>Endereço do pedido: </h4>
+                <p class="text-detalhes">
+                    <?php
+                    echo
+                    "Rua: " . $exibirPedidos[0]["end_rua"] . ",<br> " .
+                        "Nº: " . $exibirPedidos[0]["end_numero"] . ",<br> " .
+                        "Bairro: " . $exibirPedidos[0]["end_bairro"] . ",<br> " .
+                        "Cidade: " . $exibirPedidos[0]["end_cidade"] . ",<br> " .
+                        "CEP: " . $exibirPedidos[0]["end_cep"];
+                    ?>
+
+                <h4> Status do pedido:</h4>
+                <?php
+                if ($exibirPedidos[0]["ped_concluido"] == 0) {
+                    echo "<p style='color: red;'>Pendente</p>";
+                } else {
+                    echo "<p style='color: green;'>Concluído</p>";
+                }
+                ?>
+            </div>
+            <div class="grid-items">
+                <?php
+                foreach ($exibirPedidos as $linha) {
+                    $exibirPedidos = exibirPedidos($conexao, $linha['ped_id']);
+                ?>
+
+                    <div class="pedido-info">
+                        <?php echo "<h2>Item #" . $exibirPedidos[0]["ite_id"] . "</h2>"; ?>
+                        <h3>Descrição do item:</h3>
+                        <p><?php echo $exibirPedidos[0]["ite_descricao"]; ?></p><br>
+                        <h3>valor de cada item:</h3>
+                        <p>R$<?php echo $exibirPedidos[0]["cat_valor"]; ?></p>
+
+                    </div>
+
+                <?php
+
+                    $soma = 0;
+                    foreach ($exibirPedidos as $valor) {
+                        $soma += $valor['cat_valor'];
+                    }
+                }
+                ?>
+            </div>
+            <div class="footer-pedido">
+                <p class="total-pedido">Valor total do pedido: R$<?php echo number_format($soma, 2, ',', '.'); ?></p>
+
+                <form action="concluir.php" method="POST">
+                    <input type="hidden" name="ped_id" value="<?php echo $ped_id; ?>">
+                    <button type="submit" class="btn-concluir">Concluir Pedido</button>
+            </div>
         </div>
     </div>
 
