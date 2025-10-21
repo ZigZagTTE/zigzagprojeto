@@ -31,7 +31,7 @@
     exit();
   }
 
-  $pedido = bancoEntrega($conexao, 1);
+  $listaDePedidos = bancoEntrega($conexao, 1);
 
   ?>
 </head>
@@ -53,7 +53,7 @@
     <!--casa-->
     <a class="icon" href="../perfil/"><img
         class="icon_img_perfil"
-        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["entgd_perfil"]; ?>"
         alt="Foto de perfil" />
     </a>
     <!--user-->
@@ -86,15 +86,16 @@
 
     <div class="endereco">
       <p class="title">Entregas Feitas</p>
-
-      <a href="detalhes/?id=<?php echo $pedido["ped_id"]; ?>">
-        <div class="setor_endereco">
-          <p><?php echo $pedido["entrg_id"]; ?></p>
-          <p><?php echo $pedido["entrg_data"]; ?></p>
-          <p>Destino final do pedido</p>
-          <i class="fa-solid fa-arrow-right fa-lg"></i>
-        </div>
-      </a>
+      <?php foreach ($listaDePedidos as $pedido) { ?>
+        <a href="detalhes/?id=<?php echo $pedido["ped_id"]; ?>">
+          <div class="setor_endereco">
+            <p><?php echo $pedido["entrg_id"]; ?></p>
+            <p><?php echo $pedido["entrg_data"]; ?></p>
+            <p>Destino final do pedido</p>
+            <i class="fa-solid fa-arrow-right fa-lg"></i>
+          </div>
+        </a>
+      <?php } ?>
     </div>
   </div>
 
