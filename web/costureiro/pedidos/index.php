@@ -25,6 +25,7 @@
     require_once 'bancoPedidos.php';
     $id = $_SESSION["cos_id"];
     $buscarPedidos = buscarPedidos($conexao, $id);
+
     ?>
 </head>
 
@@ -68,66 +69,67 @@
             ?>
                 <div class="card-pedidos">
                     <div class="pedido-info">
+                        <?php echo "<h2>Pedido #" . $exibirPedidos[0]["ped_id"] . "</h2>"; ?>
                         <h3>Nome do cliente:<br><?php echo $exibirPedidos[0]["cli_nome"]; ?> </h3>
                         <p>data do pedido: <br><?php echo $exibirPedidos[0]["ped_data"] . "<br>" . $exibirPedidos[0]["ped_horario"]; ?></p>
-                        <p>Valor: R$ <?php echo $exibirPedidos[0]["cat_valor"]; ?></p>
+                        <p>Valor: R$ <?php echo $soma; ?></p>
 
                     </div>
                     <div class="pedido-detalhes">
-                        <a href="detalhes/?id=<?php echo $pedido["ped_id"]; ?>">Detalhes</a>
+                        <a href="detalhes/?id=<?php echo $exibirPedidos[0]["ped_id"]; ?>">Detalhes</a>
                     </div>
                 </div>
 
             <?php
             }
             if (empty($buscarPedidos)) {
-                echo "<p class='no-pedidos'>Nenhum pedido disponível no momento.</p>";
+                echo "<h2 class='no-pedidos'>Nenhum pedido disponível no momento.</h2>";
             }
             ?>
         </div>
-
-        <!-- FOOTER -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <img
-                            src="../../assets/svg/logo.svg"
-                            alt="ZigZag Logo"
-                            class="footer-logo" />
-                        <p>Conectando talentos e necessidades na arte da costura.</p>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Links Úteis</h3>
-                        <ul>
-                            <li><a href="../#sobre">Sobre Nós</a></li>
-                            <li><a href="../#contato">Contato</a></li>
-                            <li><a href="../">Termos de Uso</a></li>
-                            <li><a href="../">Política de Privacidade</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Contato</h3>
-                        <ul>
-                            <li>Email: contato@zigzag.com.br</li>
-                            <li>Telefone: (11) 99123-4567</li>
-                            <li>WhatsApp: (11) 99123-4567</li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Redes Sociais</h3>
-                        <div class="social-links">
-                            <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-                            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
-                            <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
-                        </div>
-                    </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img
+                        src="../../assets/svg/logo.svg"
+                        alt="ZigZag Logo"
+                        class="footer-logo" />
+                    <p>Conectando talentos e necessidades na arte da costura.</p>
                 </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2024 ZigZag. Todos os direitos reservados.</p>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="../#sobre">Sobre Nós</a></li>
+                        <li><a href="../#contato">Contato</a></li>
+                        <li><a href="../">Termos de Uso</a></li>
+                        <li><a href="../">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>Email: contato@zigzag.com.br</li>
+                        <li>Telefone: (11) 99123-4567</li>
+                        <li>WhatsApp: (11) 99123-4567</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+                    </div>
                 </div>
             </div>
-        </footer>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZigZag. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
