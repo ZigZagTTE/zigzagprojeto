@@ -8,36 +8,41 @@ USE bd_zigzag_main;
 -- # Clientes de exemplo
 
 INSERT INTO tbl_cliente (cli_email, cli_senhaHash, cli_cpf, cli_nome, cli_nascimento, cli_telefone, cli_perfil)
-VALUES  ('clienteA@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi', 12345678901, 'Cliente A', '2001-01-01', 12123456789, 'default.png'),
-        ('clienteB@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi', 98765432110, 'Cliente B', '2002-02-02', 12987654321, 'default.png');
+VALUES  ('JoseDiasMartins@armyspy.com', '$wp$2y$10$5vOb0xiABX1zc0JldY0NFeFu0kYe8qZxwzLb1wUMcNDzqF9IgDT5W', 66594714805, 'José Dias Martins', '1949-05-30', 4525388331, 'homem4.jpg'),
+        ('GabrielaAraujoCardoso@armyspy.com', '$wp$2y$10$14/06JSgyccB/Lpfi0AsUeH71gXOpzk4qUpWK2JXPlVqMMWy9e9TS', 81146305079, 'Gabriela Araujo Cardoso', '1980-01-03', 3136406097, 'mulher2.jpg'),
+        ('LeonorCavalcantiAlves@teleworm.us', '$wp$2y$10$DtbsvX9WbgvQ297M6bmjR.kMRDppOj1Ay1Eyb5wWrocf0CUgC/.tW', 77624981920, 'Leonor Cavalcanti Alves', '1940-02-24', 1861207476, 'mulher3.jpg'),
+        ('IsabellaFerreiraAlves@teleworm.us', '$wp$2y$10$U/YrvMW8lyE3/qfspCOX8eLRTu8CpUdqndqY3QFDUtvvo.IDR93gq', 26481390281, 'Isabella Ferreira Alves', '2000-03-31', 5168076766, 'mulher4.jpg');
 
 
 -- # Endereços de Clientes
 
 INSERT INTO tbl_endereco_cliente (end_rua, end_bairro, end_numero, end_cidade, end_estado, end_cep, cli_id)
-VALUES  ('Rua A', 'Bairro A', 100, 'Taubaté', 'SP', 12345123, 1),
-        ('Rua AA', 'Bairro A', 101, 'Taubaté', 'SP', 12345456, 1),
-        ('Rua B', 'Bairro B', 200, 'Taubaté', 'SP', 54321123, 2),
-        ('Rua BB', 'Bairro B', 201, 'Taubaté', 'SP', 54321456, 2);
+VALUES  ('Rua Pica-pau', 'Bonfim', 1084, 'Taubaté', 'SP', 85859630, 1),
+        ('Rua Miguel Couto', 'Independência', 1180, 'Taubaté', 'SP', 54786340, 2),
+        ('Rua José Couto', 'Quiririm', 201, 'Taubaté', 'SP', 45298413, 2),
+        ('Travessa Oito', 'Gurilândia', 1312, 'Taubaté', 'SP', 19100168, 3),
+        ('Rua 1', 'Quiririm', 201, 'Taubaté', 'SP', 60877060, 4);
 
 
 -- # Entregadores
 
 INSERT INTO tbl_entregador (entgd_email, entgd_senhaHash, entgd_nome, entgd_cnh, entgd_cpf, entgd_telefone, entgd_perfil)
-VALUES  ('entregadorA@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi', 'Entregador A', 000123456789, 12345678902, 12123456790, 'default.png'),
-        ('entregadorB@exemplo.com', 'ABCd$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi1234', 'Entregador B', 000123456790, 98765432111, 12987654322, 'default.png');
+VALUES  ('cenolar962@datoinf.com', '$wp$2y$10$tqyLW2guORTxFuGYkXXmB.iqVUI149kCsn/QjgObJSRZnzkEb4Rii', 'Rodrigo Gomes Costa', 12123456790, 60249059711, 12981475233, 'homem.jpg'),
+        ('BrunoBarrosAraujo@jourrapide.com', '$wp$2y$10$EMaMNp8voRviQq9j7Eio6.GKhz4C0oRTsAKwcJ7lGZyX154X9yBlG', 'Bruno Barros Araujo', 12987654322, 80822817667, 8560355057, 'homem2.jpg'),
+        ('MiguelPereiraAlves@armyspy.com', '$wp$2y$10$s3Z0piiI775JPlzu587LVOIlYoGH9FOmvN.wqTP6YMwEY85YeyWV.', 'Miguel Pereira Alves', 12987654322, 67898799518, 8124028442, 'homem3.jpg'),
+        ('AnaAzevedoRibeiro@armyspy.com', '$wp$2y$10$7Ymy2MTXGFydN7Ue6tBz0O4EHT/iJdI45Nrmr2P2aTsaED2RoT3ou', 'Ana Azevedo Ribeiro', 12987654322, 44173081871, 4127664443, 'mulher1.jpg');
+        
 
 
 -- # Costureiros
 
-INSERT INTO tbl_costureiro (cos_email, cos_senhaHash, cos_nome, cos_cpf, cos_cnpj, cos_perfil,
-            cos_rua, cos_bairro, cos_numero, cos_cidade, cos_estado, cos_cep)
-VALUES  ('costureiroA@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi', 'Costureiro A', 12345678903, 12345678000190, 'default.png',
+INSERT INTO tbl_costureiro (cos_email, cos_senhaHash, cos_nome, cos_cpf, cos_cnpj, cos_perfil, cos_rua, cos_bairro, cos_numero, cos_cidade, cos_estado, cos_cep)
+VALUES  ('JulietaSousaDias@jourrapide.com', '$wp$2y$10$MufwN2qbHsTYmpFD/2Ansuwr..GRSvz4LMN8eliyNkM5dlKDGUota', 'Beatrice Dias Pinto', 84826365292, 12345678000190, 'costureira1.jpg',
 -- Endereço do Costureiro A
-        'Rua A', 'Bairro A', 110, 'Taubaté', 'SP', 12345123),
-        ('costureiroB@exemplo.com', '$2y$10$iN9.al/wa8m7a5GVgNvHAO5JhkMx7sma4t4peAi3gHRy3advWkVoi',  'Costureiro B',98765432113, 23456789000291, 'default.png',
+        'Rua Coronel Panfilo', 'Araucárias', 661, 'Taubaté', 'SP', 03908050),
+        ('LuisCunhaDias@dayrep.com', '$wp$2y$10$BUs8YsN1UrrInuXIL3pDC.Hd8km/uuhOmIf57PXEr6DYGDzHPBAv2', 'Luis Cunha Dias', 62508605840, 23456789000291, 'costureira2.jpg',
 -- Endereço do Costureiro B
-        'Rua B', 'Bairro B', 210, 'Taubaté', 'SP', 54321123);
+        'Rua do Grupo Escolar', 'Vista alegre', 75, 'Taubaté', 'SP', 08440480);
 
 
 -- # Catálogos

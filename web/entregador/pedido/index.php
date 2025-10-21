@@ -11,19 +11,23 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
-</head>
-
-<?php 
-session_start();
-    if (!isset($_SESSION["entgd_id"])){
+    <?php
+    session_start();
+    if (!isset($_SESSION["entgd_id"])) {
         header("Location: ./cadastrar");
     }
 
-    $_GET["id"];
+    $ped_id = $_GET["id"];
     require_once "../../conexao.php";
     require_once "pedidoInfo.php";
-    $pedido = pedidoInfo($conexao, $_GET["id"]);
-?>
+    $pedido = pedidoInfo($conexao, $ped_id);
+
+    echo $_SESSION["entgd_id"];
+    echo $ped_id;
+    ?>
+</head>
+
+
 
 <body>
 
@@ -60,10 +64,13 @@ session_start();
                 <p class="costureira"><?php echo $pedido[0]["cli_nome"]; ?></p>
                 <p class="endereco"><?php echo $pedido[0]["end_rua"] . ", " . $pedido[0]["end_numero"]; ?></p>
             </div>
-            
-        </div>
 
-        <a href="detalhes/?id=<?php echo $_GET["id"] ?>" class="btn-aceitar">Aceitar Pedido</a>
+        </div>
+        <form action="processarPedido.php" method="POST">
+            <input name="ped_id" value="<?php echo $ped_id ?>" hidden>
+            <input name="entgd_id" value="<?php echo $_SESSION["entgd_id"] ?>" hidden>
+            <button class="btn-aceitar">Aceitar Pedido</button>
+        </form>
 
     </section>
 
