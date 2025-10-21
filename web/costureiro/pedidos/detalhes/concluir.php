@@ -14,11 +14,6 @@ $ped_id = $_POST['ped_id'];
 $query = "UPDATE tbl_pedido SET ped_concluido = 1 WHERE ped_id = $ped_id";
 $resultado = mysqli_query($conexao, $query);
 
-
-$id = null;
-
-$ped_id = null;
-
 if ($resultado) {
     header("Location: ../");
     exit();
