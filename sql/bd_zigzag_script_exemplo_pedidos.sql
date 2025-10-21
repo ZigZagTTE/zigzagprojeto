@@ -2,16 +2,15 @@
 
 -- ## PEDIDOS
 INSERT INTO tbl_pedido (ped_data, ped_horario, ped_descricao, ped_viagens, ped_concluido, cli_id, end_id)
--- CLIENTE A
-VALUES  ('2025-10-09', '20:03', 'Pedido do cliente A para Costureira A com 2 itens diferentes e na Rua A e não concluído estando com o cliente', 0, 0, 1, 1),
-        ('2025-10-09', '20:05', 'Pedido do cliente A para Costureira A com 2 itens iguais e na Rua AA e não concluído estando com a costureira', 1, 0, 1, 2),
-        ('2025-10-09', '20:06', 'Pedido do cliente A para Costureira B com 2 itens diferentes e na Rua A e concluído estando com a costureira', 1, 1, 1, 1),
-        ('2025-10-09', '20:09', 'Pedido do cliente A para Costureira B com 2 itens iguais e na Rua AA e concluído estando com o cliente (finalizado)', 2, 1, 1, 2),
--- CLIENTE B
-        ('2025-10-09', '20:10', 'Pedido do cliente B para Costureira A com 2 itens diferentes e na Rua B e não concluído estando com o cliente', 0, 0, 2, 3),
-        ('2025-10-09', '20:05', 'Pedido do cliente B para Costureira A com 2 itens iguais e na Rua BB e não concluído estando com a costureira', 1, 0, 2, 4),
-        ('2025-10-09', '20:06', 'Pedido do cliente B para Costureira B com 2 itens diferentes e na Rua B e concluído estando com a costureira', 1, 1, 2, 3),
-        ('2025-10-09', '20:09', 'Pedido do cliente B para Costureira B com 2 itens iguais e na Rua BB e concluído estando com o cliente (finalizado)', 2, 1, 2, 4);
+
+VALUES  ('2025-10-09', '20:03', 'Pedido do cliente José Dias Martins para Costureira Beatrice Dias Pinto com 2 itens diferentes e na Rua Pica-pau e não concluído estando com o cliente', 0, 0, 1, 1),
+        ('2025-10-09', '20:05', 'Pedido do cliente Gabriela Araujo Cardoso para Costureira Beatrice Dias Pinto com 2 itens iguais e na Rua Coronel Panfilo e não concluído estando com a costureira', 1, 0, 2, 2),
+        ('2025-10-09', '20:06', 'Pedido do cliente José Dias Martins para Costureira Luis Cunha Dias com 2 itens diferentes e na Rua do Grupo Escolar e concluído estando com a costureira', 1, 1, 1, 1),
+        ('2025-10-09', '20:09', 'Pedido do cliente José Dias Martins para Costureira Luis Cunha Dias com 2 itens iguais e na Rua Pica-pau e concluído estando com o cliente (finalizado)', 2, 1, 2, 3),
+        ('2025-10-09', '20:10', 'Pedido do cliente Gabriela Araujo Cardoso para Costureira Beatrice Dias Pinto com 2 itens diferentes e na Rua Coronel Panfilo e não concluído estando com o cliente', 0, 0, 2, 3),
+        ('2025-10-09', '20:05', 'Pedido do cliente Leonor Cavalcanti Alves para Costureira Beatrice Dias Pinto com 2 itens iguais e na Travessa Oito e não concluído estando com a costureira', 1, 0, 3, 4),
+        ('2025-10-09', '20:06', 'Pedido do cliente Gabriela Araujo Cardoso para Costureira Luis Cunha Dias com 2 itens diferentes e na Rua José Couto e concluído estando com a costureira', 1, 1, 2, 3),
+        ('2025-10-09', '20:09', 'Pedido do cliente Isabella Ferreira Alves para Costureira Luis Cunha Dias com 2 itens iguais e na Rua 1 e concluído estando com o cliente (finalizado)', 2, 1, 4, 5);
 
 -- ## ITENS
 INSERT INTO tbl_item (ped_id, cat_id)
