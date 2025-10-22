@@ -106,68 +106,38 @@
         <div id="conteudo1" class="servicos_grid active">
             <?php
             foreach ($listaDeCatalogos as $catalogo) {
-                switch ($catalogo['ser_id']) {
-                    case '1':
-                        $imagem = "agulha.png";
-                        $descricao = "Reparos e ajustes simples";
-                        break;
-                    case '2':
-                        $imagem = "ziper.png";
-                        $descricao = "Substituição de zíperes fáceis";
-                        break;
-                    case '3':
-                        $imagem = "ziper.png";
-                        $descricao = "Substituição de zíperes complicados";
-                        break;
-                    case '4':
-                        $imagem = "calca.png";
-                        $descricao = "Ajustes de comprimento";
-                        break;
-                    case '5':
-                        $imagem = "calça.png";
-                        $descricao = "Ajuste de comprimento personalizado";
-                        break;
-                    case '6':
-                        $imagem = "vestido.png";
-                        $descricao = "Peças complicadas de costura";
-                        break;
-                    case '7':
-                        $imagem = "tecido.png";
-                        $descricao = "Reparos em tecidos danificados";
-                        break;
-                    case '8':
-                        $imagem = "bordar.png";
-                        $descricao = "Decoração de peças";
-                        break;
-                    case '9':
-                        $imagem = "patchwork.png";
-                        $descricao = "Cria padrões atravéz de tecidos variados";
-                        break;
-                }
+                $imagem = ["agulha.png", "ziper.png", "ziper.png", 
+                    "calca.png", "calça.png", "vestido.png", 
+                    "tecido.png", "bordar.png", "patchwork.png"];
+                $descricao = ["Reparos e ajustes simples", "Substituição de zíperes fáceis", "Substituição de zíperes complicados", "Ajustes de comprimento", 
+                    "Ajuste de comprimento personalizado", "Peças complicadas de costura", "Reparos em tecidos danificados", 
+                    "Decoração de peças", "Cria padrões atravéz de tecidos variados"];
+                
                 ?>
                 <a class="servico-card" href="peca/<?php echo "?ser=" . $catalogo['ser_id'] . "&cos=" . $_GET['cos']; ?>">
                     <div class="servico-icon-container">
-                        <img class="servico-icon" src="../../assets/images/usu_img/<?php echo $imagem; ?>"
+                        <img class="servico-icon" src="../../assets/images/usu_img/servicos/<?php echo $imagem[$catalogo['ser_id'] - 1]; ?>"
                             alt="<?php echo $catalogo['ser_nome']; ?>" />
                     </div>
                     <div class="servico-info">
                         <div class="servico-nome"><?php echo $catalogo['ser_nome']; ?></div>
                         <div class="servico-descricao">
-                            <?php echo $descricao; ?>
+                            <?php echo $descricao[$catalogo['ser_id'] - 1]; ?>
                         </div>
                     </div>
                 </a>
             <?php } ?>
         </div>
         <?php if ($isCriadora) { ?>
-            <form method="POST" action="confirmacao/index.php" id="conteudo2" class="personalizado_grid" style="display: none;">
+            <form method="POST" action="confirmacao/index.php" id="conteudo2" class="personalizado_grid"
+                style="display: none;">
                 <h1>Escolha a peça para criar.</h1>
                 <select name="peca" class="input">
                     <?php
 
-                    $listaDePecasCriacao = buscarPecasDoServicoDaCostureira($conexao, $_GET['cos'], 10);
+                    $listaDePecasCriacao = buscarCatalgosDaCostureiraPorServico($conexao, $_GET['cos'], 10);
 
-                    foreach ($listaDePecasCriacao AS $peca) {
+                    foreach ($listaDePecasCriacao as $peca) {
 
                         echo "<option value=\"$peca[pec_id]\"";
 
@@ -180,7 +150,7 @@
                 <textarea name="txtDescricao" id="descricao" cols="30" rows="10"
                     placeholder="Descreva aqui o seu projeto..."></textarea>
                 <input hidden value="10" name="servico">
-                <input hidden value="<?php echo $_GET['cos'];?>" name="costureira">
+                <input hidden value="<?php echo $_GET['cos']; ?>" name="costureira">
 
                 <button type="submit">Inserir item no carrinho</button>
             </form>

@@ -37,6 +37,7 @@ section {
   --preto: #303030;
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
+  --bege-escuro: #e1d5c7;
   --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
@@ -121,7 +122,7 @@ table {
   display: flex;
 }
 
-.cost_text {
+.cli_text {
   width: max-content;
   height: 90px;
   scale: 0.5;
@@ -155,6 +156,120 @@ table {
 
 .logo_header:hover {
   scale: 1.05;
+}
+
+/* BOTÃO DE BUSCA*/
+
+.buttons_home {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.button_orc {
+  display: flex;
+  width: min-content;
+  margin: 2rem auto;
+  background-color: var(--roxo-principal);
+  color: var(--bege);
+  text-decoration: none;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  padding: 0.6rem 3rem;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Animações */
+@keyframes expandSearch {
+  0% {
+    width: 24px;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    width: 320px;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.search-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0;
+  align-self: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #d89ffd;
+  border-radius: 25px;
+  padding: 15px 50px 15px 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: expandSearch 0.9s ease-out forwards;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.search-box:hover {
+  box-shadow: 0 4px 12px #d89ffd;
+  transform: translateY(-1px);
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px 0 -20px;
+  transition: transform 0.3s ease;
+}
+
+.search-icon:hover {
+  transform: scale(1.1);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 8px 10px;
+  background: transparent;
+  animation: fadeIn 0.7s ease-out 0.7s forwards;
+  opacity: 0;
+  color: #b450f5;
+  cursor: text;
+}
+
+.search-input::placeholder {
+  color: #b450f5;
+  white-space: nowrap;
+}
+
+.search-input:focus::placeholder {
+  color: #b450f5;
 }
 
 /*ICON*/
@@ -196,120 +311,163 @@ table {
 /* BODY DO SITE                                                              */
 /* ========================================================================== */
 
-/*TÍTULO*/
-
-.title {
-  font-size: 30px;
-  margin: 30px 0 20px 50px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-/* ========================================================================== */
-/* CLIENTE LOJA                                                               */
-/* ========================================================================== */
-.info-loja {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-.loja-header {
-  display: flex;
-  margin: 30px 0;
-  gap: 20px;
-}
-
-.loja-imagem {
-  width: 70px;
-  height: 70px;
-  border-radius: 15px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.loja-nome {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--preto);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.servico-btn {
-  background-color: var(--roxo-claro);
-  color: var(--preto);
-  border-radius: 25px;
-  height: 2rem;
-  width: 15rem;
-  margin-left: auto;
-  padding:  0 40px;
-  font-size: 16px;
-}
-
-/* Serviços */
-.servicos_grid {
+.secoes {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
-}
 
-.servico-card {
-  background-color: #c0b9b9;
-  width: 60%;
-  border-radius: 5px;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  margin: 0 auto 20px auto;
-}
+  .loja-header {
+    display: flex;
+    margin: 2rem 0 2.5rem 0;
+    width: 80%;
+    gap: 20px;
 
-.servico-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
+    .loja-imagem {
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
 
-.servico-icon-container {
-  background-color: white;
-  border-radius: 12px;
-  padding: 15px;
-  flex-shrink: 0;
-}
+    .loja-nome {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--preto);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
 
-.servico-icon {
-  width: 60px;
-  height: 60px;
-  color: var(--roxo-principal);
-}
+    .servico-btn {
+      background-color: var(--roxo-claro);
+      color: var(--preto);
+      border-radius: 25px;
+      height: 2rem;
+      width: 17rem;
+      margin-left: auto;
+      padding: 0 40px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
 
-.servico-nome {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--preto);
-  margin-bottom: 5px;
-}
+  .titulo_secoes {
+    width: 80%;
+    font-size: 1.2rem;
+    display: inline-flex;
+    justify-content: space-between;
+    align-content: center;
+    color: var(--cinza-escuro);
+    margin: 2rem 0;
+    .costureira {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .endereco {
+      text-align: end;
+      max-width: 30rem;
+      max-height: 4rem;
+      height: fit-content;
+    }
+  }
 
-.servico-descricao {
-  font-size: 14px;
-  margin-left: auto;
-  color: var(--cinza-escuro);
-}
+  .catalogo_box {
+    width: 80%;
+    background-color: var(--bege-escuro);
+    padding: 2rem;
+    border-radius: 10px;
 
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .imagem_nome {
+      margin: 1rem 0;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+
+      .peca-icon-container {
+        background-color: white;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 12px;
+        padding: 7px;
+        margin: 0 1rem 0 0;
+        .peca-icon {
+          width: 43px;
+          height: 43px;
+          color: var(--roxo-principal);
+        }
+      }
+
+      .peca_nome {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+
+    .peca_descricao{
+      padding: 0.5rem;
+      border: var(--bege-claro) dashed 3px;
+      border-radius: 10px;
+      min-height: 2rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 5rem;
+      border-radius: 10px;
+      border: 1px solid var(--roxo-principal);
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      background-color: var(--bege);
+      resize: none;
+    }
+
+    .peca_valor {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.3rem;
+      font-weight: bold;
+      width: 100%;
+      text-align: right;
+      color: var(--preto);
+    }
+
+    .btn_confimar {
+      display: block;
+      width: fit-content;
+      height: 3rem;
+      padding: 0 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: white;
+      margin: 10px auto;
+      background-color: var(--roxo-principal);
+      border-radius: 10px;
+    }
+
+    .btn_confimar:hover {
+      background-color: var(--roxo-principal);
+      scale: 1.05;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+  }
+}
 
 /* ==========================================================================
-  FOOTER
+    FOOTER
    ========================================================================== */
 .footer {
   width: 100%;
   background-color: var(--preto);
   padding: 4rem 0 2rem;
+  margin-top: 200px;
 }
 
 .footer-logo {
@@ -396,4 +554,5 @@ table {
 
 .footer-bottom p {
   color: var(--roxo-claro);
-  font-size: 0.9em; }
+  font-size: 0.9em;
+}

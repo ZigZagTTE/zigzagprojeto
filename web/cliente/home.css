@@ -37,6 +37,7 @@ section {
   --preto: #303030;
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
+  --bege-escuro: #e1d5c7;
   --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
@@ -121,7 +122,7 @@ table {
   display: flex;
 }
 
-.cost_text {
+.cli_text {
   width: max-content;
   height: 90px;
   scale: 0.5;
@@ -491,7 +492,7 @@ E ASSIM POR DIANTE*/
 }
 
 .store-card {
-  background: rgb(192, 185, 185);
+  background-color: var(--bege-escuro);
   border-radius: 15px;
   padding: 20px;
   min-width: 200px;

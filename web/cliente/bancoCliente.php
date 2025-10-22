@@ -77,18 +77,15 @@ function buscarServicosDaCostureira($conexao, $cos_id)
     }
 }
 
-function buscarPecasDoServicoDaCostureira($conexao, $cos_id, $ser_id)
+function buscarCatalgosDaCostureiraPorServico($conexao, $cos_id, $ser_id)
 {
-    // Preparar consulta para evitar SQL injection
+
     $queryCatalogos = "SELECT *
-                        FROM tbl_peca
-                        WHERE pec_id = ANY 
-                        (
-                        SELECT pec_id
-                        FROM tbl_costureiro AS cos JOIN tbl_catalogo AS cat ON cos.cos_id = cat.cos_id
+                        FROM tbl_costureiro AS cos 
+                        JOIN tbl_catalogo AS cat ON cos.cos_id = cat.cos_id
+                        JOIN tbl_peca as pec ON pec.pec_id = cat.pec_id
                         WHERE cos.cos_id = $cos_id 
-                        AND ser_id = $ser_id
-                        );";
+                        AND cat.ser_id = $ser_id";
 
     $resultadoCatalogos = mysqli_query($conexao, $queryCatalogos);
 

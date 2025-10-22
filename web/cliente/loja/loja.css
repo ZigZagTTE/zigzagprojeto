@@ -37,6 +37,7 @@ section {
   --preto: #303030;
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
+  --bege-escuro: #e1d5c7;
   --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
@@ -736,7 +737,7 @@ E ASSIM POR DIANTE*/
 
 .servico-card {
   display: flex;
-  background-color: #c0b9b9;
+  background-color: var(--bege-escuro);
   border-radius: 15px;
   padding: 20px;
   text-decoration: none;
@@ -786,10 +787,10 @@ E ASSIM POR DIANTE*/
 }
 
 .personalizado_grid {
-  background-color: #c0b9b9;
+  background-color: var(--bege-escuro);
   display: block;
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
   justify-self: center;
   flex-direction: column;
   justify-content: center;

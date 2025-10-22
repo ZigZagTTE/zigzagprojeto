@@ -37,6 +37,7 @@ section {
   --preto: #303030;
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
+  --bege-escuro: #e1d5c7;
   --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
@@ -121,7 +122,7 @@ table {
   display: flex;
 }
 
-.cost_text {
+.cli_text {
   width: max-content;
   height: 90px;
   scale: 0.5;
@@ -243,15 +244,15 @@ table {
   color: var(--preto);
   border-radius: 25px;
   height: 2rem;
-  width: 15rem;
+  width: 17rem;
   margin-left: auto;
-  padding:  0 40px;
+  padding: 0 40px;
   font-size: 16px;
   font-weight: bold;
 }
 
 /* Serviços */
-.servicos_grid {
+.pecas_grid {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -259,10 +260,10 @@ table {
   padding: 20px;
 }
 
-.servico-card {
-  background-color: #c0b9b9;
+.peca-card {
+  background-color: var(--bege-escuro);
   width: 60%;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 15px;
   display: flex;
   align-items: center;
@@ -270,39 +271,45 @@ table {
   transition: all 0.3s ease;
   cursor: pointer;
   margin: 0 auto 20px auto;
+  text-decoration: none;
 }
 
-.servico-card:hover {
+.peca-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-.servico-icon-container {
+.peca-icon-container {
   background-color: white;
   border-radius: 12px;
   padding: 15px;
   flex-shrink: 0;
+  .peca-icon {
+    width: 60px;
+    height: 60px;
+    color: var(--roxo-principal);
+  }
 }
 
-.servico-icon {
-  width: 60px;
-  height: 60px;
-  color: var(--roxo-principal);
-}
-
-.servico-nome {
-  font-size: 20px;
-  font-weight: bold;
+.peca-info {
+  font-size: 18px;
+  font-weight: normal;
   color: var(--preto);
   margin-bottom: 5px;
+
+  .nome {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
-.servico-descricao {
-  font-size: 14px;
+.peca-valor {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
   margin-left: auto;
-  color: var(--cinza-escuro);
+  color: var(--preto);
 }
-
 
 /* ==========================================================================
   FOOTER
@@ -397,4 +404,5 @@ table {
 
 .footer-bottom p {
   color: var(--roxo-claro);
-  font-size: 0.9em; }
+  font-size: 0.9em;
+}
