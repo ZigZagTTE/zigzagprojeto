@@ -37,6 +37,7 @@ if (array_key_exists('sair', $_POST)) {
             $uploadDir = '../../assets/uploads/profilepictures/';
             $uploadDestino = $uploadDir . $imagemNomeNovo;
             move_uploaded_file($imagemTmp, $uploadDestino);
+            unlink('../../assets/uploads/profilepictures/' . $_SESSION['cli_perfil']);
         }
 
         $queryTesteEmail = "SELECT cli_email "
