@@ -64,39 +64,33 @@
         <div class="carousel-warp-costurar">
             <div class="carousel-section" id="carousel1">
                 <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/agulha.png" alt="Pequenas costuras">
+                    <img class="service-image" src="../assets/images/usu_img/servicos/agulha.png" alt="Pequenas costuras">
                     <div class="service-info">
                         <p class="service-name">Pequenas costuras</p>
                     </div>
                 </a>
                 <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/ziper.png" alt="ziper">
+                    <img class="service-image" src="../assets/images/usu_img/servicos/ziper.png" alt="ziper">
                     <div class="service-info">
                         <p class="service-name">Trocas de zíper</p>
                     </div>
                 </a>
                 <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/tecido.png" alt="Pequenas costuras">
+                    <img class="service-image" src="../assets/images/usu_img/servicos/tecido.png" alt="Pequenas costuras">
                     <div class="service-info">
                         <p class="service-name">Remendos</p>
                     </div>
                 </a>
                 <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/camisa.png" alt="camisa">
+                    <img class="service-image" src="../assets/images/usu_img/pecas/camisa.png" alt="camisa">
                     <div class="service-info">
                         <p class="service-name">Reforma de camisa</p>
                     </div>
                 </a>
                 <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/calca.png" alt="Pequenas costuras">
+                    <img class="service-image" src="../assets/images/usu_img/pecas/calcas.png" alt="Pequenas costuras">
                     <div class="service-info">
                         <p class="service-name">Reforma de calça</p>
-                    </div>
-                </a>
-                <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/saia.png" alt="Pequenas costuras">
-                    <div class="service-info">
-                        <p class="service-name">Reforma de saia</p>
                     </div>
                 </a>
             </div>
@@ -123,42 +117,31 @@
         <div class="carousel-warp-criar">
             <div class="carousel-section" id="carousel2">
                 <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/camisa.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/pecas/camisa.png" alt="Remendos">
                     <div class="service-info">
                         <p class="service-name">Camisas</p>
                     </div>
 
                 </a>
                 <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/calça.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/pecas/calcas.png" alt="Remendos">
                     <div class="service-info">
                         <p class="service-name">Calças</p>
                     </div>
                 </a>
                 <a href="precos /" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/vestido.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/pecas/vestido.png" alt="Remendos">
                     <div class="service-info">
                         <p class="service-name">Vestidos</p>
                     </div>
                 </a>
                 <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/calca.png" alt="Remendos">
+                    <img class="service-image" src="../assets/images/usu_img/pecas/calcas.png" alt="Remendos">
                     <div class="service-info">
                         <p class="service-name">Calças</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/saia.png" alt="Remendos">
-                    <div class="service-info">
-                        <p class="service-name">Saias</p>
-                    </div>
-                </a>
-                <a href="precos/" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/bone.png" alt="Remendos">
-                    <div class="service-info">
-                        <p class="service-name">Bonés</p>
-                    </div>
-                </a>
+
             </div>
         </div>
         <div class="carousel-controls-criar">
