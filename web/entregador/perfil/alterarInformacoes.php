@@ -37,7 +37,9 @@ if (array_key_exists('sair', $_POST)) {
             $uploadDir = '../../assets/uploads/profilepictures/';
             $uploadDestino = $uploadDir . $imagemNomeNovo;
             move_uploaded_file($imagemTmp, $uploadDestino);
-            unlink('../../assets/uploads/profilepictures/' . $_SESSION['entgd_perfil']);
+            if ($_SESSION['cli_perfil'] != 'default.png') {
+                unlink('../../assets/uploads/profilepictures/' . $_SESSION['cli_perfil']);
+            }
         }
 
         $queryTesteEmail = "SELECT entgd_email "
@@ -74,7 +76,8 @@ if (array_key_exists('sair', $_POST)) {
 }
 mysqli_close($conexao);
 
-function apagarSessao() {
+function apagarSessao()
+{
     unset($_SESSION["entgd_id"]);
     unset($_SESSION["entgd_email"]);
     unset($_SESSION["entgd_nome"]);
@@ -83,4 +86,3 @@ function apagarSessao() {
     unset($_SESSION["entgd_telefone"]);
     unset($_SESSION["entgd_cnh"]);
 }
-?>
