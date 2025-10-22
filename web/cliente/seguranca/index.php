@@ -33,7 +33,7 @@
       <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="costureiro">
+        <img class="cli_text" src="../../assets\images\usu_img\ZigZag.png" alt="costureiro">
       </a>
     </div>
     <nav class="nav_header">
@@ -91,9 +91,9 @@
           <input id="mostrarSenha" type="checkbox">
           <span class="checkmark"></span>
         </label>
-        
+
         <input id="btnCancelarSenha" type="button" class="btn" value="Cancelar">
-        
+
         <input disabled id="btnSalvarSenha" type="submit" name="salvar" class="btn-salvar" value="Salvar senha">
       </div>
 

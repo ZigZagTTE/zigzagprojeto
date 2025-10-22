@@ -30,7 +30,7 @@
       <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="cliente">
+        <img class="cli_text" src="../../assets\images\usu_img\ZigZag.png" alt="cliente">
       </a>
     </div>
     <nav class="nav_header">
