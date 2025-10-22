@@ -96,15 +96,14 @@ CREATE TABLE IF NOT EXISTS tbl_peca
 -- Valores definidos para peças
 
 INSERT INTO tbl_peca (pec_nome)
-VALUES  ('blusa'),
-        ('camisa (com botão)'),
-        ('camiseta (sem botão)'),
-        ('moletom'),
-        ('casaco'),
-        ('macacão'),
-        ('calças'),
-        ('shorts'),
-        ('bermuda');
+VALUES  ('Camisa (com botão)'),
+        ('Camiseta (sem botão)'),
+        ('Casaco'),
+        ('Macacão'),
+        ('Calças'),
+        ('Shorts'),
+        ('Bermuda'),
+        ('Vestido');
 
 CREATE TABLE IF NOT EXISTS tbl_servico
 (
@@ -123,8 +122,8 @@ VALUES  ('Pequenas costuras'),
         ('Roupas ornamentadas'),
         ('Remendos'),
         ('Bordados'),
-        ('Patchwork');
---        ('criação');
+        ('Patchwork'),
+        ('Criação');
 
 CREATE TABLE IF NOT EXISTS tbl_catalogo
 (

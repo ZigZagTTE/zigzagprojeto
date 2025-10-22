@@ -37,6 +37,7 @@ section {
   --preto: #303030;
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
+  --bege-escuro: #e1d5c7;
   --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
@@ -116,6 +117,19 @@ table {
   box-sizing: border-box;
 }
 
+.header_logo a {
+  text-decoration: none;
+  display: flex;
+}
+
+.cli_text {
+  width: max-content;
+  height: 90px;
+  scale: 0.5;
+  margin: 0 0 -20px -80px;
+  align-self: flex-end;
+}
+
 .nav_header {
   width: 100%;
   display: flex;
@@ -126,19 +140,12 @@ table {
   box-sizing: border-box;
 }
 
-.ent_text {
-  width: max-content;
-  height: 100px;
-  margin: 0 0 -25px -60px;
-  scale: 0.5;
-  align-self: flex-end;
-}
-
 .zigzag_txt {
   color: #f5e9db;
   font-family: "Iansui";
   font-size: 40px;
-  align-self: center;
+  align-self: last baseline;
+  margin: 0 0 5px 0;
 }
 
 .logo_header {
@@ -149,6 +156,120 @@ table {
 
 .logo_header:hover {
   scale: 1.05;
+}
+
+/* BOTÃO DE BUSCA*/
+
+.buttons_home {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.button_orc {
+  display: flex;
+  width: min-content;
+  margin: 2rem auto;
+  background-color: var(--roxo-principal);
+  color: var(--bege);
+  text-decoration: none;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  padding: 0.6rem 3rem;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Animações */
+@keyframes expandSearch {
+  0% {
+    width: 24px;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    width: 320px;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.search-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0;
+  align-self: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #d89ffd;
+  border-radius: 25px;
+  padding: 15px 50px 15px 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: expandSearch 0.9s ease-out forwards;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.search-box:hover {
+  box-shadow: 0 4px 12px #d89ffd;
+  transform: translateY(-1px);
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px 0 -20px;
+  transition: transform 0.3s ease;
+}
+
+.search-icon:hover {
+  transform: scale(1.1);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 8px 10px;
+  background: transparent;
+  animation: fadeIn 0.7s ease-out 0.7s forwards;
+  opacity: 0;
+  color: #b450f5;
+  cursor: text;
+}
+
+.search-input::placeholder {
+  color: #b450f5;
+  white-space: nowrap;
+}
+
+.search-input:focus::placeholder {
+  color: #b450f5;
 }
 
 /*ICON*/
@@ -178,20 +299,12 @@ table {
 }
 
 .icon_img_perfil {
+  object-fit: cover;
   width: 48px;
   height: 48px;
   border-radius: 100%;
   justify-content: center;
   box-shadow: #303030 0px 0px 8px;
-  object-fit: cover;
-}
-
-.ent_text {
-  width: max-content;
-  height: 100px;
-  margin: 0 0 -25px -60px;
-  scale: 0.5;
-  align-self: flex-end;
 }
 
 /* ========================================================================== */
@@ -205,51 +318,140 @@ table {
   justify-content: center;
   align-items: center;
 
+  .loja-header {
+    display: flex;
+    margin: 2rem 0 2.5rem 0;
+    width: 80%;
+    gap: 20px;
+
+    .loja-imagem {
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .loja-nome {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--preto);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .servico-btn {
+      background-color: var(--roxo-claro);
+      color: var(--preto);
+      border-radius: 25px;
+      height: 2rem;
+      width: 17rem;
+      margin-left: auto;
+      padding: 0 40px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
 
   .titulo_secoes {
-    font-size: 2rem;
-    color: var(--preto);
-    margin: 2rem 0;
-  }
-
-  .subtitulo_secoes {
-    width: 100%;
+    width: 80%;
     font-size: 1.2rem;
     display: inline-flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-content: center;
     color: var(--cinza-escuro);
-    margin-bottom: 1rem;
+    margin: 2rem 0;
+    .costureira {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .endereco {
+      text-align: end;
+      max-width: 30rem;
+      max-height: 4rem;
+      height: fit-content;
+    }
   }
 
-  .carrinho{
+  .catalogo_box {
     width: 80%;
-    background-color: var(--bege-claro);
+    background-color: var(--bege-escuro);
     padding: 2rem;
-    border: 3px solid #e1d5c7;
+    border-radius: 10px;
 
-    p{
-      margin-bottom: 1rem ;
+    p {
+      margin-bottom: 1rem;
     }
 
-    .descricao{
-      background-color: #e1d5c7;
+    .imagem_nome {
+      margin: 1rem 0;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+
+      .peca-icon-container {
+        background-color: white;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 12px;
+        padding: 7px;
+        margin: 0 1rem 0 0;
+        .peca-icon {
+          width: 43px;
+          height: 43px;
+          color: var(--roxo-principal);
+        }
+      }
+
+      .peca_nome {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+
+    .peca_descricao{
+      padding: 0.5rem;
+      border: var(--bege-claro) dashed 3px;
+      border-radius: 10px;
+      min-height: 2rem;
+    }
+
+    textarea {
       width: 100%;
-      height: 140px;
-      padding: 1rem;   
+      height: 5rem;
+      border-radius: 10px;
+      border: 1px solid var(--roxo-principal);
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      background-color: var(--bege);
+      resize: none;
     }
 
-    .pedido{
+    .peca_valor {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.3rem;
+      font-weight: bold;
+      width: 100%;
+      text-align: right;
+      color: var(--preto);
+    }
+
+    .btn_confimar {
       display: block;
-      width: max-content;
+      width: fit-content;
+      height: 3rem;
+      padding: 0 20px;
       text-decoration: none;
-      color: #000;
+      font-size: 1.1rem;
+      color: white;
       margin: 10px auto;
-      background-color: var(--roxo-claro);
-      padding: 10px;
+      background-color: var(--roxo-principal);
       border-radius: 10px;
     }
 
-    .pedido:hover{
+    .btn_confimar:hover {
       background-color: var(--roxo-principal);
       scale: 1.05;
       transition: all 0.3s ease;

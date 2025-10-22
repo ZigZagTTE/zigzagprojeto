@@ -37,6 +37,7 @@ section {
   --preto: #303030;
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
+  --bege-escuro: #e1d5c7;
   --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
@@ -354,10 +355,6 @@ E ASSIM POR DIANTE*/
   gap: 8px;
 }
 
-
-
-
-
 /*LILNHA*/
 
 .ponto {
@@ -449,7 +446,6 @@ E ASSIM POR DIANTE*/
   grid-row-start: 3;
   margin: auto;
 }
-
 
 .carousel-controls-costurar {
   margin: 10px auto auto auto;
@@ -606,23 +602,6 @@ E ASSIM POR DIANTE*/
   gap: 10px;
 }
 
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.star {
-  color: #ffd700;
-  font-size: 20px;
-}
-
-.rating-text {
-  font-size: 18px;
-  color: var(--preto);
-  font-weight: bold;
-}
-
 .loja-detalhes {
   font-size: 18px;
   color: var(--cinza-escuro);
@@ -758,7 +737,7 @@ E ASSIM POR DIANTE*/
 
 .servico-card {
   display: flex;
-  background-color: #c0b9b9;
+  background-color: var(--bege-escuro);
   border-radius: 15px;
   padding: 20px;
   text-decoration: none;
@@ -807,39 +786,50 @@ E ASSIM POR DIANTE*/
   cursor: inherit;
 }
 
-.personalizado_grid{
-  background-color: #c0b9b9;
-  display: flex;
+.personalizado_grid {
+  background-color: var(--bege-escuro);
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  justify-self: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   border-radius: 20px;
+  padding: 50px 50px 25px 50px;
 
-  h1{
-    font-size: 24px;
+  h1 {
+    font-size: 20px;
     color: var(--preto);
     margin: 30px 10px 10px 10px;
   }
 
-  p{
+  p {
     font-size: 24px;
     color: var(--preto);
     margin: 10px;
   }
 
-  textarea{
-    width: 80%;
+  .input {
+    border-radius: 10px;
+    border: 1px solid var(--roxo-principal);
+    background-color: var(--bege);
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  textarea {
+    width: 100%;
     height: 200px;
     border-radius: 10px;
+    border: 1px solid var(--roxo-principal);
     padding: 10px;
     font-size: 16px;
-    border: none;
     margin-bottom: 20px;
     background-color: var(--bege);
     resize: none;
-  } 
+  }
 
-  
   .file_customizada {
     margin: 10px;
     padding: 10px;
@@ -848,7 +838,7 @@ E ASSIM POR DIANTE*/
     color: var(--preto);
     font-size: 16px;
   }
-  
+
   button {
     background-color: var(--roxo-principal);
     color: var(--bege);
@@ -955,4 +945,5 @@ E ASSIM POR DIANTE*/
 
 .footer-bottom p {
   color: var(--roxo-claro);
-  font-size: 0.9em; }
+  font-size: 0.9em;
+}
