@@ -74,12 +74,13 @@ if (isset($_GET["cancelarEntrada"])) {
         apagarDadosTemps();
 
         header("Location: ../");
-    } else if ($_SESSION["senhasErradas"] >= 3) {
-        unset($_SESSION["senhasErradas"]);
-        header("Location: ./?erroSenha=2");
     } else {
         $_SESSION["senhasErradas"] += 1;
-        header("Location: ./?erroSenha=1&senha=$senhaHash");
+        header("Location: ./?erroSenha=".$_SESSION["senhasErradas"]);
+    }
+    if ($_SESSION["senhasErradas"] > 2) {
+        apagarDadosTemps();
+        header("Location: ./");
     }
 }
 mysqli_close($conexao);
