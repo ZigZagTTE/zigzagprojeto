@@ -21,9 +21,6 @@
     require_once "../../conexao.php";
     require_once "pedidoInfo.php";
     $pedido = pedidoInfo($conexao, $ped_id);
-
-    echo $_SESSION["entgd_id"];
-    echo $ped_id;
     ?>
 </head>
 
