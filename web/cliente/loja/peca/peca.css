@@ -117,17 +117,21 @@ table {
   box-sizing: border-box;
 }
 
-.header_logo a {
-  text-decoration: none;
-  display: flex;
+.header_logo {
+  
+  a {
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+  }
 }
 
 .cli_text {
+  display: inline-block;
   width: max-content;
   height: 90px;
   scale: 0.5;
   margin: 0 0 -20px -80px;
-  align-self: flex-end;
 }
 
 .nav_header {
@@ -144,8 +148,7 @@ table {
   color: #f5e9db;
   font-family: "Iansui";
   font-size: 40px;
-  align-self: last baseline;
-  margin: 0 0 5px 0;
+  align-self: center;
 }
 
 .logo_header {
@@ -165,6 +168,10 @@ table {
   padding-right: 20px;
   color: #f5e9db;
   transition: all 0.3s ease;
+  font-size: 2em;
+  i {
+    font-size: inherit;
+  }
 }
 
 .icon::after {
@@ -211,6 +218,7 @@ table {
 /* ========================================================================== */
 .info-loja {
   max-width: 1200px;
+  min-height: 50vh;
   margin: auto;
   padding: 0 20px;
 }

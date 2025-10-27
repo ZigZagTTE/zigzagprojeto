@@ -2,7 +2,6 @@
 
 function buscarListaDeCostureiras($conexao)
 {
-    // Preparar consulta para evitar SQL injection
     $queryCostureiras = "SELECT *
                         FROM tbl_costureiro;";
 
@@ -18,7 +17,6 @@ function buscarListaDeCostureiras($conexao)
 
 function buscarListaDeCostureirasCriadoras($conexao)
 {
-    // Preparar consulta para evitar SQL injection
     $queryCostureiras = "SELECT * 
                         FROM tbl_costureiro
                         WHERE cos_id = ANY
@@ -40,15 +38,18 @@ function buscarListaDeCostureirasCriadoras($conexao)
 
 function buscarCostureira($conexao, $cos_id)
 {
-    $queryCatalogos =   "SELECT * 
+    $queryCostureira =   mysqli_prepare($conexao,"SELECT * 
                         FROM tbl_costureiro 
-                        WHERE cos_id = $cos_id;";
+                        WHERE cos_id = ?;");
 
-    $resultadoCatalogos = mysqli_query($conexao, $queryCatalogos);
+    mysqli_stmt_bind_param($queryCostureira, "i", $cos_id);
 
+    mysqli_stmt_execute($queryCostureira);
 
-    if ($resultadoCatalogos) {
-        return mysqli_fetch_assoc($resultadoCatalogos);
+    $resultadoCostureira = mysqli_stmt_get_result( $queryCostureira);
+
+    if ($resultadoCostureira) {
+        return mysqli_fetch_assoc($resultadoCostureira);
     } else {
         return false;
     }
@@ -57,17 +58,46 @@ function buscarCostureira($conexao, $cos_id)
 function buscarServicosDaCostureira($conexao, $cos_id)
 {
     // Preparar consulta para evitar SQL injection
-    $queryCatalogos = "SELECT *
+    $queryServicos = mysqli_prepare($conexao, "SELECT *
                         FROM tbl_servico
                         WHERE ser_id = ANY 
                         (
                         SELECT ser_id
                         FROM tbl_costureiro AS cos JOIN tbl_catalogo AS cat ON cos.cos_id = cat.cos_id
-                        WHERE cos.cos_id = $cos_id 
+                        WHERE cos.cos_id = ?
                         AND ser_id != 10
-                        );";
+                        );");
 
-    $resultadoCatalogos = mysqli_query($conexao, $queryCatalogos);
+    mysqli_stmt_bind_param($queryServicos, "i", $cos_id);
+
+    mysqli_stmt_execute($queryServicos);
+
+    $resultadoServicos = mysqli_stmt_get_result( $queryServicos);
+
+
+    if ($resultadoServicos) {
+        return mysqli_fetch_all($resultadoServicos, MYSQLI_ASSOC);
+    } else {
+        return false;
+    }
+}
+
+function buscarCatalogosDaCostureiraPorServico($conexao, $cos_id, $ser_id)
+{
+
+    $queryCatalogos = mysqli_prepare($conexao, "SELECT *
+                        FROM tbl_costureiro AS cos 
+                        JOIN tbl_catalogo AS cat ON cos.cos_id = cat.cos_id
+                        JOIN tbl_peca as pec ON pec.pec_id = cat.pec_id
+                        JOIN tbl_servico as ser ON ser.ser_id = cat.ser_id
+                        WHERE cos.cos_id = ? 
+                        AND cat.ser_id = ?");
+
+    mysqli_stmt_bind_param($queryCatalogos, "ii", $cos_id, $ser_id);
+
+    mysqli_stmt_execute($queryCatalogos);
+
+    $resultadoCatalogos = mysqli_stmt_get_result($queryCatalogos);
 
 
     if ($resultadoCatalogos) {
@@ -77,21 +107,25 @@ function buscarServicosDaCostureira($conexao, $cos_id)
     }
 }
 
-function buscarCatalgosDaCostureiraPorServico($conexao, $cos_id, $ser_id)
+function buscarInformacoesCatalogo($conexao, $cat_id)
 {
 
-    $queryCatalogos = "SELECT *
+    $queryInfoCatalogo = mysqli_prepare($conexao, "SELECT *
                         FROM tbl_costureiro AS cos 
                         JOIN tbl_catalogo AS cat ON cos.cos_id = cat.cos_id
                         JOIN tbl_peca as pec ON pec.pec_id = cat.pec_id
-                        WHERE cos.cos_id = $cos_id 
-                        AND cat.ser_id = $ser_id";
+                        JOIN tbl_servico as ser ON ser.ser_id = cat.ser_id
+                        WHERE cat_id = ?");
 
-    $resultadoCatalogos = mysqli_query($conexao, $queryCatalogos);
+    mysqli_stmt_bind_param($queryInfoCatalogo, "i", $cat_id);
+
+    mysqli_stmt_execute($queryInfoCatalogo);
+
+    $resultadoInfoCatalogo = mysqli_stmt_get_result( $queryInfoCatalogo);
 
 
-    if ($resultadoCatalogos) {
-        return mysqli_fetch_all($resultadoCatalogos, MYSQLI_ASSOC);
+    if ($resultadoInfoCatalogo) {
+        return mysqli_fetch_assoc($resultadoInfoCatalogo);
     } else {
         return false;
     }

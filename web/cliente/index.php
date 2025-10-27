@@ -29,10 +29,10 @@
     <!-- HEADER -->
     <header class="top">
         <div class="header_logo">
-            <a href="../"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
+            <a href="./"><img class="logo_header" src="../assets/svg/logo.svg" width="90" height="90"
                     alt="Logo ZigZag">
                 <p class="zigzag_txt">igzag</p>
-                <img class="cli_text" src="../assets/images/usu_img/ZigZag.png" alt="costureiro">
+                <img class="cli_text" src="../assets/images/usu_img/ZigZag.png" alt="cliente">
             </a>
         </div>
         <nav class="nav_header">
@@ -40,13 +40,13 @@
                 <div class="search-container">
                     <div class="search-box">
                         <img src="../assets/svg/search.svg" alt="Buscar" class="search-icon">
-                        <input type="text" placeholder="Busque costureiras e faça seu orçamento!" class="search-input">
+                        <input type="text" placeholder="Busque costureiras aqui" class="search-input">
                     </div>
                 </div>
             </div>
         </nav>
-        <a class="icon" href="../"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-        <a class="icon" href="carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a> <!--carrinho-->
+        <a class="icon" href="./"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
+        <a class="icon" href="sacola/"><i class="fa-solid fa-bag-shopping"></i></a> <!--carrinho-->
         <a class="icon" href="perfil/"><img class="icon_img_perfil"
                 src="../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"></a> <!--user-->
     </header>
@@ -68,7 +68,7 @@
         <div class="carousel-warp-costurar">
             <div class="carousel-section" id="carousel1">
                 <?php foreach ($listaCostureiras as $costureira) { ?>
-                    <a href="loja/?cos=<?php echo $costureira['cos_id']; ?>"" class=" store-card">
+                    <a href="loja/?costureira=<?php echo $costureira['cos_id']; ?>"" class=" store-card">
                         <img class="store-image"
                             src="../assets/uploads/profilepictures/<?php echo $costureira['cos_perfil']; ?>">
                         <div class="store-info">
@@ -103,7 +103,7 @@
         <div class="carousel-warp-criar">
             <div class="carousel-section" id="carousel2">
                 <?php foreach ($listaCostureirasCriadoras as $costureira) { ?>
-                    <a href="loja/?cos=<?php echo $costureira['cos_id']; ?>" class=" store-card">
+                    <a href="loja/?costureira=<?php echo $costureira['cos_id']; ?>" class=" store-card">
                         <img class="store-image"
                             src="../assets/uploads/profilepictures/<?php echo $costureira['cos_perfil']; ?>">
                         <div class="store-info">
@@ -121,6 +121,7 @@
             <button class="carousel-btn right" data-carousel="carousel2">›</button>
         </div>
     </div>
+
 
     <!-- FOOTER -->
     <footer class="footer">
