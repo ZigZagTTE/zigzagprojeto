@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="endereco.css" />
+  <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="../home.css" />
   <link
     rel="icon"
@@ -31,7 +31,7 @@
     exit();
   }
 
-  $listaDePedidos = bancoEntrega($conexao, 1);
+  $listaDePedidos = bancoEntrega($conexao, $entgd_id = $_SESSION['entgd_id']);
 
   ?>
 </head>

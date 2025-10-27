@@ -56,7 +56,7 @@
         <a href="../perfil/" class="choice">
           <li><i class="fa-regular fa-user fa-lg" style="color: #fdf2e6;"></i>Meus dados</li>
         </a>
-        <a href="index.html" class="choice">
+        <a href="index.php" class="choice">
           <li><i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6;"></i>Segurança</li>
         </a>
         <a href="../entregas/" class="choice">

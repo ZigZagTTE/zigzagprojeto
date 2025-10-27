@@ -242,32 +242,6 @@ table {
   }
 }
 
-.etapa {
-  border: #e1d5c7 3px solid;
-  width: 90%;
-  height: 25%;
-  margin: 15px 0 auto 0;
-
-  .etapa-info{
-    justify-content: space-between;
-    display: flex;
-    margin-top: 12px;
-
-    p {
-    font-weight: bold;
-    font-size: 18px;
-    align-self: center;
-    width: fit-content;
-  }
-
-  span {
-    font-size: 16px;
-  }
-
-  }
-
-}
-
 .btn-aceitar {
     justify-self: end;
     align-self: end;

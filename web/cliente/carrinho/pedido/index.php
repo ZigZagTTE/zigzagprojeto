@@ -71,12 +71,6 @@
             </div>
         </div>
 
-        <div class="etapa">
-            <div class="etapa-info">
-                <p class="costureira">Etapa</p>
-                <span class="costureira">0</span>
-            </div>
-        </div>
         
         <div class="pedido">
             <div class="pedido-info">
@@ -86,7 +80,7 @@
             </div>
         </div>
 
-        <a href="pedido/" class="btn-aceitar">Confirmação de entrega</a>
+        <a href="finalizar/" class="btn-aceitar">Confirmação de entrega</a>
 
     </section>
 
