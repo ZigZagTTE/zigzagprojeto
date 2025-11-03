@@ -8,7 +8,7 @@ function bancoEntrega($conexao, $entgd_id)
     $queryEntrega = "SELECT *
         FROM tbl_entrega 
         INNER JOIN tbl_entregador ON tbl_entrega.entgd_id = tbl_entregador.entgd_id
-        INNER JOIN tbl_pedido ON tbl_entrega.entgd_id = tbl_entregador.entgd_id
+        INNER JOIN tbl_pedido ON tbl_entrega.ped_id = tbl_pedido.ped_id
         WHERE tbl_entregador.entgd_id = $entgd_id
         AND tbl_pedido.ped_viagens = 2
         AND tbl_pedido.ped_concluido = 1;";
