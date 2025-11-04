@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="carrinho.css" />
+  <link rel="stylesheet" href="sacola.css" />
   <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -38,11 +38,11 @@
     </nav>
     <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-    <a class="icon" href="../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    <a class="icon" href="./"><i class="fa-solid fa-bag-shopping"></i></i>
     </a>
     <!--carrinho-->
     <a class="icon" href="../perfil/"><img class="icon_img_perfil"
-        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
     </a>
     <!--user-->
   </header>

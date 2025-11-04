@@ -36,16 +36,19 @@
 <body>
   <!-- HEADER -->
   <header class="top">
-    <a href="../../index.php"><img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90"
-        alt="Logo ZigZag" /></a>
-    <p class="zigzag_txt">igzag</p>
+    <div class="header_logo">
+      <a href="../../index.php">
+        <img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90" alt="Logo ZigZag" />
+        <p class="zigzag_txt">igzag</p>
+        <img class="cli_text" src="../../../assets/images/usu_img/ZigZag.png" alt="cliente">
+      </a>
+    </div>
+
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a>
-    <!--casa-->
-    <a class="icon" href="../../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
-    <!--carrinho-->
+    <a class="icon" href="./"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
+    <a class="icon" href="../../sacola/"><i class="fa-solid fa-bag-shopping"></i></a> <!--carrinho-->
     <a class="icon" href="../../perfil/">
       <img class="icon_img_perfil" src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
         alt="Foto de perfil" />
@@ -89,7 +92,9 @@
           <input name="txtBairro" type="text" id="bairro" class="input"
             value="<?php echo $dados_endereco_unico["end_bairro"]; ?>" disabled />
           <p class="label">Complemento</p>
-          <textarea name="txtComplemento" id="complemento" class="input" rows="4" placeholder="Escreva no máximo 255 caracteres" disabled><?php echo $dados_endereco_unico["end_complemento"]; ?></textarea>
+          <textarea name="txtComplemento" id="complemento" class="input" rows="4"
+            placeholder="Escreva no máximo 255 caracteres"
+            disabled><?php echo $dados_endereco_unico["end_complemento"]; ?></textarea>
         </div>
 
         <div class="info_endereco_dois">
@@ -103,8 +108,8 @@
             <select name="txtEstado" id="estado" class="input" disabled>
               <?php
               $listaDosEstados = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
-              
-              for ($i=0; $i < 27; $i++) {
+
+              for ($i = 0; $i < 27; $i++) {
                 $codigoCategoria = $listaDosEstados[$i];
 
                 echo "<option value=\"$listaDosEstados[$i]\"";
@@ -127,11 +132,11 @@
       <div class="box_botoes">
         <div>
           <input id="btnAlterar" class="btn" type="button" value="Alterar endereço">
-          
+
           <input id="btnSalvarAlteracoes" class="btn-salvar" style="display:none;" type="submit" name="salvar"
             value="Salvar endereço">
         </div>
-        
+
         <input id="btnExcluir" type="button" class="btn-excluir" value="Excluir endereço">
       </div>
       <div class="popup">

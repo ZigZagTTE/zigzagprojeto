@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
   <link rel="stylesheet" href="perfil.css" />
-  <link rel="stylesheet" href="../home.css" />
   <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -27,7 +26,7 @@
   <!-- HEADER -->
   <header class="top">
     <div class="header_logo">
-      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+      <a href="../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
         <img class="cli_text" src="../../assets\images\usu_img\ZigZag.png" alt="cliente">
@@ -39,7 +38,7 @@
     <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i>
     </a>
     <!--casa-->
-    <a class="icon" href="../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    <a class="icon" href="../carrinho/"><i class="fa-solid fa-bag-shopping"></i></i>
     </a>
     <!--carrinho-->
     <a class="icon" href="index.php"><img class="icon_img_perfil"
@@ -65,7 +64,12 @@
         </a>
         <a href="../endereco/" class="choice">
           <li>
-            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereço
+            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereços
+          </li>
+        </a>
+        <a href="../pedidos" class="choice">
+          <li>
+            <i class="fa-solid fa-truck-fast" style="color: #fdf2e6"></i>Pedidos
           </li>
         </a>
       </ul>

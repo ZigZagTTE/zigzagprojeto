@@ -117,17 +117,21 @@ table {
   box-sizing: border-box;
 }
 
-.header_logo a {
-  text-decoration: none;
-  display: flex;
+.header_logo {
+  
+  a {
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+  }
 }
 
 .cli_text {
+  display: inline-block;
   width: max-content;
   height: 90px;
   scale: 0.5;
   margin: 0 0 -20px -80px;
-  align-self: flex-end;
 }
 
 .nav_header {
@@ -144,8 +148,7 @@ table {
   color: #f5e9db;
   font-family: "Iansui";
   font-size: 40px;
-  align-self: last baseline;
-  margin: 0 0 5px 0;
+  align-self: center;
 }
 
 .logo_header {
@@ -242,7 +245,8 @@ table {
 .search-icon {
   width: 24px;
   height: 24px;
-  margin: 0 5px 0 -20px;
+  margin: 0 5px 0 0px;
+  left: 5px;
   transition: transform 0.3s ease;
 }
 
@@ -279,6 +283,10 @@ table {
   padding-right: 20px;
   color: #f5e9db;
   transition: all 0.3s ease;
+  font-size: 2em;
+  i {
+    font-size: inherit;
+  }
 }
 
 .icon::after {
@@ -335,7 +343,7 @@ E ASSIM POR DIANTE*/
 
 .ponto {
   border: solid;
-  background-color: black;
+  color: var(--preto);
   border-radius: 50%;
   width: 10px;
   height: 10px;
@@ -356,8 +364,8 @@ E ASSIM POR DIANTE*/
 
 .linha_hr {
   flex: 1;
-  height: 5px;
-  background-color: black;
+  height: 4px;
+  background-color: var(--preto);
   border: none;
   margin: 0;
   border-radius: 2px;

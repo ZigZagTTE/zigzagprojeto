@@ -27,16 +27,18 @@ if (!isset($_SESSION['cli_id'])) {
 <body>
     <!-- HEADER -->
     <header class="top">
-        <a href="../../index.php"><img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90"
-                alt="Logo ZigZag" /></a>
-        <p class="zigzag_txt">igzag</p>
+        <div class="header_logo">
+            <a href="../../index.php">
+                <img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90" alt="Logo ZigZag" />
+                <p class="zigzag_txt">igzag</p>
+                <img class="cli_text" src="../../../assets/images/usu_img/ZigZag.png" alt="cliente">
+            </a>
+        </div>
         <nav class="nav_header">
             <div class="buttons_home"></div>
         </nav>
-        <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a>
-        <!--casa-->
-        <a class="icon" href="../../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
-        <!--carrinho-->
+        <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a><!--casa-->
+        <a class="icon" href="../../sacola/"><i class="fa-solid fa-bag-shopping"></i></a> <!--carrinho--><!--carrinho-->
         <a class="icon" href="../../perfil/">
             <img class="icon_img_perfil"
                 src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
@@ -103,14 +105,14 @@ if (!isset($_SESSION['cli_id'])) {
                         </select>
                     </div>
                     <p class="label">CEP</p>
-                    <input type="text" name="txtCEP" id="cep" class="input" placeholder="00000-000" pattern="[0-9]{5}-[0-9]{3}" />
+                    <input type="text" name="txtCEP" id="cep" class="input" placeholder="00000-000"
+                        pattern="[0-9]{5}-[0-9]{3}" />
                 </div>
             </div>
             <p class="erro_aviso"></p>
             <div class="box_botoes">
 
-                <input id="btnSalvar" class="btn-salvar" type="button" name="salvar"
-                    value="Salvar endereço">
+                <input id="btnSalvar" class="btn-salvar" type="button" name="salvar" value="Salvar endereço">
 
                 <a href="../"><input id="btnExcluir" type="button" class="btn" value="Cancelar"></a>
             </div>

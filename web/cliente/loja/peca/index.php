@@ -17,11 +17,16 @@
     require_once "../../../conexao.php";
     require_once "../../bancoCliente.php";
 
-    $idCostureira = $_GET['cos'];
-    $idServico = $_GET['ser'];
+    if (isset($_GET['costureira']) AND isset($_GET['servico'])) {
+        $idCostureira = $_GET['costureira'];
+        $idServico = $_GET['servico'];
 
-    $infoCostureira = buscarCostureira($conexao, $idCostureira);
-    $listaDeCatalogosDoServico = buscarCatalgosDaCostureiraPorServico($conexao, $idCostureira, $idServico);
+        $infoCostureira = buscarCostureira($conexao, $idCostureira);
+        $listaDeCatalogosDoServico = buscarCatalogosDaCostureiraPorServico($conexao, $idCostureira, $idServico);
+
+    } else {
+        header('Location: ../../');
+    }
     ?>
 </head>
 
@@ -33,7 +38,7 @@
             <a href="../../"><img class="logo_header" src="../../../assets/svg/logo.svg" width="90" height="90"
                     alt="Logo ZigZag">
                 <p class="zigzag_txt">igzag</p>
-                <img class="cli_text" src="../../../assets\images\usu_img\ZigZag.png" alt="costureiro">
+                <img class="cli_text" src="../../../assets/images/usu_img/ZigZag.png" alt="costureiro">
             </a>
         </div>
         <nav class="nav_header">
@@ -42,7 +47,7 @@
         <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i>
         </a>
         <!--casa-->
-        <a class="icon" href="../../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+        <a class="icon" href="../../carrinho/"><i class="fa-solid fa-bag-shopping"></i></i>
         </a>
         <!--carrinho-->
         <a class="icon" href="index.php"><img class="icon_img_perfil"
@@ -61,10 +66,7 @@
                 <?php echo $infoCostureira['cos_nome']; ?>
             </div>
             <button class="servico-btn">
-                <?php
-                $listaDeServicos = ['Pequenas costuras', 'Troca de zíper comum', 'Troca de zíper invisível', 'Ajuste de barra', 'Sob medida', 'Roupas ornamentadas', 'Remendos', 'Bordados', 'Patchwork'];
-                echo $listaDeServicos[$idServico - 1];
-                ?>
+                <?php echo $listaDeCatalogosDoServico[0]['ser_nome']; ?>
             </button>
         </div>
 
@@ -74,7 +76,7 @@
             foreach ($listaDeCatalogosDoServico as $catalogo) {
                 $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermudas.png', 'vestido.png']
                     ?>
-                <a class="peca-card" href="./confirmacao?<?php echo 'cat=' . $catalogo['cat_id']; ?>">
+                <a class="peca-card" href="./confirmacao?<?php echo 'catalogo=' . $catalogo['cat_id']; ?>">
                     <div class="peca-icon-container">
                         <img class="peca-icon"
                             src="../../../assets/images/usu_img/pecas/<?php echo $imagem[$catalogo['pec_id'] - 1]; ?>"

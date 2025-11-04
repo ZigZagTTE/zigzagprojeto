@@ -14,10 +14,33 @@
   <?php
 
   require_once "../../../../conexao.php";
+  require_once "../../../bancoCliente.php";
+
   session_start();
+
   if (!isset($_SESSION['cli_id'])) {
     header("Location: ../entrar");
     exit();
+  }
+
+  if (isset($_GET['catalogo'])) {
+    $catalogo = $_GET['catalogo'];
+    $descricao = "";
+  } else if (isset($_POST['catalogo'])) {
+    $catalogo = $_POST['catalogo'];
+    $descricao = $_POST['txtDescricao'];
+  } else {
+    header('Location: ../../../');
+  }
+
+  $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermudas.png', 'vestido.png'];
+
+  $infoCatalogo = buscarInformacoesCatalogo($conexao, $catalogo);
+
+  if (isset($_SESSION['sacola']) AND (string) $_SESSION['sacola']['idCostureira'] != $infoCatalogo['cos_id']) {
+    $isCostureiraDiferenteDaSacola = true;
+  } else {
+    $isCostureiraDiferenteDaSacola = false;
   }
 
   ?>
@@ -27,7 +50,7 @@
   <!-- HEADER -->
   <header class="top">
     <div class="header_logo">
-      <a href="../../../../"><img class="logo_header" src="../../../../assets/svg/logo.svg" width="90" height="90"
+      <a href="../../../"><img class="logo_header" src="../../../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
         <img class="cli_text" src="../../../../assets/images/usu_img/ZigZag.png" alt="cliente">
@@ -38,7 +61,7 @@
     </nav>
     <a class="icon" href="../../../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-    <a class="icon" href="../../../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    <a class="icon" href="../../../sacola/"><i class="fa-solid fa-bag-shopping"></i></i>
     </a>
     <!--carrinho-->
     <a class="icon" href="../../../perfil/"><img class="icon_img_perfil"
@@ -51,39 +74,51 @@
 
   <section class="secoes">
     <div class="loja-header">
-      <img src="../../../../assets/uploads/profilepictures/<?php echo 'default.png'; ?>" alt="Foto da loja"
-        class="loja-imagem">
+      <img src="../../../../assets/uploads/profilepictures/<?php echo $infoCatalogo['cos_perfil']; ?>"
+        alt="Foto da loja" class="loja-imagem">
       <div class="loja-nome">
-        <?php echo 'Costureira exemplo'; ?>
+        <?php echo $infoCatalogo['cos_nome']; ?>
       </div>
       <button class="servico-btn">
-        <?php
-        $listaDeServicos = ['Pequenas costuras', 'Troca de zíper comum', 'Troca de zíper invisível', 'Ajuste de barra', 'Sob medida', 'Roupas ornamentadas', 'Remendos', 'Bordados', 'Patchwork'];
-        echo $listaDeServicos[3 - 1];
-        ?>
+        <?php echo $infoCatalogo['ser_nome']; ?>
       </button>
     </div>
 
-    <div class="catalogo_box">
+    <form class="catalogo_box" method="POST" action="processarItem.php">
       <div class="imagem_nome">
         <div class="peca-icon-container">
-          <img class="peca-icon" src="../../../../assets/images/usu_img/pecas/<?php echo 'calcas.png'; ?>" alt="Imagem">
+          <img class="peca-icon"
+            src="../../../../assets/images/usu_img/pecas/<?php echo $imagem[$infoCatalogo['pec_id'] - 1]; ?>"
+            alt="Imagem">
         </div>
-        <p class="peca_nome">Calça</p>
+        <p class="peca_nome"><?php echo $infoCatalogo['pec_nome']; ?></p>
       </div>
 
-      <p class="peca_descricao">Descrição do Costureiro</p>
+      <p class="peca_descricao"><?php echo $infoCatalogo['cat_descricao']; ?></p>
 
       <textarea name="txtDescricao" id="descricao" cols="30" rows="10"
-        placeholder="Descreva aqui suas preferências..."></textarea>
+        placeholder="Descreva aqui suas preferências..."><?php echo $descricao; ?></textarea>
 
-      <p class="peca_valor">R$ 55.90</p>
+      <p class="peca_valor"><?php echo "R$ " . $infoCatalogo['cat_valor']; ?></p>
 
-      <button href="pedido/" class="btn_confimar">
-        Adicionar ao carrinho
+      <input hidden name="cos_id" value="<?php echo $infoCatalogo['cos_id']; ?>">
+      <input hidden name="cat_id" value="<?php echo $infoCatalogo['cat_id']; ?>">
+
+      <button type="submit" <?php echo $isCostureiraDiferenteDaSacola? 'disabled' : '' ?> class="btn_confimar">
+        Adicionar à sacola
       </button>
-    </div>
+    </form>
   </section>
+
+  <?php
+  if ($isCostureiraDiferenteDaSacola) {
+    ?>
+    <div class="popup">
+      <p class="label">
+        Você pode adicionar apenas itens da mesma costureira na sacola.
+      </p>
+    </div>
+  <?php } ?>
 
   <!-- FOOTER -->
   <footer class="footer">

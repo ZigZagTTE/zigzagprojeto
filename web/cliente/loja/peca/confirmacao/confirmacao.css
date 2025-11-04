@@ -41,6 +41,7 @@ section {
   --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
+  --vermelho-erro: #f73151;
 
   /* Breakpoints */
   --mobile-pequeno: 320px;
@@ -117,17 +118,20 @@ table {
   box-sizing: border-box;
 }
 
-.header_logo a {
-  text-decoration: none;
-  display: flex;
+.header_logo {
+  a {
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+  }
 }
 
 .cli_text {
+  display: inline-block;
   width: max-content;
   height: 90px;
   scale: 0.5;
   margin: 0 0 -20px -80px;
-  align-self: flex-end;
 }
 
 .nav_header {
@@ -144,8 +148,7 @@ table {
   color: #f5e9db;
   font-family: "Iansui";
   font-size: 40px;
-  align-self: last baseline;
-  margin: 0 0 5px 0;
+  align-self: center;
 }
 
 .logo_header {
@@ -158,120 +161,6 @@ table {
   scale: 1.05;
 }
 
-/* BOTÃO DE BUSCA*/
-
-.buttons_home {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.button_orc {
-  display: flex;
-  width: min-content;
-  margin: 2rem auto;
-  background-color: var(--roxo-principal);
-  color: var(--bege);
-  text-decoration: none;
-  border-radius: 5rem;
-  font-size: 1.5rem;
-  padding: 0.6rem 3rem;
-  transition: all 0.3s ease;
-  transform-origin: center;
-  position: relative;
-  cursor: pointer;
-}
-
-/* Animações */
-@keyframes expandSearch {
-  0% {
-    width: 24px;
-    opacity: 0;
-    transform: scale(0.8);
-  }
-
-  100% {
-    width: 320px;
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.search-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0;
-  align-self: center;
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  background-color: #d89ffd;
-  border-radius: 25px;
-  padding: 15px 50px 15px 20px;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  animation: expandSearch 0.9s ease-out forwards;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.search-box:hover {
-  box-shadow: 0 4px 12px #d89ffd;
-  transform: translateY(-1px);
-}
-
-.search-icon {
-  width: 24px;
-  height: 24px;
-  margin: 0 5px 0 -20px;
-  transition: transform 0.3s ease;
-}
-
-.search-icon:hover {
-  transform: scale(1.1);
-}
-
-.search-input {
-  border: none;
-  outline: none;
-  width: 100%;
-  font-size: 16px;
-  padding: 8px 10px;
-  background: transparent;
-  animation: fadeIn 0.7s ease-out 0.7s forwards;
-  opacity: 0;
-  color: #b450f5;
-  cursor: text;
-}
-
-.search-input::placeholder {
-  color: #b450f5;
-  white-space: nowrap;
-}
-
-.search-input:focus::placeholder {
-  color: #b450f5;
-}
-
 /*ICON*/
 
 .icon {
@@ -279,6 +168,10 @@ table {
   padding-right: 20px;
   color: #f5e9db;
   transition: all 0.3s ease;
+  font-size: 2em;
+  i {
+    font-size: inherit;
+  }
 }
 
 .icon::after {
@@ -410,7 +303,7 @@ table {
       }
     }
 
-    .peca_descricao{
+    .peca_descricao {
       padding: 0.5rem;
       border: var(--bege-claro) dashed 3px;
       border-radius: 10px;
@@ -457,6 +350,36 @@ table {
       transition: all 0.3s ease;
       cursor: pointer;
     }
+  }
+}
+
+/* ========================================================================== 
+/* POPUP DE COSTUREIRA DIFERENTE NA SACOLA
+/* ========================================================================== */
+
+.popup {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  background-color: var(--bege);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(15, 15, 15);
+  width: auto;
+  padding: 1rem 2rem 1rem 2rem;
+  height: auto;
+  max-height: 120vh;
+  margin: 30px auto 30px auto;
+  overflow: hidden;
+
+  .label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--vermelho-erro);
+    margin: 16px auto 16px auto;
+    width: inherit;
   }
 }
 

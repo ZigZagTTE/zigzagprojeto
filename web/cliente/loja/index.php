@@ -18,17 +18,22 @@
     require_once "../bancoCliente.php";
     require_once "../../conexao.php";
 
-    $costureiraInfo = buscarCostureira($conexao, $_GET['cos']);
+    if (isset($_GET['costureira'])) {
 
-    $listaDeCatalogos = buscarServicosDaCostureira($conexao, $_GET['cos']);
+        $costureiraInfo = buscarCostureira($conexao, $_GET['costureira']);
 
-    $listaCostureirasCriadoras = buscarListaDeCostureirasCriadoras($conexao);
+        $listaDeCatalogos = buscarServicosDaCostureira($conexao, $_GET['costureira']);
 
-    $isCriadora = false;
-    foreach ($listaCostureirasCriadoras as $costureira) {
-        if ($costureira['cos_id'] == $_GET['cos']) {
-            $isCriadora = true;
+        $listaCostureirasCriadoras = buscarListaDeCostureirasCriadoras($conexao);
+
+        $isCriadora = false;
+        foreach ($listaCostureirasCriadoras as $costureira) {
+            if ($costureira['cos_id'] == $_GET['costureira']) {
+                $isCriadora = true;
+            }
         }
+    } else {
+        header('Location: ../');
     }
     ?>
 </head>
@@ -38,22 +43,18 @@
     <!-- HEADER -->
     <header class="top">
         <div class="header_logo">
-            <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+            <a href="../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
                     alt="Logo ZigZag">
                 <p class="zigzag_txt">igzag</p>
-                <img class="cost_text" src="../../assets\images\usu_img\ZigZag.png" alt="costureiro">
+                <img class="cli_text" src="../../assets/images/usu_img/ZigZag.png" alt="cliente">
             </a>
         </div>
         <nav class="nav_header">
             <div class="buttons_home"></div>
         </nav>
-        <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
-        </a>
-        <!--casa-->
-        <a class="icon" href="../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
-        </a>
-        <!--carrinho-->
-        <a class="icon" href="index.php"><img class="icon_img_perfil"
+        <a class="icon" href="./"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
+        <a class="icon" href="../sacola/"><i class="fa-solid fa-bag-shopping"></i></a> <!--carrinho-->
+        <a class="icon" href="../perfil"><img class="icon_img_perfil"
                 src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
                 alt="Foto de perfil" />
         </a>
@@ -106,17 +107,35 @@
         <div id="conteudo1" class="servicos_grid active">
             <?php
             foreach ($listaDeCatalogos as $catalogo) {
-                $imagem = ["agulha.png", "ziper.png", "ziper.png", 
-                    "calca.png", "calça.png", "vestido.png", 
-                    "tecido.png", "bordar.png", "patchwork.png"];
-                $descricao = ["Reparos e ajustes simples", "Substituição de zíperes fáceis", "Substituição de zíperes complicados", "Ajustes de comprimento", 
-                    "Ajuste de comprimento personalizado", "Peças complicadas de costura", "Reparos em tecidos danificados", 
-                    "Decoração de peças", "Cria padrões atravéz de tecidos variados"];
-                
+                $imagem = [
+                    "agulha.png",
+                    "ziper.png",
+                    "ziper.png",
+                    "calca.png",
+                    "calça.png",
+                    "vestido.png",
+                    "tecido.png",
+                    "bordar.png",
+                    "patchwork.png"
+                ];
+                $descricao = [
+                    "Reparos e ajustes simples",
+                    "Substituição de zíperes fáceis",
+                    "Substituição de zíperes complicados",
+                    "Ajustes de comprimento",
+                    "Ajuste de comprimento personalizado",
+                    "Peças complicadas de costura",
+                    "Reparos em tecidos danificados",
+                    "Decoração de peças",
+                    "Cria padrões atravéz de tecidos variados"
+                ];
+
                 ?>
-                <a class="servico-card" href="peca/<?php echo "?ser=" . $catalogo['ser_id'] . "&cos=" . $_GET['cos']; ?>">
+                <a class="servico-card"
+                    href="peca/<?php echo "?servico=" . $catalogo['ser_id'] . "&costureira=" . $_GET['costureira']; ?>">
                     <div class="servico-icon-container">
-                        <img class="servico-icon" src="../../assets/images/usu_img/servicos/<?php echo $imagem[$catalogo['ser_id'] - 1]; ?>"
+                        <img class="servico-icon"
+                            src="../../assets/images/usu_img/servicos/<?php echo $imagem[$catalogo['ser_id'] - 1]; ?>"
                             alt="<?php echo $catalogo['ser_nome']; ?>" />
                     </div>
                     <div class="servico-info">
@@ -129,17 +148,17 @@
             <?php } ?>
         </div>
         <?php if ($isCriadora) { ?>
-            <form method="POST" action="confirmacao/index.php" id="conteudo2" class="personalizado_grid"
+            <form method="POST" action="peca/confirmacao/index.php" id="conteudo2" class="personalizado_grid"
                 style="display: none;">
                 <h1>Escolha a peça para criar.</h1>
-                <select name="peca" class="input">
+                <select name="catalogo" class="input">
                     <?php
 
-                    $listaDePecasCriacao = buscarCatalgosDaCostureiraPorServico($conexao, $_GET['cos'], 10);
+                    $listaDePecasCriacao = buscarCatalogosDaCostureiraPorServico($conexao, $_GET['costureira'], 10);
 
                     foreach ($listaDePecasCriacao as $peca) {
 
-                        echo "<option value=\"$peca[pec_id]\"";
+                        echo "<option value=\"$peca[cat_id]\"";
 
                         echo ">$peca[pec_nome]</option>\n";
                     }
@@ -150,12 +169,21 @@
                 <textarea name="txtDescricao" id="descricao" cols="30" rows="10"
                     placeholder="Descreva aqui o seu projeto..."></textarea>
                 <input hidden value="10" name="servico">
-                <input hidden value="<?php echo $_GET['cos']; ?>" name="costureira">
 
-                <button type="submit">Inserir item no carrinho</button>
+                <button type="submit">Inserir item na sacola</button>
             </form>
         <?php } ?>
     </div>
+
+    <?php
+    if (isset($_SESSION['sacola']) AND (string) $_SESSION['sacola']['idCostureira'] != $_GET['costureira']) {
+        ?>
+        <div class="popup">
+            <p class="label">
+                Você pode adicionar apenas itens da mesma costureira na sacola.
+            </p>
+        </div>
+    <?php } ?>
 
     <!-- FOOTER -->
     <footer class="footer">
