@@ -333,11 +333,13 @@ table {
     }
 
     .choice {
-      margin: 10px;
+      display: inline-block;
       font-size: 22px;
       font-weight: bold;
+      margin: 10px 0 10px 0;
+      height: fit-content;
+      width: fit-content;
       vertical-align: middle;
-      background-color: var(--roxo-claro);
       text-decoration: none;
       color: black;
     }

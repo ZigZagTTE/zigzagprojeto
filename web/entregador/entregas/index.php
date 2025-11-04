@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="endereco.css" />
+  <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="../home.css" />
   <link
     rel="icon"
@@ -31,7 +31,7 @@
     exit();
   }
 
-  $listaDePedidos = bancoEntrega($conexao, 1);
+  $listaDePedidos = bancoEntrega($conexao, $entgd_id = $_SESSION['entgd_id']);
 
   ?>
 </head>
@@ -89,13 +89,17 @@
       <?php foreach ($listaDePedidos as $pedido) { ?>
         <a href="detalhes/?id=<?php echo $pedido["ped_id"]; ?>">
           <div class="setor_endereco">
-            <p><?php echo $pedido["entrg_id"]; ?></p>
-            <p><?php echo $pedido["entrg_data"]; ?></p>
-            <p>Destino final do pedido</p>
+            <p class="id"><?php echo $pedido["entrg_id"]; ?></p>
+            <div class="info">
+              <p><?php echo $pedido["entrg_data"]; ?></p>
+              <p>Destino final do pedido</p>
+            </div>
             <i class="fa-solid fa-arrow-right fa-lg"></i>
           </div>
         </a>
-      <?php } ?>
+      <?php 
+    } 
+    ?>
     </div>
   </div>
 

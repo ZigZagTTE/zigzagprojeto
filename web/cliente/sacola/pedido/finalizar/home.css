@@ -37,6 +37,7 @@ section {
   --preto: #303030;
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
+  --bege-escuro: #e1d5c7;
   --bege: #f5e9dc;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
@@ -50,7 +51,7 @@ section {
   --ultra-wide: 1440px;
 }
 
-/* [data-theme="dark"] {
+/*[data-theme="dark"] {
     /* Paleta de cores - Tema Escuro 
     --bege: #f5e9dc;
     --roxo-principal: #b450f5;
@@ -114,7 +115,6 @@ table {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  justify-content: space-between;
 }
 
 .header_logo a {
@@ -122,11 +122,11 @@ table {
   display: flex;
 }
 
-.ent_text {
+.cli_text {
   width: max-content;
-  height: 100px;
-  margin: 0 0 -25px -60px;
+  height: 90px;
   scale: 0.5;
+  margin: 0 0 -20px -80px;
   align-self: flex-end;
 }
 
@@ -145,7 +145,7 @@ table {
   font-family: "Iansui";
   font-size: 40px;
   align-self: last baseline;
-  margin: 0 0 15px 0;
+  margin: 0 0 5px 0;
 }
 
 .logo_header {
@@ -157,10 +157,7 @@ table {
 .logo_header:hover {
   scale: 1.05;
 }
-.icons {
-  display: flex;
-  gap: 5px;
-}
+
 /*ICON*/
 
 .icon {
@@ -188,136 +185,79 @@ table {
 }
 
 .icon_img_perfil {
+  object-fit: cover;
   width: 48px;
   height: 48px;
   border-radius: 100%;
   justify-content: center;
   box-shadow: #303030 0px 0px 8px;
-  object-fit: cover;
 }
 
 /* ========================================================================== */
-/* BBODY DO SITE                                                              */
+/* BODY DO SITE                                                              */
 /* ========================================================================== */
 
-/*TÍTULO*/
-
-.title {
-  font-size: 30px;
-  margin: 4rem 0 0 50px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-/* ==========================================================================
-   ÁREA DOS PEDIDOS
-   ========================================================================== */
-.pedidos {
+.secoes {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.pedido {
-  border: #e1d5c7 3px solid;
-  width: 90%;
-  height: 160px;
-  margin: 15px;
-  align-items: center;
-  justify-self: center;
-
-  .pedido-info {
-    margin-left: 10px;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    font-size: 18px;
+  .titulo_secoes {
+    font-size: 2.5rem;
+    color: var(--preto);
+    margin: 2rem 0 1rem 0;
+  }
   }
 
-  .status {
-    display: flex;
-    justify-self: end;
-    margin: auto 20px 20px auto;
-    text-align: end;
-    font-size: 16px;
-  }
-
-  .costureira {
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 24px;
-  }
-
-  .endereco{
-    font-size: 14px;
-    margin-top: 6px;
-  }
-}
-
-.etapa {
-  border: #e1d5c7 3px solid;
-  width: 90%;
-  height: 25%;
-  margin: 15px 0 auto 0;
-
-  .etapa-info{
-    justify-content: space-between;
-    display: flex;
-    margin-top: 12px;
+  .carrinho {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 2fr;
+    width: 80%;
+    background-color: var(--bege-claro);
+    padding: 2rem;
+    border: 3px solid #e1d5c7;
 
     p {
-    font-weight: bold;
-    font-size: 18px;
-    align-self: center;
-    width: fit-content;
+      margin-bottom: 1rem;
+    }
+
+    .descricao {
+      background-color: #e1d5c7;
+      width: 100%;
+      height: 140px;
+      padding: 1rem;
+    }
+
+    .pedido {
+      display: block;
+      width: max-content;
+      text-decoration: none;
+      color: #000;
+      margin: 10px auto;
+      background-color: var(--roxo-claro);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .pedido:hover {
+      background-color: var(--roxo-principal);
+      scale: 1.05;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
   }
-
-  span {
-    font-size: 16px;
-  }
-
-  }
-
-}
-
-.confirmar{
-  margin: 10px auto 0 40px;
-  font-size: 20px;
-
-}
-
-.btn-aceitar {
-    justify-self: center;
-    align-self: center;
-    background-color: var(--roxo-claro);
-    color: var(--preto);
-    font-weight: bold;
-    border: none;
-    text-decoration: none;
-    text-align: center;
-    width: 200px;
-    margin: 0 20px 4rem 0;
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-aceitar:hover {
-  background-color: var(--roxo-principal);
-  color: var(--bege-claro);
-  transform: scale(1.05);
-}
 
 /* ==========================================================================
-  FOOTER
-========================================================================== */
+    FOOTER
+   ========================================================================== */
 .footer {
   width: 100%;
   background-color: var(--preto);
   padding: 4rem 0 2rem;
+  margin-top: 200px;
 }
 
 .footer-logo {

@@ -29,7 +29,7 @@
     <!-- HEADER -->
     <header class="top">
         <div class="header_logo">
-            <a href="../"><img class="logo_header" src="../../../../assets/svg/logo.svg" width="90" height="90"
+            <a href="../../../"><img class="logo_header" src="../../../../assets/svg/logo.svg" width="90" height="90"
                     alt="Logo ZigZag">
                 <p class="zigzag_txt">igzag</p>
                 <img class="ent_text" src="../../../../assets/images/ent_img/entregadores.png" alt="entregador">
@@ -65,7 +65,10 @@
 
         <p class="confirmar">Confirmar entrega do pedido?</p>
 
-        <button class="btn-aceitar">Confirmar Pedido</button>
+        <form action="confirmar.php" method="POST">
+            <input type="hidden" name="pedido_id" value="<?php echo $_GET['id']; ?>">
+            <button class="btn-aceitar">Confirmar Pedido</button>
+        </form>
 
     </section>
 

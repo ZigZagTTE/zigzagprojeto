@@ -38,7 +38,7 @@ section {
   --cinza-escuro: #545454;
   --cinza: #a6a6a6;
   --bege-escuro: #e1d5c7;
-  --bege: #f5e9dc;
+  --bege: #fdf2e6;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
 
@@ -240,19 +240,37 @@ table {
 
   .carrinho {
     width: 80%;
-    background-color: var(--bege-claro);
-    padding: 2rem;
-    border: 3px solid #e1d5c7;
+    background-color: #e1d5c7;
+    padding: 1rem;
+    border-radius: 16px;
 
-    p {
+    .peca {
+      display: flex;
+      align-items: center;
+      padding: 30px;
+      justify-content: space-between;
+      border: var(--bege-claro) 3px dashed;
+      gap: 1rem;
       margin-bottom: 1rem;
     }
-
+    .checkbox_peca {
+      width: 20px;
+      height: 20px;
+    }
     .descricao {
-      background-color: #e1d5c7;
+      display: inline-flex;
+      justify-content: space-between;
+      margin: 4rem 0 4rem 0;
       width: 100%;
-      height: 140px;
-      padding: 1rem;
+
+      .desc{
+        width: 30%;
+        height: auto;
+        background-color: var(--bege);
+        vertical-align: top;
+        border: var(--roxo-principal) 2px solid;
+        border-radius: 8px;
+      }
     }
 
     .pedido {

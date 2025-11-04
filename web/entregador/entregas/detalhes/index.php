@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../home.css" />
   <link
     rel="icon"
-    href="../../assets/images/MiniLogo.png"
+    href="../../../assets/images/MiniLogo.png"
     type="image/x-icon" />
   <link
     href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
@@ -85,23 +85,31 @@
     </div>
 
     <div class="endereco">
-      <p class="title">Entrega do pedido <?php echo $pedido["ped_id"]; ?></p>
+      <p class="title">Entrega do pedido #<?php echo $pedido["ped_id"]; ?></p>
 
       <div class="setor_endereco">
-        <p>Etapa:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_viagens"]; ?>" disabled />
+        <div class="secao_um">
 
-        <p>Data:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_data"]; ?>" disabled />
+          <p>Etapa:</p>
+          <input type="text" placeholder="<?php echo $pedido["ped_viagens"]; ?>" disabled />
 
-        <p>Horário:</p>
-        <input type="text" placeholder="<?php echo $pedido["ped_horario"]; ?>" disabled />
+          <p>Data:</p>
+          <input type="text" placeholder="<?php echo $pedido["ped_data"]; ?>" disabled />
 
-        <p>Endereço cliente:</p>
-        <input type="text" placeholder="<?php echo $pedido["end_rua"] . $pedido["end_numero"]; ?>" disabled />
+          <p>Horário:</p>
+          <input type="text" placeholder="<?php echo $pedido["ped_horario"]; ?>" disabled />
 
-        <p>Endereço costureiro:</p>
-        <input type="text" placeholder="<?php echo $pedido["cos_rua"] . $pedido["cos_numero"]; ?>" disabled />
+        </div>
+
+        <div class="secao_dois">
+
+          <p>Endereço cliente:</p>
+          <input type="text" placeholder="<?php echo $pedido["end_rua"] . $pedido["end_numero"]; ?>" disabled />
+
+          <p>Endereço costureiro:</p>
+          <input type="text" placeholder="<?php echo $pedido["cos_rua"] . $pedido["cos_numero"]; ?>" disabled />
+          
+        </div>
 
 
       </div>

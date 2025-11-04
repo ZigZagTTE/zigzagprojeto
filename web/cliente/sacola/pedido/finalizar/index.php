@@ -5,15 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="sacola.css" />
-  <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="icon" href="../../../../assets/images/MiniLogo.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
   <?php
 
-  require_once "../../conexao.php";
+  require_once "../../../../conexao.php";
   session_start();
   if (!isset($_SESSION['cli_id'])) {
     header("Location: ../entrar");
@@ -27,22 +27,22 @@
   <!-- HEADER -->
   <header class="top">
     <div class="header_logo">
-      <a href="../../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
+      <a href="../../"><img class="logo_header" src="../../../../assets/svg/logo.svg" width="90" height="90"
           alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cli_text" src="../../assets/images/usu_img/ZigZag.png" alt="cliente">
+        <img class="cli_text" src="../../../../assets/images/usu_img/ZigZag.png" alt="cliente">
       </a>
     </div>
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
+    <a class="icon" href="../../../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-    <a class="icon" href="../sacola/"><i class="fa-solid fa-bag-shopping fa-2x"></i>
+    <a class="icon" href="../../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
     </a>
     <!--carrinho-->
-    <a class="icon" href="../perfil/"><img class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
+    <a class="icon" href="../../../perfil/"><img class="icon_img_perfil"
+        src="../../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
     </a>
     <!--user-->
   </header>
@@ -50,47 +50,33 @@
   <!-- INFORMACOES -->
 
   <section class="secoes">
-
-    <div class="subtitulo_secoes">
-      <img src="../../assets/images/usu_img/costureira.png" alt="Costureira" class="img_costureira">
-      <p class="costureira">Costureira</p>
-      <p class="endereco">Endereço</p>
-
-    </div>
+    <p class="titulo_secoes">Finalizar Pedido</p>
+    
     <div class="carrinho">
-      <div class="peca">
-        <input type="checkbox" class="checkbox_peca">
-        <img src="../../assets/images/usu_img/peca.png" alt="Peça" class="img_peca">
-        <p class="txt_peca">Peça</p>
-        <p class="txt_desc">Descrição da peça</p>
 
+      <div class="separar">
+        <p class="costureira">Cliente</p>
+        <p class="endereco">Endereço</p>
       </div>
-
-      <div class="descricao">
-        <input class="desc" name="txtArea" type="textarea" placeholder="Deixe um recado para o entregador">
-        
-        <div class="info">
-          <p>Soma:</p>
-          <p>Taxa de entrega (15%):</p>
-          <p>Custo total:</p>
+      <div class="separar">
+        <p class="costureira">Costureira</p>
+        <p class="endereco">Endereço</p>
+        <p >Peça</p>
+        <p>Serviço</p>
+        <div class="descricao">
+        Descrição
         </div>
 
-        <div class="valores">
-          <p>R$00,00</p>
-          <p>R$00,00</p>
-          <p>R$00,00</p>
-        </div>
+        <p>Valor</p>
       </div>
 
-      <a href="pedido/" class="excluir_pedido">
-        Cancelar sacola
-      </a>
-      <a href="pedido/" class="excluir_item">
-        Excluir itens
-      </a>
-      <a href="pedido/" class="pedido">
-        Fazer pedido
-      </a>
+      <div class="separar">
+        <p>Pagamento</p>
+        <p>Na entrega(obrigatóriamente)</p>
+        <a href="pedido/" class="pedido">
+        Realizar pedido
+        </a>
+      </div>
     </div>
   </section>
 
