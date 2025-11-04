@@ -62,79 +62,82 @@
 
     <div class="list-precos">
         <ul>
-            <li>
-                <img src="../../assets/images/usu_img/pecas/camisa.png" alt="Camisa (com botão)">
-                <p>Camisa (com botão)</p>
-                <div class="valor_list">
-                    <p>Valor:</p>
-                    <input type="text" placeholder="R$ 00,00">
-                    <button>Salvar</button>
-                </div>
-            </li>
-            <li>
-                <img src="../../assets/images/usu_img/pecas/camiseta.png" alt="Camiseta (sem botão)">
-                <p>Camiseta (sem botão)</p>
-                <div class="valor_list">
-                    <p>Valor:</p>
-                    <input type="text" placeholder="R$ 00,00">
-                    <button>Salvar</button>
-                </div>
-            </li>
-            <li>
-                <img src="../../assets/images/usu_img/pecas/casaco.png" alt="Casaco">
-                <p>Casaco</p>
-                <div class="valor_list">
-                    <p>Valor:</p>
-                    <input type="text" placeholder="R$ 00,00">
-                    <button>Salvar</button>
-                </div>
-            </li>
-            <li>
-                <img src="../../assets/images/usu_img/pecas/macacao-feminino.png" alt="Macacão">
-                <p>Macacão</p>
-                <div class="valor_list">
-                    <p>Valor:</p>
-                    <input type="text" placeholder="R$ 00,00">
-                    <button>Salvar</button>
-                </div>
-            </li>
-            <li>
-                <img src="../../assets/images/usu_img/pecas/calcas.png" alt="Calças">
-                <p>Calças</p>
-                <div class="valor_list">
-                    <p>Valor:</p>
-                    <input type="text" placeholder="R$ 00,00">
-                    <button>Salvar</button>
-                </div>
-            </li>
-            <li>
-                <img src="../../assets/images/usu_img/pecas/shorts.png" alt="Shorts">
-                <p>Shorts</p>
-                <div class="valor_list">
-                    <p>Valor:</p>
-                    <input type="text" placeholder="R$ 00,00">
-                    <button>Salvar</button>
-                </div>
-            </li>
-            <li>
-                <img src="../../assets/images/usu_img/pecas/bermuda.png" alt="Bermuda">
-                <p>Bermuda</p>
-                <div class="valor_list">
-                    <p>Valor:</p>
-                    <input type="text" placeholder="R$ 00,00">
-                    <button>Salvar</button>
-                </div>
-            </li>
-            <li>
-                <img src="../../assets/images/usu_img/pecas/vestido.png" alt="Vestido">
-                <p>Vestido</p>
-                <div class="valor_list">
-                    <p>Valor:</p>
-                    <input type="text" placeholder="R$ 00,00">
-                    <button>Salvar</button>
-                </div>
-            </li>
+            <form action="alterarPreco.php" method="$_POST">
+                <li>
+                    <img src="../../assets/images/usu_img/pecas/camisa.png" alt="Camisa (com botão)">
+                    <p>Camisa (com botão)</p>
+                    <div class="valor_list">
+                        <p>Valor:</p>
+                        <input type="text" placeholder="<?php echo $cat_valor; ?>">
+                        <button>Salvar</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="../../assets/images/usu_img/pecas/camiseta.png" alt="Camiseta (sem botão)">
+                    <p>Camiseta (sem botão)</p>
+                    <div class="valor_list">
+                        <p>Valor:</p>
+                        <input type="text" placeholder="R$ 00,00">
+                        <button>Salvar</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="../../assets/images/usu_img/pecas/casaco.png" alt="Casaco">
+                    <p>Casaco</p>
+                    <div class="valor_list">
+                        <p>Valor:</p>
+                        <input type="text" placeholder="R$ 00,00">
+                        <button>Salvar</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="../../assets/images/usu_img/pecas/macacao-feminino.png" alt="Macacão">
+                    <p>Macacão</p>
+                    <div class="valor_list">
+                        <p>Valor:</p>
+                        <input type="text" placeholder="R$ 00,00">
+                        <button>Salvar</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="../../assets/images/usu_img/pecas/calcas.png" alt="Calças">
+                    <p>Calças</p>
+                    <div class="valor_list">
+                        <p>Valor:</p>
+                        <input type="text" placeholder="R$ 00,00">
+                        <button>Salvar</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="../../assets/images/usu_img/pecas/shorts.png" alt="Shorts">
+                    <p>Shorts</p>
+                    <div class="valor_list">
+                        <p>Valor:</p>
+                        <input type="text" placeholder="R$ 00,00">
+                        <button>Salvar</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="../../assets/images/usu_img/pecas/bermuda.png" alt="Bermuda">
+                    <p>Bermuda</p>
+                    <div class="valor_list">
+                        <p>Valor:</p>
+                        <input type="text" placeholder="R$ 00,00">
+                        <button>Salvar</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="../../assets/images/usu_img/pecas/vestido.png" alt="Vestido">
+                    <p>Vestido</p>
+                    <div class="valor_list">
+                        <p>Valor:</p>
+                        <input type="text" placeholder="R$ 00,00">
+                        <button>Salvar</button>
+                    </div>
+                </li>
+            </form>
         </ul>
+
     </div>
 
 
