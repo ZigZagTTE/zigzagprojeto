@@ -38,11 +38,11 @@
     </nav>
     <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-    <a class="icon" href="../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i>
+    <a class="icon" href="../sacola/"><i class="fa-solid fa-bag-shopping fa-2x"></i>
     </a>
     <!--carrinho-->
     <a class="icon" href="../perfil/"><img class="icon_img_perfil"
-        src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
     </a>
     <!--user-->
   </header>
@@ -50,22 +50,44 @@
   <!-- INFORMACOES -->
 
   <section class="secoes">
-    <p class="titulo_secoes">Carrinho de Compras</p>
-    <div class="subtitulo_secoes">
 
+    <div class="subtitulo_secoes">
+      <img src="../../assets/images/usu_img/costureira.png" alt="Costureira" class="img_costureira">
       <p class="costureira">Costureira</p>
       <p class="endereco">Endereço</p>
 
     </div>
     <div class="carrinho">
-      <p style="font-weight: bold">Serviço</p>
-      <p>1x peça de serviço</p>
-      <p>1x peça de serviço</p>
+      <div class="peca">
+        <input type="checkbox" class="checkbox_peca">
+        <img src="../../assets/images/usu_img/peca.png" alt="Peça" class="img_peca">
+        <p class="txt_peca">Peça</p>
+        <p class="txt_desc">Descrição da peça</p>
 
-      <div class="descricao">
-        Descrição
       </div>
 
+      <div class="descricao">
+        <input class="desc" name="txtArea" type="textarea" placeholder="Deixe um recado para o entregador">
+        
+        <div class="info">
+          <p>Soma:</p>
+          <p>Taxa de entrega (15%):</p>
+          <p>Custo total:</p>
+        </div>
+
+        <div class="valores">
+          <p>R$00,00</p>
+          <p>R$00,00</p>
+          <p>R$00,00</p>
+        </div>
+      </div>
+
+      <a href="pedido/" class="excluir_pedido">
+        Cancelar sacola
+      </a>
+      <a href="pedido/" class="excluir_item">
+        Excluir itens
+      </a>
       <a href="pedido/" class="pedido">
         Fazer pedido
       </a>

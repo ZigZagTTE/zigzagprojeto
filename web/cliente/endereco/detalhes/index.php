@@ -44,7 +44,7 @@
     </nav>
     <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-    <a class="icon" href="../../carrinho/"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+    <a class="icon" href="../../sacola/"><i class="fa-solid fa-bag-shopping fa-2x"></i>
     <!--carrinho-->
     <a class="icon" href="../../perfil/">
       <img class="icon_img_perfil" src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
