@@ -39,12 +39,8 @@
     </nav>
     <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i></a>
     <!--casa-->
-<<<<<<< HEAD
-    <a class="icon" href="../sacola/"><i class="fa-solid fa-bag-shopping"></i></a>
-=======
     <a class="icon" href="../sacola/"><i class="fa-solid fa-bag-shopping fa-2x"></i>
     </a>
->>>>>>> entregador
     <!--carrinho-->
     <a class="icon" href="index.php"><img class="icon_img_perfil"
         src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />

@@ -52,23 +52,37 @@
   <section class="secoes">
 
     <div class="subtitulo_secoes">
-      <img src="../../assets/images/usu_img/costureira.png" alt="Costureira" class="img_costureira">
+      <img src="" alt="Costureira" class="img_costureira">
       <p class="costureira">Costureira</p>
       <p class="endereco">Endereço</p>
 
     </div>
     <div class="carrinho">
       <div class="peca">
-        <input type="checkbox" class="checkbox_peca">
-        <img src="../../assets/images/usu_img/peca.png" alt="Peça" class="img_peca">
-        <p class="txt_peca">Peça</p>
-        <p class="txt_desc">Descrição da peça</p>
 
+        <label class="container_mostrar_check">
+          <input id="mostrarCheck" type="checkbox">
+          <span class="checkmark">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/cross-white-icon.png">
+          </span>
+          <img src="../../assets/images/usu_img/pecas/calcas.png" alt="Peça" class="img_peca">
+        </label>
+
+        <div>
+          <p class="txt_peca">Peça</p>
+          <p class="txt_desc">Descrição da peça</p>
+        </div>
+
+        <span class="valor">Valor</span>
       </div>
+
+        <button href="pedido/" class="excluir_item">
+          Excluir itens
+        </button>
 
       <div class="descricao">
         <input class="desc" name="txtArea" type="textarea" placeholder="Deixe um recado para o entregador">
-        
+
         <div class="info">
           <p>Soma:</p>
           <p>Taxa de entrega (15%):</p>
@@ -82,16 +96,17 @@
         </div>
       </div>
 
-      <a href="pedido/" class="excluir_pedido">
-        Cancelar sacola
-      </a>
-      <a href="pedido/" class="excluir_item">
-        Excluir itens
-      </a>
-      <a href="pedido/" class="pedido">
-        Fazer pedido
-      </a>
+      <div class="botoes">
+        <a href="pedido/" class="excluir_pedido">
+          Cancelar sacola
+        </a>
+
+        <a href="pedido/" class="pedido">
+          Fazer pedido
+        </a>
+      </div>
     </div>
+
   </section>
 
   <!-- FOOTER -->

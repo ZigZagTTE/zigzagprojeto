@@ -245,13 +245,78 @@ table {
     border-radius: 16px;
 
     .peca {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
       padding: 30px;
       justify-content: space-between;
-      border: var(--bege-claro) 3px dashed;
+      border: var(--bege-claro) 4px dashed;
       gap: 1rem;
       margin-bottom: 1rem;
+
+      div {
+        display: flex;
+        gap: 28px;
+      }
+    }
+
+    .container_mostrar_check {
+      display: flex;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 16px;
+
+    }
+
+    .container_mostrar_check input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      border-radius: 100%;
+
+      img {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+
+        display: none;
+        height: 17px;
+      }
+    }
+
+    .container_mostrar_check:hover input ~ .checkmark {
+      background-color: grey;
+      cursor: pointer;
+    }
+
+    .container_mostrar_check input:checked ~ .checkmark {
+      background-color: red;
+
+      img {
+        display: block;
+      }
+    }
+
+    .img_peca {
+      background-color: white;
+      width: 80px;
+      border-radius: 10px;
+      padding: 5px;
     }
     .checkbox_peca {
       width: 20px;
@@ -263,7 +328,7 @@ table {
       margin: 4rem 0 4rem 0;
       width: 100%;
 
-      .desc{
+      .desc {
         width: 30%;
         height: auto;
         background-color: var(--bege);
@@ -273,23 +338,52 @@ table {
       }
     }
 
-    .pedido {
-      display: block;
-      width: max-content;
-      text-decoration: none;
-      color: #000;
-      margin: 10px auto;
-      background-color: var(--roxo-claro);
-      padding: 10px;
-      border-radius: 10px;
+    .botoes {
+      display: flex;
     }
 
-    .pedido:hover {
-      background-color: var(--roxo-principal);
-      scale: 1.05;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
+    .excluir_pedido {
+        width: max-content;
+        text-decoration: none;
+        font-weight: bold;
+        color: red;
+        border: red 2px solid;
+        margin: 10px auto;
+        background-color: var(--bege-claro);
+        padding: 10px;
+        border-radius: 30px;
+      }
+
+      .excluir_item {
+        width: max-content;
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--roxo-principal);
+        border: var(--roxo-principal) 2px solid;
+        margin: 10px auto;
+        background-color: var(--bege-claro);
+        padding: 10px;
+        border-radius: 30px;
+      }
+
+      .pedido {
+        display: block;
+        width: max-content;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        margin: 10px auto;
+        background-color: var(--roxo-claro);
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .pedido:hover {
+        background-color: var(--roxo-principal);
+        scale: 1.05;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
   }
 }
 
