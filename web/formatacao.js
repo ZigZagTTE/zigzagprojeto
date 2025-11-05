@@ -7,10 +7,10 @@ function formatarTelefone(valor) {
   if (valor.length > 7) {
     formatoTelefone = `(${valor.substring(0, 2)})${valor.substring(2, 7)}-${valor.substring(7, 11)}`;
   }
-  else if (valor.length > 2){
+  else if (valor.length > 2) {
     formatoTelefone = `(${valor.substring(0, 2)})${valor.substring(2, 7)}`;
   }
-  else if (valor.length > 0){
+  else if (valor.length > 0) {
     formatoTelefone = `(${valor.substring(0, 2)}`;
   }
   return formatoTelefone;
@@ -38,7 +38,7 @@ function formatarCPF(valor) {
 
 function formatarCNPJ(valor) {
   let formatoCNPJ = "";
-  
+
   valor = valor.replace(/\D/g, "");
   valor = valor.substring(0, 14);
   if (valor.length > 12) {
@@ -62,16 +62,41 @@ function formatarCNPJ(valor) {
 
 function formatarCEP(valor) {
   let formatoCEP = "";
-  
+
   valor = valor.replace(/\D/g, "");
   valor = valor.substring(0, 8);
   if (valor.length > 5) {
     formatoCEP = `${valor.substring(0, 5)}-${valor.substring(5, 8)}`;
   }
-  else{
+  else {
     formatoCEP = `${valor.substring(0, 5)}`;
   }
 
 
   return formatoCEP;
+};
+
+function formatarPreco(valor) {
+  let formatoPreco = "";
+
+
+  valor = valor.replace(/\D/g, "");
+  valor = valor.substring(0,5);
+  ultimoValor = valor.length;
+
+  if (valor.length > 2) {
+    formatoPreco = `${valor.substring(0, ultimoValor - 2)}.${valor.substring(ultimoValor - 2, ultimoValor)}`;
+  }
+  else if (valor.length > 1) {
+    formatoPreco = `0.${valor.substring(ultimoValor - 2, ultimoValor)}`;
+  }
+  else if (valor.length > 0) {
+    formatoPreco = `0.0${valor.substring(ultimoValor - 1, ultimoValor)}`;
+  }
+  else {
+    formatoPreco = `0.${valor.substring(0, 2)}`;
+  }
+
+
+  return formatoPreco;
 };

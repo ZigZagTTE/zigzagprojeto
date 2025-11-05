@@ -14,7 +14,6 @@
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
 
     <script src="../../formatacao.js" defer></script>
-    <script src="./perfil.js" defer></script>
 
     <?php session_start();
     if (!isset($_SESSION["cos_id"])) {
@@ -62,79 +61,65 @@
 
     <div class="list-precos">
         <ul>
-            <form action="alterarPreco.php" method="$_POST">
+            <form action="alterarPreco.php" method="POST">
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camisa.png" alt="Camisa (com botão)">
+                    <div class="detalhes-servico">
                     <p>Camisa (com botão)</p>
-                    <div class="valor_list">
-                        <p>Valor:</p>
-                        <input type="text" placeholder="<?php echo $cat_valor; ?>">
-                        <button>Salvar</button>
+                    <a href="">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camiseta.png" alt="Camiseta (sem botão)">
+                    <div class="detalhes-servico">
                     <p>Camiseta (sem botão)</p>
-                    <div class="valor_list">
-                        <p>Valor:</p>
-                        <input type="text" placeholder="R$ 00,00">
-                        <button>Salvar</button>
+                    <a href="">Detalhes</a>
                     </div>
+                    
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/casaco.png" alt="Casaco">
+                    <div class="detalhes-servico">
                     <p>Casaco</p>
-                    <div class="valor_list">
-                        <p>Valor:</p>
-                        <input type="text" placeholder="R$ 00,00">
-                        <button>Salvar</button>
+                    <a href="">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/macacao-feminino.png" alt="Macacão">
+                    <div class="detalhes-servico">
                     <p>Macacão</p>
-                    <div class="valor_list">
-                        <p>Valor:</p>
-                        <input type="text" placeholder="R$ 00,00">
-                        <button>Salvar</button>
+                    <a href="">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/calcas.png" alt="Calças">
+                    <div class="detalhes-servico">
                     <p>Calças</p>
-                    <div class="valor_list">
-                        <p>Valor:</p>
-                        <input type="text" placeholder="R$ 00,00">
-                        <button>Salvar</button>
+                    <a href="">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/shorts.png" alt="Shorts">
+                    <div class="detalhes-servico">
                     <p>Shorts</p>
-                    <div class="valor_list">
-                        <p>Valor:</p>
-                        <input type="text" placeholder="R$ 00,00">
-                        <button>Salvar</button>
+                    <a href="">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/bermuda.png" alt="Bermuda">
+                    <div class="detalhes-servico">
                     <p>Bermuda</p>
-                    <div class="valor_list">
-                        <p>Valor:</p>
-                        <input type="text" placeholder="R$ 00,00">
-                        <button>Salvar</button>
+                    <a href="">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/vestido.png" alt="Vestido">
+                    <div class="detalhes-servico">
                     <p>Vestido</p>
-                    <div class="valor_list">
-                        <p>Valor:</p>
-                        <input type="text" placeholder="R$ 00,00">
-                        <button>Salvar</button>
+                    <a href="">Detalhes</a>
                     </div>
                 </li>
+                <button class="botao-salvar">Salvar</button>
             </form>
         </ul>
 
