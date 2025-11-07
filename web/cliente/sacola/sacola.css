@@ -41,6 +41,7 @@ section {
   --bege: #fdf2e6;
   --bege-claro: #f5e9db;
   --amarelo: #edbd44;
+  --vermelho-erro: #f73151;
 
   /* Breakpoints */
   --mobile-pequeno: 320px;
@@ -211,30 +212,31 @@ table {
   justify-content: center;
   align-items: center;
 
-  .titulo_secoes {
-    font-size: 2.5rem;
-    text-decoration: underline;
-    color: var(--preto);
-    margin: 2rem 0 1rem 0;
-  }
-
   .subtitulo_secoes {
     width: 80%;
     font-size: 1.2rem;
-    display: inline-flex;
-    justify-content: space-between;
+    display: flex;
     align-content: center;
-    color: var(--cinza-escuro);
+    color: black;
     margin: 2rem 0;
+  
     .costureira {
       font-size: 2rem;
       font-weight: bold;
+      margin: auto 5px;
     }
     .endereco {
-      text-align: end;
+      margin: auto 0 auto auto;
       max-width: 30rem;
       max-height: 4rem;
       height: fit-content;
+    }
+
+    img{
+      width: 70px;
+      height: 70px;
+      border-radius: 20%;
+      object-fit: cover;
     }
   }
 
@@ -245,28 +247,36 @@ table {
     border-radius: 16px;
 
     .peca {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      display: flex;
       align-items: center;
-      padding: 30px;
-      justify-content: space-between;
+      padding: 1rem;
       border: var(--bege-claro) 4px dashed;
-      gap: 1rem;
       margin-bottom: 1rem;
+
+      .txt_peca {
+        margin-left: 24px;
+        font-weight: bold;
+      }
+      
+      .valor{
+        margin-left: auto;
+        margin-top: auto;
+        font-weight: bold;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
 
       div {
         display: flex;
-        gap: 28px;
+        gap: 48px;
       }
     }
 
     .container_mostrar_check {
       display: flex;
-      width: 100px;
-      height: 100px;
+      width: auto;
+      height: auto;
+      margin-top: 25px;
       position: relative;
-      padding-left: 25px;
-      margin-bottom: 12px;
       cursor: pointer;
       font-size: 16px;
 
@@ -305,7 +315,7 @@ table {
     }
 
     .container_mostrar_check input:checked ~ .checkmark {
-      background-color: red;
+      background-color: var(--vermelho-erro);
 
       img {
         display: block;
@@ -322,19 +332,31 @@ table {
       width: 20px;
       height: 20px;
     }
+
+
     .descricao {
       display: inline-flex;
-      justify-content: space-between;
-      margin: 4rem 0 4rem 0;
+      margin: 2rem 0 2rem 0;
       width: 100%;
+      height: 12rem;
 
       .desc {
-        width: 30%;
-        height: auto;
+        width: 40%;
         background-color: var(--bege);
         vertical-align: top;
         border: var(--roxo-principal) 2px solid;
         border-radius: 8px;
+      }
+
+      .info{
+        width: 40%;
+        margin-left: auto;
+        margin-top: auto;
+      }
+
+      .valores {
+        margin-left: auto;
+        margin-top: auto;
       }
     }
 
@@ -346,12 +368,20 @@ table {
         width: max-content;
         text-decoration: none;
         font-weight: bold;
-        color: red;
-        border: red 2px solid;
+        color: var(--vermelho-erro);
+        border: var(--vermelho-erro) 2px solid;
         margin: 10px auto;
         background-color: var(--bege-claro);
         padding: 10px;
         border-radius: 30px;
+      }
+
+      .excluir_pedido:hover {
+        background-color: var(--bege-claro);
+        color: var(--vermelho-erro);
+        scale: 1.05;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
       }
 
       .excluir_item {
@@ -366,16 +396,24 @@ table {
         border-radius: 30px;
       }
 
+      .excluir_item:hover {
+        background-color: var(--bege-claro);
+        color: var(--roxo-principal);
+        scale: 1.05;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+      }
+
       .pedido {
         display: block;
         width: max-content;
         text-decoration: none;
-        color: #000;
+        color: var(--bege-claro);
         font-weight: bold;
         margin: 10px auto;
-        background-color: var(--roxo-claro);
+        background-color: var(--roxo-principal);
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 30px;
       }
 
       .pedido:hover {
@@ -384,6 +422,58 @@ table {
         transition: all 0.3s ease;
         cursor: pointer;
       }
+
+      .popup{
+        display: none;
+        position: fixed;
+        flex-direction: column;
+        top: 40vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        background-color: var(--bege);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgb(15, 15, 15);
+        width: 30%;
+        padding: 2rem 0 2rem 0;
+        height: auto;
+        max-height: 120vh;
+        margin: 30px auto 30px auto;
+        overflow: hidden;
+
+      .label {
+        font-size: 20px;
+        text-align: center;
+        width: 18rem;
+      }
+
+      div{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1.5rem;
+        gap: 48px;
+      }
+
+      .btn{
+        background-color: var(--cinza-escuro);
+        color: var(--bege-claro);
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-excluir{
+        background-color: var(--vermelho-erro);
+        color: var(--bege-claro);
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+      }
+    }
   }
 }
 

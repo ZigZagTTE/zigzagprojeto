@@ -2,8 +2,18 @@
 
     require_once "../../conexao.php";
 
-    function infoCostureira($conexao, $ped_id) {
-        $sql = "SELECT * FROM tbl_costureiro, tbl_pedido 
-        WHERE tbl_costureiro.cost_id = tbl_pedido.cost_id
-        WHERE ped_id = $ped_id";
+    if (isset($_SESSION['sacola']['idCostureira']) and (string) $_SESSION['sacola']['idCostureira'] != $_POST['cos_id']) {
+        //código para tratar erro de costureira diferente
     }
+    else{
+        $_SESSION['sacola']['idCostureira'] = $_POST['cos_id'];
+        $_SESSION['sacola']['idCliente'] = $_POST['cli_id'];
+
+        $_SESSION['sacola']['itens'][] = 
+        [
+            'catalogo' => $_POST['cat_id'],
+            'descricao' => $_POST['txtDescricao'],
+        ];
+    }
+
+    
