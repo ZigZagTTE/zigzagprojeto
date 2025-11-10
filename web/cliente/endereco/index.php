@@ -38,11 +38,6 @@
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-<<<<<<< HEAD
-    <a class="icon" href="./"><i class="fa-solid fa-house fa-2x  "></i></a> <!--casa-->
-    <a class="icon" href="../sacola/"><i class="fa-solid fa-bag-shopping"></i></a> <!--carrinho-->
-    <a class="icon" href="../perfil"><img class="icon_img_perfil"
-=======
     <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
     </a>
     <!--casa-->
@@ -50,7 +45,6 @@
     </a>
     <!--carrinho-->
     <a class="icon" href="index.php"><img class="icon_img_perfil"
->>>>>>> entregador
         src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
     </a>
     <!--user-->

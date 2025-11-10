@@ -58,7 +58,7 @@
 
     <div class="subtitulo_secoes">
       <img src="../../assets/uploads/profilepictures/<?php echo $cost['cos_perfil']; ?>" alt="Costureira" class="img_costureira">
-      <p class="costureira"><?php echo $cost['cos_nome']?></p>
+      <p class="costureira"><?php echo $cost['cos_nome'] ?></p>
       <p class="endereco"><?php echo $cost['cos_rua'] . ", " . $cost['cos_numero']; ?></p>
 
     </div>
@@ -69,13 +69,13 @@
       $preco = 0;
 
       foreach ($_SESSION['sacola']['itens'] as $indice => $item) {
-        
+
         $info = buscarInformacoesCatalogo($conexao, $item['catalogo']);
         $preco += $info['cat_valor'];
         $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermudas.png', 'vestido.png']
       ?>
 
-      <div class="peca">
+        <form action="criarPedido.php" method="POST" name="form<?php echo $indice; ?>"  class="peca">
           <div>
             <label class="container_mostrar_check">
               <input name="checkIndicesParaApagar" type="checkbox" value="<?php echo $indice; ?>">
@@ -83,57 +83,59 @@
                 <img src="https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/cross-white-icon.png">
               </span>
             </label>
-            <img src="<?php echo $imagem; ?>" alt="Peça" class="img_peca">
+            <img src="../../assets/images/usu_img/pecas/<?php echo $imagem[$info['cat_id'] - 1]; ?>" alt="Peça" class="img_peca">
           </div>
-        <div>
-          <p class="txt_peca"><?php echo $info['pec_nome']; ?></p>
-          <p class="txt_desc"><?php echo $item['descricao']; ?></p>
-        </div>
+          <div>
+            <p name="txtPeca" class="txt_peca"><?php echo $info['pec_nome']; ?></p>
+            <p name="txtDesc" class="txt_desc"><?php echo $item['descricao']; ?></p>
+          </div>
 
-        <span class="valor"><?php echo $info['cat_valor']; ?></span>
-      </div>
+          <span class="valor"><?php echo $info['cat_valor']; ?></span>
+        </form>
 
 
-  <?php
+      <?php
 
       }
 
-  ?>
+      ?>
 
-  <button href="pedido/" class="excluir_item">
-    Excluir itens
-  </button>
+      
+      <input type="button" placeholder="Excluir itens" class="excluir_item">
+        
 
-  <div class="descricao">
-    <input class="desc" name="txtArea" type="textarea" placeholder="Deixe um recado para o entregador">
+      <div class="descricao">
+        <input class="desc" name="txtArea" type="textarea" placeholder="Deixe um recado para o entregador">
 
-    <div class="info">
-      <p>Soma:</p>
-      <p>Taxa de entrega (15%):</p>
-      <p style="font-weight: bold;">Custo total:</p>
-    </div>
+        <div class="info">
+          <p>Soma:</p>
+          <p>Taxa de entrega (15%):</p>
+          <p style="font-weight: bold;">Custo total:</p>
+        </div>
 
-    <div class="valores">
-      <p><?php echo $preco; ?></p>
-      <p><?php echo $taxa =$preco * 0.10; ?></p>
-      <p style="font-weight: bold;"><?php echo $preco + $taxa; ?></p>
-    </div>
-  </div>
+        <div class="valores">
+          <p><?php echo $preco; ?></p>
+          <p><?php echo $taxa = $preco * 0.10; ?></p>
+          <p style="font-weight: bold;"><?php echo $preco + $taxa; ?></p>
+        </div>
+      </div>
 
-  <div class="botoes">
-    <input type="button" id="btnExcluir" class="excluir_pedido" value="Cancelar sacola">
-    <input type="submit" name="pedido" class="pedido" value="Fazer pedido">
-</div>
+      <div class="botoes">
+        <input type="button" id="btnExcluir" class="excluir_pedido" value="Cancelar sacola">
 
-<div class="popup" style="display: none;">
+        <input type="submit" name="pedido" class="pedido" value="Fazer pedido">
+
+      </div>
+
+      <div class="popup" style="display: none;">
         <p class="label">Você realmente deseja cancelar sua sacola?</p>
         <br>
         <div>
           <input id="btnCancelar" type="button" class="btn" value="Cancelar">
           <input type="submit" name="excluir" class="btn-excluir" value="Excluir Sacola">
         </div>
-    </div>
-    
+      </div>
+
 
   </section>
 

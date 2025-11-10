@@ -15,5 +15,3 @@
             'descricao' => $_POST['txtDescricao'],
         ];
     }
-
-    
