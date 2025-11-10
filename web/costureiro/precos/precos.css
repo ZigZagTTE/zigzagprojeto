@@ -48,7 +48,32 @@
   gap: 5px;
 }
 
-.detalhes-servico {}
+.detalhes-servico {
+  display: grid;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.detalhes-servico a {
+  text-decoration: none;
+  padding: 2px;
+  text-align: center;
+  background-color: var(--roxo-principal);
+  color: var(--bege-claro);
+  width: 100px;
+  border: none;
+  border-radius: 8px;
+}
+
+.detalhes-servico a:hover {
+  transition: all 0.3s ease;
+  background-color: var(--roxo-claro);
+  scale: 1.05;
+}
+
+
 
 .list-precos {
   height: auto;
@@ -103,4 +128,10 @@
   width: 100px;
   border: none;
   border-radius: 8px;
+}
+
+.botao-salvar:hover {
+  transition: all 0.3s ease;
+  background-color: var(--roxo-claro);
+  scale: 1.05;
 }
