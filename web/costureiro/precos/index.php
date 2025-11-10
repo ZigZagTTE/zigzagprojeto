@@ -47,6 +47,8 @@
         <!--user-->
     </header>
 
+    <!-- HEADER -->
+
     <p class="title">Atribuir preços:</p>
 
     <div class="category-card-costurar-atribut">
@@ -65,58 +67,58 @@
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camisa.png" alt="Camisa (com botão)">
                     <div class="detalhes-servico">
-                    <p>Camisa (com botão)</p>
-                    <a href="">Detalhes</a>
+                        <p>Camisa (com botão)</p>
+                        <a href="detalhes/">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camiseta.png" alt="Camiseta (sem botão)">
                     <div class="detalhes-servico">
-                    <p>Camiseta (sem botão)</p>
-                    <a href="">Detalhes</a>
+                        <p>Camiseta (sem botão)</p>
+                        <a href="detalhes/">Detalhes</a>
                     </div>
-                    
+
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/casaco.png" alt="Casaco">
                     <div class="detalhes-servico">
-                    <p>Casaco</p>
-                    <a href="">Detalhes</a>
+                        <p>Casaco</p>
+                        <a href="detalhes/">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/macacao-feminino.png" alt="Macacão">
                     <div class="detalhes-servico">
-                    <p>Macacão</p>
-                    <a href="">Detalhes</a>
+                        <p>Macacão</p>
+                        <a href="detalhes/">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/calcas.png" alt="Calças">
                     <div class="detalhes-servico">
-                    <p>Calças</p>
-                    <a href="">Detalhes</a>
+                        <p>Calças</p>
+                        <a href="detalhes/">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/shorts.png" alt="Shorts">
                     <div class="detalhes-servico">
-                    <p>Shorts</p>
-                    <a href="">Detalhes</a>
+                        <p>Shorts</p>
+                        <a href="detalhes/">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/bermuda.png" alt="Bermuda">
                     <div class="detalhes-servico">
-                    <p>Bermuda</p>
-                    <a href="">Detalhes</a>
+                        <p>Bermuda</p>
+                        <a href="detalhes/">Detalhes</a>
                     </div>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/vestido.png" alt="Vestido">
                     <div class="detalhes-servico">
-                    <p>Vestido</p>
-                    <a href="">Detalhes</a>
+                        <p>Vestido</p>
+                        <a href="detalhes/">Detalhes</a>
                     </div>
                 </li>
                 <button class="botao-salvar">Salvar</button>

@@ -101,7 +101,7 @@
                     <h3>Redes Sociais</h3>
                     <div class="social-links">
                         <a href="#"><img src="../../../assets/svg/facebook.svg" alt="Facebook" /></a>
-                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../../assets/svg/instagram.svg" alt="Instagram" /></a>
                         <a href="#"><img src="../../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
                     </div>
                 </div>

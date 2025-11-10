@@ -48,6 +48,8 @@
   gap: 5px;
 }
 
+.detalhes-servico {}
+
 .list-precos {
   height: auto;
   width: 50%;
@@ -56,14 +58,13 @@
 }
 
 .list-precos li {
-  display: grid;
-  grid-template-columns: 40px;
-  grid-template-rows: 40px;
-  gap: 0px;
+  align-items: center;
   background-color: var(--bege-escuro);
-  height: 100px;
+  min-height: 100px;
   width: auto;
   margin: 5px;
+  align-items: center;
+  display: flex;
 }
 
 .list-precos li p {
@@ -75,7 +76,6 @@
 
 .list-precos li img {
   display: flex;
-  grid-row: span 2 / span 2;
   margin: auto 10px;
   width: 80px;
   padding: 5px;
@@ -91,36 +91,16 @@
   border-radius: 8px;
 }
 
-.valor_list {
+.botao-salvar {
   display: flex;
   justify-content: center;
   height: min-content;
-  grid-column-start: 2;
-  gap: 10px;
-  align-items: center;
-  margin: auto;
-}
-
-.valor_list p {
-  width: min-content;
-}
-
-.valor_list input {
-  width: 300px;
-  text-align: center;
-}
-
-.valor_list button {
+  margin: 7px auto;
+  padding: 7px 9px;
+  font-size: 25px;
   background-color: var(--roxo-principal);
-  color: white;
+  color: var(--bege-claro);
+  width: 100px;
   border: none;
   border-radius: 8px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.valor_list button:hover {
-  background-color: var(--roxo-claro);
 }
