@@ -205,17 +205,19 @@ table {
 .title{
   font-size: 24px;
   margin: 20px 0 20px 60px;
+  font-weight: bold;
 }
 .pedidos {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
   justify-content: center;
   align-items: center;
 }
 
 .pedido {
-  border: #e1d5c7 3px solid;
+  background-color: #e1d5c7;
+  border-radius: 20px;
   width: 90%;
   height: 160px;
   margin: 15px;
@@ -245,22 +247,21 @@ table {
   }
 
   .endereco{
-    font-size: 14px;
-    margin-top: 6px;
+    font-size: 18px;
+    margin-top: 16px;
   }
 }
 
 .btn-aceitar {
     justify-self: end;
     align-self: end;
+    margin: 0 auto 0 60px;
     background-color: var(--roxo-claro);
     color: var(--preto);
     font-weight: bold;
-    border: none;
     text-decoration: none;
     text-align: center;
     width: 200px;
-    margin: 0 20px 28px 0;
     padding: 10px 20px;
     border-radius: 50px;
     cursor: pointer;

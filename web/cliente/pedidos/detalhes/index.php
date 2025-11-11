@@ -65,7 +65,7 @@
 
   <p class="title">Pedido #<?php echo $_GET["id"]; ?></p>
 
-    <section class="pedidos">
+    <form action="confirmar.php" method="POST" class="pedidos">
         <div class="pedido">
             <div class="pedido-info">
                 <p class="costureira"><?php echo $dados_pedido[0]["cos_nome"]; ?></p>
@@ -77,7 +77,7 @@
                     $total += $item["cat_valor"];
                 }
             ?>
-                <p class="endereco"><?php echo $total; ?></p>
+                <p class="endereco">R$<?php echo $total; ?></p>
             </div>
         </div>
 
@@ -90,9 +90,9 @@
             </div>
         </div>
 
-        <a href="finalizar/" class="btn-aceitar">Confirmação de entrega</a>
+        <input type="submit" value="Confirmar entrega" class="btn-aceitar">
 
-    </section>
+    </form>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -100,7 +100,7 @@
       <div class="footer-content">
         <div class="footer-section">
           <img
-            src="../../assets/svg/logo.svg"
+            src="../../../assets/svg/logo.svg"
             alt="ZigZag Logo"
             class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
@@ -125,9 +125,9 @@
         <div class="footer-section">
           <h3>Redes Sociais</h3>
           <div class="social-links">
-            <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
-            <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
+            <a href="#"><img src="../../../assets/svg/facebook.svg" alt="Facebook" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../../assets/svg/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="../../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
       </div>
