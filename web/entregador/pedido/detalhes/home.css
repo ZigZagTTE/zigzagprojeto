@@ -218,6 +218,7 @@ table {
   grid-template-rows: 1fr 1fr;
   justify-content: center;
   align-items: center;
+  margin-bottom: 12rem;
 }
 
 .pedido {

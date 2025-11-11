@@ -237,8 +237,8 @@ table {
 
   .status {
     display: flex;
+    margin: -20px 10px 0 0;
     justify-self: end;
-    margin: auto 20px 20px auto;
     text-align: end;
     font-size: 16px;
   }
@@ -253,32 +253,6 @@ table {
     font-size: 14px;
     margin-top: 6px;
   }
-}
-
-.etapa {
-  border: #e1d5c7 3px solid;
-  width: 90%;
-  height: 25%;
-  margin: 15px 0 auto 0;
-
-  .etapa-info{
-    justify-content: space-between;
-    display: flex;
-    margin-top: 12px;
-
-    p {
-    font-weight: bold;
-    font-size: 18px;
-    align-self: center;
-    width: fit-content;
-  }
-
-  span {
-    font-size: 16px;
-  }
-
-  }
-
 }
 
 .confirmar{

@@ -47,16 +47,23 @@
 
     <section class="pedidos">
         <div class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
+            <img class="pedido-img" src="../../assets/uploads/profilepictures/<?php echo $pedido[0]["cos_perfil"]; ?>" alt="informações">
             <div class="pedido-info">
                 <p class="costureira"><?php echo $pedido[0]["cos_nome"]; ?></p>
                 <p class="endereco"><?php echo $pedido[0]["cos_rua"] . ", " . $pedido[0]["cos_numero"]; ?></p>
             </div>
-            <span class="status">Valor</span>
+
+            <?php 
+                $total = 0;
+                foreach($pedido as $item){
+                    $total += $item["cat_valor"];
+                }
+            ?>
+            <span class="status"><?php echo "R$ " . $total; ?></span>
         </div>
 
         <div class="pedido">
-            <img class="pedido-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo94nluortt0jdP3BhKfb-5lkMuCoCS_olg&s" alt="informações">
+            <img class="pedido-img" src="../../assets/uploads/profilepictures/<?php echo $pedido[0]["cli_perfil"]; ?>" alt="informações">
             <div class="pedido-info">
                 <p class="costureira"><?php echo $pedido[0]["cli_nome"]; ?></p>
                 <p class="endereco"><?php echo $pedido[0]["end_rua"] . ", " . $pedido[0]["end_numero"]; ?></p>

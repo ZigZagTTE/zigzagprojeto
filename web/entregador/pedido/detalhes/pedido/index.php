@@ -50,7 +50,7 @@
                 <p class="endereco"><?php echo $pedido[0]["cos_rua"] . ", " . $pedido[0]["cos_numero"]; ?></p>
                 <p class="endereco"><?php echo $pedido[0]["pec_nome"]; ?></p>
             </div>
-            <span class="status">Horário</span>
+            <span class="status"><?php echo $pedido[0]["ped_horario"]; ?></span>
         </div>
 
         <div class="pedido">
@@ -60,7 +60,14 @@
                 <p class="endereco"><?php echo $pedido[0]["ser_nome"]; ?></p>
                 <p class="endereco">Valor</p>
             </div>
-            <span class="status">Horário</span>
+
+            <?php 
+                $total = 0;
+                foreach($pedido as $item){
+                    $total += $item["cat_valor"];
+                }
+            ?>
+            <span class="status"><?php echo "R$ " . $total; ?></span>
         </div>
 
         <p class="confirmar">Confirmar entrega do pedido?</p>
