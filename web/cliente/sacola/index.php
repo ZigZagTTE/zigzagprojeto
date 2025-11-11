@@ -23,7 +23,12 @@
     exit();
   }
 
-  $cost = buscarInformacoesCatalogo($conexao, $_SESSION['sacola']['idCostureira']);
+  if (empty($_SESSION['sacola'])) {
+    $sacolaVazia = true;
+  } else {
+    $sacolaVazia = false;
+    $cost = buscarInformacoesCatalogo($conexao, $_SESSION['sacola']['idCostureira']);
+  }
 
   ?>
 </head>
@@ -55,57 +60,82 @@
   <!-- INFORMACOES -->
 
   <section class="secoes">
-
     <div class="subtitulo_secoes">
-      <img src="../../assets/uploads/profilepictures/<?php echo $cost['cos_perfil']; ?>" alt="Costureira" class="img_costureira">
-      <p class="costureira"><?php echo $cost['cos_nome'] ?></p>
-      <p class="endereco"><?php echo $cost['cos_rua'] . ", " . $cost['cos_numero']; ?></p>
-
+      <?php if ($sacolaVazia) { ?>
+        <p class="avisoVazia">Sua sacola está vazia.</p>
+      <?php } else { ?>
+        <img src="../../assets/uploads/profilepictures/<?php echo $cost['cos_perfil']; ?>" alt="Costureira"
+          class="img_costureira">
+        <p class="costureira"><?php echo $cost['cos_nome'] ?></p>
+        <p class="endereco"><?php echo $cost['cos_rua'] . ", " . $cost['cos_numero']; ?></p>
+      <?php } ?>
     </div>
-    <div class="carrinho">
+    <form action="processarPedido.php" method="POST" class="carrinho">
 
+      <label class="titulos">Itens</label>
       <?php
+
+      $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermudas.png', 'vestido.png'];
 
       $preco = 0;
 
-      foreach ($_SESSION['sacola']['itens'] as $indice => $item) {
+      if (empty($_SESSION['sacola'])) {
 
-        $info = buscarInformacoesCatalogo($conexao, $item['catalogo']);
-        $preco += $info['cat_valor'];
-        $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermudas.png', 'vestido.png']
-      ?>
-
-        <form action="criarPedido.php" method="POST" name="form<?php echo $indice; ?>"  class="peca">
+        ?>
+        <div class="peca">
           <div>
-            <label class="container_mostrar_check">
-              <input name="checkIndicesParaApagar" type="checkbox" value="<?php echo $indice; ?>">
-              <span class="checkmark">
-                <img src="https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/cross-white-icon.png">
-              </span>
-            </label>
-            <img src="../../assets/images/usu_img/pecas/<?php echo $imagem[$info['cat_id'] - 1]; ?>" alt="Peça" class="img_peca">
+            <img src="../../assets/images/usu_img/pecas/camisa.png" alt="Peça" class="img_peca">
           </div>
           <div>
-            <p name="txtPeca" class="txt_peca"><?php echo $info['pec_nome']; ?></p>
-            <p name="txtDesc" class="txt_desc"><?php echo $item['descricao']; ?></p>
+            <p name="txtPeca" class="txt_peca">Que tal fazer alguns pedidos?</p>
+            <p name="txtDesc" class="txt_desc">Vá a uma página de costureira e escolha algum catálogo!</p>
           </div>
 
-          <span class="valor"><?php echo $info['cat_valor']; ?></span>
-        </form>
+          <span class="valor">R$ ...</span>
+        </div>
+        <?php
+
+      } else
+        foreach ($_SESSION['sacola']['itens'] as $indice => $item) {
+
+          $info = buscarInformacoesCatalogo($conexao, $item['catalogo']);
+          $preco += $info['cat_valor'];
+          ?>
+
+          <div class="peca">
+            <div>
+              <label class="container_mostrar_check">
+                <input name="checkIndicesParaApagar[]" type="checkbox" value="<?php echo $indice; ?>">
+                <span class="checkmark">
+                  <img src="https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/cross-white-icon.png">
+                </span>
+              </label>
+              <img src="../../assets/images/usu_img/pecas/<?php echo $imagem[$info['cat_id'] - 1]; ?>" alt="Peça"
+                class="img_peca">
+            </div>
+            <div>
+              <p class="txt_peca"><?php echo $info['ser_nome']; ?> de <u><?php echo $info['pec_nome']; ?></u></p>
+              <p class="txt_desc"><?php echo $item['descricao']; ?></p>
+            </div>
+
+            <span class="valor"><?php echo 'R$ ' . $info['cat_valor']; ?></span>
+          </div>
 
 
-      <?php
+          <?php
 
-      }
+        }
 
       ?>
 
-      
-      <input type="button" placeholder="Excluir itens" class="excluir_item">
-        
 
+      <input type="submit" name="excluirItens" value="Excluir itens" class="excluir_item">
+      <div class="titulos_desc_valor">
+        <label class="titulos">Descrição para entrega</label>
+        <label class="titulos">Valores</label>
+      </div>
       <div class="descricao">
-        <input class="desc" name="txtArea" type="textarea" placeholder="Deixe um recado para o entregador">
+        <textarea class="desc" name="txtDescricao" placeholder="Deixe um recado para o entregador"></textarea>
 
         <div class="info">
           <p>Soma:</p>
@@ -114,17 +144,37 @@
         </div>
 
         <div class="valores">
-          <p><?php echo $preco; ?></p>
-          <p><?php echo $taxa = $preco * 0.10; ?></p>
-          <p style="font-weight: bold;"><?php echo $preco + $taxa; ?></p>
+          <p><?php echo 'R$ ' . $preco; ?></p>
+          <p><?php echo 'R$ ' . $taxa = floor(($preco * 0.15) * 100) / 100; ?></p>
+          <p style="font-weight: bold;"><?php echo 'R$ ' . $preco + $taxa; ?></p>
         </div>
       </div>
+
+      <label class="titulos">Endereço</label>
+      <select name="idEndereco" class="enderecos">
+        <?php
+
+        $listaEnderecos = buscarEnderecosDoCliente($conexao, $_SESSION['cli_id']);
+
+        if (empty($listaEnderecos)) {
+          echo "<option value=''> Não há endereços para escolher.</option>";
+        } else {
+          foreach ($listaEnderecos as $endereco) {
+
+            echo "<option value='" . $endereco['end_id'] . "'>";
+
+            echo $endereco['end_rua'] . ", " . $endereco['end_numero'] . ", " . $endereco['end_bairro'] . ", " . $endereco['end_cidade'] . " - " . $endereco['end_estado'] . "</option>\n";
+          }
+        }
+
+
+        ?>
+      </select>
 
       <div class="botoes">
         <input type="button" id="btnExcluir" class="excluir_pedido" value="Cancelar sacola">
 
-        <input type="submit" name="pedido" class="pedido" value="Fazer pedido">
-
+        <input type="submit" name="fazerPedido" class="pedido" value="Fazer pedido"  <?php echo $sacolaVazia ? "disabled" : "";?>>
       </div>
 
       <div class="popup" style="display: none;">
@@ -132,10 +182,10 @@
         <br>
         <div>
           <input id="btnCancelar" type="button" class="btn" value="Cancelar">
-          <input type="submit" name="excluir" class="btn-excluir" value="Excluir Sacola">
+          <input type="submit" name="excluirSacola" class="btn-excluir" value="Excluir Sacola">
         </div>
       </div>
-
+    </form>
 
   </section>
 

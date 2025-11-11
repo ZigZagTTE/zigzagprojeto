@@ -219,7 +219,14 @@ table {
     align-content: center;
     color: black;
     margin: 2rem 0;
-  
+
+    .avisoVazia {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: auto 5px;
+      text-decoration: underline;
+    }
+
     .costureira {
       font-size: 2rem;
       font-weight: bold;
@@ -232,7 +239,7 @@ table {
       height: fit-content;
     }
 
-    img{
+    img {
       width: 70px;
       height: 70px;
       border-radius: 20%;
@@ -257,12 +264,18 @@ table {
         margin-left: 24px;
         font-weight: bold;
       }
-      
-      .valor{
+
+      txt_servico {
+        margin-left: 24px;
+        font-weight: bold;
+      }
+
+      .valor {
         margin-left: auto;
         margin-top: auto;
+        font-size: 18px;
         font-weight: bold;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
       div {
@@ -279,7 +292,6 @@ table {
       position: relative;
       cursor: pointer;
       font-size: 16px;
-
     }
 
     .container_mostrar_check input {
@@ -301,11 +313,11 @@ table {
 
       img {
         position: absolute;
-        top: 4px;
-        left: 4px;
+        top: 5px;
+        left: 5px;
 
         display: none;
-        height: 17px;
+        height: 15px;
       }
     }
 
@@ -333,7 +345,6 @@ table {
       height: 20px;
     }
 
-
     .descricao {
       display: inline-flex;
       margin: 2rem 0 2rem 0;
@@ -343,130 +354,167 @@ table {
       .desc {
         width: 40%;
         background-color: var(--bege);
-        vertical-align: top;
         border: var(--roxo-principal) 2px solid;
         border-radius: 8px;
+        padding: 10px;
+        resize: none;
       }
 
-      .info{
+      .info {
+        line-height: 24px;
+        font-size: 20px;
         width: 40%;
         margin-left: auto;
         margin-top: auto;
       }
 
       .valores {
+        line-height: 24px;
+        font-size: 22px;
         margin-left: auto;
         margin-top: auto;
+        p {
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
       }
+    }
+
+    .titulos {
+      display: block;
+      margin: 0 0 20px 0 ;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .titulos_desc_valor{
+      position: relative;
+      top: 30px;
+      padding: 20px 30rem 0 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .enderecos {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid var(--roxo-principal);
+      background-color: var(--bege);
+      padding: 8px;
+      font-size: 16px;
     }
 
     .botoes {
       display: flex;
+      justify-content: flex-end;
     }
 
     .excluir_pedido {
-        width: max-content;
-        text-decoration: none;
-        font-weight: bold;
-        color: var(--vermelho-erro);
-        border: var(--vermelho-erro) 2px solid;
-        margin: 10px auto;
-        background-color: var(--bege-claro);
-        padding: 10px;
-        border-radius: 30px;
-      }
+      width: max-content;
+      text-decoration: none;
+      font-weight: bold;
+      color: var(--vermelho-erro);
+      border: var(--vermelho-erro) 2px solid;
+      margin: 10px 50px;
+      background-color: var(--bege-claro);
+      padding: 10px;
+      border-radius: 30px;
+      width: 20rem;
+    }
 
-      .excluir_pedido:hover {
-        background-color: var(--bege-claro);
-        color: var(--vermelho-erro);
-        scale: 1.05;
-        transition: all 0.3s ease-out;
-        cursor: pointer;
-      }
+    .excluir_pedido:hover {
+      background-color: var(--bege-claro);
+      color: var(--vermelho-erro);
+      scale: 1.05;
+      transition: all 0.3s ease-out;
+      cursor: pointer;
+    }
 
-      .excluir_item {
-        width: max-content;
-        text-decoration: none;
-        font-weight: bold;
-        color: var(--roxo-principal);
-        border: var(--roxo-principal) 2px solid;
-        margin: 10px auto;
-        background-color: var(--bege-claro);
-        padding: 10px;
-        border-radius: 30px;
-      }
+    .excluir_item {
+      width: max-content;
+      text-decoration: none;
+      font-weight: bold;
+      color: var(--roxo-principal);
+      border: var(--roxo-principal) 2px solid;
+      margin: 10px auto;
+      background-color: var(--bege-claro);
+      padding: 10px;
+      border-radius: 30px;
+    }
 
-      .excluir_item:hover {
-        background-color: var(--bege-claro);
-        color: var(--roxo-principal);
-        scale: 1.05;
-        transition: all 0.3s ease-out;
-        cursor: pointer;
-      }
+    .excluir_item:hover {
+      background-color: var(--bege-claro);
+      color: var(--roxo-principal);
+      scale: 1.05;
+      transition: all 0.3s ease-out;
+      cursor: pointer;
+    }
 
-      .pedido {
-        display: block;
-        width: max-content;
-        text-decoration: none;
-        color: var(--bege-claro);
-        font-weight: bold;
-        margin: 10px auto;
-        background-color: var(--roxo-principal);
-        padding: 10px;
-        border-radius: 30px;
-      }
+    .pedido {
+      display: block;
+      width: max-content;
+      text-decoration: none;
+      color: var(--bege-claro);
+      font-weight: bold;
+      margin: 10px 0px;
+      background-color: var(--roxo-principal);
+      padding: 10px;
+      border-radius: 30px;
+      width: 20rem;
+    }
 
-      .pedido:hover {
-        background-color: var(--roxo-principal);
-        scale: 1.05;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
+    .pedido:hover {
+      background-color: var(--roxo-principal);
+      scale: 1.05;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
 
-      .popup{
-        display: none;
-        position: fixed;
-        flex-direction: column;
-        top: 40vh;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        align-items: center;
-        background-color: var(--bege);
-        border-radius: 20px;
-        box-shadow: 0 0 10px rgb(15, 15, 15);
-        width: 30%;
-        padding: 2rem 0 2rem 0;
-        height: auto;
-        max-height: 120vh;
-        margin: 30px auto 30px auto;
-        overflow: hidden;
+    .popup {
+      display: none;
+      position: fixed;
+      flex-direction: column;
+      top: 40vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      align-items: center;
+      background-color: var(--bege);
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgb(15, 15, 15);
+      width: 30%;
+      padding: 2rem 0 2rem 0;
+      height: auto;
+      max-height: 120vh;
+      margin: 30px auto 30px auto;
+      overflow: hidden;
 
       .label {
         font-size: 20px;
         text-align: center;
-        width: 18rem;
       }
 
-      div{
+      div {
         display: flex;
         justify-content: space-around;
         margin-top: 1.5rem;
         gap: 48px;
       }
 
-      .btn{
-        background-color: var(--cinza-escuro);
-        color: var(--bege-claro);
+      .btn {
+        background-color: var(--bege-claro);
+        color: var(--cinza-escuro);
+        width: 9rem;
         font-weight: bold;
         padding: 10px;
         border-radius: 30px;
-        border: none;
+        border: solid 2px var(--cinza-escuro);
         cursor: pointer;
       }
 
-      .btn-excluir{
+      .btn-excluir {
         background-color: var(--vermelho-erro);
         color: var(--bege-claro);
+        width: 9rem;
         font-weight: bold;
         padding: 10px;
         border-radius: 30px;

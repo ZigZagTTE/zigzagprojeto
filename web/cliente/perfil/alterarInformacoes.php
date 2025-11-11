@@ -8,6 +8,7 @@ $id = $_SESSION['cli_id'];
 
 if (array_key_exists('sair', $_POST)) {
     apagarSessao();
+    unset($_SESSION['sacola']);
     header("Location: ./");
 } else if (array_key_exists('salvar', $_POST)) {
     $nome = $_POST['txtNome'];

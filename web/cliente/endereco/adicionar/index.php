@@ -37,25 +37,23 @@ if (!isset($_SESSION['cli_id'])) {
         <nav class="nav_header">
             <div class="buttons_home"></div>
         </nav>
-<<<<<<< HEAD
-        <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a><!--casa-->
-        <a class="icon" href="../../sacola/"><i class="fa-solid fa-bag-shopping"></i></a> <!--carrinho--><!--carrinho-->
-=======
         <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a>
         <!--casa-->
         <a class="icon" href="../../sacola/"><i class="fa-solid fa-bag-shopping fa-2x"></i>
-        <!--carrinho-->
->>>>>>> entregador
-        <a class="icon" href="../../perfil/">
-            <img class="icon_img_perfil"
-                src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
-                alt="Foto de perfil" />
-        </a>
-        <!--user-->
+            <!--carrinho-->
+            <a class="icon" href="../../perfil/">
+                <img class="icon_img_perfil"
+                    src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
+                    alt="Foto de perfil" />
+            </a>
+            <!--user-->
     </header>
 
     <!-- INFORMACOES -->
 
+    <?php if (!empty($_GET['mensagem']) && $_GET['mensagem'] == 'sacola') { ?>
+        <p class="aviso_sacola">Adicione um endereço e então volte para a sacola</p>
+    <?php } ?>
     <div class="secoes">
         <div class="paginas">
             <ul>

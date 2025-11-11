@@ -131,6 +131,24 @@ function buscarInformacoesCatalogo($conexao, $cat_id)
     }
 }
 
+function buscarEnderecosDoCliente($conexao, $cli_id){
+    $queryEnderecos = mysqli_prepare($conexao, "SELECT *
+                        FROM tbl_cliente AS cli 
+                        JOIN tbl_endereco_cliente AS endereco ON cli.cli_id = endereco.cli_id
+                        WHERE cli.cli_id = ?");
 
+    mysqli_stmt_bind_param($queryEnderecos, "i", $cli_id);
+
+    mysqli_stmt_execute($queryEnderecos);
+
+    $resultadoEnderecos = mysqli_stmt_get_result( $queryEnderecos);
+
+
+    if ($resultadoEnderecos) {
+        return mysqli_fetch_all($resultadoEnderecos, MYSQLI_ASSOC);
+    } else {
+        return false;
+    }
+}
 
 ?>
