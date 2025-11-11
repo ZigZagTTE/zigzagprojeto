@@ -31,6 +31,7 @@ section {
 /* Variáveis de Cores e Breakpoints */
 :root {
   /* Paleta de cores - Tema Claro */
+  --vermelho-erro: #f73151;
   --roxo-principal: #b450f5;
   --roxo-claro: #d89ffd;
   --roxo-mais-claro: #e7cef6;
@@ -196,79 +197,268 @@ table {
   border-radius: 100%;
   justify-content: center;
   box-shadow: #303030 0px 0px 8px;
-  object-fit: cover;
 }
 
 /* ========================================================================== */
 /* BODY DO SITE                                                              */
 /* ========================================================================== */
 
-.pedidos {
+.secoes {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  .paginas {
+    li {
+      margin-top: 20px;
+      margin-bottom: -10px;
+      padding: 20px 20px 40px 40px;
+      width: 300px;
+      height: 30px;
+      background-color: var(--roxo-claro);
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      transition: transform 0.3s ease;
+
+      i {
+        margin-right: 24px;
+      }
+    }
+
+    li:hover {
+      transform: scale(1.1);
+    }
+
+    .choice {
+      display: inline-block;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 10px 0 10px 0;
+      height: fit-content;
+      width: fit-content;
+      vertical-align: middle;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .informacoes {
+    grid-area: 2fr;
+
+    .title {
+      font-size: 54px;
+      margin: 16px 16px 32px 16px;
+    }
+
+    .endereco_grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+
+      .label {
+        font-size: 18px;
+        margin: 16px 0;
+      }
+
+      .dado_endereco {
+        display: inline-block;
+      }
+
+      .input {
+        border-radius: 20px;
+        border: 1px solid var(--roxo-principal);
+        background-color: #faf4ee;
+        padding: 8px;
+        font-size: 16px;
+      }
+
+      #rua {
+        width: 300px;
+        margin: 0 10px 0 0;
+      }
+      #numero {
+        width: 75px;
+      }
+      #bairro {
+        width: 390px;
+      }
+      #complemento {
+        width: 390px;
+        resize: none;
+        word-break: break-word;
+      }
+      #cidade {
+        width: 200px;
+      }
+      #estado {
+        width: 80px;
+        text-align: center;
+      }
+      #cep {
+        width: 285px;
+      }
+    }
+
+    .popup {
+      display: none;
+      position: absolute;
+      top: 40vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      background-color: var(--bege);
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgb(15, 15, 15);
+      width: 26%;
+      padding: 2rem 0 2rem 0;
+      height: auto;
+      max-height: 120vh;
+      margin: 30px auto 30px auto;
+      overflow: hidden;
+
+      .label {
+        font-size: 18px;
+        margin: 16px auto 16px auto;
+        width: 15rem;
+      }
+
+      .excluir_aviso {
+        text-align: center;
+      }
+
+      input[type="button"],
+      input[type="submit"] {
+        margin: 20px auto;
+      }
+
+      .btn {
+        font-size: 16px;
+        width: 15rem;
+        height: 2.8rem;
+      }
+
+      .btn-excluir {
+        font-size: 16px;
+        width: 15rem;
+        height: 2.8rem;
+      }
+
+      .excluir_aviso {
+        font-family: "Calibri";
+        font-weight: bold;
+        color: var(--vermelho-erro);
+      }
+    }
+
+    .erro_aviso {
+      display: none;
+      margin: 24px auto 0 auto;
+      text-align: center;
+      font-size: 1rem;
+      font-family: "Calibri";
+      font-weight: bold;
+      color: var(--vermelho-erro);
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .box_botoes {
+      display: grid;
+      align-items: top;
+      grid-template-columns: 20rem 1fr;
+    }
+
+    .btn {
+      display: block;
+      margin: 20px 0;
+      width: 18rem;
+      height: 3rem;
+      background-color: var(--roxo-principal);
+      color: var(--bege);
+      text-decoration: none;
+      text-align: center;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 0;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      cursor: pointer;
+    }
+
+    .btn-salvar {
+      display: block;
+      margin: 16px 0;
+      width: 18rem;
+      height: 3rem;
+      border: green 2px solid;
+      background-color: var(--bege);
+      color: green;
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-excluir {
+      display: block;
+      margin: 20px 0;
+      width: 18rem;
+      height: 3rem;
+      border: var(--vermelho-erro) 2px solid;
+      background-color: var(--bege);
+      color: var(--vermelho-erro);
+      text-decoration: none;
+      border-radius: 5rem;
+      font-size: 1.2rem;
+      padding: 0.6rem 3rem;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}
+.endereco {
   justify-content: center;
-  align-items: center;
-}
-
-.pedido {
-  border: #e1d5c7 3px solid;
-  width: 90%;
-  height: 160px;
-  margin: 15px;
-  align-items: center;
-  justify-self: center;
-
-  .pedido-info {
-    margin-left: 10px;
+  .setor_endereco {
+    background-color: #e1d5c7;
     display: flex;
-    height: 100%;
-    flex-direction: column;
-    font-size: 18px;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    height: 30%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+
+    h1 {
+      font-size: 22px;
+      margin: 12px;
+    }
+
+    i {
+      margin-right: 20px;
+      padding: auto;
+      transition: width 1s, height 1s, transform 1s ease;
+    }
+
+    i:hover {
+      transform: scale(1.4);
+    }
   }
 
-  .status {
-    display: flex;
-    justify-self: end;
-    margin: auto 20px 20px auto;
-    text-align: end;
-    font-size: 16px;
-  }
-
-  .costureira {
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 24px;
-  }
-
-  .endereco{
-    font-size: 14px;
-    margin-top: 6px;
-  }
-}
-
-.btn-aceitar {
-    justify-self: end;
-    align-self: end;
-    background-color: var(--roxo-claro);
-    color: var(--preto);
-    font-weight: bold;
-    border: none;
+  a {
     text-decoration: none;
-    text-align: center;
-    width: 200px;
-    margin: 0 20px 28px 0;
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+    color: black;
+  }
 
-.btn-aceitar:hover {
-  background-color: var(--roxo-principal);
-  color: var(--bege-claro);
-  transform: scale(1.05);
+  .title {
+    font-size: 54px;
+    margin: 16px 16px 32px 16px;
+  }
 }
 
 /* ==========================================================================

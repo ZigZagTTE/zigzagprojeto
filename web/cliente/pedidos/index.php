@@ -5,28 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZigZag</title>
-  <link rel="stylesheet" href="pedido.css" />
-  <link
-    rel="icon"
-    href="../../../assets/images/MiniLogo.png"
-    type="image/x-icon" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
-    rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script
-    src="https://kit.fontawesome.com/a1d8234c07.js"
-    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
   <?php
   session_start();
+  require_once "../../conexao.php";
+  require_once "pedidoInfo.php";
+
   if (!isset($_SESSION['cli_id'])) {
-    header("Location: ../entrar");
+    header("Location: ../../login.php");
     exit();
   }
 
+  $dados_pedido = pedidoInfo($conexao, $_SESSION["cli_id"]);
   ?>
 </head>
 
@@ -34,64 +29,79 @@
   <!-- HEADER -->
   <header class="top">
     <div class="header_logo">
-      <a href="../"><img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90"
-          alt="Logo ZigZag">
+      <a href="../">
+        <img class="logo_header" src="../../assets/svg/logo.svg" width="90" height="90" alt="Logo ZigZag">
         <p class="zigzag_txt">igzag</p>
-        <img class="cli_text" src="../../assets/images/usu_img/ZigZag.png" alt="cliente">
+        <img class="cli_text" src="../../assets\images\usu_img\ZigZag.png" alt="cliente">
       </a>
     </div>
     <nav class="nav_header">
       <div class="buttons_home"></div>
     </nav>
-    <a class="icon" href="../index.php"><i class="fa-solid fa-house fa-2x"></i></a>
+    <a class="icon" href="../"><i class="fa-solid fa-house fa-2x"></i>
+    </a>
     <!--casa-->
-    <a class="icon" href="../sacola"><i class="fa-solid fa-bag-shopping"></i></i>
+    <a class="icon" href="../sacola/"><i class="fa-solid fa-bag-shopping fa-2x"></i>
     </a>
     <!--carrinho-->
-    <a class="icon" href="../perfil/"><img
-        class="icon_img_perfil"
-        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>"
-        alt="Foto de perfil" />
+    <a class="icon" href="index.php"><img class="icon_img_perfil"
+        src="../../assets/uploads/profilepictures/<?php echo $_SESSION["cli_perfil"]; ?>" alt="Foto de perfil" />
     </a>
     <!--user-->
   </header>
 
   <!-- INFORMACOES -->
 
-  <p class="title">Pedido #</p>
+  <div class="secoes">
+    <div class="paginas">
+      <ul>
+        <a href="../perfil/" class="choice">
+          <li>
+            <i class="fa-regular fa-user fa-lg" style="color: #fdf2e6"></i>Meus dados
+          </li>
+        </a>
+        <a href="../seguranca/" class="choice">
+          <li>
+            <i class="fa-solid fa-shield-halved fa-lg" style="color: #fdf2e6"></i>Segurança
+          </li>
+        </a>
+        <a href="index.php" class="choice">
+          <li>
+            <i class="fa-regular fa-compass fa-lg" style="color: #fdf2e6"></i>Endereços
+          </li>
+        </a>
+        <a href="../pedidos" class="choice">
+          <li>
+            <i class="fa-solid fa-truck-fast" style="color: #fdf2e6"></i>Pedidos
+          </li>
+        </a>
+      </ul>
+    </div>
 
-    <section class="pedidos">
-        <div class="pedido">
-            <div class="pedido-info">
-                <p class="costureira">Costureira</p>
-                <p class="endereco">Endereço</p>
-                <p class="endereco">Valor</p>
-                <span class="status">Horário</span>
-            </div>
-        </div>
-
-        
-        <div class="pedido">
-            <div class="pedido-info">
-                <p class="costureira">Cliente</p>
-                <p class="endereco">Endereço</p>
-                <span class="status">Horário</span>
-            </div>
-        </div>
-
-        <a href="finalizar/" class="btn-aceitar">Confirmação de entrega</a>
-
-    </section>
+    <div class="endereco">
+      <p class="title">Pedidos</p>
+      <?php
+      foreach ($dados_pedido as $linha => $valores) {
+        ?>
+        <a href="detalhes?id=<?php echo $valores['ped_id']; ?>">
+          <div class="setor_endereco">
+            <h1>Pedido #<?php echo $linha + 1; ?></h1>
+            <p><?php echo $valores['end_rua'] . ", " . $valores['end_numero'] . ", " . $valores['end_bairro']; ?></p>
+            <i class="fa-solid fa-arrow-right fa-lg"></i>
+          </div>
+        </a>
+        <?php
+      }
+      ?>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <img
-            src="../../assets/svg/logo.svg"
-            alt="ZigZag Logo"
-            class="footer-logo" />
+          <img src="../../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
         </div>
         <div class="footer-section">
@@ -115,7 +125,8 @@
           <h3>Redes Sociais</h3>
           <div class="social-links">
             <a href="#"><img src="../../assets/svg/facebook.svg" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg" alt="Instagram" /></a>
+            <a href="https://www.instagram.com/zigzag_ltda"><img src="../../assets/svg/instagram.svg"
+                alt="Instagram" /></a>
             <a href="#"><img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
           </div>
         </div>
