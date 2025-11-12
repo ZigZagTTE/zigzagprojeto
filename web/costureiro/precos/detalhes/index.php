@@ -7,7 +7,7 @@
     <title>ZigZag</title>
     <link rel="stylesheet" href="detalhes.css" />
     <link rel="stylesheet" href="../../home.css" />
-    <link rel="icon" href="../../assets/images/MiniLogo.png" type="image/x-icon" />
+    <link rel="icon" href="../../../assets/images/MiniLogo.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -47,24 +47,24 @@
         <!--user-->
     </header>
 
-    <p class="title">Atribuir preços:</p>
+    <form action="alterarPreco.php" method="POST" class="carrinho">
 
-    <div class="category-card-costurar-atribut">
-        <div class="category-icon">
-            <img class="category-icon" src="../../../assets/images/usu_img/maquina.png">
+        <div class="detalhes-peca">
+            <img src="../../../assets/images/usu_img/pecas/camisa.png" alt="camisa">
+            <p>Camisa</p>
         </div>
-        <div class="category-text">
-            Costurar minhas peças
+
+        <div class="valor-preco">
+            <p>valor</p>
+            <input class="preco" value="R$ 100,00">
         </div>
-    </div>
 
+        <div class="confimar-preco">
+            <a href="../">Cancelar Alteração</a>
+            <button type="submit">Confirmar Preço</button>
+        </div>
 
-    <div class="list-precos">
-
-    </div>
-
-
-
+    </form>
 
 
 

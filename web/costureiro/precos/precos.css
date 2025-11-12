@@ -53,11 +53,11 @@
   gap: 5px;
   justify-content: center;
   align-items: center;
-
 }
 
-.detalhes-servico a {
+.detalhes-servico {
   text-decoration: none;
+  margin: 0 20px 0 0;
   padding: 2px;
   text-align: center;
   background-color: var(--roxo-principal);
@@ -67,13 +67,11 @@
   border-radius: 8px;
 }
 
-.detalhes-servico a:hover {
+.detalhes-servico:hover {
   transition: all 0.3s ease;
   background-color: var(--roxo-claro);
   scale: 1.05;
 }
-
-
 
 .list-precos {
   height: auto;
@@ -88,15 +86,15 @@
   min-height: 100px;
   width: auto;
   margin: 5px;
-  align-items: center;
+  align-items: cente;
   display: flex;
+  justify-content: space-between;
 }
 
 .list-precos li p {
   display: flex;
   font-size: 25px;
   height: min-content;
-  margin: auto auto;
 }
 
 .list-precos li img {
@@ -107,26 +105,11 @@
   background: white;
   border-radius: 6px;
   height: 80px;
-
 }
 
 .list-precos input {
   width: 250px;
   height: 30px;
-  border-radius: 8px;
-}
-
-.botao-salvar {
-  display: flex;
-  justify-content: center;
-  height: min-content;
-  margin: 7px auto;
-  padding: 7px 9px;
-  font-size: 25px;
-  background-color: var(--roxo-principal);
-  color: var(--bege-claro);
-  width: 100px;
-  border: none;
   border-radius: 8px;
 }
 

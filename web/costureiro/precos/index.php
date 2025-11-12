@@ -66,62 +66,57 @@
             <form action="alterarPreco.php" method="POST">
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camisa.png" alt="Camisa (com botão)">
-                    <div class="detalhes-servico">
-                        <p>Camisa (com botão)</p>
-                        <a href="detalhes/">Detalhes</a>
-                    </div>
+                    <p>Camisa (com botão)</p>
+                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camiseta.png" alt="Camiseta (sem botão)">
-                    <div class="detalhes-servico">
-                        <p>Camiseta (sem botão)</p>
-                        <a href="detalhes/">Detalhes</a>
-                    </div>
+                    <p>Camiseta (sem botão)</p>
+                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
 
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/casaco.png" alt="Casaco">
-                    <div class="detalhes-servico">
-                        <p>Casaco</p>
-                        <a href="detalhes/">Detalhes</a>
-                    </div>
+
+                    <p>Casaco</p>
+                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
+
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/macacao-feminino.png" alt="Macacão">
-                    <div class="detalhes-servico">
-                        <p>Macacão</p>
-                        <a href="detalhes/">Detalhes</a>
-                    </div>
+
+                    <p>Macacão</p>
+                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
+
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/calcas.png" alt="Calças">
-                    <div class="detalhes-servico">
-                        <p>Calças</p>
-                        <a href="detalhes/">Detalhes</a>
-                    </div>
+
+                    <p>Calças</p>
+                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
+
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/shorts.png" alt="Shorts">
-                    <div class="detalhes-servico">
-                        <p>Shorts</p>
-                        <a href="detalhes/">Detalhes</a>
-                    </div>
+
+                    <p>Shorts</p>
+                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
+
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/bermuda.png" alt="Bermuda">
-                    <div class="detalhes-servico">
-                        <p>Bermuda</p>
-                        <a href="detalhes/">Detalhes</a>
-                    </div>
+
+                    <p>Bermuda</p>
+                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
+
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/vestido.png" alt="Vestido">
-                    <div class="detalhes-servico">
-                        <p>Vestido</p>
-                        <a href="detalhes/">Detalhes</a>
-                    </div>
+
+                    <p>Vestido</p>
+                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
+
                 </li>
-                <button class="botao-salvar">Salvar</button>
             </form>
         </ul>
 
