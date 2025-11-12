@@ -19,6 +19,11 @@
     if (!isset($_SESSION["cos_id"])) {
         header("Location: ../cadastrar");
     }
+
+    require_once "buscarPeca.php";
+
+    $buscarPeca = buscarPeca($conexao,  $_SESSION['cos_id']);
+
     ?>
 </head>
 
@@ -67,7 +72,7 @@
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camisa.png" alt="Camisa (com botão)">
                     <p>Camisa (com botão)</p>
-                    <a class="detalhes-servico" href="detalhes/">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/" <?php echo "?peca=". pecaId= ?></a>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camiseta.png" alt="Camiseta (sem botão)">
