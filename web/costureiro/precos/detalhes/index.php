@@ -19,6 +19,8 @@
     if (!isset($_SESSION["cos_id"])) {
         header("Location: ../../cadastrar");
     }
+
+    $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermudas.png', 'vestido.png'];
     ?>
 </head>
 
