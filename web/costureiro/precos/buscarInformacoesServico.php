@@ -17,7 +17,7 @@
         $resultado = mysqli_stmt_get_result($query);
         $resultado = mysqli_fetch_assoc($resultado);
 
-        return $resultado;
         mysqli_stmt_close($query);
-        mysqli_close($conexao);
+
+        return $resultado;
     }

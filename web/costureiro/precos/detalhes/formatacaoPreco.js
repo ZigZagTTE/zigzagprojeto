@@ -7,10 +7,12 @@ txtPreco.addEventListener("input", function (evento) {
 
 function formatarPreco(valor) {
     let formatoPreco = "";
-    let digitos = valor.replace(/^0+|\D+/g, "");
+    let digitos = valor.replace(/\D+/g, "");
+    digitos = digitos.replace(/^0+/, '');
+    console.log(digitos);
     digitos = digitos.padStart(3, '0');
     let centavos = digitos.substring(digitos.length - 2);
     let reais = digitos.substring(0, digitos.length - 2);
-    formatoPreco = '${ reais }.${ centavos }';
-    return formatoPreco;
+    formatoPreco = `${ reais }.${ centavos }`;
+    return 'R$ ' + formatoPreco;
 };
