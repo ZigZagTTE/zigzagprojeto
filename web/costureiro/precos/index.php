@@ -19,8 +19,10 @@
     if (!isset($_SESSION["cos_id"])) {
         header("Location: ../cadastrar");
     }
+    require_once "buscarInformacoesServico.php";
 
     $servicoId = $_GET["ser_id"];
+    $buscarInforServico = buscarInformacoesDoServico($conexao, $servicoId);
 
     ?>
 </head>
@@ -59,7 +61,7 @@
             <img class="category-icon" src="../../assets/images/usu_img/maquina.png">
         </div>
         <div class="category-text">
-            Costurar minhas peças
+            <?php echo $buscarInforServico['ser_nome']; ?>
         </div>
     </div>
 

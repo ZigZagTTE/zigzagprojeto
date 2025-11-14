@@ -51,7 +51,7 @@
   gap: 10px;
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     font-weight: bold;
     text-align: center;
     margin: 0 0 10px 0;
@@ -61,9 +61,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin:auto;
+    margin: auto;
     width: 300px;
     height: 80px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 3px solid var(--roxo-principal);
+  }
+}
+
+.valor-desc {
+  font-size: 1rem;
+}
+
+.desc-preco {
+  justify-content: center;
+  width: min-content;
+  margin: auto auto 1.5rem auto;
+  gap: 10px;
+
+  p {
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
+
+
+  .descricao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 600px;
+    height: 100px;
     text-align: center;
     font-size: 1rem;
     border-radius: 10px;

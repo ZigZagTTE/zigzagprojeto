@@ -25,12 +25,29 @@
         mysqli_close($conexao);
     }
 
+    function buscarInformacoesDoServico($conexao, $ser_id)
+    {
+        $query = mysqli_prepare($conexao, "SELECT *
+                        FROM tbl_servico AS ser
+                        where ser_id = ?");
 
-    function buscarValorAtual($conexao, $pec_id, $cos_id)
+        mysqli_stmt_bind_param($query, "i", $ser_id);
+
+        mysqli_stmt_execute($query);
+
+        $resultado = mysqli_stmt_get_result($query);
+        $resultado = mysqli_fetch_assoc($resultado);
+
+        return $resultado;
+        mysqli_stmt_close($query);
+        mysqli_close($conexao);
+    }
+
+    function buscarInformacoesDoCatalogo($conexao, $pec_id, $cos_id)
     {
 
 
-        $query = mysqli_prepare($conexao, "SELECT cat_valor from tbl_catalogo where cos_id = ? and pec_id = ?");
+        $query = mysqli_prepare($conexao, "SELECT * from tbl_catalogo where cos_id = ? and pec_id = ?");
         mysqli_stmt_bind_param($query, 'ii', $cos_id, $pec_id);
         mysqli_stmt_execute($query);
         $resultado = mysqli_stmt_get_result($query);
@@ -38,7 +55,6 @@
             return mysqli_fetch_assoc($resultado);
         } else {
             return $resultado;
-
         }
         mysqli_stmt_close($query);
         mysqli_close($conexao);

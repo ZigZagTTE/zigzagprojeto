@@ -21,12 +21,12 @@
     }
 
     $ser_id = $_GET['ser_id'];
+    $pec_id = $_GET['pec_id'];
 
-    require_once "../buscarInformacoes.php";
+    require_once "buscarInformacoes.php";
 
-    $infoPecas = buscarInformacoesDaPeca($conexao, $_GET['pec_id']);
-    $buscarValorAtual = buscarValorAtual($conexao, $_GET['pec_id'], $_SESSION['cos_id']);
-
+    $infoPecas = buscarInformacoesDaPeca($conexao, $pec_id);
+    $buscarValorAtual = buscarInformacoesDoCatalogo($conexao, $pec_id, $_SESSION['cos_id']);
     $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermuda.png', 'vestido.png'];
 
     ?>
@@ -60,14 +60,24 @@
 
     <form action="alterarPreco.php" method="POST" class="carrinho">
 
+        <input type="hidden" value="<?php echo $ser_id; ?>" name="ser_id">
+        <input type="hidden" value="<?php echo $pec_id; ?>" name="pec_id">
+
         <div class="detalhes-peca">
             <img src="../../../assets/images/usu_img/pecas/<?php echo $imagem[$infoPecas['pec_id'] - 1]; ?>" alt="peca">
             <p><?php echo $infoPecas['pec_nome']; ?></p>
         </div>
 
         <div class="valor-preco">
-            <p>valor</p>
-            <input class="preco" name="cat_preco" type="text" value="R$<?php if(isset($buscarValorAtual)) echo $buscarValorAtual['cat_valor']; else echo 0;?>" required>
+            <p>Valor<span class="valor-desc">(em R$)</span></p>
+            <input class="preco" name="txtPrecoNovo" type="text" id="txtPreco" value="<?php if (isset($buscarValorAtual)) echo $buscarValorAtual['cat_valor'];
+                                                                                        else echo 0; ?>" required>
+        </div>
+
+        <div class="desc-preco">
+            <p>Descrição</p>
+            <input class="descricao" name="txtDescricaoNovo" type="text" id="txtDescricao" maxlength="50" value="<?php if (isset($buscarValorAtual)) echo $buscarValorAtual['cat_descricao'];
+                                                                                                                    else echo "Adicione uma descrição perssonalizada!"; ?>" required>
         </div>
 
         <div class="confimar-preco">
