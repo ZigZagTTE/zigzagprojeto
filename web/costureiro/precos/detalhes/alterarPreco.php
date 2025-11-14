@@ -8,7 +8,7 @@ $cos_id = $_SESSION['cos_id'];
 $ser_id = $_POST['ser_id'];
 $pec_id = $_POST['pec_id'];
 $valor_novo = $_POST['txtPrecoNovo'];
-$valor_novo = preg_replace('/\D/', '', $valor_novo);
+$valor_novo = preg_replace('/[^\d.]/', '', $valor_novo);
 $descricao_novo = $_POST['txtDescricaoNovo'];
 
 $buscarInformacoesPeca = buscarInformacoesDaPeca($conexao, $pec_id);
