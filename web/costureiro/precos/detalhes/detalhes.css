@@ -29,6 +29,8 @@
   align-items: center;
 
   img {
+    background-color: white;
+    padding: 10px;
     width: 150px;
     border-radius: 10px;
     height: auto;
@@ -56,10 +58,14 @@
   }
 
   .preco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
     width: 300px;
     height: 80px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 10px;
     border: 3px solid var(--roxo-principal);
   }

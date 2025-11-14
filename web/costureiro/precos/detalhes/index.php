@@ -20,8 +20,17 @@
         header("Location: ../../cadastrar");
     }
 
-    $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermudas.png', 'vestido.png'];
+    $ser_id = $_GET['ser_id'];
+
+    require_once "../buscarInformacoes.php";
+
+    $infoPecas = buscarInformacoesDaPeca($conexao, $_GET['pec_id']);
+    $buscarValorAtual = buscarValorAtual($conexao, $_GET['pec_id'], $_SESSION['cos_id']);
+
+    $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermuda.png', 'vestido.png'];
+
     ?>
+
 </head>
 
 <body>
@@ -52,19 +61,21 @@
     <form action="alterarPreco.php" method="POST" class="carrinho">
 
         <div class="detalhes-peca">
-            <img src="../../../assets/images/usu_img/pecas/camisa.png" alt="camisa">
-            <p>Camisa</p>
+            <img src="../../../assets/images/usu_img/pecas/<?php echo $imagem[$infoPecas['pec_id'] - 1]; ?>" alt="peca">
+            <p><?php echo $infoPecas['pec_nome']; ?></p>
         </div>
 
         <div class="valor-preco">
             <p>valor</p>
-            <input class="preco" value="R$ 100,00">
+            <input class="preco" name="cat_preco" type="text" value="R$<?php if(isset($buscarValorAtual)) echo $buscarValorAtual['cat_valor']; else echo 0;?>" required>
         </div>
 
         <div class="confimar-preco">
-            <a href="../">Cancelar Alteração</a>
+            <a href="../?ser_id=<?php echo $ser_id; ?>">Cancelar Alteração</a>
             <button type="submit">Confirmar Preço</button>
         </div>
+        <input type="hidden" name="pec_id" value="<?php echo $infoPecas['pec_id']; ?>">
+        <input type="hidden" name="ser_id" value="<?php echo $ser_id; ?>">
 
     </form>
 

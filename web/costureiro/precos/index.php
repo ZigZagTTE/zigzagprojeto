@@ -20,10 +20,7 @@
         header("Location: ../cadastrar");
     }
 
-    require_once "buscarPeca.php";
-
-
-
+    $servicoId = $_GET["ser_id"];
 
     ?>
 </head>
@@ -73,54 +70,54 @@
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camisa.png" alt="Camisa (com botão)">
                     <p>Camisa (com botão)</p>
-                    <a class="detalhes-servico" href="detalhes/?pecaId=1">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/?pec_id=1&ser_id=<?php echo $servicoId; ?>">Detalhes</a>
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/camiseta.png" alt="Camiseta (sem botão)">
                     <p>Camiseta (sem botão)</p>
-                    <a class="detalhes-servico" href="detalhes/?pecaId=2">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/?pec_id=2&ser_id=<?php echo $servicoId; ?>">Detalhes</a>
 
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/casaco.png" alt="Casaco">
 
                     <p>Casaco</p>
-                    <a class="detalhes-servico" href="detalhes/?pecaId=3">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/?pec_id=3&ser_id=<?php echo $servicoId; ?>">Detalhes</a>
 
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/macacao-feminino.png" alt="Macacão">
 
                     <p>Macacão</p>
-                    <a class="detalhes-servico" href="detalhes/?pecaId=4">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/?pec_id=4&ser_id=<?php echo $servicoId; ?>">Detalhes</a>
 
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/calcas.png" alt="Calças">
 
                     <p>Calças</p>
-                    <a class="detalhes-servico" href="detalhes/?pecaId=5">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/?pec_id=5&ser_id=<?php echo $servicoId; ?>">Detalhes</a>
 
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/shorts.png" alt="Shorts">
 
                     <p>Shorts</p>
-                    <a class="detalhes-servico" href="detalhes/?pecaId=6">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/?pec_id=6&ser_id=<?php echo $servicoId; ?>">Detalhes</a>
 
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/bermuda.png" alt="Bermuda">
 
                     <p>Bermuda</p>
-                    <a class="detalhes-servico" href="detalhes/?pecaId=7">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/?pec_id=7&ser_id=<?php echo $servicoId; ?>">Detalhes</a>
 
                 </li>
                 <li>
                     <img src="../../assets/images/usu_img/pecas/vestido.png" alt="Vestido">
 
                     <p>Vestido</p>
-                    <a class="detalhes-servico" href="detalhes/?pecaId=8">Detalhes</a>
+                    <a class="detalhes-servico" href="detalhes/?pec_id=8&ser_id=<?php echo $servicoId; ?>">Detalhes</a>
 
                 </li>
             </form>

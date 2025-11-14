@@ -63,61 +63,61 @@
         </div>
         <div class="carousel-warp-costurar">
             <div class="carousel-section" id="carousel1">
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=1" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/servicos/agulha.png" alt="Pequenas costuras">
                     <div class="service-info">
                         <p class="service-name">Pequenas costuras</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=2" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/servicos/ziper.png" alt="Troca de zíper comum">
                     <div class="service-info">
                         <p class="service-name">Troca de zíper comum</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=3" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/servicos/tecido.png" alt="Troca de zíper invisível">
                     <div class="service-info">
                         <p class="service-name">Troca de zíper invisível</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=4" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/camisa.png" alt="Ajuste de barra">
                     <div class="service-info">
                         <p class="service-name">Ajuste de barra</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=5" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/calcas.png" alt="Sob medida">
                     <div class="service-info">
                         <p class="service-name">Sob medida</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=6" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/servicos/vestido.png" alt="Roupas ornamentadas">
                     <div class="service-info">
                         <p class="service-name">Roupas ornamentadas</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=7" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/servicos/tecido.png" alt="Remendos">
                     <div class="service-info">
                         <p class="service-name">Remendos</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=8" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/servicos/bordar.png" alt="Bordados">
                     <div class="service-info">
                         <p class="service-name">Bordados</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=9" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/servicos/patchwork.png" alt="Patchwork">
                     <div class="service-info">
                         <p class="service-name">Patchwork</p>
                     </div>
                 </a>
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/servicos/cabide.png" alt="Criação">
                     <div class="service-info">
                         <p class="service-name">Criação</p>
