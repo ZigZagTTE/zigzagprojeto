@@ -14,6 +14,7 @@
     <script src="https://kit.fontawesome.com/a1d8234c07.js" crossorigin="anonymous"></script>
 
     <script src="../../../formatacao.js" defer></script>
+    <script src="./formatacaoPreco.js" defer></script>
 
     <?php session_start();
     if (!isset($_SESSION["cos_id"])) {
@@ -48,10 +49,10 @@
         </nav>
         <a class="icon" href="../../"><i class="fa-solid fa-house fa-2x"></i></a>
         <!--casa-->
-        <a class="icon" href="../../pedidos"><i class="fa-duotone fa-solid fa-clipboard-list fa-2xl" style="--fa-primary-color: #b450f5; --fa-secondary-color: #f5e9db;"></i></a>
+        <a class="icon" href="../../pedidos"><i class="fa-duotone fa-solid fa-clipboard-list fa-2xl"
+                style="--fa-primary-color: #b450f5; --fa-secondary-color: #f5e9db;"></i></a>
         <!--lista de pedidos-->
-        <a class="icon" href="../../perfil/"><img
-                class="icon_img_perfil"
+        <a class="icon" href="../../perfil/"><img class="icon_img_perfil"
                 src="../../../assets/uploads/profilepictures/<?php echo $_SESSION["cos_perfil"]; ?>"
                 alt="Foto de perfil" />
         </a>
@@ -69,15 +70,24 @@
         </div>
 
         <div class="valor-preco">
-            <p>Valor<span class="valor-desc">(em R$)</span></p>
-            <input class="preco" name="txtPrecoNovo" type="text" id="txtPreco" value="<?php if (isset($buscarValorAtual)) echo $buscarValorAtual['cat_valor'];
-                                                                                        else echo 0; ?>" required>
+            <p>
+                Valor
+                <!-- <span class="valor-desc">(em R$)</span> -->
+            </p>
+            <input class="preco" name="txtPrecoNovo" type="text" id="txtPreco" value="<?php if (isset($buscarValorAtual))
+                echo $buscarValorAtual['cat_valor'];
+            else
+                echo 0; ?>" required>
         </div>
 
         <div class="desc-preco">
             <p>Descrição</p>
-            <input class="descricao" name="txtDescricaoNovo" type="text" id="txtDescricao" maxlength="50" value="<?php if (isset($buscarValorAtual)) echo $buscarValorAtual['cat_descricao'];
-                                                                                                                    else echo "Adicione uma descrição perssonalizada!"; ?>" required>
+            <textarea class="descricao" name="txtDescricaoNovo" type="text" id="txtDescricao" maxlength="500"
+                placeholder="<?php if (isset($buscarValorAtual))
+                    echo $buscarValorAtual['cat_descricao'];
+                else
+                    echo "Adicione uma descrição perssonalizada!"; ?>"
+                required></textarea>
         </div>
 
         <div class="confimar-preco">
@@ -97,10 +107,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img
-                        src="../../../assets/svg/logo.svg"
-                        alt="ZigZag Logo"
-                        class="footer-logo" />
+                    <img src="../../../assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
                     <p>Conectando talentos e necessidades na arte da costura.</p>
                 </div>
                 <div class="footer-section">
@@ -124,7 +131,8 @@
                     <h3>Redes Sociais</h3>
                     <div class="social-links">
                         <a href="#"><img src="../../../assets/svg/facebook.svg" alt="Facebook" /></a>
-                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../../assets/svg/instagram.svg" alt="Instagram" /></a>
+                        <a href="https://www.instagram.com/zigzag_ltda"><img src="../../../assets/svg/instagram.svg"
+                                alt="Instagram" /></a>
                         <a href="#"><img src="../../../assets/svg/whatsapp.svg" alt="WhatsApp" /></a>
                     </div>
                 </div>
