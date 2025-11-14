@@ -11,11 +11,11 @@ $valor_novo = $_POST['txtPrecoNovo'];
 $descricao_novo = $_POST['txtDescricaoNovo'];
 
 $buscarInformacoesPeca = buscarInformacoesDaPeca($conexao, $pec_id);
-$buscarValorAtual = buscarInformacoesDoCatalogo($conexao, $pec_id, $cos_id);
+$buscarValorAtual = buscarInformacoesDoCatalogo($conexao, $ser_id, $pec_id, $cos_id);
 
 
-$query_verificar_categoria = mysqli_prepare($conexao, "SELECT * from tbl_catalogo where cos_id = ? and pec_id = ?");
-mysqli_stmt_bind_param($query_verificar_categoria, 'ii', $cos_id, $pec_id);
+$query_verificar_categoria = mysqli_prepare($conexao, "SELECT * from tbl_catalogo where cos_id = ? and pec_id = ? and ser_id = ?");
+mysqli_stmt_bind_param($query_verificar_categoria, 'iii', $cos_id, $pec_id, $ser_id);
 mysqli_stmt_execute($query_verificar_categoria);
 $resultado_query = mysqli_stmt_get_result($query_verificar_categoria);
 
@@ -31,7 +31,7 @@ if ($resultado_query > 0) {
 } else {
     $query = mysqli_prepare($conexao, "INSERT INTO tbl_catalogo (cat_valor, cat_descricao, cos_id, pec_id, ser_id) VALUES (?, ?, ?, ?, ?)");
     mysqli_stmt_bind_param($query, 'dsiii', $valor_novo, $descricao_novo, $cos_id, $pec_id, $ser_id);
-    mysqli_stmt_execute($query); 
+    mysqli_stmt_execute($query);
     mysqli_stmt_close($query);
     mysqli_close($conexao);
 }
@@ -39,4 +39,4 @@ if ($resultado_query > 0) {
 $valor_novo = 0;
 $descricao_novo = "";
 
-header('Location: ./?pec_id=' . $pec_id . '&ser_id=' . $ser_id);
+header('Location: ../?&ser_id=' . $ser_id);

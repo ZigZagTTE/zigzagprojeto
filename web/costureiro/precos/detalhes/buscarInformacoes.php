@@ -43,12 +43,12 @@
         mysqli_close($conexao);
     }
 
-    function buscarInformacoesDoCatalogo($conexao, $pec_id, $cos_id)
+    function buscarInformacoesDoCatalogo($conexao, $ser_id, $pec_id, $cos_id)
     {
 
 
-        $query = mysqli_prepare($conexao, "SELECT * from tbl_catalogo where cos_id = ? and pec_id = ?");
-        mysqli_stmt_bind_param($query, 'ii', $cos_id, $pec_id);
+        $query = mysqli_prepare($conexao, "SELECT * from tbl_catalogo where cos_id = ? and pec_id = ? and ser_id = ?");
+        mysqli_stmt_bind_param($query, 'iii', $cos_id, $pec_id, $ser_id);
         mysqli_stmt_execute($query);
         $resultado = mysqli_stmt_get_result($query);
         if ($resultado) {

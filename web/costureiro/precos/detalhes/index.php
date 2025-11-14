@@ -26,7 +26,7 @@
     require_once "buscarInformacoes.php";
 
     $infoPecas = buscarInformacoesDaPeca($conexao, $pec_id);
-    $buscarValorAtual = buscarInformacoesDoCatalogo($conexao, $pec_id, $_SESSION['cos_id']);
+    $buscarValorAtual = buscarInformacoesDoCatalogo($conexao, $ser_id, $pec_id, $_SESSION['cos_id']);
     $imagem = ['camisa.png', 'camiseta.png', 'casaco.png', 'macacao-feminino.png', 'calcas.png', 'shorts.png', 'bermuda.png', 'vestido.png'];
 
     ?>

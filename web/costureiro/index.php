@@ -117,12 +117,6 @@
                         <p class="service-name">Patchwork</p>
                     </div>
                 </a>
-                <a href="precos/?ser_id=10" class="service-card">
-                    <img class="service-image" src="../assets/images/usu_img/servicos/cabide.png" alt="Criação">
-                    <div class="service-info">
-                        <p class="service-name">Criação</p>
-                    </div>
-                </a>
             </div>
         </div>
         <div class="carousel-controls-costurar">
@@ -147,7 +141,7 @@
         <div class="carousel-warp-criar">
             <div class="carousel-section" id="carousel2">
 
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/camisa.png" alt="Camisa (com botão)">
                     <div class="service-info">
                         <p class="service-name">Camisa (com botão)</p>
@@ -155,7 +149,7 @@
 
                 </a>
 
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/camiseta.png" alt="Camiseta (sem botão)">
                     <div class="service-info">
                         <p class="service-name">Camiseta (sem botão)</p>
@@ -163,7 +157,7 @@
 
                 </a>
 
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/casaco.png" alt="Casaco">
                     <div class="service-info">
                         <p class="service-name">Casaco</p>
@@ -171,7 +165,7 @@
 
                 </a>
 
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/macacao-feminino.png" alt="Macacão">
                     <div class="service-info">
                         <p class="service-name">Macacão</p>
@@ -179,7 +173,7 @@
 
                 </a>
 
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/calcas.png" alt="Calças">
                     <div class="service-info">
                         <p class="service-name">Calças</p>
@@ -187,7 +181,7 @@
 
                 </a>
 
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/shorts.png" alt="Shorts">
                     <div class="service-info">
                         <p class="service-name">Shorts</p>
@@ -195,7 +189,7 @@
 
                 </a>
 
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/bermuda.png" alt="Bermuda">
                     <div class="service-info">
                         <p class="service-name">Bermuda</p>
@@ -203,7 +197,7 @@
 
                 </a>
 
-                <a href="precos/" class="service-card">
+                <a href="precos/?ser_id=10" class="service-card">
                     <img class="service-image" src="../assets/images/usu_img/pecas/vestido.png" alt="Vestido">
                     <div class="service-info">
                         <p class="service-name">Vestido</p>
