@@ -8,6 +8,7 @@ $cos_id = $_SESSION['cos_id'];
 $ser_id = $_POST['ser_id'];
 $pec_id = $_POST['pec_id'];
 $valor_novo = $_POST['txtPrecoNovo'];
+$valor_novo = preg_replace('/\D/', '', $valor_novo);
 $descricao_novo = $_POST['txtDescricaoNovo'];
 
 $buscarInformacoesPeca = buscarInformacoesDaPeca($conexao, $pec_id);
@@ -23,8 +24,8 @@ $resultado_query = mysqli_num_rows($resultado_query);
 
 if ($resultado_query > 0) {
 
-    $query = mysqli_prepare($conexao, "UPDATE tbl_catalogo SET cat_valor = ?, cat_descricao = ? WHERE cos_id = ? and pec_id = ?");
-    mysqli_stmt_bind_param($query, 'dsii', $valor_novo, $descricao_novo, $cos_id, $pec_id);
+    $query = mysqli_prepare($conexao, "UPDATE tbl_catalogo SET cat_valor = ?, cat_descricao = ? WHERE cos_id = ? and pec_id = ? and ser_id = ?");
+    mysqli_stmt_bind_param($query, 'dsiii', $valor_novo, $descricao_novo, $cos_id, $pec_id, $ser_id);
     mysqli_stmt_execute($query);
     mysqli_stmt_close($query);
     mysqli_close($conexao);
