@@ -29,9 +29,9 @@ if ($resultado_query > 0) {
     mysqli_stmt_close($query);
     mysqli_close($conexao);
 } else {
-    $query = mysqli_prepare($conexao, "INSERT INTO tbl_catalogo (cat_valor, cat_descricao, cos_id, pec_id) VALUES (?, ?, ?, ?)");
-    mysqli_stmt_bind_param($query, 'dsii', $valor_novo, $descricao_novo, $cos_id, $pec_id);
-    mysqli_stmt_execute($query);
+    $query = mysqli_prepare($conexao, "INSERT INTO tbl_catalogo (cat_valor, cat_descricao, cos_id, pec_id, ser_id) VALUES (?, ?, ?, ?, ?)");
+    mysqli_stmt_bind_param($query, 'dsiii', $valor_novo, $descricao_novo, $cos_id, $pec_id, $ser_id);
+    mysqli_stmt_execute($query); 
     mysqli_stmt_close($query);
     mysqli_close($conexao);
 }
