@@ -7,23 +7,15 @@
   <title>ZigZag</title>
   <link rel="stylesheet" href="index.css" />
   <link rel="icon" href="assets/images/MiniLogo.png" type="image/x-icon" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Iansui&display=swap"
-    rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
   <!-- HEADER -->
   <header class="top">
-    <a href="index.php"><img
-        class="logo_header"
-        src="assets/svg/logo.svg"
-        width="90"
-        height="90"
+    <a href="index.php"><img class="logo_header" src="assets/svg/logo.svg" width="90" height="90"
         alt="Logo ZigZag" /></a>
     <p class="zigzag_txt">igzag</p>
     <nav class="nav_header">
@@ -64,14 +56,8 @@
         <a class="button_orc" href="cadastro.php">Faça seu orçamento</a>
         <div class="search-container">
           <div class="search-box">
-            <img
-              src="assets/svg/search.svg"
-              alt="Buscar"
-              class="search-icon" />
-            <input
-              type="text"
-              placeholder="Buscar costureiras próximas..."
-              class="search-input" />
+            <img src="assets/svg/search.svg" alt="Buscar" class="search-icon" />
+            <input type="text" placeholder="Buscar costureiras próximas..." class="search-input" />
           </div>
         </div>
       </div>
@@ -102,9 +88,7 @@
           </ul>
         </div>
         <div class="sobre-imagem">
-          <img
-            src="assets/images/costureira_trabalhando.png"
-            alt="Costureira trabalhando" />
+          <img src="assets/images/costureira_trabalhando.png" alt="Costureira trabalhando" />
         </div>
       </div>
     </div>
@@ -144,10 +128,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <img
-            src="assets/svg/logo.svg"
-            alt="ZigZag Logo"
-            class="footer-logo" />
+          <img src="assets/svg/logo.svg" alt="ZigZag Logo" class="footer-logo" />
           <p>Conectando talentos e necessidades na arte da costura.</p>
         </div>
         <div class="footer-section">
@@ -200,7 +181,7 @@
     window.addEventListener("DOMContentLoaded", onScrollFadeIn);
   </script>
   <script>
-    window.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("DOMContentLoaded", function () {
       document.body.classList.add("loaded");
     });
   </script>

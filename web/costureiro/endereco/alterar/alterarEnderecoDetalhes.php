@@ -30,3 +30,4 @@ if (array_key_exists('excluir', $_POST)) {
     }
 }
 mysqli_close($conexao);
+?>

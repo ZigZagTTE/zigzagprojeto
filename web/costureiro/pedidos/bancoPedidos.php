@@ -41,3 +41,4 @@ function exibirPedidos($conexao, $ped_id)
     $resultado = mysqli_fetch_all($sqlexecutar, MYSQLI_ASSOC);
     return $resultado;
 }
+?>

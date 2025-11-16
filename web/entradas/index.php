@@ -10,9 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
   <script type="text/javascript" src="entrar.js" defer></script>
-  <?php
-
-  ?>
 </head>
 
 <body>

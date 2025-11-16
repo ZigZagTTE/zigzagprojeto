@@ -27,3 +27,4 @@ function pedidoSelecionado($conexao, $ped_id)
     $pedido = mysqli_fetch_all($result, MYSQLI_ASSOC);
     return $pedido;
 }
+?>

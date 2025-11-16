@@ -41,3 +41,4 @@ $valor_novo = 0;
 $descricao_novo = "";
 
 header('Location: ../?&ser_id=' . $ser_id);
+?>

@@ -1,12 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CED4A8D3-AB9F-48D0-AC4F-A406EBC57171}|sistemaModeradorZigZag\\sistemaModeradorZigZag.csproj|C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemamoderadorzigzag\\frmverificaentregador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CED4A8D3-AB9F-48D0-AC4F-A406EBC57171}|sistemaModeradorZigZag\\sistemaModeradorZigZag.csproj|solutionrelative:sistemamoderadorzigzag\\frmverificaentregador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmVerificaEntregador.cs [Design]",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemaModeradorZigZag\\frmVerificaEntregador.cs",
+              "RelativeDocumentMoniker": "sistemaModeradorZigZag\\frmVerificaEntregador.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\zigzagprojeto\\csharp\\sistemaModeradorZigZag\\sistemaModeradorZigZag\\frmVerificaEntregador.cs [Design]",
+              "RelativeToolTip": "sistemaModeradorZigZag\\frmVerificaEntregador.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T16:17:06.179Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

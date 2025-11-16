@@ -12,3 +12,4 @@ $sql = "INSERT INTO tbl_entrega (entrg_data, entrg_inicio, entrg_confirmacao_cli
 
 mysqli_query($conexao, $sql);
 header("Location: ./detalhes/?id=$ped_id");
+?>
