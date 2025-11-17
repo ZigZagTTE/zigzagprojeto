@@ -11,7 +11,7 @@ $id = $_SESSION["cos_id"];
 
 $ped_id = $_POST['ped_id'];
 
-$query = "UPDATE tbl_pedido SET ped_concluido = 1 WHERE ped_id = $ped_id";
+$query = "UPDATE tbl_pedido, tbl_entrega SET ped_concluido = 1, entrg_confirmacao_cos = 1 WHERE tbl_pedido.ped_id = $ped_id AND tbl_entrega.ped_id = $ped_id";
 $resultado = mysqli_query($conexao, $query);
 
 if ($resultado) {

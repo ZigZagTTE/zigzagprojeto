@@ -65,7 +65,7 @@
 
   <p class="title">Pedido #<?php echo $_GET["id"]; ?></p>
 
-    <form action="confirmar.php" method="POST" class="pedidos">
+    <form action="confirmar.php <?php echo "?id=" . $_GET["id"]; ?>" method="POST" class="pedidos">
         <div class="pedido">
             <div class="pedido-info">
                 <p class="costureira"><?php echo $dados_pedido[0]["cos_nome"]; ?></p>
